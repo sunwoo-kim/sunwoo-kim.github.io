@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>some operator properties | sun woo kim</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="some operator properties" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Required level: Quantum Mechanics." />
+<meta property="og:description" content="Required level: Quantum Mechanics." />
+<link rel="canonical" href="http://localhost:4000/physics/2020/01/05/someproperties.html" />
+<meta property="og:url" content="http://localhost:4000/physics/2020/01/05/someproperties.html" />
+<meta property="og:site_name" content="sun woo kim" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-01-05T00:00:00+09:00" />
+<script type="application/ld+json">
+{"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/physics/2020/01/05/someproperties.html"},"url":"http://localhost:4000/physics/2020/01/05/someproperties.html","description":"Required level: Quantum Mechanics.","dateModified":"2020-01-05T00:00:00+09:00","datePublished":"2020-01-05T00:00:00+09:00","headline":"some operator properties","@type":"BlogPosting","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="sun woo kim" /></head>
+<body><header class="site-header">
+
+    <div class="wrapper"><a class="site-title" rel="author" href="/">sun woo kim</a><nav class="site-nav">
+          <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+          <label for="nav-trigger">
+            <span class="menu-icon">
+              <svg viewBox="0 0 18 15" width="18px" height="15px">
+                <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+              </svg>
+            </span>
+          </label>
+  
+          <div class="trigger"><a class="page-link" href="/">about</a><a class="page-link" href="/posts.html">posts</a></div>
+        </nav></div>
+
+    <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+      TeX: {
+        equationNumbers: {
+          autoNumber: "AMS"
+        }
+      },
+      tex2jax: {
+      inlineMath: [ ['$', '$'] ],
+      displayMath: [ ['$$', '$$'] ],
+      processEscapes: true,
+    }
+  });
+  MathJax.Hub.Register.MessageHook("Math Processing Error",function (message) {
+      alert("Math Processing Error: "+message[1]);
+    });
+  MathJax.Hub.Register.MessageHook("TeX Jax - parse error",function (message) {
+      alert("Math Processing Error: "+message[1]);
+    });
+  </script>
+  <script type="text/javascript" async
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+
+  </header><main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">some operator properties</h1>
+    <div class="post-categories">
+        categories: 
+        
+        
+        <a href="/categories/#physics">physics</a>
+        
+        
+    </div>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2020-01-05T00:00:00+09:00" itemprop="datePublished">Jan 5, 2020
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>Required level: Quantum Mechanics.</p>
+<h2 id="commuting-exponentials-of-operators">commuting exponentials of operators</h2>
+<p>For any operator $\hat{O}$, let's define its time-dependent version, $\hat{O}_t$ to be</p>
+<p>$$
+\hat{O}_t= e^{+i \hat{H} t} \hat{O} e^{-i \hat{H} t}.
+$$</p>
+<p>From this definition, it is easily shown that</p>
+<p>$$
+\frac{d \hat{O}_t}{dt}=+i\left[\hat{H},\hat{O}_t\right]=+i\left[\hat{H},\hat{O}\right],
+$$</p>
+<p>where the last equality is since $e^{\pm i \hat{H}t}$ commutes with $\hat{H}$. Let's consider the case where</p>
+<p>$$
+\left[\hat{H},\hat{O}_t\right]=\hat{C} \hat{O}_t.
+$$</p>
+<p>Then, we can set up the differential equation for $\hat{O}_t$ as</p>
+<p>$$
+\frac{d \hat{O}_t}{dt}=+i\hat{C} \hat{O}_t \implies \hat{O}_t = e^{+i\hat{C}t} \hat{O}.
+$$</p>
+<p>Substituting the definition of $\hat{O}_t$, we can find the `commutation' rule:</p>
+<p>$$
+\forall ; \hat{O} \text{ such that } \left[\hat{H},\hat{O}\right]=\hat{C} \hat{O},
+$$</p>
+<p>$$
+\hat{O} e^{\pm i \hat{H} t} = e^{\pm i \hat{H} t} e^{\mp i \hat{C} t} \hat{O},
+$$</p>
+<p>$$
+e^{\pm i \hat{H} t} \hat{O}= e^{ \pm i \hat{C} t} \hat{O} e^{ \pm i \hat{H} t}.
+$$</p>
+<p>Similarly, for the case where</p>
+<p>$$
+\forall ; \hat{O} \text{ such that } \left[\hat{H},\hat{O}\right]= \hat{O} \hat{C},
+$$</p>
+<p>$$
+\hat{O} e^{\pm i \hat{H} t}= e^{\pm i \hat{H} t} \hat{O} e^{\mp i \hat{C} t},
+$$</p>
+<p>$$
+e^{\pm i \hat{H} t} \hat{O}=\hat{O} e^{\pm i \hat{C} t} e^{\pm i \hat{H} t}.
+$$</p>
+<h2 id="commuting-creationannhilation-operators-with-number-operators">commuting creation/annhilation operators with number operators</h2>
+<p>Consider annhilation operator $\hat{\eta}_a$, and number operator $\hat{I}_a$.</p>
+<p>To quadratic order:</p>
+<p>$$
+\left[ \hat{\eta}_{a}, \hat{I}_{b} \right] = \delta_{a,b}\hat{\eta}_{a}
+$$</p>
+<p>and</p>
+<p>$$
+\left[ \hat{\eta}^\dagger_a, \hat{I}_b \right] = - \hat{\eta}^\dagger_a \delta_{a,b}.
+$$</p>
+<p>For quartic order:</p>
+<p>$$
+\left[ \hat{\eta}_a, \hat{I}_b \hat{I}_c \right] = \left(\delta_{a,b}\delta_{b,c} + \delta_{a,b} \hat{I}_c + \delta_{a,c} \hat{I}_b \right) \hat{\eta}_a
+$$</p>
+<p>and</p>
+<p>$$
+\left[ \hat{\eta}^\dagger_a, \hat{I}_b \hat{I}_c \right] = - \hat{\eta}^\dagger_a \left(\delta_{a,b}\delta_{b,c} + \delta_{a,b} \hat{I}_c + \delta_{a,c} \hat{I}_b \right).
+$$</p>
+
+  </div><a class="u-url" href="/physics/2020/01/05/someproperties.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+    <data class="u-url" href="/"></data>
+  
+    <div class="wrapper">
+  
+      <div class="footer-col-wrapper">
+        <div class="footer-col one-half">
+        <h2 class="footer-heading">sun woo kim</h2>
+          <ul class="contact-list">
+            <li class="p-name"></li></ul>
+        </div>
+  
+        <div class="footer-col one-half">
+          <p>sunwoo-kim [at] outlook [com]</p>
+        </div>
+  
+        <div class="social-links"><ul class="social-media-list"></ul>
+</div>
+      </div>
+  
+    </div>
+  
+  </footer></body>
+
+</html>

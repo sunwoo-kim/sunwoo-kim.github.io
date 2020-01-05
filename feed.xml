@@ -1,63 +1,56 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-01-06T00:06:39+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">sun woo kim</title><subtitle>sunwoo-kim [at] outlook [com]</subtitle><entry><title type="html">generalised wick’s theorem</title><link href="http://localhost:4000/physics/2019/12/06/generalisedwick.html" rel="alternate" type="text/html" title="generalised wick's theorem" /><published>2019-12-06T22:00:00+09:00</published><updated>2019-12-06T22:00:00+09:00</updated><id>http://localhost:4000/physics/2019/12/06/generalisedwick</id><content type="html" xml:base="http://localhost:4000/physics/2019/12/06/generalisedwick.html">&lt;p&gt;Required level: 4th year theoretical physics.&lt;/p&gt;
-&lt;p&gt;If you had an undergraduate or an introductory course in quantum field theory, you were probably introduced to Wick's theorem, which states that the time-ordered product can be transformed into a sum of normal-ordered products:&lt;/p&gt;
-&lt;p&gt;\begin{align} \label{hello}
-\mathcal{T}\left\{ \hat{\phi}(x_1) \dots \hat{\phi}(x_n) \right\} = \mathcal{N}\left\{ \hat{\phi}(x_1) \hat{\phi}(x_n) \dots \hat{\phi} + \text{all possible contractions} \right\},
-\end{align}&lt;/p&gt;
-&lt;p&gt;where $\mathcal{T}\{\dots \}$ refers to the time-ordering and $\mathcal{N}\{\dots\}$ refers to normal-ordering.&lt;/p&gt;
-&lt;p&gt;This is one version of Wick's theorem; there is another generalised version which I think makes clear what Wick's theorem is doing.&lt;/p&gt;
-&lt;p&gt;For this version, we state is with respect to some (many-body) state $\lvert \Psi \rangle$.&lt;/p&gt;
-&lt;p&gt;For any operator $\hat{O}$, we split it into three parts:&lt;/p&gt;
-&lt;p&gt;$$ \hat{O} = \hat{O}^0 + \hat{O}^+ + \hat{O}^-,$$&lt;/p&gt;
-&lt;p&gt;(the $0$ does not indicate power) such that&lt;/p&gt;
-&lt;p&gt;$$ \hat{O}^0 = \text{cst.},$$&lt;/p&gt;
-&lt;p&gt;$$ \hat{O}^- \lvert \Psi \rangle = 0,$$&lt;/p&gt;
-&lt;p&gt;$$ \hat{O}^+ \langle \Psi \rvert = 0.$$&lt;/p&gt;
-&lt;p&gt;One way to explicitly construct such operators (and how it is conventionally done) is&lt;/p&gt;
-&lt;p&gt;$$ \hat{O}^0 = \langle \hat{O} \rangle,$$&lt;/p&gt;
-&lt;p&gt;$$ \hat{O}^+ = \left(\hat{P} - \hat{O}^0\right)(\mathbb{1} - \hat{P}), $$&lt;/p&gt;
-&lt;p&gt;$$ \hat{O}^+ = \left(\mathbb{1} - \hat{P}\right) \hat{O} \hat{P}, $$&lt;/p&gt;
-&lt;p&gt;where $\langle \dots \rangle := \langle \Psi \rvert \dots \lvert \Psi \rangle$, and the projector $\hat{P} := \lvert \Psi \rangle \langle \Psi \rvert$.&lt;/p&gt;
-&lt;!-- &lt;details&gt;&lt;summary&gt;time ordering&lt;/summary&gt;
-&lt;p&gt;
-
-#### yes, even hidden code blocks!
-
-```python
-print(&quot;hello world!&quot;)
-```
-
-&lt;/p&gt;
-&lt;/details&gt; --&gt;
-&lt;!-- 
-{% highlight c++ %}  &lt;br/&gt; code code code &lt;br/&gt; {% endhighlight %}
-
-
-Produces something like this:
-
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c--&quot; data-lang=&quot;c++&quot;&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;argc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;argv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[])&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-    &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;input a string: &quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;getline&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;length&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-
-    &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;charArray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-
-    &lt;span class=&quot;n&quot;&gt;charArray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;charArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot; &quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
- --&gt;
-&lt;!-- &lt;hr&gt;
-
-Pug heirloom High Life vinyl swag, single-origin coffee four dollar toast taxidermy reprehenderit fap distillery master cleanse locavore. Est anim sapiente leggings Brooklyn ea. Thundercats locavore excepteur veniam eiusmod. Raw denim Truffaut Schlitz, migas sapiente Portland VHS twee Bushwick Marfa typewriter retro id keytar.
-
-&lt;blockquote&gt;
-    We do not grow absolutely, chronologically. We grow sometimes in one dimension, and not in another, unevenly. We grow partially. We are relative. We are mature in one realm, childish in another.
-    —Anais Nin
-&lt;/blockquote&gt; --&gt;</content><author><name></name></author><summary type="html">Required level: 4th year theoretical physics.</summary></entry></feed>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-01-06T00:57:29+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">sun woo kim</title><subtitle>sunwoo-kim [at] outlook [com]</subtitle><entry><title type="html">some operator properties</title><link href="http://localhost:4000/physics/2020/01/05/someproperties.html" rel="alternate" type="text/html" title="some operator properties" /><published>2020-01-05T00:00:00+09:00</published><updated>2020-01-05T00:00:00+09:00</updated><id>http://localhost:4000/physics/2020/01/05/someproperties</id><content type="html" xml:base="http://localhost:4000/physics/2020/01/05/someproperties.html">&lt;p&gt;Required level: Quantum Mechanics.&lt;/p&gt;
+&lt;h2 id=&quot;commuting-exponentials-of-operators&quot;&gt;commuting exponentials of operators&lt;/h2&gt;
+&lt;p&gt;For any operator $\hat{O}$, let's define its time-dependent version, $\hat{O}_t$ to be&lt;/p&gt;
+&lt;p&gt;$$
+\hat{O}_t= e^{+i \hat{H} t} \hat{O} e^{-i \hat{H} t}.
+$$&lt;/p&gt;
+&lt;p&gt;From this definition, it is easily shown that&lt;/p&gt;
+&lt;p&gt;$$
+\frac{d \hat{O}_t}{dt}=+i\left[\hat{H},\hat{O}_t\right]=+i\left[\hat{H},\hat{O}\right],
+$$&lt;/p&gt;
+&lt;p&gt;where the last equality is since $e^{\pm i \hat{H}t}$ commutes with $\hat{H}$. Let's consider the case where&lt;/p&gt;
+&lt;p&gt;$$
+\left[\hat{H},\hat{O}_t\right]=\hat{C} \hat{O}_t.
+$$&lt;/p&gt;
+&lt;p&gt;Then, we can set up the differential equation for $\hat{O}_t$ as&lt;/p&gt;
+&lt;p&gt;$$
+\frac{d \hat{O}_t}{dt}=+i\hat{C} \hat{O}_t \implies \hat{O}_t = e^{+i\hat{C}t} \hat{O}.
+$$&lt;/p&gt;
+&lt;p&gt;Substituting the definition of $\hat{O}_t$, we can find the `commutation' rule:&lt;/p&gt;
+&lt;p&gt;$$
+\forall ; \hat{O} \text{ such that } \left[\hat{H},\hat{O}\right]=\hat{C} \hat{O},
+$$&lt;/p&gt;
+&lt;p&gt;$$
+\hat{O} e^{\pm i \hat{H} t} = e^{\pm i \hat{H} t} e^{\mp i \hat{C} t} \hat{O},
+$$&lt;/p&gt;
+&lt;p&gt;$$
+e^{\pm i \hat{H} t} \hat{O}= e^{ \pm i \hat{C} t} \hat{O} e^{ \pm i \hat{H} t}.
+$$&lt;/p&gt;
+&lt;p&gt;Similarly, for the case where&lt;/p&gt;
+&lt;p&gt;$$
+\forall ; \hat{O} \text{ such that } \left[\hat{H},\hat{O}\right]= \hat{O} \hat{C},
+$$&lt;/p&gt;
+&lt;p&gt;$$
+\hat{O} e^{\pm i \hat{H} t}= e^{\pm i \hat{H} t} \hat{O} e^{\mp i \hat{C} t},
+$$&lt;/p&gt;
+&lt;p&gt;$$
+e^{\pm i \hat{H} t} \hat{O}=\hat{O} e^{\pm i \hat{C} t} e^{\pm i \hat{H} t}.
+$$&lt;/p&gt;
+&lt;h2 id=&quot;commuting-creationannhilation-operators-with-number-operators&quot;&gt;commuting creation/annhilation operators with number operators&lt;/h2&gt;
+&lt;p&gt;Consider annhilation operator $\hat{\eta}_a$, and number operator $\hat{I}_a$.&lt;/p&gt;
+&lt;p&gt;To quadratic order:&lt;/p&gt;
+&lt;p&gt;$$
+\left[ \hat{\eta}_{a}, \hat{I}_{b} \right] = \delta_{a,b}\hat{\eta}_{a}
+$$&lt;/p&gt;
+&lt;p&gt;and&lt;/p&gt;
+&lt;p&gt;$$
+\left[ \hat{\eta}^\dagger_a, \hat{I}_b \right] = - \hat{\eta}^\dagger_a \delta_{a,b}.
+$$&lt;/p&gt;
+&lt;p&gt;For quartic order:&lt;/p&gt;
+&lt;p&gt;$$
+\left[ \hat{\eta}_a, \hat{I}_b \hat{I}_c \right] = \left(\delta_{a,b}\delta_{b,c} + \delta_{a,b} \hat{I}_c + \delta_{a,c} \hat{I}_b \right) \hat{\eta}_a
+$$&lt;/p&gt;
+&lt;p&gt;and&lt;/p&gt;
+&lt;p&gt;$$
+\left[ \hat{\eta}^\dagger_a, \hat{I}_b \hat{I}_c \right] = - \hat{\eta}^\dagger_a \left(\delta_{a,b}\delta_{b,c} + \delta_{a,b} \hat{I}_c + \delta_{a,c} \hat{I}_b \right).
+$$&lt;/p&gt;</content><author><name></name></author><summary type="html">Required level: Quantum Mechanics.</summary></entry></feed>
