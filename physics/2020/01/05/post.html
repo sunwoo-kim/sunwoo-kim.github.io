@@ -15,7 +15,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-01-05T02:41:09+09:00" />
 <script type="application/ld+json">
-{"datePublished":"2020-01-05T02:41:09+09:00","dateModified":"2020-01-05T02:41:09+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/physics/2020/01/05/post.html"},"url":"http://localhost:4000/physics/2020/01/05/post.html","description":"collapsible markdown?","@type":"BlogPosting","headline":"site created","@context":"https://schema.org"}</script>
+{"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/physics/2020/01/05/post.html"},"url":"http://localhost:4000/physics/2020/01/05/post.html","description":"collapsible markdown?","dateModified":"2020-01-05T02:41:09+09:00","datePublished":"2020-01-05T02:41:09+09:00","headline":"site created","@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="sun woo kim" /></head>
 <body><header class="site-header">
@@ -35,21 +35,27 @@
 
     <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
-    TeX: {
-      equationNumbers: {
-        autoNumber: "AMS"
-      }
-    },
-    tex2jax: {
-      inlineMath: [ ['\$','\$'] ],
-      displayMath: [ ['$$','$$'] ],
+      TeX: {
+        equationNumbers: {
+          autoNumber: "AMS"
+        }
+      },
+      tex2jax: {
+      inlineMath: [ ['$', '$'] ],
+      displayMath: [ ['$$', '$$'] ],
       processEscapes: true,
     }
   });
-</script>
-<script type="text/javascript"
-        src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
+  MathJax.Hub.Register.MessageHook("Math Processing Error",function (message) {
+      alert("Math Processing Error: "+message[1]);
+    });
+  MathJax.Hub.Register.MessageHook("TeX Jax - parse error",function (message) {
+      alert("Math Processing Error: "+message[1]);
+    });
+  </script>
+  <script type="text/javascript" async
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
     
   </header><main class="page-content" aria-label="Content">
       <div class="wrapper">
@@ -72,64 +78,56 @@
 
   <div class="post-content e-content" itemprop="articleBody">
     <h2 id="collapsible-markdown">collapsible markdown?</h2>
-
 <details><summary>CLICK ME</summary>
 <p>
-
-#### yes, even hidden code blocks!
-
-```python
-print("hello world!")
-```
-
+<h4 id="yes-even-hidden-code-blocks">yes, even hidden code blocks!</h4>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"hello world!"</span><span class="p">)</span>
+</code></pre></div></div>
 </p>
 </details>
-
 <p>Excerpt with multiple paragraphs</p>
-
 <h1 id="hello">Hello</h1>
-<p>Let’s test some inline math $x$, $y$, $x_1$, $y_1$.</p>
-
-<p>Now a inline math with special character: $|\psi\rangle$, $x’$, $x^*$.</p>
-
+<p>Let's test some inline math $x$, $y$, $x_1$, $y_1$.</p>
+<p>Now a inline math with special character: $|\psi\rangle$, $x'$, $x^*$.</p>
 <ol>
-  <li>
-    <p>Test a display math:
-<script type="math/tex">|\psi_1\rangle = a|0\rangle + b|1\rangle</script></p>
-  </li>
-  <li>
-    <p>Test a display math with equation number:
+<li>
+<p>Test a display math:
+$$
+|\psi_1\rangle = a|0\rangle + b|1\rangle
+$$</p>
+</li>
+<li>
+<p>Test a display math with equation number:
 \begin{equation} \label{hello}
 |\psi_1\rangle = a|0\rangle + b|1\rangle
 \end{equation}</p>
-  </li>
+</li>
 </ol>
-
 <p>(\ref{hello})</p>
-
-<ol>
-  <li>
-    <p>Test a display math with equation number:
-<script type="math/tex">% <![CDATA[
+<ol start="3">
+<li>
+<p>Test a display math with equation number:
+$$
 \begin{align}
- |\psi_1\rangle &= a|0\rangle + b|1\rangle \\
- |\psi_2\rangle &= c|0\rangle + d|1\rangle
-  \end{align} %]]></script></p>
-  </li>
-  <li>
-    <p>Test a display math with equation number:
+|\psi_1\rangle &amp;= a|0\rangle + b|1\rangle \
+|\psi_2\rangle &amp;= c|0\rangle + d|1\rangle
+\end{align}
+$$</p>
+</li>
+<li>
+<p>Test a display math with equation number:
 \begin{align}
- |\psi_1\rangle &amp;= a|0\rangle + b|1\rangle <br />
- |\psi_2\rangle &amp;= c|0\rangle + d|1\rangle
+|\psi_1\rangle &amp;= a|0\rangle + b|1\rangle \
+|\psi_2\rangle &amp;= c|0\rangle + d|1\rangle
 \end{align}</p>
-  </li>
-  <li>
-    <p>And test a display math without equaltion number:
+</li>
+<li>
+<p>And test a display math without equaltion number:
 \begin{align*}
- |\psi_1\rangle &amp;= a|0\rangle + b|1\rangle <br />
- |\psi_2\rangle &amp;= c|0\rangle + d|1\rangle
+|\psi_1\rangle &amp;= a|0\rangle + b|1\rangle \
+|\psi_2\rangle &amp;= c|0\rangle + d|1\rangle
 \end{align*}</p>
-  </li>
+</li>
 </ol>
 
   </div><a class="u-url" href="/physics/2020/01/05/post.html" hidden></a>

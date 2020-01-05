@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://localhost:4000/" />
 <meta property="og:site_name" content="sun woo kim" />
 <script type="application/ld+json">
-{"url":"http://localhost:4000/","name":"sun woo kim","@type":"WebSite","headline":"about","@context":"https://schema.org"}</script>
+{"url":"http://localhost:4000/","name":"sun woo kim","headline":"about","@type":"WebSite","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="sun woo kim" /></head>
 <body><header class="site-header">
@@ -31,21 +31,27 @@
 
     <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
-    TeX: {
-      equationNumbers: {
-        autoNumber: "AMS"
-      }
-    },
-    tex2jax: {
-      inlineMath: [ ['\$','\$'] ],
-      displayMath: [ ['$$','$$'] ],
+      TeX: {
+        equationNumbers: {
+          autoNumber: "AMS"
+        }
+      },
+      tex2jax: {
+      inlineMath: [ ['$', '$'] ],
+      displayMath: [ ['$$', '$$'] ],
       processEscapes: true,
     }
   });
-</script>
-<script type="text/javascript"
-        src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
+  MathJax.Hub.Register.MessageHook("Math Processing Error",function (message) {
+      alert("Math Processing Error: "+message[1]);
+    });
+  MathJax.Hub.Register.MessageHook("TeX Jax - parse error",function (message) {
+      alert("Math Processing Error: "+message[1]);
+    });
+  </script>
+  <script type="text/javascript" async
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
     
   </header><main class="page-content" aria-label="Content">
       <div class="wrapper">
@@ -57,21 +63,14 @@
 
   <div class="post-content">
     <p><img src="/assets/img/profile.jpg" alt="My helpful screenshot" /></p>
-
-<p>Hi! I’m an aspiring condensed matter theoretical physicist.</p>
-
-<p>I am serving the south korean military service as a ‘skilled industry personnel’. I will (hopefully) be discharged on Nov 2021.</p>
-
-<p>Currently, I’m working on a project with <a href="https://www.pks.mpg.de/dynamics-in-correlated-quantum-matter/">Prof. Markus Heyl</a> on the many-body localisation of lattice gauge theories.</p>
-
+<p>Hi! I'm an aspiring condensed matter theoretical physicist.</p>
+<p>I am serving the south korean military service as a 'skilled industry personnel'. I will (hopefully) be discharged on Nov 2021.</p>
+<p>Currently, I'm working on a project with <a href="https://www.pks.mpg.de/dynamics-in-correlated-quantum-matter/">Prof. Markus Heyl</a> on the many-body localisation of lattice gauge theories.</p>
 <p>I completed the Masters of Advanced Studies in physics at Cambridge University in 2019, and a Bachelors of Science in Physics with Theoretical Physics at Imperial College London in 2018.</p>
-
 <details><summary>more info</summary>
 <p>
-
-I used to make starcraft II maps such as [Frost](https://liquipedia.net/starcraft2/Frost), [Bridgehead](https://liquipedia.net/starcraft2/Bridgehead), and [Fruitland](https://liquipedia.net/starcraft2/Fruitland). [Here](https://tl.net/forum/sc2-maps/417437-semmos-map-thread) are some of my other maps (Starcraft II is a Real-Time Strategy game).
-
-Jazz guitar is another passion of mine, I try to get some practise in every week!
+<p>I used to make starcraft II maps such as <a href="https://liquipedia.net/starcraft2/Frost">Frost</a>, <a href="https://liquipedia.net/starcraft2/Bridgehead">Bridgehead</a>, and <a href="https://liquipedia.net/starcraft2/Fruitland">Fruitland</a>. <a href="https://tl.net/forum/sc2-maps/417437-semmos-map-thread">Here</a> are some of my other maps (Starcraft II is a Real-Time Strategy game).</p>
+<p>Jazz guitar is another passion of mine, I try to get some practise in every week!</p>
 </p>
 </details>
 
