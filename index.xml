@@ -38,6 +38,7 @@
       <pubDate>Sun, 18 Apr 2021 00:00:00 +0000</pubDate>
       <guid>/post/hello-world/</guid>
       <description>&lt;p&gt;Welcome to my new website! I hope to post expository writings about some of my projects here. Stay tuned!&lt;/p&gt;
+&lt;p&gt;We can even use LaTeX: $f(x)$.&lt;/p&gt;
 </description>
     </item>
     
