@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Sun Woo Kim</title>
-    <link>/</link>
-      <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <link>sunwoo-kim.github.io/</link>
+      <atom:link href="sunwoo-kim.github.io/index.xml" rel="self" type="application/rss+xml" />
     <description>Sun Woo Kim</description>
     <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>sunwoo-kim [at] outlook [dot] com</copyright><lastBuildDate>Sat, 01 Jun 2030 13:00:00 +0000</lastBuildDate>
     <image>
-      <url>/media/icon_hu8b309a9302268010949630654373c3a0_79828_512x512_fill_lanczos_center_2.png</url>
+      <url>/sunwoo-kim.github.io/media/icon_hu8b309a9302268010949630654373c3a0_79828_512x512_fill_lanczos_center_2.png</url>
       <title>Sun Woo Kim</title>
-      <link>/</link>
+      <link>sunwoo-kim.github.io/</link>
     </image>
     
     <item>
       <title>Example Talk</title>
-      <link>/talk/example-talk/</link>
+      <link>sunwoo-kim.github.io/talk/example-talk/</link>
       <pubDate>Sat, 01 Jun 2030 13:00:00 +0000</pubDate>
-      <guid>/talk/example-talk/</guid>
+      <guid>sunwoo-kim.github.io/talk/example-talk/</guid>
       <description>&lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     Click on the &lt;strong&gt;Slides&lt;/strong&gt; button above to view the built-in slides feature.
@@ -34,27 +34,27 @@
     
     <item>
       <title>Hello World</title>
-      <link>/post/hello-world/</link>
+      <link>sunwoo-kim.github.io/post/hello-world/</link>
       <pubDate>Sun, 18 Apr 2021 00:00:00 +0000</pubDate>
-      <guid>/post/hello-world/</guid>
+      <guid>sunwoo-kim.github.io/post/hello-world/</guid>
       <description>&lt;p&gt;Welcome to my new website! I hope to post expository writings about some of my projects, as well as pedagogical posts that hopefully will help me remember concepts down the line.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>MBL Bosons</title>
-      <link>/project/mblbosons/</link>
+      <link>sunwoo-kim.github.io/project/mblbosons/</link>
       <pubDate>Sun, 18 Apr 2021 00:00:00 +0000</pubDate>
-      <guid>/project/mblbosons/</guid>
+      <guid>sunwoo-kim.github.io/project/mblbosons/</guid>
       <description>&lt;p&gt;Under construction, please check again later!&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Slides</title>
-      <link>/slides/example/</link>
+      <link>sunwoo-kim.github.io/slides/example/</link>
       <pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate>
-      <guid>/slides/example/</guid>
+      <guid>sunwoo-kim.github.io/slides/example/</guid>
       <description>&lt;h1 id=&#34;create-slides-in-markdown-with-wowchemy&#34;&gt;Create slides in Markdown with Wowchemy&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&#34;https://wowchemy.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Wowchemy&lt;/a&gt; | &lt;a href=&#34;https://owchemy.com/docs/managing-content/#create-slides&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;hr&gt;
@@ -181,9 +181,9 @@ Three
     
     <item>
       <title>An example conference paper</title>
-      <link>/publication/example/</link>
+      <link>sunwoo-kim.github.io/publication/example/</link>
       <pubDate>Mon, 01 Jul 2013 00:00:00 +0000</pubDate>
-      <guid>/publication/example/</guid>
+      <guid>sunwoo-kim.github.io/publication/example/</guid>
       <description>&lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
@@ -200,9 +200,9 @@ Three
     
     <item>
       <title></title>
-      <link>/admin/config.yml</link>
+      <link>sunwoo-kim.github.io/admin/config.yml</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/admin/config.yml</guid>
+      <guid>sunwoo-kim.github.io/admin/config.yml</guid>
       <description></description>
     </item>
     
