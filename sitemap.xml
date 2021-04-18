@@ -2,60 +2,49 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/</loc>
+    <loc>sunwoo-kim.github.io/talk/example-talk/</loc>
     <lastmod>2030-06-01T13:00:00+00:00</lastmod>
   </url><url>
-    <loc>/talk/example-talk/</loc>
+    <loc>sunwoo-kim.github.io/event/</loc>
     <lastmod>2030-06-01T13:00:00+00:00</lastmod>
   </url><url>
-    <loc>/event/</loc>
+    <loc>sunwoo-kim.github.io/</loc>
     <lastmod>2030-06-01T13:00:00+00:00</lastmod>
   </url><url>
-    <loc>/categories/</loc>
-    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
+    <loc>sunwoo-kim.github.io/post/hello-world/</loc>
+    <lastmod>2021-04-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/category/demo/</loc>
-    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
+    <loc>sunwoo-kim.github.io/project/mblbosons/</loc>
+    <lastmod>2021-04-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/post/</loc>
-    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
+    <loc>sunwoo-kim.github.io/post/</loc>
+    <lastmod>2021-04-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/</loc>
-    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
+    <loc>sunwoo-kim.github.io/project/</loc>
+    <lastmod>2021-04-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tag/test/</loc>
-    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/post/getting-started/</loc>
-    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/slides/</loc>
+    <loc>sunwoo-kim.github.io/slides/</loc>
     <lastmod>2019-02-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/slides/example/</loc>
+    <loc>sunwoo-kim.github.io/slides/example/</loc>
     <lastmod>2019-02-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tag/deep-learning/</loc>
-    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/project/example/</loc>
-    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/project/</loc>
-    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/publication-type/1/</loc>
+    <loc>sunwoo-kim.github.io/publication-type/1/</loc>
     <lastmod>2013-07-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/publication/example/</loc>
+    <loc>sunwoo-kim.github.io/publication/example/</loc>
     <lastmod>2013-07-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/publication_types/</loc>
+    <loc>sunwoo-kim.github.io/publication_types/</loc>
     <lastmod>2013-07-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/publication/</loc>
+    <loc>sunwoo-kim.github.io/publication/</loc>
     <lastmod>2013-07-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/admin/</loc>
+    <loc>sunwoo-kim.github.io/admin/</loc>
+  </url><url>
+    <loc>sunwoo-kim.github.io/categories/</loc>
+  </url><url>
+    <loc>sunwoo-kim.github.io/tags/</loc>
   </url>
 </urlset>

@@ -1,31 +1,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts | Academic</title>
-    <link>/post/</link>
-      <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <title>Posts | Sun Woo Kim</title>
+    <link>sunwoo-kim.github.io/post/</link>
+      <atom:link href="sunwoo-kim.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 13 Dec 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>sunwoo-kim [at] outlook [dot] com</copyright><lastBuildDate>Sun, 18 Apr 2021 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <url>/sunwoo-kim.github.io/media/icon_hu8b309a9302268010949630654373c3a0_79828_512x512_fill_lanczos_center_2.png</url>
       <title>Posts</title>
-      <link>/post/</link>
+      <link>sunwoo-kim.github.io/post/</link>
     </image>
     
     <item>
-      <title>Test</title>
-      <link>/post/getting-started/</link>
-      <pubDate>Sun, 13 Dec 2020 00:00:00 +0000</pubDate>
-      <guid>/post/getting-started/</guid>
-      <description>&lt;p&gt;Alright then, let&amp;rsquo;s see if LaTeX works, $f(x)$.&lt;/p&gt;
-&lt;p&gt;$$F(x)$$.&lt;/p&gt;
-&lt;p&gt;Labelling:&lt;/p&gt;
-&lt;p&gt;$$F(x) \label{eqn}$$&lt;/p&gt;
-&lt;p&gt;Is it possible that I can refer to equation $\eqref{eqn}$?&lt;/p&gt;
-&lt;p&gt;$$\begin{aligned}
-f(x) &amp;amp; = 2 \&lt;br&gt;
-&amp;amp; + 2.
-\end{aligned}$$&lt;/p&gt;
+      <title>Hello World</title>
+      <link>sunwoo-kim.github.io/post/hello-world/</link>
+      <pubDate>Sun, 18 Apr 2021 00:00:00 +0000</pubDate>
+      <guid>sunwoo-kim.github.io/post/hello-world/</guid>
+      <description>&lt;p&gt;Welcome to my new website! I hope to post expository writings about some of my projects, as well as pedagogical posts that hopefully will help me remember concepts down the line.&lt;/p&gt;
 </description>
     </item>
     
