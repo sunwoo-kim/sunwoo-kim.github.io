@@ -23,14 +23,14 @@
   
   
 
-  <meta name="author" content="Nelson Bighetti" />
+  <meta name="author" content="Sun Woo Kim" />
 
   
   
   
     
   
-  <meta name="description" content="Professor of Artificial Intelligence" />
+  <meta name="description" content="" />
 
   
   <link rel="alternate" hreflang="en-us" href="/404.html" />
@@ -60,6 +60,9 @@
   
 
   
+  
+    
+    <script src="/js/mathjax-config.js"></script>
   
 
   
@@ -207,9 +210,9 @@
 
       
       
-        
-      
 
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
       
     
       
@@ -292,7 +295,7 @@
   <meta property="og:site_name" content="Academic" />
   <meta property="og:url" content="/404.html" />
   <meta property="og:title" content="404 Page not found | Academic" />
-  <meta property="og:description" content="Professor of Artificial Intelligence" /><meta property="og:image" content="/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png" />
+  <meta property="og:description" content="" /><meta property="og:image" content="/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png" />
     <meta property="twitter:image" content="/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png" /><meta property="og:locale" content="en-us" />
   
     
@@ -304,11 +307,18 @@
 
   
 
-  
-
-
-
-
+  <head>
+<script type="text/x-mathjax-config"> MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "all" } } }); </script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true
+    }
+    });
+</script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+</head>
 
   <title>404 Page not found | Academic</title>
 </head>
@@ -644,8 +654,6 @@
 
       
       
-        
-      
 
       
       
@@ -709,7 +717,7 @@
     
       <li><a href="/talk/example-talk/">Example Talk</a></li>
     
-      <li><a href="/post/getting-started/">Welcome to Wowchemy, the website builder for Hugo</a></li>
+      <li><a href="/post/getting-started/">Test</a></li>
     
       <li><a href="/slides/example/">Slides</a></li>
     

@@ -11,9 +11,6 @@
     <loc>/event/</loc>
     <lastmod>2030-06-01T13:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tag/academic/</loc>
-    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>/categories/</loc>
     <lastmod>2020-12-13T00:00:00+00:00</lastmod>
   </url><url>
@@ -26,13 +23,10 @@
     <loc>/tags/</loc>
     <lastmod>2020-12-13T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>/tag/test/</loc>
+    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>/post/getting-started/</loc>
-    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tag/%E5%BC%80%E6%BA%90/</loc>
-    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/category/%E6%95%99%E7%A8%8B/</loc>
     <lastmod>2020-12-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/slides/</loc>
