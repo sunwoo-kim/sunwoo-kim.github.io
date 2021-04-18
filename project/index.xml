@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Projects | Sun Woo Kim</title>
-    <link>sunwoo-kim.github.io/project/</link>
-      <atom:link href="sunwoo-kim.github.io/project/index.xml" rel="self" type="application/rss+xml" />
+    <link>/project/</link>
+      <atom:link href="/project/index.xml" rel="self" type="application/rss+xml" />
     <description>Projects</description>
     <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>sunwoo-kim [at] outlook [dot] com</copyright><lastBuildDate>Sun, 18 Apr 2021 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/sunwoo-kim.github.io/media/icon_hu8b309a9302268010949630654373c3a0_79828_512x512_fill_lanczos_center_2.png</url>
+      <url>/media/icon_hu8b309a9302268010949630654373c3a0_79828_512x512_fill_lanczos_center_2.png</url>
       <title>Projects</title>
-      <link>sunwoo-kim.github.io/project/</link>
+      <link>/project/</link>
     </image>
     
     <item>
       <title>MBL Bosons</title>
-      <link>sunwoo-kim.github.io/project/mblbosons/</link>
+      <link>/project/mblbosons/</link>
       <pubDate>Sun, 18 Apr 2021 00:00:00 +0000</pubDate>
-      <guid>sunwoo-kim.github.io/project/mblbosons/</guid>
+      <guid>/project/mblbosons/</guid>
       <description>&lt;p&gt;Under construction, please check again later!&lt;/p&gt;
 </description>
     </item>
