@@ -2,108 +2,66 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://hubert0527.github.io/home/hero_carousel/</loc>
-    <lastmod>2018-10-01T00:16:12+01:00</lastmod>
+    <loc>/</loc>
+    <lastmod>2030-06-01T13:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://hubert0527.github.io/home/hero/</loc>
-    <lastmod>2018-10-14T02:15:45+01:00</lastmod>
+    <loc>/talk/example-talk/</loc>
+    <lastmod>2030-06-01T13:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://hubert0527.github.io/home/about/</loc>
-    <lastmod>2019-01-12T15:17:07+08:00</lastmod>
+    <loc>/event/</loc>
+    <lastmod>2030-06-01T13:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://hubert0527.github.io/home/skills/</loc>
-    <lastmod>2018-10-01T00:16:12+01:00</lastmod>
+    <loc>/tag/academic/</loc>
+    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://hubert0527.github.io/home/experience/</loc>
-    <lastmod>2018-10-01T00:16:12+01:00</lastmod>
+    <loc>/categories/</loc>
+    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://hubert0527.github.io/home/publications_selected/</loc>
-    <lastmod>2018-10-14T02:15:45+01:00</lastmod>
+    <loc>/category/demo/</loc>
+    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://hubert0527.github.io/home/accomplishments/</loc>
-    <lastmod>2018-12-31T12:35:24+00:00</lastmod>
+    <loc>/post/</loc>
+    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://hubert0527.github.io/home/publications/</loc>
-    <lastmod>2019-01-12T15:17:07+08:00</lastmod>
+    <loc>/tags/</loc>
+    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://hubert0527.github.io/home/talks_selected/</loc>
-    <lastmod>2018-10-14T02:15:45+01:00</lastmod>
+    <loc>/post/getting-started/</loc>
+    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://hubert0527.github.io/home/talks/</loc>
-    <lastmod>2018-10-14T02:15:45+01:00</lastmod>
+    <loc>/tag/%E5%BC%80%E6%BA%90/</loc>
+    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://hubert0527.github.io/home/posts/</loc>
-    <lastmod>2018-12-28T01:08:34+00:00</lastmod>
+    <loc>/category/%E6%95%99%E7%A8%8B/</loc>
+    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://hubert0527.github.io/home/projects/</loc>
-    <lastmod>2018-11-03T23:48:59+00:00</lastmod>
+    <loc>/slides/</loc>
+    <lastmod>2019-02-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://hubert0527.github.io/home/teaching/</loc>
-    <lastmod>2018-07-13T03:02:27+08:00</lastmod>
+    <loc>/slides/example/</loc>
+    <lastmod>2019-02-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://hubert0527.github.io/home/tags/</loc>
-    <lastmod>2018-07-13T03:02:27+08:00</lastmod>
+    <loc>/tag/deep-learning/</loc>
+    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://hubert0527.github.io/home/contact/</loc>
-    <lastmod>2018-10-21T01:26:52+01:00</lastmod>
+    <loc>/project/example/</loc>
+    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://hubert0527.github.io/</loc>
-    <lastmod>2019-01-12T15:35:54+08:00</lastmod>
+    <loc>/project/</loc>
+    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://hubert0527.github.io/publication/instanas/</loc>
-    <lastmod>2018-11-26T00:00:00+09:00</lastmod>
+    <loc>/publication-type/1/</loc>
+    <lastmod>2013-07-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://hubert0527.github.io/tags/neural-architecture-search/</loc>
-    <lastmod>2018-11-26T00:00:00+09:00</lastmod>
+    <loc>/publication/example/</loc>
+    <lastmod>2013-07-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://hubert0527.github.io/tags/reinforcement-learning/</loc>
-    <lastmod>2018-11-26T00:00:00+09:00</lastmod>
+    <loc>/publication_types/</loc>
+    <lastmod>2013-07-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://hubert0527.github.io/tags/</loc>
-    <lastmod>2018-11-26T00:00:00+09:00</lastmod>
+    <loc>/publication/</loc>
+    <lastmod>2013-07-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://hubert0527.github.io/publication/coco-gan/</loc>
-    <lastmod>2018-09-28T00:00:00+09:00</lastmod>
-  </url><url>
-    <loc>https://hubert0527.github.io/tags/computer-vision/</loc>
-    <lastmod>2018-09-28T00:00:00+09:00</lastmod>
-  </url><url>
-    <loc>https://hubert0527.github.io/tags/generative-adversarial-networks/</loc>
-    <lastmod>2018-09-28T00:00:00+09:00</lastmod>
-  </url><url>
-    <loc>https://hubert0527.github.io/publication/began-cs/</loc>
-    <lastmod>2018-07-12T00:00:00+09:00</lastmod>
-  </url><url>
-    <loc>https://hubert0527.github.io/home/</loc>
-    <lastmod>2019-01-12T15:17:07+08:00</lastmod>
-  </url><url>
-    <loc>https://hubert0527.github.io/tags/for-fun/</loc>
-    <lastmod>2018-01-12T00:00:00+09:00</lastmod>
-  </url><url>
-    <loc>https://hubert0527.github.io/project/human2anime/</loc>
-    <lastmod>2018-01-12T00:00:00+09:00</lastmod>
-  </url><url>
-    <loc>https://hubert0527.github.io/project/</loc>
-    <lastmod>2018-01-12T00:00:00+09:00</lastmod>
-  </url><url>
-    <loc>https://hubert0527.github.io/tags/kaggle/</loc>
-    <lastmod>2017-06-15T00:00:00+09:00</lastmod>
-  </url><url>
-    <loc>https://hubert0527.github.io/project/quora-question-pair/</loc>
-    <lastmod>2017-06-15T00:00:00+09:00</lastmod>
-  </url><url>
-    <loc>https://hubert0527.github.io/tags/nlp/</loc>
-    <lastmod>2017-06-15T00:00:00+09:00</lastmod>
-  </url><url>
-    <loc>https://hubert0527.github.io/post/</loc>
-    <lastmod>2018-10-14T02:15:45+01:00</lastmod>
-  </url><url>
-    <loc>https://hubert0527.github.io/publication/</loc>
-    <lastmod>2019-01-12T15:35:54+08:00</lastmod>
-  </url><url>
-    <loc>https://hubert0527.github.io/talk/</loc>
-    <lastmod>2018-10-14T02:15:45+01:00</lastmod>
-  </url><url>
-    <loc>https://hubert0527.github.io/categories/</loc>
+    <loc>/admin/</loc>
   </url>
 </urlset>
