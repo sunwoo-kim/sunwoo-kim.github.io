@@ -8624,7 +8624,7 @@ footer .powered-by {
 /*************************************************
  *  Compact (stream) list view
  **************************************************/
-.media.stream-item {
+.media.stream-item:not(:last-child) {
   margin-bottom: 2rem; }
 
 .card-simple .article-title,
@@ -8647,6 +8647,9 @@ footer .powered-by {
 @media screen and (max-width: 768px) {
   .media.stream-item img {
     max-width: 80px; } }
+
+.stream-meta.article-metadata .article-metadata {
+  margin-bottom: 0; }
 
 /*************************************************
  *  Publications
