@@ -30,10 +30,10 @@
   
     
   
-  <meta name="description" content="Welcome to my new website! I hope to post expository writings about some of my projects, as well as pedagogical posts that hopefully will help me remember concepts down the line." />
+  <meta name="description" content="An example of using the in-built project page." />
 
   
-  <link rel="alternate" hreflang="en-us" href="/post/hello-world/" />
+  <link rel="alternate" hreflang="en-us" href="/project/mblbosons/" />
 
   
 
@@ -276,7 +276,7 @@
   <link rel="icon" type="image/png" href="/media/icon_hu8b309a9302268010949630654373c3a0_79828_32x32_fill_lanczos_center_2.png" />
   <link rel="apple-touch-icon" type="image/png" href="/media/icon_hu8b309a9302268010949630654373c3a0_79828_180x180_fill_lanczos_center_2.png" />
 
-  <link rel="canonical" href="/post/hello-world/" />
+  <link rel="canonical" href="/project/mblbosons/" />
 
   
   
@@ -287,16 +287,15 @@
   
   
     
-    
   
   
-  <meta property="twitter:card" content="summary" />
+  <meta property="twitter:card" content="summary_large_image" />
   
   <meta property="og:site_name" content="Sun Woo Kim" />
-  <meta property="og:url" content="/post/hello-world/" />
-  <meta property="og:title" content="Hello World | Sun Woo Kim" />
-  <meta property="og:description" content="Welcome to my new website! I hope to post expository writings about some of my projects, as well as pedagogical posts that hopefully will help me remember concepts down the line." /><meta property="og:image" content="/media/icon_hu8b309a9302268010949630654373c3a0_79828_512x512_fill_lanczos_center_2.png" />
-    <meta property="twitter:image" content="/media/icon_hu8b309a9302268010949630654373c3a0_79828_512x512_fill_lanczos_center_2.png" /><meta property="og:locale" content="en-us" />
+  <meta property="og:url" content="/project/mblbosons/" />
+  <meta property="og:title" content="MBL Bosons | Sun Woo Kim" />
+  <meta property="og:description" content="An example of using the in-built project page." /><meta property="og:image" content="/project/mblbosons/featured.jpg" />
+    <meta property="twitter:image" content="/project/mblbosons/featured.jpg" /><meta property="og:locale" content="en-us" />
   
     
       <meta
@@ -317,20 +316,22 @@
 
 
 
-  
-
 
 
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "BlogPosting",
+  "@type": "Article",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "/post/hello-world/"
+    "@id": "/project/mblbosons/"
   },
-  "headline": "Hello World",
+  "headline": "MBL Bosons",
+  
+  "image": [
+    "/project/mblbosons/featured.jpg"
+  ],
   
   "datePublished": "2021-04-18T00:00:00Z",
   "dateModified": "2021-04-18T00:00:00Z",
@@ -348,7 +349,7 @@
       "url": "/media/icon_hu8b309a9302268010949630654373c3a0_79828_192x192_fill_lanczos_center_2.png"
     }
   },
-  "description": "Welcome to my new website! I hope to post expository writings about some of my projects, as well as pedagogical posts that hopefully will help me remember concepts down the line."
+  "description": "An example of using the in-built project page."
 }
 </script>
 
@@ -371,11 +372,11 @@
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 </head>
 
-  <title>Hello World | Sun Woo Kim</title>
+  <title>MBL Bosons | Sun Woo Kim</title>
 </head>
 
 
-<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="3f289ad9deff50f67a8232b628d934fb" >
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="e0b24beb962f79a9c50202f63cb0fc14" >
 
   
   
@@ -532,7 +533,7 @@
         
 
         <li class="nav-item">
-          <a class="nav-link  active" href="/post"><span>Posts</span></a>
+          <a class="nav-link " href="/post"><span>Posts</span></a>
         </li>
 
         
@@ -562,7 +563,7 @@
         
 
         <li class="nav-item">
-          <a class="nav-link " href="/project"><span>Projects</span></a>
+          <a class="nav-link  active" href="/project"><span>Projects</span></a>
         </li>
 
         
@@ -648,7 +649,7 @@
   </div>
 
   <div class="page-body">
-    <article class="article">
+    <article class="article article-project">
 
   
 
@@ -663,32 +664,30 @@
 
 
 
-  
+
+
+
+
+
+
+
 
   
-  
-  
-<div class="article-container pt-3">
-  <h1>Hello World</h1>
-
-  
-
   
     
+  
+
+
+<div class="article-container pt-3">
+  <h1>MBL Bosons</h1>
+
+  
+
+  
 
 
 <div class="article-metadata">
 
-  
-  
-  
-  
-  <div>
-    
-
-  <span >
-      Sun Woo Kim</span>
-  </div>
   
   
 
@@ -705,11 +704,6 @@
   
 
   
-  <span class="middot-divider"></span>
-  <span class="article-reading-time">
-    1 min read
-  </span>
-  
 
   
   
@@ -723,13 +717,20 @@
 
 </div>
 
-    
-
-
-
-
-
   
+
+
+
+
+
+</div>
+
+
+<div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 405px;">
+  <div style="position: relative">
+    <img src="/project/mblbosons/featured_hu3d03a01dcc18bc5be0e67db3d8d209a6_224363_720x0_resize_q75_lanczos.jpg" alt="" class="featured-image">
+    <span class="article-header-caption">Photo by rawpixel on Unsplash</span>
+  </div>
 </div>
 
 
@@ -737,7 +738,7 @@
   <div class="article-container">
 
     <div class="article-style">
-      <p>Welcome to my new website! I hope to post expository writings about some of my projects, as well as pedagogical posts that hopefully will help me remember concepts down the line.</p>
+      <p>Under construction, please check again later!</p>
 
     </div>
 
@@ -761,7 +762,7 @@
       
       
       <li>
-        <a href="https://twitter.com/intent/tweet?url=/post/hello-world/&amp;text=Hello%20World" target="_blank" rel="noopener" class="share-btn-twitter">
+        <a href="https://twitter.com/intent/tweet?url=/project/mblbosons/&amp;text=MBL%20Bosons" target="_blank" rel="noopener" class="share-btn-twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -774,7 +775,7 @@
       
       
       <li>
-        <a href="https://www.facebook.com/sharer.php?u=/post/hello-world/&amp;t=Hello%20World" target="_blank" rel="noopener" class="share-btn-facebook">
+        <a href="https://www.facebook.com/sharer.php?u=/project/mblbosons/&amp;t=MBL%20Bosons" target="_blank" rel="noopener" class="share-btn-facebook">
           <i class="fab fa-facebook"></i>
         </a>
       </li>
@@ -787,7 +788,7 @@
       
       
       <li>
-        <a href="mailto:?subject=Hello%20World&amp;body=/post/hello-world/" target="_blank" rel="noopener" class="share-btn-email">
+        <a href="mailto:?subject=MBL%20Bosons&amp;body=/project/mblbosons/" target="_blank" rel="noopener" class="share-btn-email">
           <i class="fas fa-envelope"></i>
         </a>
       </li>
@@ -800,7 +801,7 @@
       
       
       <li>
-        <a href="https://www.linkedin.com/shareArticle?url=/post/hello-world/&amp;title=Hello%20World" target="_blank" rel="noopener" class="share-btn-linkedin">
+        <a href="https://www.linkedin.com/shareArticle?url=/project/mblbosons/&amp;title=MBL%20Bosons" target="_blank" rel="noopener" class="share-btn-linkedin">
           <i class="fab fa-linkedin-in"></i>
         </a>
       </li>
@@ -813,7 +814,7 @@
       
       
       <li>
-        <a href="whatsapp://send?text=Hello%20World%20/post/hello-world/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+        <a href="whatsapp://send?text=MBL%20Bosons%20/project/mblbosons/" target="_blank" rel="noopener" class="share-btn-whatsapp">
           <i class="fab fa-whatsapp"></i>
         </a>
       </li>
@@ -826,7 +827,7 @@
       
       
       <li>
-        <a href="https://service.weibo.com/share/share.php?url=/post/hello-world/&amp;title=Hello%20World" target="_blank" rel="noopener" class="share-btn-weibo">
+        <a href="https://service.weibo.com/share/share.php?url=/project/mblbosons/&amp;title=MBL%20Bosons" target="_blank" rel="noopener" class="share-btn-weibo">
           <i class="fab fa-weibo"></i>
         </a>
       </li>
@@ -846,7 +847,6 @@
 
   
   
-    
 
 
 
@@ -875,7 +875,6 @@
   </div>
 
 
-  
 
 
 
@@ -897,6 +896,22 @@
 
 
 
+    <div class="project-related-pages content-widget-hr">
+      
+      
+
+      
+      
+      
+
+      
+      
+      
+
+      
+      
+      
+    </div>
   </div>
 </article>
   </div>
@@ -933,7 +948,7 @@
       
       
       
-      
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
     
   </p>
 </footer>

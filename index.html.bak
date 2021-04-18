@@ -30,10 +30,10 @@
   
     
   
-  <meta name="description" content="Welcome to my new website! I hope to post expository writings about some of my projects, as well as pedagogical posts that hopefully will help me remember concepts down the line." />
+  <meta name="description" content="" />
 
   
-  <link rel="alternate" hreflang="en-us" href="/post/hello-world/" />
+  <link rel="alternate" hreflang="en-us" href="/" />
 
   
 
@@ -76,6 +76,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
 
     
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous" media="print" onload="this.media='all'">
     
 
     
@@ -266,7 +268,11 @@
   
   
   
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  
 
+  
+    <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Sun Woo Kim" />
   
 
   
@@ -276,7 +282,7 @@
   <link rel="icon" type="image/png" href="/media/icon_hu8b309a9302268010949630654373c3a0_79828_32x32_fill_lanczos_center_2.png" />
   <link rel="apple-touch-icon" type="image/png" href="/media/icon_hu8b309a9302268010949630654373c3a0_79828_180x180_fill_lanczos_center_2.png" />
 
-  <link rel="canonical" href="/post/hello-world/" />
+  <link rel="canonical" href="/" />
 
   
   
@@ -293,66 +299,31 @@
   <meta property="twitter:card" content="summary" />
   
   <meta property="og:site_name" content="Sun Woo Kim" />
-  <meta property="og:url" content="/post/hello-world/" />
-  <meta property="og:title" content="Hello World | Sun Woo Kim" />
-  <meta property="og:description" content="Welcome to my new website! I hope to post expository writings about some of my projects, as well as pedagogical posts that hopefully will help me remember concepts down the line." /><meta property="og:image" content="/media/icon_hu8b309a9302268010949630654373c3a0_79828_512x512_fill_lanczos_center_2.png" />
+  <meta property="og:url" content="/" />
+  <meta property="og:title" content="Sun Woo Kim" />
+  <meta property="og:description" content="" /><meta property="og:image" content="/media/icon_hu8b309a9302268010949630654373c3a0_79828_512x512_fill_lanczos_center_2.png" />
     <meta property="twitter:image" content="/media/icon_hu8b309a9302268010949630654373c3a0_79828_512x512_fill_lanczos_center_2.png" /><meta property="og:locale" content="en-us" />
   
     
-      <meta
-        property="article:published_time"
-        content="2021-04-18T00:00:00&#43;00:00"
-      />
+      <meta property="og:updated_time" content="2030-06-01T13:00:00&#43;00:00" />
     
-    <meta property="article:modified_time" content="2021-04-18T00:00:00&#43;00:00">
   
 
   
-
-
-    
-
-
-
-
-
-
-  
-
-
-
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "/post/hello-world/"
+  "@type": "WebSite",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "?q={search_term_string}",
+    "query-input": "required name=search_term_string"
   },
-  "headline": "Hello World",
-  
-  "datePublished": "2021-04-18T00:00:00Z",
-  "dateModified": "2021-04-18T00:00:00Z",
-  
-  "author": {
-    "@type": "Person",
-    "name": "Sun Woo Kim"
-  },
-  
-  "publisher": {
-    "@type": "Organization",
-    "name": "Sun Woo Kim",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "/media/icon_hu8b309a9302268010949630654373c3a0_79828_192x192_fill_lanczos_center_2.png"
-    }
-  },
-  "description": "Welcome to my new website! I hope to post expository writings about some of my projects, as well as pedagogical posts that hopefully will help me remember concepts down the line."
+  "url": ""
 }
 </script>
 
-  
 
   
 
@@ -371,11 +342,11 @@
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 </head>
 
-  <title>Hello World | Sun Woo Kim</title>
+  <title>Sun Woo Kim</title>
 </head>
 
 
-<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="3f289ad9deff50f67a8232b628d934fb" >
+<body id="top" data-spy="scroll" data-offset="70" data-target="#navbar-main" class="page-wrapper   "  >
 
   
   
@@ -504,7 +475,7 @@
         
 
         <li class="nav-item">
-          <a class="nav-link " href="/#about"><span>Home</span></a>
+          <a class="nav-link " href="/#about" data-target="#about"><span>Home</span></a>
         </li>
 
         
@@ -532,7 +503,7 @@
         
 
         <li class="nav-item">
-          <a class="nav-link  active" href="/post"><span>Posts</span></a>
+          <a class="nav-link " href="/post"><span>Posts</span></a>
         </li>
 
         
@@ -648,7 +619,220 @@
   </div>
 
   <div class="page-body">
-    <article class="article">
+    
+
+
+
+
+
+
+
+
+
+  
+<span class="js-widget-page d-none"></span>
+
+
+
+
+
+  
+  
+  
+  
+
+
+
+
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  <section id="about" class="home-section wg-about  "  >
+   <div class="home-section-bg " ></div>
+    <div class="container">
+
+    
+
+      
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+<div class="row">
+  <div class="col-12 col-lg-4">
+    <div id="profile">
+
+      
+      
+      <img class="avatar avatar-circle" src="/authors/admin/avatar_hu47de05293238c030c4015723d3f7410f_17494_270x270_fill_q75_lanczos_center.jpg" alt="Sun Woo Kim">
+      
+
+      <div class="portrait-title">
+        <h2>Sun Woo Kim</h2>
+        
+
+        
+      </div>
+
+      <ul class="network-icon" aria-hidden="true">
+        
+      </ul>
+
+    </div>
+  </div>
+  <div class="col-12 col-lg-8">
+
+    
+    
+
+    <div class="article-style">
+      <p>Hello, I&rsquo;m an aspiring condensed matter physicist. The site is <em>under construction</em>, so there might not be much to see here.</p>
+<p>Currently, I am serving Republic of Korea&rsquo;s national service as a &lsquo;Skilled Industry Personnel&rsquo;, at an medical imaging startup <a href="https://airsmed.com/en/people/" target="_blank" rel="noopener">AIRS Medical</a>, where I develop algorithms combining MRI Physics, Compressed Sensing, and Deep Learning in reconstruction and diagnostic settings. I will be discharged in November 2021.</p>
+<p>I am also doing part-time research with <a href="https://www.pks.mpg.de/dynamics-in-correlated-quantum-matter/" target="_blank" rel="noopener">Prof. Markus Heyl</a> and <a href="https://www.giuseppedetomasi.org/" target="_blank" rel="noopener">Giuseppe de Tomasi</a> on developing efficient ways of studying the dynamics of bosonic systems in the Many-Body Localized (MBL) regime.</p>
+<p>I completed the Masters of Advanced Studies in physics at Cambridge University in 2019, and a Bachelors of Science in Physics with Theoretical Physics at Imperial College London in 2018. Please check my <a href="uploads/CV.pdf">CV</a> and <a href="project">Projects</a> page for more details.</p>
+<!-- 
+  <i class="fas fa-download  pr-1 fa-fw"></i> Download my <a href="/media/demo_resume.pdf" target="_blank">resumé</a>. -->
+
+    </div>
+
+    <div class="row">
+
+      
+
+      
+
+    </div>
+  </div>
+</div>
+
+
+    
+
+    </div>
+  </section>
+
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  <section id="posts" class="home-section wg-pages  "  >
+   <div class="home-section-bg " ></div>
+    <div class="container">
+
+    
+      <div class="row  ">
+      
+        
+          <div class="section-heading col-12 col-lg-4 mb-3 mb-lg-0 d-flex flex-column align-items-center align-items-lg-start">
+            <h1 class="mb-0">Recent Posts</h1>
+            
+          </div>
+        
+      
+    
+
+      
+
+
+
+
+
+
+
 
   
 
@@ -663,18 +847,73 @@
 
 
 
-  
+
+
+
+
+
+
+
+
+
+
+
 
   
+
+
+
+
+
   
-  
-<div class="article-container pt-3">
-  <h1>Hello World</h1>
+
+
+
+
+<div class="col-12 col-lg-8">
 
   
 
   
     
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<div class="media stream-item">
+  <div class="media-body">
+
+    <div class="section-subheading article-title mb-0 mt-0">
+      <a href="/post/hello-world/" >Hello World</a>
+    </div>
+
+    
+    <a href="/post/hello-world/"  class="summary-link">
+      <div class="article-style">
+        Welcome to my new website! I hope to post expository writings about some of my projects, as well as pedagogical posts that hopefully will help me remember concepts down the line.
+      </div>
+    </a>
+    
+
+    <div class="stream-meta article-metadata">
+
+      
+
+      
+        
 
 
 <div class="article-metadata">
@@ -723,182 +962,201 @@
 
 </div>
 
-    
-
-
-
-
-
-  
-</div>
-
-
-
-  <div class="article-container">
-
-    <div class="article-style">
-      <p>Welcome to my new website! I hope to post expository writings about some of my projects, as well as pedagogical posts that hopefully will help me remember concepts down the line.</p>
-
+      
     </div>
 
     
 
-
-
-
-
-
-
-
-<div class="share-box" aria-hidden="true">
-  <ul class="share">
+  </div>
+  <div class="ml-3">
     
-      
-      
-      
-        
-      
-      
-      
-      <li>
-        <a href="https://twitter.com/intent/tweet?url=/post/hello-world/&amp;text=Hello%20World" target="_blank" rel="noopener" class="share-btn-twitter">
-          <i class="fab fa-twitter"></i>
-        </a>
-      </li>
     
-      
-      
-      
-        
-      
-      
-      
-      <li>
-        <a href="https://www.facebook.com/sharer.php?u=/post/hello-world/&amp;t=Hello%20World" target="_blank" rel="noopener" class="share-btn-facebook">
-          <i class="fab fa-facebook"></i>
-        </a>
-      </li>
+  </div>
+</div>
+
     
-      
-      
-      
-        
-      
-      
-      
-      <li>
-        <a href="mailto:?subject=Hello%20World&amp;body=/post/hello-world/" target="_blank" rel="noopener" class="share-btn-email">
-          <i class="fas fa-envelope"></i>
-        </a>
-      </li>
-    
-      
-      
-      
-        
-      
-      
-      
-      <li>
-        <a href="https://www.linkedin.com/shareArticle?url=/post/hello-world/&amp;title=Hello%20World" target="_blank" rel="noopener" class="share-btn-linkedin">
-          <i class="fab fa-linkedin-in"></i>
-        </a>
-      </li>
-    
-      
-      
-      
-        
-      
-      
-      
-      <li>
-        <a href="whatsapp://send?text=Hello%20World%20/post/hello-world/" target="_blank" rel="noopener" class="share-btn-whatsapp">
-          <i class="fab fa-whatsapp"></i>
-        </a>
-      </li>
-    
-      
-      
-      
-        
-      
-      
-      
-      <li>
-        <a href="https://service.weibo.com/share/share.php?url=/post/hello-world/&amp;title=Hello%20World" target="_blank" rel="noopener" class="share-btn-weibo">
-          <i class="fab fa-weibo"></i>
-        </a>
-      </li>
-    
-  </ul>
+  
+
+  
+  
+  
+
 </div>
 
 
-
-
-
-
-
-
-
-
-
-  
-  
     
-
-
-
-  
-  
-  
+      </div>
     
-  
-  
-  
-  <div class="media author-card content-widget-hr">
-    
-      
-      <img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_hu47de05293238c030c4015723d3f7410f_17494_270x270_fill_q75_lanczos_center.jpg" alt="Sun Woo Kim">
-    
-
-    <div class="media-body">
-      <h5 class="card-title">Sun Woo Kim</h5>
-      
-      
-      <ul class="network-icon" aria-hidden="true">
-  
-</ul>
 
     </div>
+  </section>
+
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  <section id="projects" class="home-section wg-portfolio  "  >
+   <div class="home-section-bg " ></div>
+    <div class="container">
+
+    
+      <div class="row  ">
+      
+        
+          <div class="section-heading col-12 col-lg-4 mb-3 mb-lg-0 d-flex flex-column align-items-center align-items-lg-start">
+            <h1 class="mb-0">Featured Projects</h1>
+            
+          </div>
+        
+      
+    
+
+      
+
+
+
+
+
+
+
+<div class="col-12 col-lg-8">
+
+  
+
+  
+
+  <div class=" row js-layout-row ">
+
+    
+    
+      
+    
+
+    
+
+      
+      
+      
+
+      
+        
+
+
+<div class="col-12 isotope-item ">
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+
+
+<div class="media stream-item">
+  <div class="media-body">
+
+    <div class="section-subheading article-title mb-0 mt-0">
+      <a href="/project/mblbosons/" >MBL Bosons</a>
+    </div>
+
+    
+    <a href="/project/mblbosons/"  class="summary-link">
+      <div class="article-style">
+        An example of using the in-built project page.
+      </div>
+    </a>
+    
+
+    <div class="stream-meta article-metadata">
+
+      
+
+      
+    </div>
+
+    
+
   </div>
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-
-
-
-
-
+  <div class="ml-3">
+    
+    
+    
+    <a href="/project/mblbosons/" >
+      <img src="/project/mblbosons/featured_hu3d03a01dcc18bc5be0e67db3d8d209a6_224363_150x0_resize_q75_lanczos.jpg" alt="MBL Bosons" loading="lazy">
+    </a>
+    
   </div>
-</article>
+</div>
+
+</div>
+
+      
+
+    
+  </div>
+</div>
+
+
+    
+      </div>
+    
+
+    </div>
+  </section>
+
+
+
   </div>
 
   <div class="page-footer">
@@ -933,7 +1191,7 @@
       
       
       
-      
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
     
   </p>
 </footer>
@@ -983,6 +1241,8 @@
       
 
       
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
       
 
       
