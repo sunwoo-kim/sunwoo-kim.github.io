@@ -30,7 +30,7 @@
   
     
   
-  <meta name="description" content="Under construction, please check again later!" />
+  <meta name="description" content=" " />
 
   
   <link rel="alternate" hreflang="en-us" href="/project/mblbosons/" />
@@ -294,7 +294,7 @@
   <meta property="og:site_name" content="Sun Woo Kim" />
   <meta property="og:url" content="/project/mblbosons/" />
   <meta property="og:title" content="Many-body localization in bosons | Sun Woo Kim" />
-  <meta property="og:description" content="Under construction, please check again later!" /><meta property="og:image" content="/project/mblbosons/featured.png" />
+  <meta property="og:description" content=" " /><meta property="og:image" content="/project/mblbosons/featured.png" />
     <meta property="twitter:image" content="/project/mblbosons/featured.png" /><meta property="og:locale" content="en-us" />
   
     
@@ -349,7 +349,7 @@
       "url": "/media/icon_hu8b309a9302268010949630654373c3a0_79828_192x192_fill_lanczos_center_2.png"
     }
   },
-  "description": "Under construction, please check again later!"
+  "description": " "
 }
 </script>
 
@@ -563,7 +563,7 @@
         
 
         <li class="nav-item">
-          <a class="nav-link  active" href="/project"><span>Projects</span></a>
+          <a class="nav-link " href="/projects"><span>Projects</span></a>
         </li>
 
         
@@ -729,7 +729,7 @@
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 720px;">
   <div style="position: relative">
     <img src="/project/mblbosons/featured_huaa823ed13e92cde40445d1811d62fd76_57233_720x0_resize_lanczos_2.png" alt="" class="featured-image">
-    <span class="article-header-caption">Logarithmic light cone of the Out-of-Time-Ordered-Correlator of a bosonic MBL system (right) compared to an Anderson localized one (left).</span>
+    <span class="article-header-caption">Unlike Anderson localized systems (left), in MBL systems, quantum correlations continues to spread in a logarithmic light cone (right). This can be visualized by the Out-of-Time-Ordered-Correlator, which I simulated for bosons in both $1D$ and $2D$.</span>
   </div>
 </div>
 
@@ -738,7 +738,8 @@
   <div class="article-container">
 
     <div class="article-style">
-      <p>Under construction, please check again later!</p>
+      <!-- Under construction, please check again later! -->
+<p>Preprint will be up on ArXiv shortly!</p>
 
     </div>
 
@@ -929,6 +930,10 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
         
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/python.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/bash.min.js"></script>
         
       
 
