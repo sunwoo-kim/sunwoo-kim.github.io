@@ -768,7 +768,7 @@
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 722px;">
   <div style="position: relative">
     <img src="/project/nonsymmorphic/featured_huc9f08282645ce26cdc837355589c2eb3_1120058_720x0_resize_lanczos_2.png" alt="" class="featured-image">
-    <span class="article-header-caption">Properties of wave-like systems can be predicted using group and representation theory. The image shows a wave splitter for a platonic crystal with $p4g$ symmetry, that I designed using group-theoretic methods.</span>
+    <span class="article-header-caption">Properties of wave-like systems can be predicted using group and representation theory. The image shows a wave splitter for a platonic crystal with $p4g$ symmetry, that was using group-theoretic methods.</span>
   </div>
 </div>
 
@@ -777,7 +777,8 @@
   <div class="article-container">
 
     <div class="article-style">
-      <!-- Under construction, please check again later! -->
+      <p>The study of wave propagation through structured periodic media depends critically upon the periodic lattice from which the medium is constructed. That is unsurprising, but perhaps what is slightly more surprising, is that pieces of pure mathematics play a key role - in particular, group and representation theory. Group theory is the natural language that encodes the symmetries of shape and form. Here we use it to consider a class of $2D$ periodic crystals whose lattice is encoded by <em>nonsymmorphic</em> space groups. These are often overlooked due to their relative complexity compared to the symmorphic space groups. We demonstrate that nonsymmorphic groups have possible practical interest in terms of coalescence of dispersion curves, Dirac points and band-sticking, using both theory and simulation. Once we&rsquo;ve laid out the group theoretical framework in the context of the nonsymmorphic crystals, we use it to illustrate how accidental degeneracies can arise in symmorphic square lattices. We combine this phenomenon with topological valley effects to design highly-efficient topological waveguides and energy-splitters.</p>
+
     </div>
 
     
@@ -908,7 +909,7 @@
       
       
       
-      
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
     
   </p>
 </footer>
