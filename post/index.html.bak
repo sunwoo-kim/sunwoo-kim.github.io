@@ -718,6 +718,9 @@
   
   
   
+    <span class="middot-divider"></span>
+    <a href="/post/hello-world/#disqus_thread"></a>
+  
 
   
   
@@ -879,6 +882,8 @@
     
     
     
+    
+      <script id="dsq-count-scr" src="https://sunwoo__kim.disqus.com/count.js" async></script>
     
 
     

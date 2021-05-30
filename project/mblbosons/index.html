@@ -711,6 +711,9 @@
   
   
   
+    <span class="middot-divider"></span>
+    <a href="/project/mblbosons/#disqus_thread"></a>
+  
 
   
   
@@ -739,7 +742,7 @@
 
 
 
-<a class="btn btn-outline-primary btn-page-header" href="/uploads/mblbosons.pdf" target="_blank" rel="noopener">
+<a class="btn btn-outline-primary btn-page-header" href="/https:/arxiv.org/pdf/2105.12740.pdf" target="_blank" rel="noopener">
   PDF
 </a>
 
@@ -768,7 +771,7 @@
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 720px;">
   <div style="position: relative">
     <img src="/project/mblbosons/featured_huaa823ed13e92cde40445d1811d62fd76_57233_720x0_resize_lanczos_2.png" alt="" class="featured-image">
-    <span class="article-header-caption">Unlike Anderson localized systems (left), in MBL systems, quantum correlations continues to spread in a logarithmic light cone (right). This can be visualized by the Out-of-Time-Ordered-Correlator, which I simulated for bosons in both $1D$ and $2D$.</span>
+    <span class="article-header-caption">Unlike Anderson localized systems (left), in MBL systems, quantum correlations continues to spread in a logarithmic light cone (right). This can be visualized by the Out-of-Time-Ordered-Correlator, which was simulated for bosons in both $1D$ and $2D$, where the horizontal axis is space, and the vertical axis is log-time.</span>
   </div>
 </div>
 
@@ -777,8 +780,23 @@
   <div class="article-container">
 
     <div class="article-style">
-      <p>Recent experiments in quantum simulators have provided evidence for the Many-Body Localized (MBL) phase in 1D and 2D bosonic quantum matter. The theoretical study of such bosonic MBL, however, is a daunting task due to the unbounded nature of its Hilbert space. In this work, we introduce a method to compute the long-time real-time evolution of 1D and 2D bosonic systems in an MBL phase at strong disorder and weak interactions. We focus on local dynamical indicators that are able to distinguish an MBL phase from an Anderson localized phase. In particular, we consider the temporal fluctuations of local observables, the spatiotemporal behavior of two-time correlators and Out-Of-Time-Correlators (OTOCs). We show that these few-body observables can be computed with a computational effort that depends only polynomially on system size but is independent of the target time, by extending a recently proposed numerical method <a href="https://journals.aps.org/prb/abstract/10.1103/PhysRevB.99.241114" target="_blank" rel="noopener">[Phys. Rev. B <strong>99</strong>, 241114 (2019)]</a> to mixed states and bosons. Our method also allows us to surrogate our numerical study with analytical considerations of the time-dependent behavior of the studied quantities.</p>
-
+      <details open> <summary> <b>What is this about?</b> <i>(click to open and close)</i> </summary>
+<hr>
+<p>In usual circumstances, we expect systems to &lsquo;thermalize&rsquo; - for example, when we put espresso and milk together, we expect the two types of particles to mix, eventually resulting in a homogeneous mixture that we call latte.</p>
+<p>There are also systems that do not thermalize. Many non-interacting systems do not thermalize, since the individual parts cannot talk to each other and therefore cannot mix. An Anderson Localized (AL) system is such a system, where non-interacting particles are &lsquo;localized&rsquo;, i.e. they do not venture far away from their initial positions. In other words, they retain a memory of their initial states.</p>
+<p>Naively, we expect that interacting systems to thermalize. What is somewhat unexpected, then, is that in certain situations, even interacting particles can stay localized and not thermalize. These are called Many-Body Localized (MBL) phases and is a big part of condensed matter research today.</p>
+<p>People usually study this phenomenon on a lattice - they pixelize space, so that instead of continuous positions that particles can be in, there are discrete &lsquo;sites&rsquo;, or &lsquo;boxes&rsquo; that particles can be in.</p>
+<p>Experimental physicists often study MBL systems using particles called Bosons, which are particles that can stack on top of each other in each site, compared to Fermions, which only allows one particle per site. But it&rsquo;s much harder to study Bosons theoretically or computationally. Why? Well, if you think about the possible states for Fermions, there can either be a particle or no particle per site, so there are $2 \times 2 \times \cdots \times 2 = 2^L$ possible states, where $L$ is the number of sites. However, for Bosons, if there are $N$ particles in total, there can be 0 to $N$ particles per site, so there are $(N+1)^L$ possible states. As you have more particles, there are just way more possible states for Bosons compared to Fermions.</p>
+<p>In this work, we developed a way to study Bosonic MBL systems efficiently. It is a bit hard to explain, but put in analogies, it goes something like this. A non-interacting quantum system can be thought of as a collection of pendulums, each with their own frequency. In the roughest approximation, the interactions will only change the frequencies of these pendulums. This approximation is called &lsquo;Poincaré-Lindstedt&rsquo; perturbation theory. We find that even this most basic approximation is enough to show some of the hallmarks of MBL systems, such as spreading of information.</p>
+<p>This is what is conveyed in the cover photo. In the x-axis is space, where if it is lit up, it indicates that information was transmitted. The y-axis is &lsquo;log-time&rsquo;, such that as you go further and further, the time increases exponentially, from 10 to 100 to 1000 and so on. On the left is the non-interacting Anderson Localized system, and on the right is the interacting MBL system. We can see that because the particles interact, information is transmitted, albeit very slowly.</p>
+<p>If you like to know more about the work, please check out the PDF, which links to an ArXiv page.</p>
+<hr>
+</details>
+<details> <summary> <b>Abstract</b> <i>(click to open and close)</i> </summary>
+<hr>
+<p>Recent experiments in quantum simulators have provided evidence for the Many-Body Localized (MBL) phase in 1D and 2D bosonic quantum matter. The theoretical study of such bosonic MBL, however, is a daunting task due to the unbounded nature of its Hilbert space. In this work, we introduce a method to compute the long-time real-time evolution of 1D and 2D bosonic systems in an MBL phase at strong disorder and weak interactions. We focus on local dynamical indicators that are able to distinguish an MBL phase from an Anderson localized phase. In particular, we consider the temporal fluctuations of local observables, the spatiotemporal behavior of two-time correlators and Out-Of-Time-Correlators (OTOCs). We show that these few-body observables can be computed with a computational effort that depends only polynomially on system size but is independent of the target time, by extending a recently proposed numerical method <a href="https://journals.aps.org/prb/abstract/10.1103/PhysRevB.99.241114" target="_blank" rel="noopener">[Phys. Rev. B <strong>99</strong>, 241114 (2019)]</a> to mixed states and bosons. Our method also allows us to surrogate our numerical study with analytical considerations of the time-dependent behavior of the studied quantities.</p>
+<hr>
+</details>
     </div>
 
     
@@ -821,7 +839,7 @@
   <div class="media author-card content-widget-hr">
     
       
-      <img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_hu47de05293238c030c4015723d3f7410f_17494_270x270_fill_q75_lanczos_center.jpg" alt="Sun Woo Kim">
+      <img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_hu8211338e1767885b59ec21a2671bb7c5_725088_270x270_fill_q75_lanczos_center.jpg" alt="Sun Woo Kim">
     
 
     <div class="media-body">
@@ -842,6 +860,42 @@
 
 
 
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  <section id="comments">
+    
+<div id="disqus_thread"></div>
+<script>
+  var disqus_config = function () {
+    
+    
+    
+  };
+  (function() {
+    if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+      document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+      return;
+    }
+    var d = document, s = d.createElement('script'); s.async = true;
+    s.src = 'https://' + "sunwoo__kim" + '.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+  </section>
+  
 
 
 
@@ -1011,6 +1065,8 @@
     
     
     
+    
+      <script id="dsq-count-scr" src="https://sunwoo__kim.disqus.com/count.js" async></script>
     
 
     

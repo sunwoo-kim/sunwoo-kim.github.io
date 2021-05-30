@@ -717,7 +717,7 @@
 
       
       
-      <img class="avatar avatar-circle" src="/authors/admin/avatar_hu47de05293238c030c4015723d3f7410f_17494_270x270_fill_q75_lanczos_center.jpg" alt="Sun Woo Kim">
+      <img class="avatar avatar-circle" src="/authors/admin/avatar_hu8211338e1767885b59ec21a2671bb7c5_725088_270x270_fill_q75_lanczos_center.jpg" alt="Sun Woo Kim">
       
 
       <div class="portrait-title">
@@ -742,7 +742,8 @@
       <p>Hello, I&rsquo;m an aspiring physicist, interested in condensed matter physics.</p>
 <p>Currently, I am serving Republic of Korea&rsquo;s national service as a &lsquo;Skilled Industry Personnel&rsquo;, at an medical imaging startup <a href="https://airsmed.com/en/people/" target="_blank" rel="noopener">AIRS Medical</a>, where I develop algorithms combining MRI Physics, Compressed Sensing, and Deep Learning in reconstruction and diagnostic settings. I will be discharged in November 2021.</p>
 <p>I am also doing part-time research with <a href="https://www.pks.mpg.de/dynamics-in-correlated-quantum-matter/" target="_blank" rel="noopener">Prof. Markus Heyl</a> and <a href="https://www.giuseppedetomasi.org/" target="_blank" rel="noopener">Giuseppe de Tomasi</a> on developing efficient ways of studying the dynamics of bosonic systems in the Many-Body Localized (MBL) regime.</p>
-<p>I completed the Masters of Advanced Studies in physics at Cambridge University in 2019, and a Bachelors of Science in Physics with Theoretical Physics at Imperial College London in 2018. Please check my <strong><a href="uploads/CV.pdf">CV</a></strong> and <strong><a href="projects">Projects</a></strong> page for more details.</p>
+<p>I completed the Masters of Advanced Studies in physics at Cambridge University in 2019, and a Bachelors of Science in Physics with Theoretical Physics at Imperial College London in 2018. Please check my <strong><a href="uploads/CV.pdf">CV</a></strong> and <strong><a href="projects">Projects</a></strong> page for more details. My Google Scholar can be found <a href="https://scholar.google.com/citations?user=5SjAcYUAAAAJ" target="_blank" rel="noopener">here</a>.</p>
+<p>If you would like to get in touch, please feel free to contact me at <strong>sunwoo-kim [at] outlook [dot] com</strong>.</p>
 <p><em>Please note that this site is still under construction. So, some things may be incomplete.</em></p>
 <!-- 
   <i class="fas fa-download  pr-1 fa-fw"></i> Download my <a href="/media/demo_resume.pdf" target="_blank">resumé</a>. -->
@@ -957,6 +958,9 @@
   
   
   
+    <span class="middot-divider"></span>
+    <a href="/post/hello-world/#disqus_thread"></a>
+  
 
   
   
@@ -1100,7 +1104,8 @@
 
 <div class="col-12 col-lg-8">
 
-  
+  <p><em>(Click on the headings to read more about each)</em></p>
+
 
   
     
@@ -1156,7 +1161,7 @@
 
 
 
-<a class="btn btn-outline-primary btn-page-header btn-sm" href="/uploads/mblbosons.pdf" target="_blank" rel="noopener">
+<a class="btn btn-outline-primary btn-page-header btn-sm" href="/https:/arxiv.org/pdf/2105.12740.pdf" target="_blank" rel="noopener">
   PDF
 </a>
 
@@ -1438,6 +1443,8 @@
     
     
     
+    
+      <script id="dsq-count-scr" src="https://sunwoo__kim.disqus.com/count.js" async></script>
     
 
     

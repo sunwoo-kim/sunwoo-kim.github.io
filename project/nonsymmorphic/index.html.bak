@@ -711,6 +711,9 @@
   
   
   
+    <span class="middot-divider"></span>
+    <a href="/project/nonsymmorphic/#disqus_thread"></a>
+  
 
   
   
@@ -777,7 +780,19 @@
   <div class="article-container">
 
     <div class="article-style">
-      <p>The study of wave propagation through structured periodic media depends critically upon the periodic lattice from which the medium is constructed. That is unsurprising, but perhaps what is slightly more surprising, is that pieces of pure mathematics play a key role - in particular, group and representation theory. Group theory is the natural language that encodes the symmetries of shape and form. Here we use it to consider a class of $2D$ periodic crystals whose lattice is encoded by <em>nonsymmorphic</em> space groups. These are often overlooked due to their relative complexity compared to the symmorphic space groups. We demonstrate that nonsymmorphic groups have possible practical interest in terms of coalescence of dispersion curves, Dirac points and band-sticking, using both theory and simulation. Once we&rsquo;ve laid out the group theoretical framework in the context of the nonsymmorphic crystals, we use it to illustrate how accidental degeneracies can arise in symmorphic square lattices. We combine this phenomenon with topological valley effects to design highly-efficient topological waveguides and energy-splitters.</p>
+      <details open> <summary> <b>What is this about?</b> <i>(click to open and close)</i> </summary>
+<hr>
+<p>You are probably well aware of tiles on the sidewalk or wallpapers with patterns that repeat themselves, potentially forever. There is some kind of symmetry there, but how do we describe it? Mathematicians were able to codeify these patterns using a field called &lsquo;group theory&rsquo;. In group theory, we define symmetries as transformations that leave the pattern the same, in other words, invariant. For example, assuming that the pattern goes on forever, we can shift the repeating pattern of wallpapers by certain directions and amount can retrieve the same exact pattern as before.</p>
+<p>In physics, systems that repeat themselves forever are called crystals. What&rsquo;s cool about crystals is that the symmetries of the crystals have a direct impact on how waves propagating in the crystals themselves behave, such as if we were to shine light (famously known as a wave) through it, or disturb it (resulting in a sound wave) and so on. Only knowing the symmetries of the crystal, we can predict whether a wave propagating in the crystal will spread out evenly, or propagate in a highly directed fashion, such as in the cover photo.</p>
+<p>In wallpapers or sidewalks, there are two different kind of symmetries. The first is symmorphic symmetry, where there exists two kinds of separable symmetries: translational, shifting the entire pattern, and rotational, only rotating the entire pattern around certain points. Nonsymmorphic symmetries are a bit more complicated, in that you cannot separate out the translational and rotational symmetries; there are certain symmetries that require partial translation, followed by a rotation.</p>
+<p>In this project, we predicted how certain crystals would behave based on their symmetries, and used their properties to design &lsquo;waveguides&rsquo;, that are able to steer the waves around in particular directions efficiently.</p>
+<p>If you like to know more about the work, please check out the PDF.</p>
+<!-- Now let's tackle the 'topological waveguiding' part of the title. What does this mean? This part is a bit more complicated. To put it simply, we first need to go into wavevector space. This is an abstract space where instead of the coordinates being points in real space, the coordinates are instead possible waves with wavelengths and directions that can propagate in the system. -->
+<hr>
+<details> <summary> <b>Abstract</b> <i>(click to open and close)</i> </summary>
+<hr>
+<p>The study of wave propagation through structured periodic media depends critically upon the periodic lattice from which the medium is constructed. That is unsurprising, but perhaps what is slightly more surprising, is that pieces of pure mathematics play a key role - in particular, group and representation theory. Group theory is the natural language that encodes the symmetries of shape and form. Here we use it to consider a class of $2D$ periodic crystals whose lattice is encoded by <em>nonsymmorphic</em> space groups. These are often overlooked due to their relative complexity compared to the symmorphic space groups. We demonstrate that nonsymmorphic groups have possible practical interest in terms of coalescence of dispersion curves, Dirac points and band-sticking, using both theory and simulation. Once we&rsquo;ve laid out the group theoretical framework in the context of the nonsymmorphic crystals, we use it to illustrate how accidental degeneracies can arise in symmorphic square lattices. We combine this phenomenon with topological valley effects to design highly-efficient topological waveguides and energy-splitters.</p>
+<hr>
 
     </div>
 
@@ -821,7 +836,7 @@
   <div class="media author-card content-widget-hr">
     
       
-      <img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_hu47de05293238c030c4015723d3f7410f_17494_270x270_fill_q75_lanczos_center.jpg" alt="Sun Woo Kim">
+      <img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_hu8211338e1767885b59ec21a2671bb7c5_725088_270x270_fill_q75_lanczos_center.jpg" alt="Sun Woo Kim">
     
 
     <div class="media-body">
@@ -842,6 +857,42 @@
 
 
 
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  <section id="comments">
+    
+<div id="disqus_thread"></div>
+<script>
+  var disqus_config = function () {
+    
+    
+    
+  };
+  (function() {
+    if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+      document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+      return;
+    }
+    var d = document, s = d.createElement('script'); s.async = true;
+    s.src = 'https://' + "sunwoo__kim" + '.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+  </section>
+  
 
 
 
@@ -1011,6 +1062,8 @@
     
     
     
+    
+      <script id="dsq-count-scr" src="https://sunwoo__kim.disqus.com/count.js" async></script>
     
 
     
