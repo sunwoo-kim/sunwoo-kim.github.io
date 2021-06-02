@@ -844,9 +844,9 @@
 <!-- In this work, we developed a way to study Bosonic MBL systems efficiently. It is a bit hard to explain, but put in analogies, it goes something like this. A non-interacting quantum system can be thought of as a collection of pendulums, each with their own frequency. In the roughest approximation, the interactions will only change the frequencies of these pendulums. This approximation is called 'Poincaré-Lindstedt' perturbation theory. We find that even this most basic approximation is enough to show some of the hallmarks of MBL systems, such as spreading of information.  -->
 <p>저희 연구에선 보손적 다체 국소화 (Bosonic MBL)시스템을 효율적으로 계산할수 있는 방법을 구안했습니다. 직접적으로 설명하기는 어렵지만, 은유적으로 설명할수 있습니다. 상호작용이 없는 양자 시스템은 서로 따로노는 진자들을 모아놓은것이라고 생각할수 있습니다. 정말 대략적으로 근사를 하면, 상호작용은 각 진자의 주기만 변화를 줄것입니다. 이 근사 방법은 &lsquo;푸엥카레-린드스테드 섭동 이론&rsquo; (Poincaré-Lindstedt perturbation theory) 이라고 할수 있습니다. 아주 간단한 근사임에도 불구하고, 정보의 확산같은 면에서 다체 국소화(MBL) 시스템 고유의 특징적 현상을 보여주기에 충분합니다.</p>
 <!-- This is what is conveyed in the cover photo. In the x-axis is space, where if it is lit up, it indicates that information was transmitted. The y-axis is 'log-time', such that as you go further and further, the time increases exponentially, from 10 to 100 to 1000 and so on. On the left is the non-interacting Anderson Localized system, and on the right is the interacting MBL system. We can see that because the particles interact, information is transmitted, albeit very slowly. -->
-<p>그리고 바로 이것이 커버 사진이 보여주려고 하는 목적입니다. x축은 공간이고, y축은 위로 올라갈수록 시간의 간격이 급수함수적으로 증가하는 (예를들어 1, 10, 100, 등등 처럼) 로그 시간입니다. 밝은색은 정보가 전송되었다는것을 의미하고, 어두운색은 정보가 미치지 못했다는것을 의미합니다. 왼쪽은 상호작용이 없는 앤더슨 국소화(AL) 시스템, 오른쪽은 상호작용이 있는 다체 국소화(MBL) 시스템 입니다. 입자간 상호작용이 존재하기 때문에, 다체 국소화 시스템의 경우 아주 느리게나마 정보가 확산된다는것을 알수 있습니다.</p>
+<p>그리고 바로 이것이 커버 사진이 보여주려고 하는 목적입니다. x축은 공간이고, y축은 위로 올라갈수록 간격이 급수함수적으로 증가하는 (예를들어 1, 10, 100, 등등) 로그 시간입니다. 밝은색은 정보가 전송되었다는것을 의미하고, 어두운색은 정보가 미치지 못했다는것을 의미합니다. 왼쪽은 상호작용이 없는 앤더슨 국소화(AL) 시스템, 오른쪽은 상호작용이 있는 다체 국소화(MBL) 시스템 입니다. 입자간 상호작용이 존재하기 때문에, 다체 국소화 시스템의 경우 아주 느리게나마 정보가 확산된다는것을 알수 있습니다.</p>
 <!-- If you like to know more about the work, please check out the PDF, which links to an ArXiv page. -->
-<p>이 연구에 대해서 더 궁금하시다면, ArXiV에 게시된 논문으로 연결된 PDF파일을 확인해주시기 바랍니다.</p>
+<p>이 연구에 대해서 더 궁금하시다면, ArXiv에 게시된 논문으로 연결된 PDF파일을 확인해주시기 바랍니다.</p>
 <hr>
 </details>
 <details> <summary> <b>초록</b> <i>(클릭해 열고 닫을수 있습니다)</i> </summary>
