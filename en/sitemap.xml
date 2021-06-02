@@ -69,6 +69,16 @@
   </url><url>
     <loc>/en/project/nonsymmorphic/</loc>
     <lastmod>2018-08-19T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ko"
+                href="/ko/project/nonsymmorphic/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/project/nonsymmorphic/"
+                />
   </url><url>
     <loc>/en/categories/</loc>
     <xhtml:link
