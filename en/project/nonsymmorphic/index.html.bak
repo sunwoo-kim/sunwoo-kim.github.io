@@ -257,7 +257,7 @@
   
   
   
-  <link rel="stylesheet" href="/css/wowchemy.75bf9066d8482d50ff735530a9df566e.css" />
+  <link rel="stylesheet" href="/css/wowchemy.4b0ead4423407e7356a809b964a90215.css" />
 
   
 
@@ -282,8 +282,8 @@
     <link rel="manifest" href="/en/index.webmanifest" />
   
 
-  <link rel="icon" type="image/png" href="/media/icon_hu8b309a9302268010949630654373c3a0_79828_32x32_fill_lanczos_center_2.png" />
-  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hu8b309a9302268010949630654373c3a0_79828_180x180_fill_lanczos_center_2.png" />
+  <link rel="icon" type="image/png" href="/media/icon_hu8b309a9302268010949630654373c3a0_79828_32x32_fill_lanczos_center_3.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hu8b309a9302268010949630654373c3a0_79828_180x180_fill_lanczos_center_3.png" />
 
   <link rel="canonical" href="/en/project/nonsymmorphic/" />
 
@@ -355,7 +355,7 @@
     "name": "Sun Woo Kim",
     "logo": {
       "@type": "ImageObject",
-      "url": "/media/icon_hu8b309a9302268010949630654373c3a0_79828_192x192_fill_lanczos_center_2.png"
+      "url": "/media/icon_hu8b309a9302268010949630654373c3a0_79828_192x192_fill_lanczos_center_3.png"
     }
   },
   "description": " "
@@ -819,7 +819,7 @@
 
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 722px;">
   <div style="position: relative">
-    <img src="/en/project/nonsymmorphic/featured_huc9f08282645ce26cdc837355589c2eb3_1120058_720x0_resize_lanczos_2.png" alt="" class="featured-image">
+    <img src="/en/project/nonsymmorphic/featured_huc9f08282645ce26cdc837355589c2eb3_1120058_720x0_resize_lanczos_3.png" alt="" class="featured-image">
     <span class="article-header-caption">Properties of wave-like systems can be predicted using group and representation theory. The image shows a wave splitter for a platonic crystal with $p4g$ symmetry, that was using group-theoretic methods.</span>
   </div>
 </div>

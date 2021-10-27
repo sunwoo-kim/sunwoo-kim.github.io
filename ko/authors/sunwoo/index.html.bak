@@ -257,7 +257,7 @@
   
   
   
-  <link rel="stylesheet" href="/css/wowchemy.75bf9066d8482d50ff735530a9df566e.css" />
+  <link rel="stylesheet" href="/css/wowchemy.4b0ead4423407e7356a809b964a90215.css" />
 
   
 
@@ -284,8 +284,8 @@
     <link rel="manifest" href="/ko/index.webmanifest" />
   
 
-  <link rel="icon" type="image/png" href="/media/icon_hu8b309a9302268010949630654373c3a0_79828_32x32_fill_lanczos_center_2.png" />
-  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hu8b309a9302268010949630654373c3a0_79828_180x180_fill_lanczos_center_2.png" />
+  <link rel="icon" type="image/png" href="/media/icon_hu8b309a9302268010949630654373c3a0_79828_32x32_fill_lanczos_center_3.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hu8b309a9302268010949630654373c3a0_79828_180x180_fill_lanczos_center_3.png" />
 
   <link rel="canonical" href="/ko/authors/sunwoo/" />
 
@@ -711,7 +711,7 @@
       <!-- Hello, I'm an aspiring physicist, interested in condensed matter physics. -->
 <p>안녕하세요, 저는 응집 물질 물리와 머신러닝에 관심있는 물리학도입니다.</p>
 <!-- Currently, I am serving Republic of Korea's national service as a 'Skilled Industry Personnel', at an medical imaging startup [AIRS Medical](https://airsmed.com/en/people/), where I develop algorithms combining MRI Physics, Compressed Sensing, and Deep Learning in reconstruction and diagnostic settings. I will be discharged in November 2021. -->
-<p>현재 저는 산업기능요원으로서 대한민국 군복무를 하고 있습니다. <a href="https://airsmed.com/ko/people/" target="_blank" rel="noopener">에어스메디컬</a>이라는 기업에서 복무중이며 MRI 물리, Compressed Sensing, 그리고 딥러닝을 이미지 리컨과 진단 상황에 적용하고 있습니다. 2021년 11월에 전역 예정입니다.</p>
+<p>현재 저는 산업기능요원으로서 대한민국 군복무를 하고 있습니다. <a href="https://airsmed.com/" target="_blank" rel="noopener">에어스메디컬</a>이라는 기업에서 복무중이며 MRI 물리, Compressed Sensing, 그리고 딥러닝을 이미지 리컨과 진단 상황에 적용하고 있습니다. 2021년 11월에 전역 예정입니다.</p>
 <!-- I am also doing part-time research with [Prof. Markus Heyl](https://www.pks.mpg.de/dynamics-in-correlated-quantum-matter/) and [Giuseppe de Tomasi](https://www.giuseppedetomasi.org/) on developing efficient ways of studying the dynamics of bosonic systems in the Many-Body Localized (MBL) regime. -->
 <p>또, 저는 파트타임으로 <a href="https://www.pks.mpg.de/dynamics-in-correlated-quantum-matter/" target="_blank" rel="noopener">Prof. Markus Heyl</a> 교수와 <a href="https://www.giuseppedetomasi.org/" target="_blank" rel="noopener">Giuseppe de Tomasi</a> 와 Many-Body Localized (MBL) regime의 bosonic systems의 dynamics를 study 할수 있는 방법을 연구하고 있습니다.</p>
 <!-- I completed the Masters of Advanced Studies in physics at Cambridge University in 2019, and a Bachelors of Science in Physics with Theoretical Physics at Imperial College London in 2018. Please check my **[CV](/uploads/CV.pdf)** and **[Projects](projects)** page for more details. My Google Scholar can be found [here](https://scholar.google.com/citations?user=5SjAcYUAAAAJ).  -->

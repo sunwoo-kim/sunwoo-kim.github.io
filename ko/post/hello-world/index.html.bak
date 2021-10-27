@@ -257,7 +257,7 @@
   
   
   
-  <link rel="stylesheet" href="/css/wowchemy.75bf9066d8482d50ff735530a9df566e.css" />
+  <link rel="stylesheet" href="/css/wowchemy.4b0ead4423407e7356a809b964a90215.css" />
 
   
 
@@ -282,8 +282,8 @@
     <link rel="manifest" href="/ko/index.webmanifest" />
   
 
-  <link rel="icon" type="image/png" href="/media/icon_hu8b309a9302268010949630654373c3a0_79828_32x32_fill_lanczos_center_2.png" />
-  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hu8b309a9302268010949630654373c3a0_79828_180x180_fill_lanczos_center_2.png" />
+  <link rel="icon" type="image/png" href="/media/icon_hu8b309a9302268010949630654373c3a0_79828_32x32_fill_lanczos_center_3.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hu8b309a9302268010949630654373c3a0_79828_180x180_fill_lanczos_center_3.png" />
 
   <link rel="canonical" href="/ko/post/hello-world/" />
 
@@ -304,8 +304,8 @@
   <meta property="og:site_name" content="김선우" />
   <meta property="og:url" content="/ko/post/hello-world/" />
   <meta property="og:title" content="Hello World | 김선우" />
-  <meta property="og:description" content="뜨끈뜨끈한 제 사이트에 오신걸 환영합니다. 이 사이트엔 제 연구 프로젝" /><meta property="og:image" content="/media/icon_hu8b309a9302268010949630654373c3a0_79828_512x512_fill_lanczos_center_2.png" />
-    <meta property="twitter:image" content="/media/icon_hu8b309a9302268010949630654373c3a0_79828_512x512_fill_lanczos_center_2.png" /><meta property="og:locale" content="ko-kr" />
+  <meta property="og:description" content="뜨끈뜨끈한 제 사이트에 오신걸 환영합니다. 이 사이트엔 제 연구 프로젝" /><meta property="og:image" content="/media/icon_hu8b309a9302268010949630654373c3a0_79828_512x512_fill_lanczos_center_3.png" />
+    <meta property="twitter:image" content="/media/icon_hu8b309a9302268010949630654373c3a0_79828_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="ko-kr" />
   
     
       <meta
@@ -354,7 +354,7 @@
     "name": "김선우",
     "logo": {
       "@type": "ImageObject",
-      "url": "/media/icon_hu8b309a9302268010949630654373c3a0_79828_192x192_fill_lanczos_center_2.png"
+      "url": "/media/icon_hu8b309a9302268010949630654373c3a0_79828_192x192_fill_lanczos_center_3.png"
     }
   },
   "description": "뜨끈뜨끈한 제 사이트에 오신걸 환영합니다. 이 사이트엔 제 연구 프로젝"
