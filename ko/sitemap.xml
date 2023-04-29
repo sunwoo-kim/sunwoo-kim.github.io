@@ -4,16 +4,6 @@
   <url>
     <loc>/ko/authors/</loc>
     <lastmod>2021-04-18T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href=""
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ko"
-                href="/ko/authors/"
-                />
   </url><url>
     <loc>/ko/post/hello-world/</loc>
     <lastmod>2021-04-18T00:00:00+00:00</lastmod>
@@ -69,16 +59,6 @@
   </url><url>
     <loc>/ko/authors/sunwoo/</loc>
     <lastmod>2021-04-18T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href=""
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ko"
-                href="/ko/authors/sunwoo/"
-                />
   </url><url>
     <loc>/ko/project/mblbosons/</loc>
     <lastmod>2021-04-18T00:00:00+00:00</lastmod>
