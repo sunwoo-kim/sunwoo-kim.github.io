@@ -17,7 +17,8 @@
       <link>/en/post/hello-world/</link>
       <pubDate>Sun, 18 Apr 2021 00:00:00 +0000</pubDate>
       <guid>/en/post/hello-world/</guid>
-      <description>&lt;p&gt;Welcome to my new website! I hope to post some expository writeups on my research projects here. Stay tuned!&lt;/p&gt;
+      <description>&lt;meta property=&#34;og:title&#34; content=&#34;helloworld&#34;/&gt;
+&lt;p&gt;Welcome to my new website! I hope to post some expository writeups on my research projects here. Stay tuned!&lt;/p&gt;
 </description>
     </item>
     
@@ -28,6 +29,7 @@
       <guid>/en/project/mblbosons/</guid>
       <description>&lt;details open&gt; &lt;summary&gt; &lt;b&gt;For the general public&lt;/b&gt; &lt;i&gt;(click to open and close)&lt;/i&gt; &lt;/summary&gt;
 &lt;hr&gt;
+&lt;meta property=&#34;og:title&#34; content=&#34;mblbosons&#34;/&gt;
 &lt;p&gt;When we put espresso and milk together, we expect the two types of particles to mix, eventually resulting in a homogeneous mixture that we call latte. This phenomenon is called ‘thermalization’. In usual circumstances, we expect systems to thermalize, where a ‘system’ is simply a set of governing rules and agents. In our case of coffee and milk, the governing rules would be the physics of fluids, and the agents would be the coffee and milk particles.&lt;/p&gt;
 &lt;p&gt;There are also systems that do not thermalize. Non-interacting systems are a common example of non-thermalizing systems, since the individual particles cannot talk to each other and therefore cannot mix. One important non-interacting system is an ‘Anderson Localized’ (AL) one, where non-interacting particles are ‘localized’, i.e. they do not venture far away from their initial positions. In other words, they retain a memory of their initial states.&lt;/p&gt;
 &lt;p&gt;Naively, we expect that interacting systems to thermalize. What is somewhat unexpected, then, is that in certain situations, even interacting particles can stay localized and not thermalize. These are called ‘Many-Body Localized’ (MBL) systems and are a big part of condensed matter physics research today. Theorists usually study such phenomena on a lattice. A lattice is a simplification of space, so that instead of particles being in continuous positions, they occupy discrete ‘sites’, which are states that particles can be in.&lt;/p&gt;
@@ -51,6 +53,7 @@
       <guid>/en/project/nonsymmorphic/</guid>
       <description>&lt;details open&gt; &lt;summary&gt; &lt;b&gt;What is this about?&lt;/b&gt; &lt;i&gt;(click to open and close)&lt;/i&gt; &lt;/summary&gt;
 &lt;hr&gt;
+&lt;meta property=&#34;og:title&#34; content=&#34;nonsymmorphic&#34;/&gt;
 &lt;p&gt;You are probably well aware of tiles on the sidewalk or wallpapers with patterns that repeat themselves, potentially forever. There is some kind of symmetry there, but how do we describe it? Mathematicians were able to codeify these patterns using a field called &amp;lsquo;group theory&amp;rsquo;. In group theory, we define symmetries as transformations that leave the pattern the same, in other words, invariant. For example, assuming that the pattern goes on forever, we can shift the repeating pattern of wallpapers by certain directions and amount can retrieve the same exact pattern as before.&lt;/p&gt;
 &lt;p&gt;In physics, systems that repeat themselves forever are called crystals. What&amp;rsquo;s cool about crystals is that the symmetries of the crystals have a direct impact on how waves propagating in the crystals themselves behave, such as if we were to shine light (famously known as a wave) through it, or disturb it (resulting in a sound wave) and so on. Only knowing the symmetries of the crystal, we can predict whether a wave propagating in the crystal will spread out evenly, or propagate in a highly directed fashion, such as in the cover photo.&lt;/p&gt;
 &lt;p&gt;In wallpapers or sidewalks, there are two different kind of symmetries. The first is symmorphic symmetry, where there exists two kinds of separable symmetries: translational, shifting the entire pattern, and rotational, only rotating the entire pattern around certain points. Nonsymmorphic symmetries are a bit more complicated, in that you cannot separate out the translational and rotational symmetries; there are certain symmetries that require partial translation, followed by a rotation.&lt;/p&gt;
