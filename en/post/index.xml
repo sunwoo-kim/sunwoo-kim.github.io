@@ -17,7 +17,12 @@
       <link>/en/post/hello-world/</link>
       <pubDate>Sun, 18 Apr 2021 00:00:00 +0000</pubDate>
       <guid>/en/post/hello-world/</guid>
-      <description>&lt;p&gt;Welcome to my new website! I hope to post some expository writeups on my research projects here. Stay tuned!&lt;/p&gt;
+      <description>&lt;p&gt;Welcome to my new website! I hope to post some expository writeups on my research projects here.&lt;/p&gt;
+&lt;p&gt;Edit 2023-08-14: Now $\LaTeX$ should also work, complete with equation numbering,&lt;/p&gt;
+&lt;p&gt;\begin{equation} \label{eq:gaussian-integral}
+\int_{-\infty}^{\infty} dx \frac{e^{-x^2/2\sigma^2}}{\sqrt{2 \pi \sigma^2}} = 1,
+\end{equation}
+where Eq. \eqref{eq:gaussian-integral} is the Gaussian integral.&lt;/p&gt;
 </description>
     </item>
     

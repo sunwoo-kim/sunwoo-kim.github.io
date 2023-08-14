@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="ko-kr" >
+<!DOCTYPE html><html lang="en-us" >
 
 <head>
   <meta charset="utf-8" />
@@ -23,19 +23,21 @@
   
   
 
-  <meta name="author" content="김선우" />
+  <meta name="author" content="Sun Woo Kim" />
 
   
   
   
     
   
-  <meta name="description" content="뜨끈뜨끈한 제 사이트에 오신걸 환영합니다. 이 사이트엔 제 연구 프로젝" />
+  <meta name="description" content="Hello
+\begin{equation} \label{eq:1} f(x) \end{equation}
+\eqref{eq:1}" />
 
   
-    <link rel="alternate" hreflang="en" href="/en/post/hello-world/" />
+    <link rel="alternate" hreflang="ko" href="/ko/post/test-post/" />
   
-  <link rel="alternate" hreflang="ko-kr" href="/ko/post/hello-world/" />
+  <link rel="alternate" hreflang="en-us" href="/en/post/test-post/" />
 
   
 
@@ -279,13 +281,13 @@
   
 
   
-    <link rel="manifest" href="/ko/index.webmanifest" />
+    <link rel="manifest" href="/en/index.webmanifest" />
   
 
   <link rel="icon" type="image/png" href="/media/icon_hu8b309a9302268010949630654373c3a0_79828_32x32_fill_lanczos_center_3.png" />
   <link rel="apple-touch-icon" type="image/png" href="/media/icon_hu8b309a9302268010949630654373c3a0_79828_180x180_fill_lanczos_center_3.png" />
 
-  <link rel="canonical" href="/ko/post/hello-world/" />
+  <link rel="canonical" href="/en/post/test-post/" />
 
   
   
@@ -301,16 +303,18 @@
   
   <meta property="twitter:card" content="summary" />
   
-  <meta property="og:site_name" content="김선우" />
-  <meta property="og:url" content="/ko/post/hello-world/" />
-  <meta property="og:title" content="Hello World | 김선우" />
-  <meta property="og:description" content="뜨끈뜨끈한 제 사이트에 오신걸 환영합니다. 이 사이트엔 제 연구 프로젝" /><meta property="og:image" content="/media/icon_hu8b309a9302268010949630654373c3a0_79828_512x512_fill_lanczos_center_3.png" />
-    <meta property="twitter:image" content="/media/icon_hu8b309a9302268010949630654373c3a0_79828_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="ko-kr" />
+  <meta property="og:site_name" content="Sun Woo Kim" />
+  <meta property="og:url" content="/en/post/test-post/" />
+  <meta property="og:title" content="Test Post | Sun Woo Kim" />
+  <meta property="og:description" content="Hello
+\begin{equation} \label{eq:1} f(x) \end{equation}
+\eqref{eq:1}" /><meta property="og:image" content="/media/icon_hu8b309a9302268010949630654373c3a0_79828_512x512_fill_lanczos_center_3.png" />
+    <meta property="twitter:image" content="/media/icon_hu8b309a9302268010949630654373c3a0_79828_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
   
     
       <meta
         property="article:published_time"
-        content="2021-04-18T00:00:00&#43;00:00"
+        content="2023-08-14T00:00:00&#43;00:00"
       />
     
     <meta property="article:modified_time" content="2021-04-18T00:00:00&#43;00:00">
@@ -337,27 +341,27 @@
   "@type": "BlogPosting",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "/ko/post/hello-world/"
+    "@id": "/en/post/test-post/"
   },
-  "headline": "Hello World",
+  "headline": "Test Post",
   
-  "datePublished": "2021-04-18T00:00:00Z",
+  "datePublished": "2023-08-14T00:00:00Z",
   "dateModified": "2021-04-18T00:00:00Z",
   
   "author": {
     "@type": "Person",
-    "name": "김선우"
+    "name": "Sun Woo Kim"
   },
   
   "publisher": {
     "@type": "Organization",
-    "name": "김선우",
+    "name": "Sun Woo Kim",
     "logo": {
       "@type": "ImageObject",
       "url": "/media/icon_hu8b309a9302268010949630654373c3a0_79828_192x192_fill_lanczos_center_3.png"
     }
   },
-  "description": "뜨끈뜨끈한 제 사이트에 오신걸 환영합니다. 이 사이트엔 제 연구 프로젝"
+  "description": "Hello\n\\begin{equation} \\label{eq:1} f(x) \\end{equation}\n\\eqref{eq:1}"
 }
 </script>
 
@@ -367,24 +371,29 @@
 
   
 
-  <script>
-    MathJax = {
-      tex: {
-        inlineMath: [['$', '$'], ['\\(', '\\)']],
-        tags: 'ams'
-      },
-
-    };
-    </script>
-    <script id="MathJax-script" async
-      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+  <head>
+<script type="text/x-mathjax-config"> MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "all" } } }); </script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true,
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+    }
+    });
 </script>
-
-  <title>Hello World | 김선우</title>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 </head>
 
 
-<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="6c40fe2afe3c28962d7641cb862dd622" >
+
+
+
+  <title>Test Post | Sun Woo Kim</title>
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="50a9354864a3d2968abe9ad551fc5456" >
 
   
   
@@ -406,7 +415,7 @@
 
       <div class="row no-gutters justify-content-between mb-3">
         <div class="col-6">
-          <h1>검색</h1>
+          <h1>Search</h1>
         </div>
         <div class="col-6 col-search-close">
           <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
@@ -415,9 +424,9 @@
 
       <div id="search-box">
         
-        <input name="q" id="search-query" placeholder="검색..." autocapitalize="off"
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
         autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
-        aria-label="검색...">
+        aria-label="Search...">
         
       </div>
 
@@ -458,20 +467,20 @@
 
     
     <div class="d-none d-lg-inline-flex">
-      <a class="navbar-brand" href="/ko/">김선우</a>
+      <a class="navbar-brand" href="/en/">Sun Woo Kim</a>
     </div>
     
 
     
     <button type="button" class="navbar-toggler" data-toggle="collapse"
-            data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="네비게이션">
+            data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
     <span><i class="fas fa-bars"></i></span>
     </button>
     
 
     
     <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
-      <a class="navbar-brand" href="/ko/">김선우</a>
+      <a class="navbar-brand" href="/en/">Sun Woo Kim</a>
     </div>
     
 
@@ -519,8 +528,8 @@
 
         <li class="nav-item">
           <a class="nav-link " 
-          href=" /ko/#about "
-          ><span>홈</span></a>
+          href=" /en/#about "
+          ><span>Home</span></a>
         </li>
 
         
@@ -553,8 +562,8 @@
 
         <li class="nav-item">
           <a class="nav-link  active" 
-          href=" /ko/post "
-          ><span>게시물</span></a>
+          href=" /en/post "
+          ><span>Posts</span></a>
         </li>
 
         
@@ -589,8 +598,8 @@
 
         <li class="nav-item">
           <a class="nav-link " 
-          href=" /ko/projects "
-          ><span>프로젝트</span></a>
+          href=" /en/projects "
+          ><span>Projects</span></a>
         </li>
 
         
@@ -646,7 +655,7 @@
       
       
       <li class="nav-item">
-        <a class="nav-link js-search" href="#" aria-label="검색"><i class="fas fa-search" aria-hidden="true"></i></a>
+        <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
       </li>
       
 
@@ -675,14 +684,14 @@
       <li class="nav-item dropdown i18n-dropdown">
         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"
            aria-haspopup="true" aria-label="Languages">
-          <i class="fas fa-globe mr-1" aria-hidden="true"></i><span class="d-none d-lg-inline">한국어</span></a>
+          <i class="fas fa-globe mr-1" aria-hidden="true"></i><span class="d-none d-lg-inline">English</span></a>
         <div class="dropdown-menu">
           <div class="dropdown-item dropdown-item-active">
-            <span>한국어</span>
+            <span>English</span>
           </div>
           
-          <a class="dropdown-item" href="/en/post/hello-world/">
-            <span>English</span>
+          <a class="dropdown-item" href="/ko/post/test-post/">
+            <span>한국어</span>
           </a>
           
         </div>
@@ -719,7 +728,7 @@
   
   
 <div class="article-container pt-3">
-  <h1>Hello World</h1>
+  <h1>Test Post</h1>
 
   
 
@@ -737,7 +746,7 @@
     
 
   <span >
-      <a href="/ko/authors/sunwoo/">김선우</a></span>
+      Sun Woo Kim</span>
   </div>
   
   
@@ -746,6 +755,8 @@
   <span class="article-date">
     
     
+      
+          Last updated on
       
     
     Apr 18, 2021
@@ -757,7 +768,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    1 분 읽기
+    1 min read
   </span>
   
 
@@ -768,7 +779,7 @@
   
   
     <span class="middot-divider"></span>
-    <a href="/ko/post/hello-world/#disqus_thread"></a>
+    <a href="/en/post/test-post/#disqus_thread"></a>
   
 
   
@@ -790,8 +801,36 @@
   <div class="article-container">
 
     <div class="article-style">
-      <!-- Welcome to my new website! I hope to post some expository writeups on my research projects here. Stay tuned! -->
-<p>뜨끈뜨끈한 제 사이트에 오신걸 환영합니다. 이 사이트엔 제 연구 프로젝트에 관한 소개문서를 올릴 예정이고, 가능하면 한국어로도 번역하려고 합니다. 기대해주세요!</p>
+      <p>Hello</p>
+<p>\begin{equation} \label{eq:1} f(x) \end{equation}</p>
+<p>\eqref{eq:1}</p>
+<!-- <details>
+  <summary>Click me</summary>
+  
+  ### Heading
+  1. Foo
+  2. Bar
+     * Baz
+     * Qux
+
+  \begin{equation} \label{eq:hello}
+     E = mc^2
+  \end{equation}
+
+  We see here that \ref{eq:hello}.
+
+  \begin{equation} \label{hello2}
+  g(x)
+  \end{equation}
+
+  We see here that \ref{hello2}.
+
+
+  ### Some Code
+  ```python
+  import numpy as np
+  ```
+</details> -->
 
     </div>
 
@@ -836,11 +875,11 @@
   <div class="media author-card content-widget-hr">
     
       
-      <img class="avatar mr-3 avatar-circle" src="/ko/authors/sunwoo/avatar_hu9405347151a0d7e43c13dd2300fcc4cc_4719879_270x270_fill_q75_lanczos_center.jpg" alt="김선우">
+      <img class="avatar mr-3 avatar-circle" src="/en/authors/sunwoo/avatar_hu9405347151a0d7e43c13dd2300fcc4cc_4719879_270x270_fill_q75_lanczos_center.jpg" alt="Sun Woo Kim">
     
 
     <div class="media-body">
-      <h5 class="card-title">김선우</h5>
+      <h5 class="card-title">Sun Woo Kim</h5>
       
       
       <ul class="network-icon" aria-hidden="true">
@@ -942,7 +981,7 @@
       
       
       
-      Site last updated 2023-08-14 12:35:52.341949
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
     
   </p>
 </footer>
@@ -956,7 +995,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">인용</h5>
+        <h5 class="modal-title">Cite</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -966,10 +1005,10 @@
       </div>
       <div class="modal-footer">
         <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
-          <i class="fas fa-copy"></i> 복사
+          <i class="fas fa-copy"></i> Copy
         </a>
         <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
-          <i class="fas fa-download"></i> 다운로드
+          <i class="fas fa-download"></i> Download
         </a>
         <div id="modal-error"></div>
       </div>
@@ -1069,7 +1108,7 @@
       
     
     
-    <script src="/ko/js/wowchemy.min.53e7d46191a0292af1c76b737c617386.js"></script>
+    <script src="/en/js/wowchemy.min.52872bf67e61fbf2177a08ba210fd727.js"></script>
 
     
 

@@ -63,9 +63,6 @@
 
   
   
-    
-    <script src="/js/mathjax-config.js"></script>
-  
 
   
   
@@ -219,9 +216,9 @@
 
       
       
-
+        
       
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+
       
     
       
@@ -320,18 +317,18 @@
 
   
 
-  <head>
-<script type="text/x-mathjax-config"> MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "all" } } }); </script>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-        processEscapes: true
-    }
-    });
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        tags: 'ams'
+      },
+
+    };
+    </script>
+    <script id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
 </script>
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-</head>
 
   <title>게시물 | 김선우</title>
 </head>
@@ -832,7 +829,7 @@
       
       
       
-      Site last updated 2023-08-05 21:50:52.703110
+      Site last updated 2023-08-14 12:35:52.341949
     
   </p>
 </footer>
