@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Activities | Sun Woo Kim</title>
+    <link>/en/activities/</link>
+      <atom:link href="/en/activities/index.xml" rel="self" type="application/rss+xml" />
+    <description>Activities</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>swk34 [at] cantab [dot] ac [dot] uk</copyright>
+    <image>
+      <url>/media/icon_hu8b309a9302268010949630654373c3a0_79828_512x512_fill_lanczos_center_3.png</url>
+      <title>Activities</title>
+      <link>/en/activities/</link>
+    </image>
+    
+    <item>
+      <title>KCL Many Body Circle</title>
+      <link>/en/activities/kclmanybodycircle/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/en/activities/kclmanybodycircle/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

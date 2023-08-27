@@ -2,50 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/ko/authors/</loc>
+    <loc>/ko/projects/</loc>
     <lastmod>2021-04-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/ko/post/hello-world/</loc>
-    <lastmod>2021-04-18T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/post/hello-world/"
+                href="/en/projects/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="/ko/post/hello-world/"
-                />
-  </url><url>
-    <loc>/ko/project/</loc>
-    <lastmod>2021-04-18T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/project/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ko"
-                href="/ko/project/"
-                />
-  </url><url>
-    <loc>/ko/post/</loc>
-    <lastmod>2021-04-18T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/post/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ko"
-                href="/ko/post/"
+                href="/ko/projects/"
                 />
   </url><url>
     <loc>/ko/</loc>
-    <lastmod>2021-04-18T00:00:00+00:00</lastmod>
+    <lastmod>2022-10-24T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -57,36 +30,72 @@
                 href="/ko/"
                 />
   </url><url>
-    <loc>/ko/authors/sunwoo/</loc>
+    <loc>/ko/authors/</loc>
     <lastmod>2021-04-18T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
   </url><url>
-    <loc>/ko/project/mblbosons/</loc>
+    <loc>/ko/posts/hello-world/</loc>
     <lastmod>2021-04-18T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/project/mblbosons/"
+                href="/en/posts/hello-world/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="/ko/project/mblbosons/"
+                href="/ko/posts/hello-world/"
                 />
   </url><url>
-    <loc>/ko/project/nonsymmorphic/</loc>
+    <loc>/ko/posts/</loc>
+    <lastmod>2021-04-18T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/posts/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ko"
+                href="/ko/posts/"
+                />
+  </url><url>
+    <loc>/ko/authors/admin/</loc>
+    <lastmod>2021-04-18T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>/ko/projects/mblbosons/</loc>
+    <lastmod>2021-04-18T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/projects/mblbosons/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ko"
+                href="/ko/projects/mblbosons/"
+                />
+  </url><url>
+    <loc>/ko/projects/nonsymmorphic/</loc>
     <lastmod>2018-08-19T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/project/nonsymmorphic/"
+                href="/en/projects/nonsymmorphic/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="/ko/project/nonsymmorphic/"
+                href="/ko/projects/nonsymmorphic/"
                 />
   </url><url>
     <loc>/ko/categories/</loc>
+    <changefreq>weekly</changefreq>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -98,7 +107,21 @@
                 href="/ko/categories/"
                 />
   </url><url>
+    <loc>/ko/activities/kclmanybodycircle/</loc>
+    <changefreq>weekly</changefreq>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/activities/kclmanybodycircle/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ko"
+                href="/ko/activities/kclmanybodycircle/"
+                />
+  </url><url>
     <loc>/ko/publication_types/</loc>
+    <changefreq>weekly</changefreq>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -111,6 +134,7 @@
                 />
   </url><url>
     <loc>/ko/tags/</loc>
+    <changefreq>weekly</changefreq>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -122,16 +146,17 @@
                 href="/ko/tags/"
                 />
   </url><url>
-    <loc>/ko/projects/</loc>
+    <loc>/ko/activities/</loc>
+    <changefreq>weekly</changefreq>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/projects/"
+                href="/en/activities/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="/ko/projects/"
+                href="/ko/activities/"
                 />
   </url>
 </urlset>

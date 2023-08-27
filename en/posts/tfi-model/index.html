@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<!-- This site was created with Wowchemy. https://www.wowchemy.com -->
+<!-- Last Published: August 27, 2023 --><html lang="en-us" >
+
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.7.0 for Hugo" />
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+
+  
+  
+    
+    <script src="/js/mathjax-config.js"></script>
+  
+
+  
+
+  <link rel="stylesheet" href="/css/vendor-bundle.min.047268c6dd09ad74ba54a0ba71837064.css" media="print" onload="this.media='all'">
+
+  
+  
+  
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.2/css/academicons.min.css" integrity="sha512-KlJCpRsLf+KKu2VQa5vmRuClRFjxc5lXO03ixZt82HZUk41+1I0bD8KBSA0fY290ayMfWYI9udIqeOWSu1/uZg==" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+
+    
+    
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.d1074f8af93a3c818e7ddf864bccad0a.css" />
+
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+    
+    
+    <link rel="stylesheet" href="/css/libs/chroma/github-light.min.css" title="hl-light" media="print" onload="this.media='all'" >
+    <link rel="stylesheet" href="/css/libs/chroma/dracula.min.css" title="hl-dark" media="print" onload="this.media='all'" disabled>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+
+
+
+
+  <meta name="author" content="Sun Woo Kim" />
+
+
+
+
+
+  
+
+<meta name="description" content="The transverse-field Ising (TFI) model is a prototypical model of a quantum magnet, where quantum fluctuations are used to generate paramagnetism instead of temperature." />
+
+
+
+<link rel="alternate" hreflang="en-us" href="/en/posts/tfi-model/" />
+<link rel="canonical" href="/en/posts/tfi-model/" />
+
+
+
+  <link rel="manifest" href="/en/manifest.webmanifest" />
+
+
+
+<link rel="icon" type="image/png" href="/media/icon_hu8b309a9302268010949630654373c3a0_79828_32x32_fill_lanczos_center_3.png" />
+<link rel="apple-touch-icon" type="image/png" href="/media/icon_hu8b309a9302268010949630654373c3a0_79828_180x180_fill_lanczos_center_3.png" />
+
+<meta name="theme-color" content="#1565c0" />
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+<meta property="twitter:card" content="summary" />
+<meta property="twitter:image" content="/media/icon_hu8b309a9302268010949630654373c3a0_79828_512x512_fill_lanczos_center_3.png" />
+<meta property="og:site_name" content="Sun Woo Kim" />
+<meta property="og:url" content="/en/posts/tfi-model/" />
+<meta property="og:title" content="Transverse field Ising model | Sun Woo Kim" />
+<meta property="og:description" content="The transverse-field Ising (TFI) model is a prototypical model of a quantum magnet, where quantum fluctuations are used to generate paramagnetism instead of temperature." /><meta property="og:image" content="/media/icon_hu8b309a9302268010949630654373c3a0_79828_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
+
+  
+    <meta
+      property="article:published_time"
+      content="2023-08-14T00:00:00&#43;00:00"
+    />
+  
+  
+    <meta property="article:modified_time" content="2023-08-14T00:00:00&#43;00:00">
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+
+  
+  
+
+  
+
+
+  
+  <title>Transverse field Ising model | Sun Woo Kim</title>
+
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="815c9e667263186829c8628516d7a35e" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.ec9d49ca50e4b80bdb08f0417a28ed84.js"></script>
+
+  
+
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Search...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header header--fixed">
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+    <div class="container-xl">
+
+      
+      <div class="d-none d-lg-inline-flex">
+        <a class="navbar-brand" href="/en/">Sun Woo Kim</a>
+      </div>
+      
+
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
+      <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+      
+      <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+        <a class="navbar-brand" href="/en/">Sun Woo Kim</a>
+      </div>
+      
+
+      
+      
+      <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+        
+        <ul class="navbar-nav d-md-inline-flex">
+          
+
+          
+
+          
+          
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/en"><span>Home</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link  active" href="/en/posts"><span>Posts</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/en/projects"><span>Projects</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/en/activities"><span>Activities</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/en/uploads/cv.pdf"><span>CV</span></a>
+          </li>
+
+          
+          
+
+        
+
+          
+        </ul>
+      </div>
+
+      <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+        
+        
+
+        
+        
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+        
+        
+        <li class="nav-item dropdown theme-dropdown">
+          <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Display preferences">
+            <i class="fas fa-moon" aria-hidden="true"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="#" class="dropdown-item js-set-theme-light">
+              <span>Light</span>
+            </a>
+            <a href="#" class="dropdown-item js-set-theme-dark">
+              <span>Dark</span>
+            </a>
+            <a href="#" class="dropdown-item js-set-theme-auto">
+              <span>Automatic</span>
+            </a>
+          </div>
+        </li>
+        
+
+        
+        
+
+      </ul>
+
+    </div>
+  </nav>
+</header>
+
+
+  </div>
+
+  <div class="page-body">
+    
+    
+    
+
+    <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>Transverse field Ising model</h1>
+
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+  <span >
+      Sun Woo Kim</span>
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    2023-08-14
+  </span>
+  
+
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    8 min read
+  </span>
+  
+
+  
+  
+  
+  
+
+  
+  
+
+</div>
+
+    
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <details>
+   <summary><font color="grey"> <small>To cite this page</small> </font></summary>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-latex" data-lang="latex"><span class="line"><span class="cl">@misc<span class="nb">{</span>swkim2023transverse,
+</span></span><span class="line"><span class="cl">   author=<span class="nb">{</span>Kim, Sun Woo<span class="nb">}</span>,
+</span></span><span class="line"><span class="cl">   title=<span class="nb">{</span>Transverse field Ising model<span class="nb">}</span>,
+</span></span><span class="line"><span class="cl">   year=<span class="nb">{</span>2023<span class="nb">}</span>,
+</span></span><span class="line"><span class="cl">   howpublished=<span class="nb">{</span><span class="k">\url</span><span class="nb">{</span>/en/posts/tfi-model/<span class="nb">}}</span>,
+</span></span><span class="line"><span class="cl">   note=<span class="nb">{</span>Accessed: 2023-08-27<span class="nb">}</span>
+</span></span><span class="line"><span class="cl"><span class="nb">}</span>
+</span></span></code></pre></div></details>
+<p>In condensed matter physics, there are myriads of phenomenological models out there, with information about them scattered throughout different papers and resources. In the field of machine learning, there are efforts such as the <a href="https://modelzoo.co" target="_blank" rel="noopener">Model Zoo</a> which tries to organise these models in one place.</p>
+<p>In this new series, I wanted to write down an overview of some of the models I looked at in my studies, with, where possible, the precise definition of what physicists mean when they say things like &rsquo;this model has a $U(1)$ symmetry&rsquo;, or &rsquo;the FM case is dual to the AFM case&rsquo;, etc., which were confusing to me when I was first reading about them. I will also try to support the discussion with some simulations from exact diagonalisation (ED) or Monté Carlo results. Since websites are interactive, I&rsquo;ll try to nest the finer details in collapsibles.</p>
+<hr>
+<details class="toc-inpage d-print-none  " open>
+  <summary class="font-weight-bold">Table of Contents</summary>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#hamiltonian">Hamiltonian</a></li>
+    <li><a href="#symmetries">Symmetries</a></li>
+    <li><a href="#phases-of-the-ground-state">Phases of the ground state</a></li>
+    <li><a href="#quantum-to-classical-mapping">Quantum to classical mapping</a></li>
+    <li><a href="#d1-case">$d=1$ case</a>
+      <ul>
+        <li><a href="#mapping-to-free-fermions">Mapping to free fermions</a></li>
+        <li><a href="#wavefunction">Wavefunction</a></li>
+        <li><a href="#entanglement">Entanglement</a></li>
+      </ul>
+    </li>
+    <li><a href="#d2-case">$d=2$ case</a></li>
+  </ul>
+</nav>
+</details>
+<h2 id="introduction">Introduction</h2>
+<p>The transverse-field Ising (TFI) model is a prototypical model of a quantum magnet, where quantum fluctuations are used to generate paramagnetism instead of temperature. Another common name is &lsquo;quantum Ising model&rsquo;, or &rsquo;transverse Ising model&rsquo; (TIM). There is already a pretty good <a href="https://en.wikipedia.org/wiki/Transverse-field_Ising_model" target="_blank" rel="noopener">Wikipedia article</a> about this model, but I wanted to just write it down in a more technical way, and fill in some missing gaps.
+<br/><br/></p>
+<h2 id="hamiltonian">Hamiltonian</h2>
+<p>Broadly, I will use the following conventions for the TFI model,</p>
+<p>\begin{equation}
+\hat{H} = J\sum_{\langle i,j \rangle} \hat{\sigma}^z_i \hat{\sigma}^z_j - g \sum_i \hat{\sigma}^x_i - b \sum_i \hat{\sigma}^z_i,
+\end{equation}
+where $\langle i, j\rangle$ denotes nearest neighbours, and $\sigma^\alpha_i$ are Pauli matrices. We consider periodic boundary conditions (PBC). Without a loss of generalisation, we can set $J=\pm 1$. Then $J=-1$ corresponds to ferrmomagnetic (FM) couplings, $J=1$ to antiferromagnetic couplings (AFM), respectively. $g$ is the transverse field strength, and $b$ the longitudinal field strength, which we will take as $b=0$ unless stated otherwise.
+<br/><br/></p>
+<h2 id="symmetries">Symmetries</h2>
+<p>For $b=0$, the Hamiltonian is $\mathbb{Z}_2$ symmetric, in the sense that we can globally send $\hat{\sigma}^z_i \rightarrow - \hat{\sigma}^z_i$ and keep the Hamiltonian invariant, or concretely, $[\hat{H}, \hat{U}] = 0$ for $\hat{U} = \vec{\prod_i} \hat{\sigma}^x_i$.
+<br/><br/></p>
+<h2 id="phases-of-the-ground-state">Phases of the ground state</h2>
+<p>The TFI model admits 3 phases: the ordered phase $g&lt;g_c$, the critical/gapless phase $g=g_c$, and the disordered phase $g&gt;g_c$.
+<br/><br/></p>
+<h2 id="quantum-to-classical-mapping">Quantum to classical mapping</h2>
+<details>
+   <summary>The TFI model in spatial dimensions $d$ can be explicitly mapped to a $d+1$ classical Ising model, in the sense that the zero-temperature (ground-state) density matrix can be explicitly mapped to the partition function of the classical Ising model.</summary>
+<div class="alert alert-note">
+  <div>
+    <p>It is well known that $d$-dimensional quantum systems map to $(d+1)$-dimensional classical systems. Here, I&rsquo;ll show an explicit mapping between $d$-dimensional quantum Ising model of length $L_Q$ with a $(d+1)$-dimensional Ising Hamiltonian, which is very similar to<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> but is for general $d$ and with longitudinal field $b$.</p>
+<p>Let $\hat{H}_0$ be the part of $\hat{H}$ that only contain $\hat{\sigma}^z$&rsquo;s, and $\hat{H}_1$ be the rest of the Hamiltonian. Then the quantum partition function is given by</p>
+<p>\begin{align}
+Z_Q = \mathrm{tr} [e^{-\beta_Q \hat{H}_0 - \beta_Q \hat{H}_1}].
+\end{align}</p>
+<p>From Trotter&rsquo;s theorem, for any two Hermitian operators bounded from below, $\hat{A}$, $\hat{B}$, we have $e^{\hat{A} + \hat{B}}= \lim_{L \rightarrow \infty} \left(e^{-\hat{A}/L} e^{-\hat{B}/L}\right)^L$, therefore. defining $\tau = \beta_Q / L$,</p>
+<p>\begin{align}
+Z_Q = \sum_\sigma \langle \sigma \rvert \lim_{L \rightarrow \infty} \left(e^{-\tau\hat{H}_0} e^{-\tau \hat{H}_1}\right)^L \lvert \sigma \rangle.
+\end{align}</p>
+<p>Inserting identities, we have</p>
+<p>\begin{align}
+Z_Q &amp; = \lim_{L \rightarrow \infty} \sum_{\sigma^1, \dots, \sigma^L} \prod_{l=1}^{L} \langle \sigma^{l+1} \rvert e^{-\tau \hat{H}_1} e^{-\tau \hat{H}_0} \lvert \sigma^l \rangle
+\end{align}</p>
+<p>\begin{align}
+Z_Q &amp; = \lim_{L \rightarrow \infty} \sum_{\sigma^1, \dots, \sigma^L} \prod_{l=1}^{L} e^{-\tau H_0(\sigma^l)} \langle \sigma^{l+1} \rvert e^{\tau g \sum_i \hat{\sigma}^x_i } \lvert \sigma^l \rangle,
+\end{align}</p>
+<p>where $H_0(\sigma^l) = - J \sum_{\langle i, j\rangle} \sigma^l_i \sigma^l_j - b \sum_i  \sigma_i^l$. Now we can use the identity that $\langle \sigma^{l+1}_i \rvert e^{\tau g \hat{\sigma}^x_i} \lvert \sigma^l_i \rangle = \Lambda e^{\gamma \sigma^{l+1}_i \sigma^{l}_i}$, where $\Lambda = \sqrt{\sinh(\tau g)\cosh(\tau g)}$ and $\gamma = -\frac{1}{2} \ln \tanh(\tau g)$. Therefore we have</p>
+<p>\begin{align}
+Z_Q = \lim_{L \rightarrow \infty} \Lambda^{L_Q^d L} \sum_{\sigma^1, \dots, \sigma^L} e^{\tau J \sum_{\langle i, j \rangle, l} \sigma^l_i \sigma^l_j + \tau b \sum_{i, l} \sigma^l_i + \gamma \sum_{i, l} \sigma^l_i \sigma^{l+1}_i},
+\end{align}</p>
+<p>so we can interpret index $l$ as an additional dimension, and write $Z_Q = \lim_{L \rightarrow \infty} \Lambda^{L^d_Q L} Z_C$,</p>
+<p>where the classical partition function is</p>
+<p>\begin{align}
+Z_C = \lim_{L_{d+1} \rightarrow \infty} \sum_{\sigma} e^{-\beta_C(-\sum_i \sum_{a=1}^{d+1} J_a \sigma_i \sigma_{i+e_a} -h \sum_i \sigma_i)},
+\end{align}</p>
+<p>where $e_a$ is the $a$<sup>th</sup> basis vector. Therefore we have the identification $L_Q = L_a$ for $a = 1, \dots d$, $\beta_C J_a = J \tau$ for $L=L_{d+1}$, $\tau b = \beta_C h$ and $\beta_C J_{d+1} = \gamma$. We are free to set ratio $\tau=\beta_Q/L$ to a value of our choosing, and send $\beta_Q \rightarrow \infty$. To map to an isotropic $(d+1)$-dim Ising model, we can set $\tau = \beta_C$ and assert $J_a = J \forall a$, and have the mapping</p>
+<p>\begin{align}
+\boxed{\lim_{\beta_Q \rightarrow \infty} Z_Q[\beta_Q, J, g, b] = \lim_{L_{d+1} \rightarrow \infty} \Lambda^{L_Q^d L_{d+1}} Z_C[\beta_C, J, b]},
+\end{align}</p>
+<p>where $g = \frac{1}{\beta_C} \mathrm{arctanh}(e^{-2 \beta_C J})$ and $\Lambda = \frac{1}{2} \mathrm{csch}(2 \beta_C J)$.</p>
+<p>Since $\beta_C \rightarrow \infty \leftrightarrow g \rightarrow 0$, $\beta_C \rightarrow 0 \leftrightarrow g \rightarrow \infty$, we can see that $g$ plays the role of temperature.</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>Lechner, D. (2014). Quantum Phase Transitions-The Quantum-Classical Mapping.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+  </div>
+</div>
+</details>
+<br/>
+<h2 id="d1-case">$d=1$ case</h2>
+<h3 id="mapping-to-free-fermions">Mapping to free fermions</h3>
+<p>Pfeuty<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> showed that the TFI model can be mapped to free fermions, using the <a href="https://en.wikipedia.org/wiki/Jordan%e2%80%93Wigner_transformation" target="_blank" rel="noopener">Jordan-Wigner transformation</a>.</p>
+<details>
+   <summary>Ignoring the boundary terms, one can show that the ground state energy is equal to</summary>
+<div class="alert alert-note">
+  <div>
+    <p>From Pfeuty, ignoring the terms at $k=0$,</p>
+<p>$$e_0 \approx -\frac{g}{L}\sum_{m=-L/2}^{L/2} \sqrt{1+\lambda^2+2\lambda\cos(2\pi m/L)},$$
+where $e_0=E_0/L$ is the ground state energy density, and $\lambda = J/g$. As $L \rightarrow \infty$ this tends to</p>
+<p>$$e_0 = -\frac{1}{2\pi} \int_{-\pi}^{\pi} dk \sqrt{1+2g\cos(k)+g^2}$$</p>
+<p>Upon integration, this is equal to</p>
+<p>$$e_0 = -\frac{2}{\pi} \lvert g-1\rvert E\left(\frac{-4g}{(g-1)^2}\right)$$</p>
+  </div>
+</div>
+</details>
+<p>$$E_0 = -\frac{2L}{\pi} \lvert g-1\rvert E\left(\frac{-4g}{(g-1)^2}\right),$$
+and from this or from the quantum-classical mapping, we can show that the second derivative of the ground state energy density diverges as $\sim \ln L$. We also know that $g_c=1$.</p>
+<h3 id="wavefunction">Wavefunction</h3>
+<h4 id="g0">$g=0$</h4>
+<p>For $J=-1$, the ground state can be any linear superposition $\lvert \psi_0 \rangle = \alpha \lvert \uparrow \rangle^{\otimes L} + \beta \lvert \downarrow \rangle^{\otimes L}$, which is &lsquo;unphysical&rsquo; in that if an infinitesimal longitudinal field $b$ is added, the degeneracy is immediately broken.</p>
+<p>For $J=1$ the ground state is a Neél state, $\lvert \psi_0 \rangle = \alpha \lvert \uparrow \downarrow \rangle^{\otimes L/2} + \beta \lvert \downarrow \uparrow \rangle^{\otimes L/2}$.</p>
+<h4 id="lvert-grvertinfty">$\lvert g\rvert=\infty$</h4>
+<p>Here we the spins would align in the $x$-direction, meaning that for $g&gt;0$ we have $\lvert \psi_0 \rangle = \lvert + \rangle^{\otimes L}$ and for $g&lt;0$ we have $\lvert \psi_0 \rangle = \lvert - \rangle^{\otimes L}$, where $\lvert \pm \rangle = \frac{1}{\sqrt{2}} \left(\lvert \uparrow \rangle \pm \rvert \downarrow \rangle\right)$.</p>
+<h3 id="entanglement">Entanglement</h3>
+<p>The entanglement entropy for the $d=1$ TFI model is an area law away from the critical point $g=1$, meaning that it tends to a constant as $L \rightarrow \infty$. This can be confirmed for the limits $g=0$, $\lvert g \rvert = \infty$ above. For $g=0$, we have due to the macroscopic superposition, we have an entanglement of $S_l^{(1)} = \ln 2$. For $g=\infty$, we have a product state in the $\sigma^x$-basis, and therefore have an entanglement entropy of 0.</p>
+<p>On the other hand, from results of conformal field theory (CFT) at the critical point<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>, the bipartite entanglement entropy of scales as logarithm of system size with factor proportional to the central charge $c$,</p>
+<p>\begin{equation}
+S_l^{(1)} = B + \frac{c}{3}\ln\left[\frac{L}{\pi} \sin \frac{\pi L_A}{L}\right],
+\end{equation}
+where $B$ is some constant.</p>
+<p>We can check this using results from ED. We use <code>netket</code> as they have a nice Hamiltonian representation builder.</p>
+<details><summary><font color="grey"> <small>Code</small> </font></summary>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">netket</span> <span class="k">as</span> <span class="nn">nk</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">netket.operator.spin</span> <span class="kn">import</span> <span class="n">sigmax</span><span class="p">,</span><span class="n">sigmaz</span><span class="p">,</span> <span class="n">sigmay</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">scipy.sparse.linalg</span> <span class="kn">import</span> <span class="n">eigsh</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">bipartite_ee</span><span class="p">(</span><span class="n">psi</span><span class="p">,</span> <span class="n">alphas</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
+</span></span><span class="line"><span class="cl">   <span class="n">L</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">psi</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+</span></span><span class="line"><span class="cl">   <span class="n">A_dim</span> <span class="o">=</span>  <span class="mi">2</span><span class="o">**</span><span class="p">(</span><span class="n">L</span><span class="o">//</span><span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">   <span class="n">psi_block</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">psi</span><span class="p">,</span> <span class="p">(</span><span class="n">A_dim</span><span class="p">,</span> <span class="n">A_dim</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">   <span class="n">s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">svd</span><span class="p">(</span><span class="n">psi_block</span><span class="p">,</span> <span class="n">compute_uv</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">   <span class="n">s</span><span class="o">=</span><span class="n">s</span><span class="p">[</span><span class="n">s</span><span class="o">&gt;</span><span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">)]</span><span class="o">**</span><span class="mi">2</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   <span class="n">entropies</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">   <span class="k">for</span> <span class="n">alpha</span> <span class="ow">in</span> <span class="n">alphas</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="n">alpha</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">         <span class="n">entropies</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">inner</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">s</span><span class="p">),</span><span class="n">s</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">      <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">         <span class="n">entropies</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">s</span><span class="o">**</span><span class="n">alpha</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">alpha</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   <span class="k">return</span> <span class="n">entropies</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Ls</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">14</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">J</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="n">d</span> <span class="o">=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="n">gs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">41</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">ees</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">L</span> <span class="ow">in</span> <span class="n">Ls</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">   <span class="n">es</span><span class="p">[</span><span class="n">L</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">   <span class="n">ees</span><span class="p">[</span><span class="n">L</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">   <span class="n">res</span><span class="p">[</span><span class="n">L</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">   <span class="n">graph</span> <span class="o">=</span> <span class="n">nk</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">Hypercube</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="n">L</span><span class="p">,</span> <span class="n">n_dim</span><span class="o">=</span><span class="n">d</span><span class="p">,</span> <span class="n">pbc</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">   <span class="n">hi</span> <span class="o">=</span> <span class="n">nk</span><span class="o">.</span><span class="n">hilbert</span><span class="o">.</span><span class="n">Spin</span><span class="p">(</span><span class="n">s</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">N</span><span class="o">=</span><span class="n">L</span><span class="o">**</span><span class="n">d</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">   
+</span></span><span class="line"><span class="cl">   <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">g</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">gs</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">      <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="n">L</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">delta</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\r</span><span class="s1">&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="n">H</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">      <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">graph</span><span class="o">.</span><span class="n">nodes</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">            <span class="n">H</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="o">-</span><span class="n">delta</span><span class="o">*</span><span class="n">sigmax</span><span class="p">(</span><span class="n">hi</span><span class="p">,</span> <span class="n">i</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">      <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">graph</span><span class="o">.</span><span class="n">edges</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">            <span class="n">H</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="o">-</span><span class="n">sigmaz</span><span class="p">(</span><span class="n">hi</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span><span class="o">*</span><span class="n">sigmaz</span><span class="p">(</span><span class="n">hi</span><span class="p">,</span> <span class="n">j</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">      <span class="n">H</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">H</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="n">w</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="n">eigsh</span><span class="p">(</span><span class="n">H</span><span class="o">.</span><span class="n">to_sparse</span><span class="p">(),</span> <span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s2">&#34;SA&#34;</span><span class="p">,</span> <span class="n">return_eigenvectors</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="n">ee</span><span class="p">,</span> <span class="n">re</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">bipartite_ee</span><span class="p">(</span><span class="n">v</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">alphas</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="n">ees</span><span class="p">[</span><span class="n">L</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ee</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   <span class="n">ees</span><span class="p">[</span><span class="n">L</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ees</span><span class="p">[</span><span class="n">L</span><span class="p">])</span>
+</span></span></code></pre></div></details>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  id="figure-entanglement-entropy-for-the-d1-tfi-model-calculated-through-exact-diagonalisation">
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img alt="alt text"
+           src="/en/posts/tfi-model/ee.svg"
+           loading="lazy" data-zoomable /></div>
+  </div><figcaption>
+      Entanglement entropy for the $d=1$ TFI model, calculated through exact diagonalisation.
+    </figcaption></figure>
+</p>
+<h2 id="d2-case">$d=2$ case</h2>
+<p>In 2d there are multiple ways of building the lattice. The simplest is to have a square lattice. In that case, the critical transverse field is approximately $g_c \approx 3.045$<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>.</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>Pfeuty, P. (1970). The one-dimensional Ising model with a transverse field. ANNALS of Physics, 57(1), 79–90.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>Calabrese, P., &amp; Cardy, J. (2009). Entanglement entropy and conformal field theory. Journal of physics a: mathematical and theoretical, 42(50), 504005.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p>de Jongh, M. S. L., &amp; van Leeuwen, J. M. J. (1997). The critical behaviour of the 2D Ising model in Transverse Field; a Density Matrix Renormalization calculation. arXiv preprint cond-mat/9709103.&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+    </div>
+
+    
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/en/tags/model-zoo/">Model Zoo</a>
+  
+</div>
+
+
+
+<div class="share-box">
+  <ul class="share">
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <img class="avatar mr-3 avatar-square" src="/en/authors/admin/avatar_hu9405347151a0d7e43c13dd2300fcc4cc_4719879_270x270_fill_q100_lanczos_center.jpg" alt="Sun Woo Kim">
+    
+
+    <div class="media-body">
+      <h5 class="card-title">Sun Woo Kim</h5>
+      
+      
+      <ul class="network-icon" aria-hidden="true">
+  
+</ul>
+
+    </div>
+  </div>
+
+
+  
+
+
+
+
+
+
+
+
+
+<script src="https://giscus.app/client.js"
+        data-repo="sunwoo-kim/sunwoo-kim.github.io"
+        data-repo-id="MDEwOlJlcG9zaXRvcnkyMzE5MjY1MDU="
+        data-category="Comments"
+        data-category-id="DIC_kwDODdLq6c4CY5LG"
+        data-mapping="specific"
+        data-term="tfi-model"
+        data-strict="1"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang='en'
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+
+
+
+
+
+  </div>
+</article>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <p class="powered-by copyright-license-text">
+    Email: swk34 [at] cantab ac [dot] uk
+  </p>
+  
+
+
+
+
+
+  
+
+  <p class="powered-by">
+    Site last updated 2023-08-27 18:16:01.301443
+  </p>
+
+</footer>
+
+    </div>
+    
+  </div>
+
+  
+
+
+<script src="/js/vendor-bundle.min.1d4346c6f7d46c340dc0a9058dd85c13.js"></script>
+
+
+
+
+  
+
+  
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script id="search-hit-fuse-template" type="text/x-template">
+    <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+    </div>
+  </script>
+  
+    <script src="https://cdn.jsdelivr.net/gh/krisk/Fuse@v3.2.1/dist/fuse.min.js" integrity="sha512-o38bmzBGX+hD3JHWUFCDA09btWaqrNmoJ3RXLlrysA7PP01Kgs4UlE4MhelE1v5dJR3+cxlR4qQlotsW7jKsnw==" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/gh/julmot/mark.js@8.11.1/dist/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script id="page-data" type="application/json">{"use_headroom":true}</script>
+
+
+  <script src="/js/wowchemy-headroom.db4755770454eb63685f8de785c0a172.js" type="module"></script>
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+<script src="/en/js/wowchemy.min.c36f3bab552754a81f82bc858abc0467.js"></script>
+
+
+
+
+
+
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+        <pre><code></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <script src="/js/wowchemy-publication.68f8d7090562ca65fc6d3cb3f8f2d2cb.js" type="module"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
