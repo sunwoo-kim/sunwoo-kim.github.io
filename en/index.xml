@@ -27,7 +27,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   note=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;Accessed: 2023-08-27&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/details&gt;
-&lt;p&gt;In condensed matter physics, there are myriads of phenomenological models out there, with information about them scattered throughout different papers and resources. In the field of machine learning, there are efforts such as the &lt;a href=&#34;https://modelzoo.co&#34;&gt;Model Zoo&lt;/a&gt; which tries to organise these models in one place.&lt;/p&gt;
+&lt;p&gt;In condensed matter physics, there are myriads of phenomenological models out there, with information about them scattered throughout different papers and resources. In the field of machine learning, there are efforts such as the &lt;a href=&#34;https://modelzoo.co&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Model Zoo&lt;/a&gt; which tries to organise these models in one place.&lt;/p&gt;
 &lt;p&gt;In this new series, I wanted to write down an overview of some of the models I looked at in my studies, with, where possible, the precise definition of what physicists mean when they say things like &amp;rsquo;this model has a $U(1)$ symmetry&amp;rsquo;, or &amp;rsquo;the FM case is dual to the AFM case&amp;rsquo;, etc., which were confusing to me when I was first reading about them. I will also try to support the discussion with some simulations from exact diagonalisation (ED) or Monté Carlo results. Since websites are interactive, I&amp;rsquo;ll try to nest the finer details in collapsibles.&lt;/p&gt;
 &lt;hr&gt;
 &lt;details class=&#34;toc-inpage d-print-none  &#34; open&gt;
@@ -51,7 +51,7 @@
 &lt;/nav&gt;
 &lt;/details&gt;
 &lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
-&lt;p&gt;The transverse-field Ising (TFI) model is a prototypical model of a quantum magnet, where quantum fluctuations are used to generate paramagnetism instead of temperature. Another common name is &amp;lsquo;quantum Ising model&amp;rsquo;, or &amp;rsquo;transverse Ising model&amp;rsquo; (TIM). There is already a pretty good &lt;a href=&#34;https://en.wikipedia.org/wiki/Transverse-field_Ising_model&#34;&gt;Wikipedia article&lt;/a&gt; about this model, but I wanted to just write it down in a more technical way, and fill in some missing gaps.
+&lt;p&gt;The transverse-field Ising (TFI) model is a prototypical model of a quantum magnet, where quantum fluctuations are used to generate paramagnetism instead of temperature. Another common name is &amp;lsquo;quantum Ising model&amp;rsquo;, or &amp;rsquo;transverse Ising model&amp;rsquo; (TIM). There is already a pretty good &lt;a href=&#34;https://en.wikipedia.org/wiki/Transverse-field_Ising_model&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Wikipedia article&lt;/a&gt; about this model, but I wanted to just write it down in a more technical way, and fill in some missing gaps.
 &lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
 &lt;h2 id=&#34;hamiltonian&#34;&gt;Hamiltonian&lt;/h2&gt;
 &lt;p&gt;Broadly, I will use the following conventions for the TFI model,&lt;/p&gt;
@@ -116,7 +116,7 @@ Z_C = \lim_{L_{d+1} \rightarrow \infty} \sum_{\sigma} e^{-\beta_C(-\sum_i \sum_{
 &lt;br/&gt;
 &lt;h2 id=&#34;d1-case&#34;&gt;$d=1$ case&lt;/h2&gt;
 &lt;h3 id=&#34;mapping-to-free-fermions&#34;&gt;Mapping to free fermions&lt;/h3&gt;
-&lt;p&gt;Pfeuty&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; showed that the TFI model can be mapped to free fermions, using the &lt;a href=&#34;https://en.wikipedia.org/wiki/Jordan%E2%80%93Wigner_transformation&#34;&gt;Jordan-Wigner transformation&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Pfeuty&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; showed that the TFI model can be mapped to free fermions, using the &lt;a href=&#34;https://en.wikipedia.org/wiki/Jordan%e2%80%93Wigner_transformation&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Jordan-Wigner transformation&lt;/a&gt;.&lt;/p&gt;
 &lt;details&gt;
    &lt;summary&gt;Ignoring the boundary terms, one can show that the ground state energy is equal to&lt;/summary&gt;
 &lt;div class=&#34;alert alert-note&#34;&gt;
@@ -199,7 +199,31 @@ where $B$ is some constant.&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   &lt;span class=&#34;n&#34;&gt;ees&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;L&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;np&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;array&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ees&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;L&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;])&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/details&gt;
-&lt;p&gt;&lt;img src=&#34;ee.svg&#34; alt=&#34;alt text&#34; title=&#34;Entanglement entropy for the $d=1$ TFI model, calculated through exact diagonalisation.&#34;&gt;&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-entanglement-entropy-for-the-d1-tfi-model-calculated-through-exact-diagonalisation&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;alt text&#34;
+           src=&#34;/en/posts/tfi-model/ee.svg&#34;
+           loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption&gt;
+      Entanglement entropy for the $d=1$ TFI model, calculated through exact diagonalisation.
+    &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;/p&gt;
 &lt;h2 id=&#34;d2-case&#34;&gt;$d=2$ case&lt;/h2&gt;
 &lt;p&gt;In 2d there are multiple ways of building the lattice. The simplest is to have a square lattice. In that case, the critical transverse field is approximately $g_c \approx 3.045$&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
 &lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
