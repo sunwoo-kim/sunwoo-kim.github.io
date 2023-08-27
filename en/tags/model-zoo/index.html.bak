@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- This site was created with Wowchemy. https://www.wowchemy.com -->
-<!-- Last Published: August 27, 2023 --><html lang="en-us" >
+<!-- Last Published: August 28, 2023 --><html lang="en-us" >
 
 
 <head>
@@ -283,8 +283,8 @@
 
 
 
-<link rel="alternate" hreflang="en-us" href="/en/tags/model-zoo/" />
-<link rel="canonical" href="/en/tags/model-zoo/" />
+<link rel="alternate" hreflang="en-us" href="https://sunwoo-kim.github.io/en/tags/model-zoo/" />
+<link rel="canonical" href="https://sunwoo-kim.github.io/en/tags/model-zoo/" />
 
 
 
@@ -315,11 +315,11 @@
 
 
 <meta property="twitter:card" content="summary" />
-<meta property="twitter:image" content="/media/icon_hu8b309a9302268010949630654373c3a0_79828_512x512_fill_lanczos_center_3.png" />
+<meta property="twitter:image" content="https://sunwoo-kim.github.io/media/icon_hu8b309a9302268010949630654373c3a0_79828_512x512_fill_lanczos_center_3.png" />
 <meta property="og:site_name" content="Sun Woo Kim" />
-<meta property="og:url" content="/en/tags/model-zoo/" />
+<meta property="og:url" content="https://sunwoo-kim.github.io/en/tags/model-zoo/" />
 <meta property="og:title" content="Model Zoo | Sun Woo Kim" />
-<meta property="og:description" content="" /><meta property="og:image" content="/media/icon_hu8b309a9302268010949630654373c3a0_79828_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
+<meta property="og:description" content="" /><meta property="og:image" content="https://sunwoo-kim.github.io/media/icon_hu8b309a9302268010949630654373c3a0_79828_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
 
   
     <meta property="og:updated_time" content="2023-08-14T00:00:00&#43;00:00" />
@@ -581,6 +581,36 @@
 
           <li class="nav-item">
             <a class="nav-link " href="/en/activities"><span>Activities</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/en/uploads/cv.pdf"><span>CV</span></a>
           </li>
 
           

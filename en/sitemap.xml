@@ -2,168 +2,168 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/en/projects/</loc>
+    <loc>https://sunwoo-kim.github.io/en/projects/</loc>
     <lastmod>2021-04-18T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="/ko/projects/"
+                href="https://sunwoo-kim.github.io/ko/projects/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/projects/"
+                href="https://sunwoo-kim.github.io/en/projects/"
                 />
   </url><url>
-    <loc>/en/tags/model-zoo/</loc>
+    <loc>https://sunwoo-kim.github.io/en/tags/model-zoo/</loc>
     <lastmod>2023-08-14T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>/en/posts/</loc>
+    <loc>https://sunwoo-kim.github.io/en/posts/</loc>
     <lastmod>2023-08-14T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="/ko/posts/"
+                href="https://sunwoo-kim.github.io/ko/posts/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/posts/"
+                href="https://sunwoo-kim.github.io/en/posts/"
                 />
   </url><url>
-    <loc>/en/tags/</loc>
+    <loc>https://sunwoo-kim.github.io/en/tags/</loc>
     <lastmod>2023-08-14T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="/ko/tags/"
+                href="https://sunwoo-kim.github.io/ko/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/tags/"
+                href="https://sunwoo-kim.github.io/en/tags/"
                 />
   </url><url>
-    <loc>/en/posts/tfi-model/</loc>
+    <loc>https://sunwoo-kim.github.io/en/posts/tfi-model/</loc>
     <lastmod>2023-08-14T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>/en/</loc>
+    <loc>https://sunwoo-kim.github.io/en/</loc>
     <lastmod>2022-10-24T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="/ko/"
+                href="https://sunwoo-kim.github.io/ko/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/"
+                href="https://sunwoo-kim.github.io/en/"
                 />
   </url><url>
-    <loc>/en/posts/hello-world/</loc>
+    <loc>https://sunwoo-kim.github.io/en/posts/hello-world/</loc>
     <lastmod>2023-08-14T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="/ko/posts/hello-world/"
+                href="https://sunwoo-kim.github.io/ko/posts/hello-world/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/posts/hello-world/"
+                href="https://sunwoo-kim.github.io/en/posts/hello-world/"
                 />
   </url><url>
-    <loc>/en/projects/mblbosons/</loc>
+    <loc>https://sunwoo-kim.github.io/en/projects/mblbosons/</loc>
     <lastmod>2021-04-18T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="/ko/projects/mblbosons/"
+                href="https://sunwoo-kim.github.io/ko/projects/mblbosons/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/projects/mblbosons/"
+                href="https://sunwoo-kim.github.io/en/projects/mblbosons/"
                 />
   </url><url>
-    <loc>/en/projects/nonsymmorphic/</loc>
+    <loc>https://sunwoo-kim.github.io/en/projects/nonsymmorphic/</loc>
     <lastmod>2018-08-19T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="/ko/projects/nonsymmorphic/"
+                href="https://sunwoo-kim.github.io/ko/projects/nonsymmorphic/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/projects/nonsymmorphic/"
+                href="https://sunwoo-kim.github.io/en/projects/nonsymmorphic/"
                 />
   </url><url>
-    <loc>/en/admin/</loc>
+    <loc>https://sunwoo-kim.github.io/en/admin/</loc>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>/en/activities/</loc>
-    <changefreq>weekly</changefreq>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ko"
-                href="/ko/activities/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/activities/"
-                />
-  </url><url>
-    <loc>/en/categories/</loc>
+    <loc>https://sunwoo-kim.github.io/en/activities/</loc>
     <changefreq>weekly</changefreq>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="/ko/categories/"
+                href="https://sunwoo-kim.github.io/ko/activities/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/categories/"
+                href="https://sunwoo-kim.github.io/en/activities/"
                 />
   </url><url>
-    <loc>/en/activities/kclmanybodycircle/</loc>
+    <loc>https://sunwoo-kim.github.io/en/categories/</loc>
     <changefreq>weekly</changefreq>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="/ko/activities/kclmanybodycircle/"
+                href="https://sunwoo-kim.github.io/ko/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/activities/kclmanybodycircle/"
+                href="https://sunwoo-kim.github.io/en/categories/"
                 />
   </url><url>
-    <loc>/en/publication_types/</loc>
+    <loc>https://sunwoo-kim.github.io/en/activities/kclmanybodycircle/</loc>
     <changefreq>weekly</changefreq>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="/ko/publication_types/"
+                href="https://sunwoo-kim.github.io/ko/activities/kclmanybodycircle/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/publication_types/"
+                href="https://sunwoo-kim.github.io/en/activities/kclmanybodycircle/"
                 />
   </url><url>
-    <loc>/en/publications/</loc>
+    <loc>https://sunwoo-kim.github.io/en/publication_types/</loc>
+    <changefreq>weekly</changefreq>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ko"
+                href="https://sunwoo-kim.github.io/ko/publication_types/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://sunwoo-kim.github.io/en/publication_types/"
+                />
+  </url><url>
+    <loc>https://sunwoo-kim.github.io/en/publications/</loc>
     <changefreq>weekly</changefreq>
   </url>
 </urlset>

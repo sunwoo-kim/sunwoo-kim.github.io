@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>김선우</title>
-    <link>/ko/authors/admin/</link>
-      <atom:link href="/ko/authors/admin/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://sunwoo-kim.github.io/ko/authors/admin/</link>
+      <atom:link href="https://sunwoo-kim.github.io/ko/authors/admin/index.xml" rel="self" type="application/rss+xml" />
     <description>김선우</description>
     <generator>Wowchemy (https://wowchemy.com)</generator><language>ko-kr</language><copyright>swk34 [at] cantab [dot] ac [dot] uk</copyright><lastBuildDate>Sun, 18 Apr 2021 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/ko/authors/admin/avatar_hu9405347151a0d7e43c13dd2300fcc4cc_4719879_270x270_fill_q100_lanczos_center.jpg</url>
+      <url>https://sunwoo-kim.github.io/ko/authors/admin/avatar_hu9405347151a0d7e43c13dd2300fcc4cc_4719879_270x270_fill_q100_lanczos_center.jpg</url>
       <title>김선우</title>
-      <link>/ko/authors/admin/</link>
+      <link>https://sunwoo-kim.github.io/ko/authors/admin/</link>
     </image>
     
     <item>
       <title>Hello World</title>
-      <link>/ko/posts/hello-world/</link>
+      <link>https://sunwoo-kim.github.io/ko/posts/hello-world/</link>
       <pubDate>Sun, 18 Apr 2021 00:00:00 +0000</pubDate>
-      <guid>/ko/posts/hello-world/</guid>
+      <guid>https://sunwoo-kim.github.io/ko/posts/hello-world/</guid>
       <description>&lt;details&gt;
    &lt;summary&gt;&lt;font color=&#34;grey&#34;&gt; &lt;small&gt;이 페이지를 인용하려면&lt;/small&gt; &lt;/font&gt;&lt;/summary&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-latex&#34; data-lang=&#34;latex&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;@misc&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;swkim2023hello,
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   author=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;Kim, Sun Woo&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;,
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   title=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;Hello World&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;,
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   year=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;2021&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;,
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   howpublished=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;\url&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;/ko/posts/hello-world/&lt;span class=&#34;nb&#34;&gt;}}&lt;/span&gt;,
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   note=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;Accessed: 2023-08-27&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   howpublished=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;\url&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;https://sunwoo-kim.github.io/ko/posts/hello-world/&lt;span class=&#34;nb&#34;&gt;}}&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   note=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;Accessed: 2023-08-28&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/details&gt;
 &lt;!-- Welcome to my new website! I hope to post some expository writeups on my research projects here. Stay tuned! --&gt;

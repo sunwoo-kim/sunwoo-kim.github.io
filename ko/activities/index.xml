@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>활동 | 김선우</title>
-    <link>/ko/activities/</link>
-      <atom:link href="/ko/activities/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://sunwoo-kim.github.io/ko/activities/</link>
+      <atom:link href="https://sunwoo-kim.github.io/ko/activities/index.xml" rel="self" type="application/rss+xml" />
     <description>활동</description>
     <generator>Wowchemy (https://wowchemy.com)</generator><language>ko-kr</language><copyright>swk34 [at] cantab [dot] ac [dot] uk</copyright>
     <image>
-      <url>/media/icon_hu8b309a9302268010949630654373c3a0_79828_512x512_fill_lanczos_center_3.png</url>
+      <url>https://sunwoo-kim.github.io/media/icon_hu8b309a9302268010949630654373c3a0_79828_512x512_fill_lanczos_center_3.png</url>
       <title>활동</title>
-      <link>/ko/activities/</link>
+      <link>https://sunwoo-kim.github.io/ko/activities/</link>
     </image>
     
     <item>
       <title>KCL Many Body Circle</title>
-      <link>/ko/activities/kclmanybodycircle/</link>
+      <link>https://sunwoo-kim.github.io/ko/activities/kclmanybodycircle/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/ko/activities/kclmanybodycircle/</guid>
+      <guid>https://sunwoo-kim.github.io/ko/activities/kclmanybodycircle/</guid>
       <description></description>
     </item>
     

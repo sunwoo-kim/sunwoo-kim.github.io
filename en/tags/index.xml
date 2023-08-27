@@ -2,14 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags | Sun Woo Kim</title>
-    <link>/en/tags/</link>
-      <atom:link href="/en/tags/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://sunwoo-kim.github.io/en/tags/</link>
+      <atom:link href="https://sunwoo-kim.github.io/en/tags/index.xml" rel="self" type="application/rss+xml" />
     <description>Tags</description>
     <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>swk34 [at] cantab [dot] ac [dot] uk</copyright><lastBuildDate>Mon, 14 Aug 2023 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/media/icon_hu8b309a9302268010949630654373c3a0_79828_512x512_fill_lanczos_center_3.png</url>
+      <url>https://sunwoo-kim.github.io/media/icon_hu8b309a9302268010949630654373c3a0_79828_512x512_fill_lanczos_center_3.png</url>
       <title>Tags</title>
-      <link>/en/tags/</link>
+      <link>https://sunwoo-kim.github.io/en/tags/</link>
     </image>
     
   </channel>

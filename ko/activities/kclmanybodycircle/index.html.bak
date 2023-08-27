@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- This site was created with Wowchemy. https://www.wowchemy.com -->
-<!-- Last Published: 2023년 8월 27일 --><html lang="ko-kr" >
+<!-- Last Published: 2023년 8월 28일 --><html lang="ko-kr" >
 
 
 <head>
@@ -283,10 +283,10 @@
 
 
 
-  <link rel="alternate" hreflang="en" href="/en/activities/kclmanybodycircle/" />
+  <link rel="alternate" hreflang="en" href="https://sunwoo-kim.github.io/en/activities/kclmanybodycircle/" />
 
-<link rel="alternate" hreflang="ko-kr" href="/ko/activities/kclmanybodycircle/" />
-<link rel="canonical" href="/ko/activities/kclmanybodycircle/" />
+<link rel="alternate" hreflang="ko-kr" href="https://sunwoo-kim.github.io/ko/activities/kclmanybodycircle/" />
+<link rel="canonical" href="https://sunwoo-kim.github.io/ko/activities/kclmanybodycircle/" />
 
 
 
@@ -317,11 +317,11 @@
 
 
 <meta property="twitter:card" content="summary" />
-<meta property="twitter:image" content="/media/icon_hu8b309a9302268010949630654373c3a0_79828_512x512_fill_lanczos_center_3.png" />
+<meta property="twitter:image" content="https://sunwoo-kim.github.io/media/icon_hu8b309a9302268010949630654373c3a0_79828_512x512_fill_lanczos_center_3.png" />
 <meta property="og:site_name" content="김선우" />
-<meta property="og:url" content="/ko/activities/kclmanybodycircle/" />
+<meta property="og:url" content="https://sunwoo-kim.github.io/ko/activities/kclmanybodycircle/" />
 <meta property="og:title" content="KCL Many Body Circle | 김선우" />
-<meta property="og:description" content="I run a reading group with KCL maths and physics PhD students, on topics regarding theories of many-body systems. We need most Wednesdays. Click [here](https://sites.google.com/view/kclmanybodycircle) for the reading group website." /><meta property="og:image" content="/media/icon_hu8b309a9302268010949630654373c3a0_79828_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="ko-kr" />
+<meta property="og:description" content="I run a reading group with KCL maths and physics PhD students, on topics regarding theories of many-body systems. We need most Wednesdays. Click [here](https://sites.google.com/view/kclmanybodycircle) for the reading group website." /><meta property="og:image" content="https://sunwoo-kim.github.io/media/icon_hu8b309a9302268010949630654373c3a0_79828_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="ko-kr" />
 
   
   
@@ -599,6 +599,36 @@
           
           
 
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/ko/uploads/cv.pdf"><span>이력서</span></a>
+          </li>
+
+          
+          
+
         
 
           
@@ -650,7 +680,7 @@
               <span>한국어</span>
             </div>
             
-            <a class="dropdown-item" href="/en/activities/kclmanybodycircle/">
+            <a class="dropdown-item" href="https://sunwoo-kim.github.io/en/activities/kclmanybodycircle/">
               <span>English</span>
             </a>
             
@@ -816,11 +846,11 @@
   <div class="media author-card content-widget-hr">
     
       
-      <img class="avatar mr-3 avatar-square" src="/ko/authors/admin/avatar_hu9405347151a0d7e43c13dd2300fcc4cc_4719879_270x270_fill_q100_lanczos_center.jpg" alt="김선우">
+      <a href="https://sunwoo-kim.github.io"><img class="avatar mr-3 avatar-square" src="/ko/authors/admin/avatar_hu9405347151a0d7e43c13dd2300fcc4cc_4719879_270x270_fill_q100_lanczos_center.jpg" alt="김선우"></a>
     
 
     <div class="media-body">
-      <h5 class="card-title">김선우</h5>
+      <h5 class="card-title"><a href="https://sunwoo-kim.github.io">김선우</a></h5>
       
       
       <ul class="network-icon" aria-hidden="true">

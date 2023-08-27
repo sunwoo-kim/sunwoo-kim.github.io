@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- This site was created with Wowchemy. https://www.wowchemy.com -->
-<!-- Last Published: 2023년 8월 27일 --><html lang="ko-kr" >
+<!-- Last Published: 2023년 8월 28일 --><html lang="ko-kr" >
 
 
 <head>
@@ -283,8 +283,8 @@
 
 
 
-<link rel="alternate" hreflang="ko-kr" href="/ko/authors/admin/" />
-<link rel="canonical" href="/ko/authors/admin/" />
+<link rel="alternate" hreflang="ko-kr" href="https://sunwoo-kim.github.io/ko/authors/admin/" />
+<link rel="canonical" href="https://sunwoo-kim.github.io/ko/authors/admin/" />
 
 
 
@@ -316,11 +316,11 @@
 
 
 <meta property="twitter:card" content="summary" />
-<meta property="twitter:image" content="/ko/authors/admin/avatar_hu9405347151a0d7e43c13dd2300fcc4cc_4719879_270x270_fill_q100_lanczos_center.jpg" />
+<meta property="twitter:image" content="https://sunwoo-kim.github.io/ko/authors/admin/avatar_hu9405347151a0d7e43c13dd2300fcc4cc_4719879_270x270_fill_q100_lanczos_center.jpg" />
 <meta property="og:site_name" content="김선우" />
-<meta property="og:url" content="/ko/authors/admin/" />
+<meta property="og:url" content="https://sunwoo-kim.github.io/ko/authors/admin/" />
 <meta property="og:title" content="김선우" />
-<meta property="og:description" content="" /><meta property="og:image" content="/ko/authors/admin/avatar_hu9405347151a0d7e43c13dd2300fcc4cc_4719879_270x270_fill_q100_lanczos_center.jpg" /><meta property="og:locale" content="ko-kr" />
+<meta property="og:description" content="" /><meta property="og:image" content="https://sunwoo-kim.github.io/ko/authors/admin/avatar_hu9405347151a0d7e43c13dd2300fcc4cc_4719879_270x270_fill_q100_lanczos_center.jpg" /><meta property="og:locale" content="ko-kr" />
 
   
     <meta property="og:updated_time" content="2021-04-18T00:00:00&#43;00:00" />
@@ -594,6 +594,36 @@
 
           <li class="nav-item">
             <a class="nav-link " href="/ko/activities"><span>활동</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/ko/uploads/cv.pdf"><span>이력서</span></a>
           </li>
 
           
