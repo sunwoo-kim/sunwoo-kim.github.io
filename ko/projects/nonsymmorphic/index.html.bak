@@ -279,7 +279,7 @@
 
   
 
-<meta name="description" content="What is this about? (click to open and close) You are probably well aware of tiles on the sidewalk or wallpapers with patterns that repeat themselves, potentially forever. There is some kind of symmetry there, but how do we describe it?" />
+<meta name="description" content=" " />
 
 
 
@@ -320,7 +320,7 @@
 <meta property="og:site_name" content="김선우" />
 <meta property="og:url" content="https://sunwoo-kim.github.io/ko/projects/nonsymmorphic/" />
 <meta property="og:title" content="Nonsymmorphic crystals and topological waveguiding | 김선우" />
-<meta property="og:description" content="What is this about? (click to open and close) You are probably well aware of tiles on the sidewalk or wallpapers with patterns that repeat themselves, potentially forever. There is some kind of symmetry there, but how do we describe it?" /><meta property="og:image" content="https://sunwoo-kim.github.io/ko/projects/nonsymmorphic/featured.png" /><meta property="og:locale" content="ko-kr" />
+<meta property="og:description" content=" " /><meta property="og:image" content="https://sunwoo-kim.github.io/ko/projects/nonsymmorphic/featured.png" /><meta property="og:locale" content="ko-kr" />
 
   
     <meta
@@ -798,10 +798,12 @@
 
 
   
+    
+  
 
 
 
-<a class="btn btn-outline-primary btn-page-header" href="/ko/projects/nonsymmorphic/nonsymmorphic.pdf" target="_blank" rel="noopener">
+<a class="btn btn-outline-primary btn-page-header" href="/uploads/nonsymmorphic.pdf" target="_blank" rel="noopener">
   PDF
 </a>
 
