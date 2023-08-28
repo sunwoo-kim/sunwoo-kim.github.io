@@ -16,42 +16,6 @@
                 href="https://sunwoo-kim.github.io/en/projects/"
                 />
   </url><url>
-    <loc>https://sunwoo-kim.github.io/en/tags/model-zoo/</loc>
-    <lastmod>2023-08-14T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://sunwoo-kim.github.io/en/posts/</loc>
-    <lastmod>2023-08-14T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ko"
-                href="https://sunwoo-kim.github.io/ko/posts/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://sunwoo-kim.github.io/en/posts/"
-                />
-  </url><url>
-    <loc>https://sunwoo-kim.github.io/en/tags/</loc>
-    <lastmod>2023-08-14T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ko"
-                href="https://sunwoo-kim.github.io/ko/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://sunwoo-kim.github.io/en/tags/"
-                />
-  </url><url>
-    <loc>https://sunwoo-kim.github.io/en/posts/tfi-model/</loc>
-    <lastmod>2023-08-14T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
     <loc>https://sunwoo-kim.github.io/en/</loc>
     <lastmod>2022-10-24T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -92,6 +56,20 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://sunwoo-kim.github.io/en/projects/mblbosons/"
+                />
+  </url><url>
+    <loc>https://sunwoo-kim.github.io/en/posts/</loc>
+    <lastmod>2023-08-14T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ko"
+                href="https://sunwoo-kim.github.io/ko/posts/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://sunwoo-kim.github.io/en/posts/"
                 />
   </url><url>
     <loc>https://sunwoo-kim.github.io/en/projects/nonsymmorphic/</loc>
@@ -155,5 +133,18 @@
   </url><url>
     <loc>https://sunwoo-kim.github.io/en/publications/</loc>
     <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://sunwoo-kim.github.io/en/tags/</loc>
+    <changefreq>weekly</changefreq>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ko"
+                href="https://sunwoo-kim.github.io/ko/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://sunwoo-kim.github.io/en/tags/"
+                />
   </url>
 </urlset>
