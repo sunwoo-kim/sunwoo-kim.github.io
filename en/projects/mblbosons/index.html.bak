@@ -57,8 +57,8 @@
   
     
       
-      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Source+Code+Pro&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Source+Code+Pro&display=swap" media="print" onload="this.media='all'">
     
   
 
@@ -215,7 +215,7 @@
   
   
   
-  <link rel="stylesheet" href="/css/wowchemy.d1074f8af93a3c818e7ddf864bccad0a.css" />
+  <link rel="stylesheet" href="/css/wowchemy.00b966861ca910c657cefd7d43141e91.css" />
 
   
   
@@ -836,7 +836,6 @@
     <div class="article-style">
       <details open> <summary> <b>For the general public</b> <i>(click to open and close)</i> </summary>
 <hr>
-<meta property="og:title" content="mblbosons"/>
 <p>When we put espresso and milk together, we expect the two types of particles to mix, eventually resulting in a homogeneous mixture that we call latte. This phenomenon is called ‘thermalization’. In usual circumstances, we expect systems to thermalize, where a ‘system’ is simply a set of governing rules and agents. In our case of coffee and milk, the governing rules would be the physics of fluids, and the agents would be the coffee and milk particles.</p>
 <p>There are also systems that do not thermalize. Non-interacting systems are a common example of non-thermalizing systems, since the individual particles cannot talk to each other and therefore cannot mix. One important non-interacting system is an ‘Anderson Localized’ (AL) one, where non-interacting particles are ‘localized’, i.e. they do not venture far away from their initial positions. In other words, they retain a memory of their initial states.</p>
 <p>Naively, we expect that interacting systems to thermalize. What is somewhat unexpected, then, is that in certain situations, even interacting particles can stay localized and not thermalize. These are called ‘Many-Body Localized’ (MBL) systems and are a big part of condensed matter physics research today. Theorists usually study such phenomena on a lattice. A lattice is a simplification of space, so that instead of particles being in continuous positions, they occupy discrete ‘sites’, which are states that particles can be in.</p>

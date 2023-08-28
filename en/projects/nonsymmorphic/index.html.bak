@@ -57,8 +57,8 @@
   
     
       
-      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Source+Code+Pro&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Source+Code+Pro&display=swap" media="print" onload="this.media='all'">
     
   
 
@@ -215,7 +215,7 @@
   
   
   
-  <link rel="stylesheet" href="/css/wowchemy.d1074f8af93a3c818e7ddf864bccad0a.css" />
+  <link rel="stylesheet" href="/css/wowchemy.00b966861ca910c657cefd7d43141e91.css" />
 
   
   
@@ -829,7 +829,7 @@
   <div class="article-container">
 
     <div class="article-style">
-      <details open> <summary> <b>What is this about?</b> <i>(click to open and close)</i> </summary>
+      <details open> <summary> <b>For the general public</b> <i>(click to open and close)</i> </summary>
 <hr>
 <p>You are probably well aware of tiles on the sidewalk or wallpapers with patterns that repeat themselves, potentially forever. There is some kind of symmetry there, but how do we describe it? Mathematicians were able to codify these patterns using a field called &lsquo;group theory&rsquo;. In group theory, we define symmetries as transformations that leave the pattern the same, in other words, invariant. For example, assuming that the pattern goes on forever, we can shift the repeating pattern of wallpapers by certain directions and amount can retrieve the same exact pattern as before.</p>
 <p>In physics, systems that repeat themselves forever are called crystals. What&rsquo;s cool about crystals is that the symmetries of the crystals have a direct impact on how waves propagating in the crystals themselves behave, such as if we were to shine light (famously known as a wave) through it, or disturb it (resulting in a sound wave) and so on. Only knowing the symmetries of the crystal, we can predict whether a wave propagating in the crystal will spread out evenly, or propagate in a highly directed fashion, such as in the cover photo.</p>
