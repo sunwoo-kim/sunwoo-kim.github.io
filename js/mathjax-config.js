@@ -19,10 +19,10 @@ window.MathJax = {
       ['\\[', '\\]'],
     ],
     processEscapes: false,
-    packages: {'[+]': ['noerrors']},
+    packages: {'[+]': ['noerrors', 'mathtools']},
     tags: 'ams'
   },
   loader: {
-    load: ['[tex]/noerrors'],
+    load: ['[tex]/noerrors', '[tex]/mathtools'],
   },
 };

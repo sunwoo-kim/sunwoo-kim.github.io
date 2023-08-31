@@ -13,6 +13,226 @@
     </image>
     
     <item>
+      <title>Continuous and discrete Fourier transforms</title>
+      <link>https://sunwoo-kim.github.io/en/posts/fourier-transforms/</link>
+      <pubDate>Thu, 31 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://sunwoo-kim.github.io/en/posts/fourier-transforms/</guid>
+      <description>&lt;details&gt;
+   &lt;summary&gt;&lt;font color=&#34;grey&#34;&gt; &lt;small&gt;To cite this page&lt;/small&gt; &lt;/font&gt;&lt;/summary&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-latex&#34; data-lang=&#34;latex&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;@misc&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;swkim2023continuous,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   author=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;Kim, Sun Woo&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   title=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;Continuous and discrete Fourier transforms&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   year=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;2023&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   howpublished=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;\url&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;https://sunwoo-kim.github.io/en/posts/fourier-transforms/&lt;span class=&#34;nb&#34;&gt;}}&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   note=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;Accessed: 2023-08-31&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/details&gt;
+&lt;p&gt;Conventions are confusing. Unfortunately, it seems like we always need to choose one when we want to concretely write down a mathematical idea. Meanwhile, when taking limits of things, we need to be careful. The conventions and relationships between discrete Fourier transforms (DFT), Fourier series, and continuous Fourier transforms (FT), are confusing enough that I decided to write a reference on it.&lt;/p&gt;
+&lt;p&gt;These notes closely follow &lt;a href=&#34;https://austen.uk/courses/tqm/elastic-chain/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Austen Lamacraft&lt;/a&gt;’s notes, but with some different choices in notation to explain each step as clearly as I can.&lt;/p&gt;
+&lt;h2 id=&#34;discrete-fourier-transform&#34;&gt;Discrete Fourier transform&lt;/h2&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Discrete lattice&#34;
+           src=&#34;https://sunwoo-kim.github.io/en/posts/fourier-transforms/discrete.svg&#34;
+           loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;Consider a function $f_j$ defined for discrete inputs $j = {0, \dots, N-1}$.&lt;/p&gt;
+&lt;p&gt;Then we can define the discrete fourier transform (DFT) by&lt;/p&gt;
+&lt;p&gt;$$
+\tilde{f}_n = C(N) \sum_{j=0}^{N-1} f_j e^{-i 2 \pi n j/N},
+$$&lt;/p&gt;
+&lt;p&gt;where $C(N)$ is a normalisation constant. Since $\tilde{f}_n$ is periodic in $n$ with period $L$, there are many choices for the domain for $n$. We could choose $n \in {0, \dots, N-1}$, or choose the domain to be symmetric(ish),&lt;/p&gt;
+&lt;p&gt;\begin{equation} \label{symmetric_domain}
+n \in
+\begin{dcases}
+\left \{ -\frac{N}{2}, \dots, \frac{N}{2}-1 \right\} &amp;amp; N \text{ even} \\
+\left \{  -\frac{N-1}{2}, \dots, \frac{N-1}{2} \right\} &amp;amp; N\text{ odd}.
+\end{dcases}
+\end{equation}&lt;/p&gt;
+&lt;p&gt;Whichever convention we choose, we can use the identity $\sum_n e^{+i 2 \pi n j /L} = N\delta_{j,0 \text{mod} N}$, to show that&lt;/p&gt;
+&lt;p&gt;$$
+f_j = \tilde C(N) \sum_{n} \tilde{f}_n e^{+i 2 \pi n j/N},
+$$&lt;/p&gt;
+&lt;p&gt;where the normalisation constants $C(N)$, $\tilde C(N)$ can be chosen to be anything, as long as $C(N) \tilde C(N) = 1/N$. The popular choice is $C, \tilde C = 1/\sqrt{N}$.&lt;/p&gt;
+&lt;p&gt;Later, we will want to look at the limits of $N \rightarrow \infty$. There we will choose the appropriate normalisations $C(N), \tilde C(N)$ such that the integrals have a well-defined limit.&lt;/p&gt;
+&lt;p&gt;(Of course, the sign in the exponential is also a convention in defining the Fourier transforms, but the convention used here is used almost everywhere, so let’s not be worried about that.)&lt;/p&gt;
+&lt;/br&gt;
+&lt;h2 id=&#34;adding-space&#34;&gt;Adding space&lt;/h2&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Discrete lattice with space&#34;
+           src=&#34;https://sunwoo-kim.github.io/en/posts/fourier-transforms/space.svg&#34;
+           loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;We can consider the case where our function is a function on discrete space $x_j = aj$, where $a$ is the lattice spacing. Then the system size is $L=Na$, and $N$ the number of discrete sptial points. Then the Fourier transform becomes&lt;/p&gt;
+&lt;p&gt;$$
+\tilde{f}_n = C(N) \sum_{j=1}^N f(x_j) e^{-i 2 \pi n x_j/L}.
+$$&lt;/p&gt;
+&lt;p&gt;We can also define the wavevector $k_n = 2 \pi n /L$, and write&lt;/p&gt;
+&lt;p&gt;$$
+\tilde{f}(k_n) = {C}(N) \sum_{j=1}^N f(x_j) e^{-i k_n x_j},
+$$&lt;/p&gt;
+&lt;p&gt;whilst the inverse transform becomes&lt;/p&gt;
+&lt;p&gt;$$
+f(x_j) = \tilde{C}(N) \sum_{n} \tilde{f}(k_n) e^{+i k_n x_j}.
+$$&lt;/p&gt;
+&lt;p&gt;Now, let’s make two choices from this point onwards:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;First, let’s choose the symmetric domain for $n$.&lt;/li&gt;
+&lt;li&gt;And, let’s expand the domain for $j$ to be $\mathbb Z$, and say that $f_j$ is periodic in $N$, $f_{j} = f_{j+N}$. This doesn’t do anything, as we can just look at the function in the domain we were interested in the end. But it does mean that we can also choose the symmetric domain Eq. \eqref{symmetric_domain} for $j$ as well.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/br&gt;
+&lt;h2 id=&#34;n-rightarrow-infty-and-a-rightarrow-0-keeping-na--l-fixed&#34;&gt;$N \rightarrow \infty$ and $a \rightarrow 0$ keeping $Na = L$ fixed&lt;/h2&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Continuous space only&#34;
+           src=&#34;https://sunwoo-kim.github.io/en/posts/fourier-transforms/conti_space.svg&#34;
+           loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;Here, we are going to continuous real-space, but fix the length of the system. This will result in a countably infinite wavevector space. We can write the discrete Fourier transform as&lt;/p&gt;
+&lt;p&gt;$$
+\tilde{f}(k_n) = {C}(N) \sum_{j} f(x_j) e^{-i k_n x_j}.
+$$&lt;/p&gt;
+&lt;p&gt;Then, the spacing between positions becomes $\delta x_j = a$. We can choose $C(N) = a$, so we have the limit&lt;/p&gt;
+&lt;p&gt;$$
+\tilde{f}(k_n) = \int_{-L/2}^{L/2} dx f(x) e^{-i k_n x},
+$$&lt;/p&gt;
+&lt;p&gt;which then means that we require $\tilde C(N) = 1/L$, so we have the inverse transform as&lt;/p&gt;
+&lt;p&gt;$$
+f(x) = \frac{1}{L} \sum_{n \in \mathbb{Z}} \tilde{f}(k_n) e^{+i k_n x}.
+$$&lt;/p&gt;
+&lt;p&gt;where now $n \in \mathbb{Z}$.&lt;/p&gt;
+&lt;p&gt;This then is just the Fourier series of a periodic function $f(x)$.&lt;/p&gt;
+&lt;/br&gt;
+&lt;h2 id=&#34;n-rightarrow-infty-and-l-rightarrow-infty-keeping-a-fixed&#34;&gt;$N \rightarrow \infty$ and $L \rightarrow \infty$, keeping $a$ fixed&lt;/h2&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Continuous kspace only&#34;
+           src=&#34;https://sunwoo-kim.github.io/en/posts/fourier-transforms/conti_kspace.svg&#34;
+           loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;Here, we are going to keep the real-space discrete, but just make it infinitely long. This will result in a continuously varying wavevector space. We have&lt;/p&gt;
+&lt;p&gt;$$
+\tilde{f}(k) = {C}(N) \sum_{j \in \mathbb{Z}} f(x_j) e^{-i k x_j},
+$$&lt;/p&gt;
+&lt;p&gt;and&lt;/p&gt;
+&lt;p&gt;$$
+f(x_j) = \tilde{C}(N) \sum_{n} \tilde{f}(k_n) e^{+i k_n x_j}.
+$$&lt;/p&gt;
+&lt;p&gt;Since $k_n = 2 \pi n /L = 2\pi n /Na$, our spacing between wavevectors goes to zero. We have $\delta k_n = 2 \pi /N a$. The most popular convention is to choose $\tilde C (N) = 1/Na$, so that we have&lt;/p&gt;
+&lt;p&gt;$$
+f(x_j) = \int_{-\pi/a}^{\pi /a} \frac{dk}{2 \pi} \tilde{f}(k) e^{+i k x_j}.
+$$&lt;/p&gt;
+&lt;p&gt;This means that the forward Fourier transform must be&lt;/p&gt;
+&lt;p&gt;$$
+\tilde{f}(k) = a \sum_{j \in \mathbb{Z}} f(x_j) e^{-i k x_j}.
+$$&lt;/p&gt;
+&lt;p&gt;Normally, in this limit, people work with $a=1$ with $x_j =j$.&lt;/p&gt;
+&lt;/br&gt;
+&lt;h2 id=&#34;sending-n-rightarrow-infty-l-rightarrow-infty-a-rightarrow-0&#34;&gt;Sending $N \rightarrow \infty$, $L \rightarrow \infty$, $a \rightarrow 0$&lt;/h2&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Both continuous&#34;
+           src=&#34;https://sunwoo-kim.github.io/en/posts/fourier-transforms/conti_both.svg&#34;
+           loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;From the expressions for the $N \rightarrow \infty$, $L \rightarrow \infty$, and $a$ fixed, we just send $a \rightarrow 0$. Since the spacing between spatial points is $\delta x_j = a$, we can just write down&lt;/p&gt;
+&lt;p&gt;$$
+\tilde{f}(k) = \int_{-\infty}^{\infty} dxf(x) e^{-i k x},
+$$&lt;/p&gt;
+&lt;p&gt;and&lt;/p&gt;
+&lt;p&gt;$$
+f(x) = \int_{-\infty}^{\infty} \frac{dk}{2 \pi} \tilde{f}(k) e^{+i k x}.
+$$&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Transverse field Ising model</title>
       <link>https://sunwoo-kim.github.io/en/posts/tfi-model/</link>
       <pubDate>Mon, 14 Aug 2023 00:00:00 +0000</pubDate>
@@ -24,7 +244,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   title=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;Transverse field Ising model&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;,
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   year=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;2023&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;,
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   howpublished=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;\url&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;https://sunwoo-kim.github.io/en/posts/tfi-model/&lt;span class=&#34;nb&#34;&gt;}}&lt;/span&gt;,
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   note=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;Accessed: 2023-08-28&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   note=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;Accessed: 2023-08-31&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/details&gt;
 &lt;p&gt;In condensed matter physics, there are myriads of phenomenological models out there, with information about them scattered throughout different papers and resources. In the field of machine learning, there are efforts such as the &lt;a href=&#34;https://modelzoo.co&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Model Zoo&lt;/a&gt; which tries to organise these models in one place.&lt;/p&gt;
@@ -217,7 +437,7 @@ where $B$ is some constant.&lt;/p&gt;
 
 &lt;figure  id=&#34;figure-entanglement-entropy-for-the-d1-tfi-model-calculated-through-exact-diagonalisation&#34;&gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;alt text&#34;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Entanglement entropy&#34;
            src=&#34;https://sunwoo-kim.github.io/en/posts/tfi-model/ee.svg&#34;
            loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
   &lt;/div&gt;&lt;figcaption&gt;
@@ -255,7 +475,7 @@ where $B$ is some constant.&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   title=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;Hello World&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;,
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   year=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;2021&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;,
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   howpublished=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;\url&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;https://sunwoo-kim.github.io/en/posts/hello-world/&lt;span class=&#34;nb&#34;&gt;}}&lt;/span&gt;,
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   note=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;Accessed: 2023-08-28&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   note=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;Accessed: 2023-08-31&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/details&gt;
 &lt;p&gt;Welcome to my new website! I hope to post some expository writeups on my research projects here.&lt;/p&gt;
