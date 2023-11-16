@@ -24,11 +24,11 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   title=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;Transverse field Ising model&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;,
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   year=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;2023&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;,
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   howpublished=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;\url&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;https://sunwoo-kim.github.io/en/posts/tfi-model/&lt;span class=&#34;nb&#34;&gt;}}&lt;/span&gt;,
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   note=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;Accessed: 2023-11-12&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   note=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;Accessed: 2023-11-16&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/details&gt;
 &lt;p&gt;In condensed matter physics, there are myriads of phenomenological models out there, with information about them scattered throughout different papers and resources. In the field of machine learning, there are efforts such as the &lt;a href=&#34;https://modelzoo.co&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Model Zoo&lt;/a&gt; which tries to organise these models in one place.&lt;/p&gt;
-&lt;p&gt;In this new series, I wanted to write down an overview of some of the models I looked at in my studies, with, where possible, the precise definition of what physicists mean when they say things like &amp;rsquo;this model has a $U(1)$ symmetry&amp;rsquo;, or &amp;rsquo;the FM case is dual to the AFM case&amp;rsquo;, etc., which were confusing to me when I was first reading about them. I will also try to support the discussion with some simulations from exact diagonalisation (ED) or Monté Carlo results. Since websites are interactive, I&amp;rsquo;ll try to nest the finer details in collapsibles.&lt;/p&gt;
+&lt;p&gt;In this new series, I wanted to write down an overview of some of the models I looked at in my studies, with, where possible, the precise definition of what physicists mean when they say things like &amp;rsquo;this model has a $U(1)$ symmetry&amp;rsquo;, or &amp;rsquo;the FM case is dual to the AFM case&amp;rsquo;, etc., which were confusing to me when I was first reading about them. I will also try to support the discussion with some simulations from exact diagonalisation (ED) or Monté Carlo results. Since websites are interactive, I&amp;rsquo;ll try to nest the finer details in collapsibles. Lastly, this page may be updated periodically with new information.&lt;/p&gt;
 &lt;hr&gt;
 &lt;details class=&#34;toc-inpage d-print-none  &#34; open&gt;
   &lt;summary class=&#34;font-weight-bold&#34;&gt;Table of Contents&lt;/summary&gt;
@@ -68,7 +68,7 @@ where $\langle i, j\rangle$ denotes nearest neighbours, and $\sigma^\alpha_i$ ar
 &lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
 &lt;h2 id=&#34;quantum-to-classical-mapping&#34;&gt;Quantum to classical mapping&lt;/h2&gt;
 &lt;details&gt;
-   &lt;summary&gt;The TFI model in spatial dimensions $d$ can be explicitly mapped to a $d+1$ classical Ising model, in the sense that the zero-temperature (ground-state) density matrix can be explicitly mapped to the partition function of the classical Ising model.&lt;/summary&gt;
+   &lt;summary&gt;The TFI model in spatial dimensions $d$ can be explicitly mapped to a $d+1$ classical Ising model, in the sense that the zero-temperature (ground-state) density matrix can be explicitly mapped to the partition function of the classical Ising model. &lt;i&gt;(click to open)&lt;/i&gt;&lt;/summary&gt;
 &lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     &lt;p&gt;It is well known that $d$-dimensional quantum systems map to $(d+1)$-dimensional classical systems. Here, I&amp;rsquo;ll show an explicit mapping between $d$-dimensional quantum Ising model of length $L_Q$ with a $(d+1)$-dimensional Ising Hamiltonian, which is very similar to&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; but is for general $d$ and with longitudinal field $b$.&lt;/p&gt;
@@ -134,8 +134,8 @@ where $e_0=E_0/L$ is the ground state energy density, and $\lambda = J/g$. As $L
 and from this or from the quantum-classical mapping, we can show that the second derivative of the ground state energy density diverges as $\sim \ln L$. We also know that $g_c=1$.&lt;/p&gt;
 &lt;h3 id=&#34;wavefunction&#34;&gt;Wavefunction&lt;/h3&gt;
 &lt;h4 id=&#34;g0&#34;&gt;$g=0$&lt;/h4&gt;
-&lt;p&gt;For $J=-1$, the ground state can be any linear superposition $\lvert \psi_0 \rangle = \alpha \lvert \uparrow \rangle^{\otimes L} + \beta \lvert \downarrow \rangle^{\otimes L}$, which is &amp;lsquo;unphysical&amp;rsquo; in that if an infinitesimal longitudinal field $b$ is added, the degeneracy is immediately broken.&lt;/p&gt;
-&lt;p&gt;For $J=1$ the ground state is a Neél state, $\lvert \psi_0 \rangle = \alpha \lvert \uparrow \downarrow \rangle^{\otimes L/2} + \beta \lvert \downarrow \uparrow \rangle^{\otimes L/2}$.&lt;/p&gt;
+&lt;p&gt;For $J=-1$, the ground state is degenerate; it can be any linear superposition $\lvert \psi_0 \rangle = \alpha \lvert \uparrow \rangle^{\otimes L} + \beta \lvert \downarrow \rangle^{\otimes L}$. This is &amp;lsquo;unphysical&amp;rsquo; in that if an infinitesimal longitudinal field $b$ is added, the degeneracy is immediately broken.&lt;/p&gt;
+&lt;p&gt;For $J=1$ the ground state is any superposition of the Neél state, $\lvert \psi_0 \rangle = \alpha \lvert \uparrow \downarrow \rangle^{\otimes L/2} + \beta \lvert \downarrow \uparrow \rangle^{\otimes L/2}$.&lt;/p&gt;
 &lt;h4 id=&#34;lvert-grvertinfty&#34;&gt;$\lvert g\rvert=\infty$&lt;/h4&gt;
 &lt;p&gt;Here we the spins would align in the $x$-direction, meaning that for $g&amp;gt;0$ we have $\lvert \psi_0 \rangle = \lvert + \rangle^{\otimes L}$ and for $g&amp;lt;0$ we have $\lvert \psi_0 \rangle = \lvert - \rangle^{\otimes L}$, where $\lvert \pm \rangle = \frac{1}{\sqrt{2}} \left(\lvert \uparrow \rangle \pm \rvert \downarrow \rangle\right)$.&lt;/p&gt;
 &lt;h3 id=&#34;entanglement&#34;&gt;Entanglement&lt;/h3&gt;
