@@ -279,12 +279,12 @@
 
   
 
-<meta name="description" content="" />
+<meta name="description" content="The term ‘free energy’ confused me for a long time. One one hand, when we learn thermodynamics, people talk about the Helmholtz free energy, $F = U - TS$, which is somehow &#39;minimised&#39; at constant temperature. On the other hand, in the literature, people seem to describe the logarithm of a partition function to be the ‘free energy’, too. They must be related, but how?" />
 
 
 
-<link rel="alternate" hreflang="en-us" href="https://sunwoo-kim.github.io/en/tags/model-zoo/" />
-<link rel="canonical" href="https://sunwoo-kim.github.io/en/tags/model-zoo/" />
+<link rel="alternate" hreflang="en-us" href="https://sunwoo-kim.github.io/en/posts/free-energy/" />
+<link rel="canonical" href="https://sunwoo-kim.github.io/en/posts/free-energy/" />
 
 
 
@@ -317,12 +317,18 @@
 <meta property="twitter:card" content="summary" />
 <meta property="twitter:image" content="https://sunwoo-kim.github.io/media/icon_hu8b309a9302268010949630654373c3a0_79828_512x512_fill_lanczos_center_3.png" />
 <meta property="og:site_name" content="Sun Woo Kim" />
-<meta property="og:url" content="https://sunwoo-kim.github.io/en/tags/model-zoo/" />
-<meta property="og:title" content="Model Zoo | Sun Woo Kim" />
-<meta property="og:description" content="" /><meta property="og:image" content="https://sunwoo-kim.github.io/media/icon_hu8b309a9302268010949630654373c3a0_79828_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
+<meta property="og:url" content="https://sunwoo-kim.github.io/en/posts/free-energy/" />
+<meta property="og:title" content="What&#39;s the deal with free energy? | Sun Woo Kim" />
+<meta property="og:description" content="The term ‘free energy’ confused me for a long time. One one hand, when we learn thermodynamics, people talk about the Helmholtz free energy, $F = U - TS$, which is somehow &#39;minimised&#39; at constant temperature. On the other hand, in the literature, people seem to describe the logarithm of a partition function to be the ‘free energy’, too. They must be related, but how?" /><meta property="og:image" content="https://sunwoo-kim.github.io/media/icon_hu8b309a9302268010949630654373c3a0_79828_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
 
   
-    <meta property="og:updated_time" content="2023-08-14T00:00:00&#43;00:00" />
+    <meta
+      property="article:published_time"
+      content="2023-11-16T00:00:00&#43;00:00"
+    />
+  
+  
+    <meta property="article:modified_time" content="2023-11-16T00:00:00&#43;00:00">
   
 
 
@@ -330,24 +336,24 @@
 
 
 
-
-
-
-
-  
-  
-  
-
-  
-  
-    <link rel="alternate" href="/en/tags/model-zoo/index.xml" type="application/rss+xml" title="Sun Woo Kim" />
-  
 
   
 
 
+
+
   
-  <title>Model Zoo | Sun Woo Kim</title>
+  
+  
+
+  
+  
+
+  
+
+
+  
+  <title>What&#39;s the deal with free energy? | Sun Woo Kim</title>
 
   
   
@@ -367,7 +373,7 @@
 </head>
 
 
-<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   "  >
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="feb395c80e57870a5f729b65b96e8fb9" >
 
   
   
@@ -520,7 +526,7 @@
           
 
           <li class="nav-item">
-            <a class="nav-link " href="/en/posts"><span>Posts</span></a>
+            <a class="nav-link  active" href="/en/posts"><span>Posts</span></a>
           </li>
 
           
@@ -673,7 +679,9 @@
     
     
 
-    
+    <article class="article">
+
+  
 
 
 
@@ -692,64 +700,13 @@
   
   
   
-    
-  
-<div class="universal-wrapper pt-3">
-  <h1>Model Zoo</h1>
+<div class="article-container pt-3">
+  <h1>What&#39;s the deal with free energy?</h1>
 
   
 
-  
-</div>
-
-
-
-<div class="universal-wrapper">
-  
-
-
-  
-
-  
   
     
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<div class="media stream-item view-compact">
-  <div class="media-body">
-
-    <div class="section-subheading article-title mb-0 mt-0">
-      <a href="/en/posts/tfi-model/" >Transverse field Ising model</a>
-    </div>
-
-    
-    <a href="/en/posts/tfi-model/"  class="summary-link">
-      <div class="article-style">
-        The transverse-field Ising (TFI) model is a prototypical model of a quantum magnet, where quantum fluctuations are used to generate paramagnetism instead of temperature.
-      </div>
-    </a>
-    
-
-    <div class="stream-meta article-metadata">
-
-      
-
-      
-        
 
 
 <div class="article-metadata">
@@ -772,8 +729,6 @@
     
     
       
-          Last updated on
-      
     
     2023-11-16
   </span>
@@ -786,7 +741,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    8 min read
+    5 min read
   </span>
   
 
@@ -800,25 +755,191 @@
 
 </div>
 
-      
+    
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <details>
+   <summary><font color="grey"> <small>To cite this page</small> </font></summary>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-latex" data-lang="latex"><span class="line"><span class="cl">@misc<span class="nb">{</span>swkim2023what&#39;s,
+</span></span><span class="line"><span class="cl">   author=<span class="nb">{</span>Kim, Sun Woo<span class="nb">}</span>,
+</span></span><span class="line"><span class="cl">   title=<span class="nb">{</span>What&#39;s the deal with free energy?<span class="nb">}</span>,
+</span></span><span class="line"><span class="cl">   year=<span class="nb">{</span>2023<span class="nb">}</span>,
+</span></span><span class="line"><span class="cl">   howpublished=<span class="nb">{</span><span class="k">\url</span><span class="nb">{</span>https://sunwoo-kim.github.io/en/posts/free-energy/<span class="nb">}}</span>,
+</span></span><span class="line"><span class="cl">   note=<span class="nb">{</span>Accessed: 2023-11-17<span class="nb">}</span>
+</span></span><span class="line"><span class="cl"><span class="nb">}</span>
+</span></span></code></pre></div></details>
+<p>The term &lsquo;free energy&rsquo; confused me for a long time. One one hand, when we learn thermodynamics, people talk about the Helmholtz free energy, $F=U-TS$. On the other hand, in the literature, people seem to describe the logarithm of a partition function to be the &lsquo;free energy&rsquo;, too. They must be related, but how?</p>
+<p>In this post, I&rsquo;m going to try to make the connection clear as I can, starting from the basic assumptions of statistical mechanics. To do this I will essentially re-derive the canonical ensemble, and point out some things along the way. I will also work in units of energy where $k_B=1$. I assume that you have read some notes on statistical physics, but was left confused as I certainly was.</p>
+<hr>
+<p>Consider a system $S$ that is in contact with with a bath $R$, and that $S$ and $R$ together are isolated. Let&rsquo;s say we know what the total energy, $E_T$, is. We know that $E_T$ is fixed since we said $S$ and $R$ together are isolated.</p>
+<p>Let&rsquo;s say that $S$ can have energies ${ E_S}$, and that the number of states (some people call it the statistical weight) that $S$ has with energy $E_S$ is $\Omega_S(E_S)$. $R$ has energies ${E_R}$, and the number of states that $R$ has with energy $E_R$ is $\Omega_R(E_R)$.</p>
+<p>We are going to apply the &lsquo;fundamental postulate of statistical mechanics&rsquo; on the combined system $S$ and $R$, which just means that we will assume that any state of the combined system, as long as it has total energy $E_T$, is equally likely.</p>
+<p>The total number of states for the joint system $S$ and $R$ is then <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>
+$$
+\Omega(E_{T}) = \sum_{E_S} \Omega_R(E_R=E_T - E_S) \Omega_S(E_S).
+$$
+This is counting all the different ways that the total energy can be shared between $S$ and $R$. Entropy is defined as $S := \ln \Omega$. So then we have
+$$
+\Omega(E_T) = \sum_{E_S} e^{S_R(E_T - E_S) + S_S(E_S)}.
+$$
+Let us assume that the bath is large, and so its energy is much larger than the system&rsquo;s $E_S \ll E_T$. Taylor expanding to first order, we have
+$$
+\Omega (E_T) \approx \sum_{E_S} e^{S_S(E_S)} \exp \left(S_R(E_T)- \frac{\partial S_R}{\partial E_R} E_S\right).
+$$
+Inverse temperature is defined as $T^{-1} = \partial_{E_R} S_R$. So the total number of states is given by
+$$
+\Omega (E_T) \approx e^{S_R(E_T)} \sum_{E_S} e^{S_S(E_S)} \exp e^{-E_S /T}.
+$$
+The number of states where $S$ has a <em>particular</em> energy $E_S$ is given by
+$$
+\Omega(E_T = E_R+E_S) = \Omega_R(E_R=E_T-E_S) \Omega_S(E_S).
+$$
+Then since all states are equally likely, the probability that the system will have energy $E_S$ is just the ratio of number of states for particular energy and the total number of states,
+$$
+\begin{aligned}
+p(E_S) &amp; = \frac{\Omega_R(E_R=E_T-E_S) \Omega_S(E_S)}{\Omega(E_T)} \\
+&amp; = \frac{e^{S_S(E_S)}e^{-E_S /T}}{\sum_{E_S&rsquo;} e^{S_S(E_S&rsquo;)} e^{-E_S&rsquo;/T}}.
+\end{aligned}
+$$
+Since the bath variables are now gone (except sneakily in the temperature), we will drop the subscript $S$ from here on. We also notice another thing: we can write $p(E)$ in terms of the Helmholtz free energy, $F(E) := E - T S(E)$. So we have
+$$
+p(E) = \frac{e^{-F(E)/T}}{\sum_{E&rsquo;} e^{-F(E&rsquo;)/T}}.
+$$
+In most cases, $F(E)$ is extensive, meaning that $F(E) = N f(E)$, where the free energy density does not scale with system size $f(E) \sim \mathcal{O}(1)$. Let&rsquo;s also define the partition function $Z = \sum_E e^{-F(E)/T}$.</p>
+<p>Now consider $E^*$, which is the energy that maximises the Boltzmann weight $e^{-F(E)/T}$ and therefore minimises $F(E)$ and $f(E)$. We can write the probability as
+$$
+p(E) = \frac{e^{N(f(E^*)-f(E))/T}}{1 + \sum_{E&rsquo; \neq E^*} e^{-N(f(E&rsquo;)-f(E^*))/T}}.
+$$
+In the thermodynamic limit, $N \rightarrow \infty$, $p(E)$ sharply peaks around $E^*$, since the numerator is zero unless $E=E^*$, and the denominator converges to $1$, since inside the sum, we always have $f(E&rsquo;) - f(E^*) &gt; 0$.</p>
+<p>We can also write the partition function in a similar fashion,
+$$
+Z = e^{-F(E^*)/T} \left(1 + \sum_{E&rsquo; \neq E^*} e^{-N(f(E&rsquo;)-f(E^*))/T} \right).
+$$
+Let&rsquo;s define a mystery quantity $\tilde{f} = -\frac{T}{N} \ln Z$. Then we have
+$$
+\begin{align}
+\tilde{f} &amp; = f(E^*) - \frac{T}{N} \ln \left(1 + \sum_{E&rsquo; \neq E^*} e^{-N(f(E&rsquo;)-f(E^*))/T} \right) \\
+&amp; \mathop{\rightarrow}_{N \rightarrow \infty} f(E^*).
+\end{align}
+$$
+So, in the thermodynamic limit, we &lsquo;select&rsquo; energies that minimise the free energy (density) $f(E)$. But we also see that $f(E^*)$ also tends to $\tilde{f}=-\frac{T}{N} \ln Z$ in the thermodynamic limit. This is why physicists refer to both $F(E)$ and $\tilde{F} := N \tilde{f}$ as the &lsquo;free energy&rsquo;. What&rsquo;s even more confusing is that sometimes we even call anything proportional to $\ln Z$ as the &lsquo;free energy&rsquo;, and don&rsquo;t even distinguish between free energy densities $f$ and free energies $F$.</p>
+<p>Above, we defined the partition function as a sum over energies. But when we study statistical models, such as the Ising model and so on, we write it as a function of configurations $\sigma$. In fact, they are one and the same. Notice that we can also write $Z = \sum_\sigma e^{-E(\sigma)/T} = \sum_E (\sum_{\sigma \vert E(\sigma) = E} 1) e^{-E/T} = \sum_E e^{S(E)} e^{-E/T}$.</p>
+<p>Back to the Helmholtz free energy, which we can write as $F(E) = T (E/T- S(E))$. Hopefully with the previous discussion it is more clear why this quantity represents a &lsquo;fight&rsquo; between entropy maximisation and energy minimisation.</p>
+<p>The first term is proportional to $E/T$, which appeared when expanding the entropy of the bath. When the system given energy $E$, this is due to the bath losing the energy by that much. The more energy the bath has to give to the system, the less likely that it will occur. So, increasing the system&rsquo;s energy decreases its probability, and hence increase the free energy. As $T \rightarrow 0$, the cost for energy becomes more and more expensive, and as $T \rightarrow \infty$, energy becomes free, so only the entropy matters.</p>
+<p>The second term is entropy. Remember that the entropy $S(E)$ appeared in the partition function due to the number of configurations with energy $E$. It increases the weight of energies with many configurations and correspondingly reduces the free energy of such energies.</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>Tong, D. (2012). Statistical Physics, <a href="https://www.damtp.cam.ac.uk/user/tong/statphys/one.pdf" target="_blank" rel="noopener">Ch. 1</a>, University of Cambridge Part II Mathematical Tripos.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
     </div>
 
     
 
-  </div>
-  <div class="ml-3">
+
+
+
+
+
+
+<div class="share-box">
+  <ul class="share">
     
-    
-  </div>
+  </ul>
 </div>
 
+
+
+
+
+
+
+
+
+
+
   
+  
+    
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="https://sunwoo-kim.github.io"><img class="avatar mr-3 avatar-square" src="/en/authors/sunwoo/avatar_hu9405347151a0d7e43c13dd2300fcc4cc_4719879_270x270_fill_q100_lanczos_center.jpg" alt="Sun Woo Kim"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://sunwoo-kim.github.io">Sun Woo Kim</a></h5>
+      
+      
+      <ul class="network-icon" aria-hidden="true">
+  
+</ul>
+
+    </div>
+  </div>
+
 
   
 
-  
 
-</div>
+
+
+
+
+
+
+
+<script src="https://giscus.app/client.js"
+        data-repo="sunwoo-kim/sunwoo-kim.github.io"
+        data-repo-id="MDEwOlJlcG9zaXRvcnkyMzE5MjY1MDU="
+        data-category="Comments"
+        data-category-id="DIC_kwDODdLq6c4CY5LG"
+        data-mapping="specific"
+        data-term="free-energy"
+        data-strict="1"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang='en'
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+
+
+
+
+
+  </div>
+</article>
   </div>
 
   <div class="page-footer">

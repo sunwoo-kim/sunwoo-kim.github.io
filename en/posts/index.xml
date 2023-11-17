@@ -5,12 +5,97 @@
     <link>https://sunwoo-kim.github.io/en/posts/</link>
       <atom:link href="https://sunwoo-kim.github.io/en/posts/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>swk34 [at] cantab [dot] ac [dot] uk</copyright><lastBuildDate>Thu, 31 Aug 2023 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>swk34 [at] cantab [dot] ac [dot] uk</copyright><lastBuildDate>Thu, 16 Nov 2023 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://sunwoo-kim.github.io/media/icon_hu8b309a9302268010949630654373c3a0_79828_512x512_fill_lanczos_center_3.png</url>
       <title>Posts</title>
       <link>https://sunwoo-kim.github.io/en/posts/</link>
     </image>
+    
+    <item>
+      <title>What&#39;s the deal with free energy?</title>
+      <link>https://sunwoo-kim.github.io/en/posts/free-energy/</link>
+      <pubDate>Thu, 16 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://sunwoo-kim.github.io/en/posts/free-energy/</guid>
+      <description>&lt;details&gt;
+   &lt;summary&gt;&lt;font color=&#34;grey&#34;&gt; &lt;small&gt;To cite this page&lt;/small&gt; &lt;/font&gt;&lt;/summary&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-latex&#34; data-lang=&#34;latex&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;@misc&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;swkim2023what&amp;#39;s,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   author=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;Kim, Sun Woo&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   title=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;What&amp;#39;s the deal with free energy?&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   year=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;2023&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   howpublished=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;\url&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;https://sunwoo-kim.github.io/en/posts/free-energy/&lt;span class=&#34;nb&#34;&gt;}}&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   note=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;Accessed: 2023-11-17&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/details&gt;
+&lt;p&gt;The term &amp;lsquo;free energy&amp;rsquo; confused me for a long time. One one hand, when we learn thermodynamics, people talk about the Helmholtz free energy, $F=U-TS$. On the other hand, in the literature, people seem to describe the logarithm of a partition function to be the &amp;lsquo;free energy&amp;rsquo;, too. They must be related, but how?&lt;/p&gt;
+&lt;p&gt;In this post, I&amp;rsquo;m going to try to make the connection clear as I can, starting from the basic assumptions of statistical mechanics. To do this I will essentially re-derive the canonical ensemble, and point out some things along the way. I will also work in units of energy where $k_B=1$. I assume that you have read some notes on statistical physics, but was left confused as I certainly was.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Consider a system $S$ that is in contact with with a bath $R$, and that $S$ and $R$ together are isolated. Let&amp;rsquo;s say we know what the total energy, $E_T$, is. We know that $E_T$ is fixed since we said $S$ and $R$ together are isolated.&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s say that $S$ can have energies ${ E_S}$, and that the number of states (some people call it the statistical weight) that $S$ has with energy $E_S$ is $\Omega_S(E_S)$. $R$ has energies ${E_R}$, and the number of states that $R$ has with energy $E_R$ is $\Omega_R(E_R)$.&lt;/p&gt;
+&lt;p&gt;We are going to apply the &amp;lsquo;fundamental postulate of statistical mechanics&amp;rsquo; on the combined system $S$ and $R$, which just means that we will assume that any state of the combined system, as long as it has total energy $E_T$, is equally likely.&lt;/p&gt;
+&lt;p&gt;The total number of states for the joint system $S$ and $R$ is then &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;
+$$
+\Omega(E_{T}) = \sum_{E_S} \Omega_R(E_R=E_T - E_S) \Omega_S(E_S).
+$$
+This is counting all the different ways that the total energy can be shared between $S$ and $R$. Entropy is defined as $S := \ln \Omega$. So then we have
+$$
+\Omega(E_T) = \sum_{E_S} e^{S_R(E_T - E_S) + S_S(E_S)}.
+$$
+Let us assume that the bath is large, and so its energy is much larger than the system&amp;rsquo;s $E_S \ll E_T$. Taylor expanding to first order, we have
+$$
+\Omega (E_T) \approx \sum_{E_S} e^{S_S(E_S)} \exp \left(S_R(E_T)- \frac{\partial S_R}{\partial E_R} E_S\right).
+$$
+Inverse temperature is defined as $T^{-1} = \partial_{E_R} S_R$. So the total number of states is given by
+$$
+\Omega (E_T) \approx e^{S_R(E_T)} \sum_{E_S} e^{S_S(E_S)} \exp e^{-E_S /T}.
+$$
+The number of states where $S$ has a &lt;em&gt;particular&lt;/em&gt; energy $E_S$ is given by
+$$
+\Omega(E_T = E_R+E_S) = \Omega_R(E_R=E_T-E_S) \Omega_S(E_S).
+$$
+Then since all states are equally likely, the probability that the system will have energy $E_S$ is just the ratio of number of states for particular energy and the total number of states,
+$$
+\begin{aligned}
+p(E_S) &amp;amp; = \frac{\Omega_R(E_R=E_T-E_S) \Omega_S(E_S)}{\Omega(E_T)} \\
+&amp;amp; = \frac{e^{S_S(E_S)}e^{-E_S /T}}{\sum_{E_S&amp;rsquo;} e^{S_S(E_S&amp;rsquo;)} e^{-E_S&amp;rsquo;/T}}.
+\end{aligned}
+$$
+Since the bath variables are now gone (except sneakily in the temperature), we will drop the subscript $S$ from here on. We also notice another thing: we can write $p(E)$ in terms of the Helmholtz free energy, $F(E) := E - T S(E)$. So we have
+$$
+p(E) = \frac{e^{-F(E)/T}}{\sum_{E&amp;rsquo;} e^{-F(E&amp;rsquo;)/T}}.
+$$
+In most cases, $F(E)$ is extensive, meaning that $F(E) = N f(E)$, where the free energy density does not scale with system size $f(E) \sim \mathcal{O}(1)$. Let&amp;rsquo;s also define the partition function $Z = \sum_E e^{-F(E)/T}$.&lt;/p&gt;
+&lt;p&gt;Now consider $E^*$, which is the energy that maximises the Boltzmann weight $e^{-F(E)/T}$ and therefore minimises $F(E)$ and $f(E)$. We can write the probability as
+$$
+p(E) = \frac{e^{N(f(E^*)-f(E))/T}}{1 + \sum_{E&amp;rsquo; \neq E^*} e^{-N(f(E&amp;rsquo;)-f(E^*))/T}}.
+$$
+In the thermodynamic limit, $N \rightarrow \infty$, $p(E)$ sharply peaks around $E^*$, since the numerator is zero unless $E=E^*$, and the denominator converges to $1$, since inside the sum, we always have $f(E&amp;rsquo;) - f(E^*) &amp;gt; 0$.&lt;/p&gt;
+&lt;p&gt;We can also write the partition function in a similar fashion,
+$$
+Z = e^{-F(E^*)/T} \left(1 + \sum_{E&amp;rsquo; \neq E^*} e^{-N(f(E&amp;rsquo;)-f(E^*))/T} \right).
+$$
+Let&amp;rsquo;s define a mystery quantity $\tilde{f} = -\frac{T}{N} \ln Z$. Then we have
+$$
+\begin{align}
+\tilde{f} &amp;amp; = f(E^*) - \frac{T}{N} \ln \left(1 + \sum_{E&amp;rsquo; \neq E^*} e^{-N(f(E&amp;rsquo;)-f(E^*))/T} \right) \\
+&amp;amp; \mathop{\rightarrow}_{N \rightarrow \infty} f(E^*).
+\end{align}
+$$
+So, in the thermodynamic limit, we &amp;lsquo;select&amp;rsquo; energies that minimise the free energy (density) $f(E)$. But we also see that $f(E^*)$ also tends to $\tilde{f}=-\frac{T}{N} \ln Z$ in the thermodynamic limit. This is why physicists refer to both $F(E)$ and $\tilde{F} := N \tilde{f}$ as the &amp;lsquo;free energy&amp;rsquo;. What&amp;rsquo;s even more confusing is that sometimes we even call anything proportional to $\ln Z$ as the &amp;lsquo;free energy&amp;rsquo;, and don&amp;rsquo;t even distinguish between free energy densities $f$ and free energies $F$.&lt;/p&gt;
+&lt;p&gt;Above, we defined the partition function as a sum over energies. But when we study statistical models, such as the Ising model and so on, we write it as a function of configurations $\sigma$. In fact, they are one and the same. Notice that we can also write $Z = \sum_\sigma e^{-E(\sigma)/T} = \sum_E (\sum_{\sigma \vert E(\sigma) = E} 1) e^{-E/T} = \sum_E e^{S(E)} e^{-E/T}$.&lt;/p&gt;
+&lt;p&gt;Back to the Helmholtz free energy, which we can write as $F(E) = T (E/T- S(E))$. Hopefully with the previous discussion it is more clear why this quantity represents a &amp;lsquo;fight&amp;rsquo; between entropy maximisation and energy minimisation.&lt;/p&gt;
+&lt;p&gt;The first term is proportional to $E/T$, which appeared when expanding the entropy of the bath. When the system given energy $E$, this is due to the bath losing the energy by that much. The more energy the bath has to give to the system, the less likely that it will occur. So, increasing the system&amp;rsquo;s energy decreases its probability, and hence increase the free energy. As $T \rightarrow 0$, the cost for energy becomes more and more expensive, and as $T \rightarrow \infty$, energy becomes free, so only the entropy matters.&lt;/p&gt;
+&lt;p&gt;The second term is entropy. Remember that the entropy $S(E)$ appeared in the partition function due to the number of configurations with energy $E$. It increases the weight of energies with many configurations and correspondingly reduces the free energy of such energies.&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;Tong, D. (2012). Statistical Physics, &lt;a href=&#34;https://www.damtp.cam.ac.uk/user/tong/statphys/one.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Ch. 1&lt;/a&gt;, University of Cambridge Part II Mathematical Tripos.&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
     
     <item>
       <title>Continuous and discrete Fourier transforms</title>
@@ -24,7 +109,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   title=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;Continuous and discrete Fourier transforms&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;,
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   year=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;2023&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;,
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   howpublished=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;\url&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;https://sunwoo-kim.github.io/en/posts/fourier-transforms/&lt;span class=&#34;nb&#34;&gt;}}&lt;/span&gt;,
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   note=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;Accessed: 2023-11-16&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   note=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;Accessed: 2023-11-17&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/details&gt;
 &lt;p&gt;The conventions and relationships between discrete Fourier transforms (DFT), Fourier series, and continuous Fourier transforms (FT), are confusing enough that I decided to write a reference on it.&lt;/p&gt;
@@ -244,7 +329,7 @@ $$&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   title=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;Transverse field Ising model&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;,
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   year=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;2023&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;,
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   howpublished=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;\url&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;https://sunwoo-kim.github.io/en/posts/tfi-model/&lt;span class=&#34;nb&#34;&gt;}}&lt;/span&gt;,
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   note=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;Accessed: 2023-11-16&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   note=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;Accessed: 2023-11-17&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/details&gt;
 &lt;p&gt;In condensed matter physics, there are myriads of phenomenological models out there, with information about them scattered throughout different papers and resources. In the field of machine learning, there are efforts such as the &lt;a href=&#34;https://modelzoo.co&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Model Zoo&lt;/a&gt; which tries to organise these models in one place.&lt;/p&gt;
@@ -475,7 +560,7 @@ where $B$ is some constant.&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   title=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;Hello World&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;,
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   year=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;2021&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;,
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   howpublished=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;\url&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;https://sunwoo-kim.github.io/en/posts/hello-world/&lt;span class=&#34;nb&#34;&gt;}}&lt;/span&gt;,
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   note=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;Accessed: 2023-11-16&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   note=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;Accessed: 2023-11-17&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/details&gt;
 &lt;p&gt;Welcome to my new website! I hope to post some expository writeups on my research projects here.&lt;/p&gt;
