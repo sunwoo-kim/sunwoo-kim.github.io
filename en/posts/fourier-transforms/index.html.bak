@@ -771,7 +771,7 @@
     <div class="article-style">
       <details>
    <summary><font color="grey"> <small>To cite this page</small> </font></summary>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-latex" data-lang="latex"><span class="line"><span class="cl">@misc<span class="nb">{</span>swkim2023continuous,
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-latex" data-lang="latex"><span class="line"><span class="cl">@misc<span class="nb">{</span>swpkim2023continuous,
 </span></span><span class="line"><span class="cl">   author=<span class="nb">{</span>Kim, Sun Woo<span class="nb">}</span>,
 </span></span><span class="line"><span class="cl">   title=<span class="nb">{</span>Continuous and discrete Fourier transforms<span class="nb">}</span>,
 </span></span><span class="line"><span class="cl">   year=<span class="nb">{</span>2023<span class="nb">}</span>,
