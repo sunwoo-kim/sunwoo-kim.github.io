@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Teaching | Sun Woo P. Kim</title>
+    <link>https://sunwoo-kim.github.io/en/activities/teaching/</link>
+      <atom:link href="https://sunwoo-kim.github.io/en/activities/teaching/index.xml" rel="self" type="application/rss+xml" />
+    <description>Teaching</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>swk34 [at] cantab [dot] ac [dot] uk</copyright><lastBuildDate>Mon, 12 Feb 2024 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://sunwoo-kim.github.io/media/icon_hu8b309a9302268010949630654373c3a0_79828_512x512_fill_lanczos_center_3.png</url>
+      <title>Teaching</title>
+      <link>https://sunwoo-kim.github.io/en/activities/teaching/</link>
+    </image>
+    
+    <item>
+      <title>Notes on group theory</title>
+      <link>https://sunwoo-kim.github.io/en/activities/teaching/symmetries/</link>
+      <pubDate>Mon, 12 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>https://sunwoo-kim.github.io/en/activities/teaching/symmetries/</guid>
+      <description>&lt;p&gt;Here are some questions and solutions on group theory.&lt;/p&gt;
+&lt;details&gt;
+   &lt;summary&gt;&lt;b&gt;Prove that the alternating group (even permutations) $A_n$ has order $\frac{n!}{2}$.&lt;/b&gt;&lt;/summary&gt;
+&lt;p&gt;We know that the order of the symmetric group (aka all permutations) $S_n$, is $n!$. We also learned that any permutation $\pi \in S_n$ can be written as a product of transpositions, which, if there are even number of them, then $\pi$ is an even permutation.&lt;/p&gt;
+&lt;p&gt;Apart from the fact that we call $A_n$ the alternating &lt;em&gt;group&lt;/em&gt;, we can see that it is one, since identity $e=(12)(21)$ and a product of two even permutations are even, since the number of transpositions will add. We know that there are odd permutations too, so we know that $A_n$ is a subgroup of $S_n$, i.e. $A_n \subset S_n$.&lt;/p&gt;
+&lt;p&gt;But, we have not shown &lt;em&gt;how many&lt;/em&gt; elements in $A_n$ there are. How to show this?&lt;/p&gt;
+&lt;p&gt;Our strategy will be to do a coset decomposition of $S_n$, then use Lagrange&amp;rsquo;s theorem. We will find that there are only two coset representatives (these are elements that label the disjoint cosets), so that there are exactly half the elements of $S_n$ in $A_n$.&lt;/p&gt;
+&lt;p&gt;First, we know that $A_n e = A_n$ is a valid right coset, and will contain all the even permutations in $S_n$. Let&amp;rsquo;s choose some odd permutation $d \in S_n$ as the next coset representative. We want to check that $A_n d$ contains the rest of $S_n$. Consider some other odd element $d&amp;rsquo; \in S_n$. Then $A_n d&amp;rsquo; = A_n d&amp;rsquo; d^{-1} d$. But $d&amp;rsquo; d^{-1}$ is an even permutation, since the number of transpositions will add and an odd number plus another odd number is an even number. Therefore $A_n d&amp;rsquo; = A_n d$. So we see that $A_n d$ contains &lt;em&gt;all&lt;/em&gt; the odd elements in $S_n$. All elements in $A_n d$ must be odd. So $A_n e$ and $A_n d$ are disjoint since the former contains only even elements and $A_n d$ contain only the odd elements, and $S_n = A_n e \cup A_n d$. There are two coset representatives, so $\lvert S_n \rvert = 2 \lvert A_n \rvert \implies \lvert A_n \rvert = n!/2$.&lt;/p&gt;
+&lt;/details&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

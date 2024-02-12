@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- This site was created with Wowchemy. https://www.wowchemy.com -->
-<!-- Last Published: January 31, 2024 --><html lang="en-us" >
+<!-- Last Published: February 12, 2024 --><html lang="en-us" >
 
 
 <head>
@@ -323,6 +323,8 @@
 <meta property="og:title" content="Activities | Sun Woo P. Kim" />
 <meta property="og:description" content="" /><meta property="og:image" content="https://sunwoo-kim.github.io/media/icon_hu8b309a9302268010949630654373c3a0_79828_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
 
+  
+    <meta property="og:updated_time" content="2024-02-12T00:00:00&#43;00:00" />
   
 
 
@@ -735,9 +737,6 @@
 
 
 
-  
-  
-
 
 
 
@@ -752,13 +751,13 @@
   <div class="media-body">
 
     <div class="section-subheading article-title mb-0 mt-0">
-      <a href="https://sites.google.com/view/kclmanybodycircle" target="_blank" rel="noopener">KCL Many Body Circle</a>
+      <a href="/en/activities/teaching/" >Teaching</a>
     </div>
 
     
-    <a href="https://sites.google.com/view/kclmanybodycircle" target="_blank" rel="noopener" class="summary-link">
+    <a href="/en/activities/teaching/"  class="summary-link">
       <div class="article-style">
-        I run a reading group with KCL maths and physics PhD students, on topics regarding theories of many-body systems. Click the heading for details.
+        Click here for a list of my teaching activities and resources.
       </div>
     </a>
     
@@ -814,6 +813,9 @@
 
 
 
+  
+  
+
 
 
 
@@ -828,13 +830,13 @@
   <div class="media-body">
 
     <div class="section-subheading article-title mb-0 mt-0">
-      <a href="/en/activities/teaching/" >Teaching</a>
+      <a href="https://sites.google.com/view/kclmanybodycircle" target="_blank" rel="noopener">KCL Many Body Circle</a>
     </div>
 
     
-    <a href="/en/activities/teaching/"  class="summary-link">
+    <a href="https://sites.google.com/view/kclmanybodycircle" target="_blank" rel="noopener" class="summary-link">
       <div class="article-style">
-        Click here for a list of my teaching activities and resources.
+        I run a reading group with KCL maths and physics PhD students, on topics regarding theories of many-body systems. Click the heading for details.
       </div>
     </a>
     

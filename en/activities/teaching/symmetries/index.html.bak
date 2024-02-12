@@ -258,6 +258,7 @@
 
 
 
+  <meta name="robots" content="noindex" />
 
 
 
@@ -279,12 +280,13 @@
 
   
 
-<meta name="description" content="Click here for a list of my teaching activities and resources." />
+<meta name="description" content="Here are some questions and solutions on group theory.
+Prove that the alternating group (even permutations) $A_n$ has order $\frac{n!}{2}$. We know that the order of the symmetric group (aka all permutations) $S_n$, is $n!" />
 
 
 
-<link rel="alternate" hreflang="en-us" href="https://sunwoo-kim.github.io/en/activities/teaching/" />
-<link rel="canonical" href="https://sunwoo-kim.github.io/en/activities/teaching/" />
+<link rel="alternate" hreflang="en-us" href="https://sunwoo-kim.github.io/en/activities/teaching/symmetries/" />
+<link rel="canonical" href="https://sunwoo-kim.github.io/en/activities/teaching/symmetries/" />
 
 
 
@@ -317,12 +319,19 @@
 <meta property="twitter:card" content="summary" />
 <meta property="twitter:image" content="https://sunwoo-kim.github.io/media/icon_hu8b309a9302268010949630654373c3a0_79828_512x512_fill_lanczos_center_3.png" />
 <meta property="og:site_name" content="Sun Woo P. Kim" />
-<meta property="og:url" content="https://sunwoo-kim.github.io/en/activities/teaching/" />
-<meta property="og:title" content="Teaching | Sun Woo P. Kim" />
-<meta property="og:description" content="Click here for a list of my teaching activities and resources." /><meta property="og:image" content="https://sunwoo-kim.github.io/media/icon_hu8b309a9302268010949630654373c3a0_79828_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
+<meta property="og:url" content="https://sunwoo-kim.github.io/en/activities/teaching/symmetries/" />
+<meta property="og:title" content="Notes on group theory | Sun Woo P. Kim" />
+<meta property="og:description" content="Here are some questions and solutions on group theory.
+Prove that the alternating group (even permutations) $A_n$ has order $\frac{n!}{2}$. We know that the order of the symmetric group (aka all permutations) $S_n$, is $n!" /><meta property="og:image" content="https://sunwoo-kim.github.io/media/icon_hu8b309a9302268010949630654373c3a0_79828_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
 
   
-    <meta property="og:updated_time" content="2024-02-12T00:00:00&#43;00:00" />
+    <meta
+      property="article:published_time"
+      content="2024-02-12T00:00:00&#43;00:00"
+    />
+  
+  
+    <meta property="article:modified_time" content="2024-02-12T00:00:00&#43;00:00">
   
 
 
@@ -330,24 +339,24 @@
 
 
 
-
-
-
-
-  
-  
-  
-
-  
-  
-    <link rel="alternate" href="/en/activities/teaching/index.xml" type="application/rss+xml" title="Sun Woo P. Kim" />
-  
 
   
 
 
+
+
   
-  <title>Teaching | Sun Woo P. Kim</title>
+  
+  
+
+  
+  
+
+  
+
+
+  
+  <title>Notes on group theory | Sun Woo P. Kim</title>
 
   
   
@@ -367,7 +376,7 @@
 </head>
 
 
-<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="4723e8b9945b814a410164180a90cff3" >
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="37c93669fbb456b3374fc64005134b93" >
 
   
   
@@ -673,64 +682,198 @@
     
     
 
+    <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>Notes on group theory</h1>
+
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+  <span >
+      Sun Woo P. Kim</span>
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    2024-02-12
+  </span>
+  
+
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    2 min read
+  </span>
+  
+
+  
+  
+  
+  
+
+  
+  
+
+</div>
+
     
 
 
 
 
-
-
-
-
-
-
-
-
-
-  
-
-  
-  
-  
-    
-  
-<div class="universal-wrapper pt-3">
-  <h1>Teaching</h1>
-
-  
 
   
 </div>
 
 
 
-<div class="universal-wrapper">
+  <div class="article-container">
+
+    <div class="article-style">
+      <p>Here are some questions and solutions on group theory.</p>
+<details>
+   <summary><b>Prove that the alternating group (even permutations) $A_n$ has order $\frac{n!}{2}$.</b></summary>
+<p>We know that the order of the symmetric group (aka all permutations) $S_n$, is $n!$. We also learned that any permutation $\pi \in S_n$ can be written as a product of transpositions, which, if there are even number of them, then $\pi$ is an even permutation.</p>
+<p>Apart from the fact that we call $A_n$ the alternating <em>group</em>, we can see that it is one, since identity $e=(12)(21)$ and a product of two even permutations are even, since the number of transpositions will add. We know that there are odd permutations too, so we know that $A_n$ is a subgroup of $S_n$, i.e. $A_n \subset S_n$.</p>
+<p>But, we have not shown <em>how many</em> elements in $A_n$ there are. How to show this?</p>
+<p>Our strategy will be to do a coset decomposition of $S_n$, then use Lagrange&rsquo;s theorem. We will find that there are only two coset representatives (these are elements that label the disjoint cosets), so that there are exactly half the elements of $S_n$ in $A_n$.</p>
+<p>First, we know that $A_n e = A_n$ is a valid right coset, and will contain all the even permutations in $S_n$. Let&rsquo;s choose some odd permutation $d \in S_n$ as the next coset representative. We want to check that $A_n d$ contains the rest of $S_n$. Consider some other odd element $d&rsquo; \in S_n$. Then $A_n d&rsquo; = A_n d&rsquo; d^{-1} d$. But $d&rsquo; d^{-1}$ is an even permutation, since the number of transpositions will add and an odd number plus another odd number is an even number. Therefore $A_n d&rsquo; = A_n d$. So we see that $A_n d$ contains <em>all</em> the odd elements in $S_n$. All elements in $A_n d$ must be odd. So $A_n e$ and $A_n d$ are disjoint since the former contains only even elements and $A_n d$ contain only the odd elements, and $S_n = A_n e \cup A_n d$. There are two coset representatives, so $\lvert S_n \rvert = 2 \lvert A_n \rvert \implies \lvert A_n \rvert = n!/2$.</p>
+</details>
+    </div>
+
+    
+
+
+
+
+
+
+
+<div class="share-box">
+  <ul class="share">
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
   
-    <div class="article-style"><h2 id="kcl-2023-">KCL (2023-)</h2>
-<h3 id="spring-2024">Spring 2024</h3>
-<ul>
-<li>TA for 5CCP2332 Symmetry in Physics, taught by Sarben Sarkar. Some notes <a href="https://sunwoo-kim.github.io/en/activities/teaching/symmetries/">here</a>.</li>
+  
+    
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="https://sunwoo-kim.github.io"><img class="avatar mr-3 avatar-square" src="/en/authors/sunwoo/avatar_hu9405347151a0d7e43c13dd2300fcc4cc_4719879_270x270_fill_q100_lanczos_center.jpg" alt="Sun Woo P. Kim"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://sunwoo-kim.github.io">Sun Woo P. Kim</a></h5>
+      
+      
+      <ul class="network-icon" aria-hidden="true">
+  
 </ul>
-<h3 id="fall-2023">Fall 2023</h3>
-<ul>
-<li>TA for 5CCP3000 Mathematical Methods for Physics, taught by George Booth and Curt von Keyserlingk.</li>
-</ul>
-</div>
-  
+
+    </div>
+  </div>
 
 
   
 
-  
-  
-    
-  
 
-  
 
-  
 
-</div>
+
+
+
+
+
+<script src="https://giscus.app/client.js"
+        data-repo="sunwoo-kim/sunwoo-kim.github.io"
+        data-repo-id="MDEwOlJlcG9zaXRvcnkyMzE5MjY1MDU="
+        data-category="Comments"
+        data-category-id="DIC_kwDODdLq6c4CY5LG"
+        data-mapping="specific"
+        data-term="symmetries"
+        data-strict="1"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang='en'
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+
+
+
+
+
+  </div>
+</article>
   </div>
 
   <div class="page-footer">
@@ -810,7 +953,7 @@
   
 
   <p class="powered-by">
-    Site last updated 2024-02-12 03:16:29.013717
+    INSERTUPDATEDATETIMETEXTHERE
   </p>
 
 </footer>

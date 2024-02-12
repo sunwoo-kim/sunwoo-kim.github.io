@@ -16,6 +16,28 @@
                 href="https://sunwoo-kim.github.io/en/projects/"
                 />
   </url><url>
+    <loc>https://sunwoo-kim.github.io/en/activities/</loc>
+    <lastmod>2024-02-12T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ko"
+                href="https://sunwoo-kim.github.io/ko/activities/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://sunwoo-kim.github.io/en/activities/"
+                />
+  </url><url>
+    <loc>https://sunwoo-kim.github.io/en/activities/teaching/symmetries/</loc>
+    <lastmod>2024-02-12T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://sunwoo-kim.github.io/en/activities/teaching/</loc>
+    <lastmod>2024-02-12T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
     <loc>https://sunwoo-kim.github.io/en/posts/</loc>
     <lastmod>2023-11-16T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -116,19 +138,6 @@
                 href="https://sunwoo-kim.github.io/en/projects/nonsymmorphic/"
                 />
   </url><url>
-    <loc>https://sunwoo-kim.github.io/en/activities/</loc>
-    <changefreq>weekly</changefreq>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ko"
-                href="https://sunwoo-kim.github.io/ko/activities/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://sunwoo-kim.github.io/en/activities/"
-                />
-  </url><url>
     <loc>https://sunwoo-kim.github.io/en/categories/</loc>
     <changefreq>weekly</changefreq>
     <xhtml:link
@@ -159,9 +168,6 @@
                 />
   </url><url>
     <loc>https://sunwoo-kim.github.io/en/publications/</loc>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://sunwoo-kim.github.io/en/activities/teaching/</loc>
     <changefreq>weekly</changefreq>
   </url>
 </urlset>
