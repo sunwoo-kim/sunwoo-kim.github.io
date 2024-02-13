@@ -17,7 +17,7 @@
       <link>https://sunwoo-kim.github.io/en/activities/teaching/symmetries/</link>
       <pubDate>Mon, 12 Feb 2024 00:00:00 +0000</pubDate>
       <guid>https://sunwoo-kim.github.io/en/activities/teaching/symmetries/</guid>
-      <description>&lt;p&gt;Here are some questions and solutions on group theory. Credits to Gabriele Pinna for working on these problems with me.&lt;/p&gt;
+      <description>&lt;p&gt;Here are some questions and solutions on group theory. I tried to be as detailed as possible. Click on the question to see the solution. Credits to Gabriele Pinna for working on these problems with me.&lt;/p&gt;
 &lt;details&gt;
    &lt;summary&gt;&lt;b&gt;Prove that the alternating group (even permutations) $A_n$ has order $\frac{n!}{2}$.&lt;/b&gt;&lt;/summary&gt;
 &lt;p&gt;We know that the order of the symmetric group (aka all permutations) $S_n$, is $n!$. We also learned that any permutation $\pi \in S_n$ can be written as a product of transpositions, which, if there are even number of them, then $\pi$ is an even permutation.&lt;/p&gt;
