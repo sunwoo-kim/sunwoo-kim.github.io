@@ -17,7 +17,7 @@
       <link>https://sunwoo-kim.github.io/en/activities/teaching/symmetries/</link>
       <pubDate>Mon, 12 Feb 2024 00:00:00 +0000</pubDate>
       <guid>https://sunwoo-kim.github.io/en/activities/teaching/symmetries/</guid>
-      <description>&lt;p&gt;Here are some questions and solutions on group theory.&lt;/p&gt;
+      <description>&lt;p&gt;Here are some questions and solutions on group theory. Credits to Gabriele Pinna for working on these problems with me.&lt;/p&gt;
 &lt;details&gt;
    &lt;summary&gt;&lt;b&gt;Prove that the alternating group (even permutations) $A_n$ has order $\frac{n!}{2}$.&lt;/b&gt;&lt;/summary&gt;
 &lt;p&gt;We know that the order of the symmetric group (aka all permutations) $S_n$, is $n!$. We also learned that any permutation $\pi \in S_n$ can be written as a product of transpositions, which, if there are even number of them, then $\pi$ is an even permutation.&lt;/p&gt;
@@ -25,6 +25,26 @@
 &lt;p&gt;But, we have not shown &lt;em&gt;how many&lt;/em&gt; elements in $A_n$ there are. How to show this?&lt;/p&gt;
 &lt;p&gt;Our strategy will be to do a coset decomposition of $S_n$, then use Lagrange&amp;rsquo;s theorem. We will find that there are only two coset representatives (these are elements that label the disjoint cosets), so that there are exactly half the elements of $S_n$ in $A_n$.&lt;/p&gt;
 &lt;p&gt;First, we know that $A_n e = A_n$ is a valid right coset, and will contain all the even permutations in $S_n$. Let&amp;rsquo;s choose some odd permutation $d \in S_n$ as the next coset representative. We want to check that $A_n d$ contains the rest of $S_n$. Consider some other odd element $d&amp;rsquo; \in S_n$. Then $A_n d&amp;rsquo; = A_n d&amp;rsquo; d^{-1} d$. But $d&amp;rsquo; d^{-1}$ is an even permutation, since the number of transpositions will add and an odd number plus another odd number is an even number. Therefore $A_n d&amp;rsquo; = A_n d$. So we see that $A_n d$ contains &lt;em&gt;all&lt;/em&gt; the odd elements in $S_n$. All elements in $A_n d$ must be odd. So $A_n e$ and $A_n d$ are disjoint since the former contains only even elements and $A_n d$ contain only the odd elements, and $S_n = A_n e \cup A_n d$. There are two coset representatives, so $\lvert S_n \rvert = 2 \lvert A_n \rvert \implies \lvert A_n \rvert = n!/2$.&lt;/p&gt;
+&lt;/details&gt;
+&lt;details&gt;
+  &lt;summary&gt;&lt;b&gt;For a group $G$ that has an action on a finite set $S$, such that $\forall g \in G$, $g(i) \in S$, let the stabiliser subgroup of $x$ given group $G$ be defined as 
+  $$\mathrm{Stab}_G(i) := \left\{ \phi \in G \vert \phi(i) = i\right\}.$$
+  Let the orbit of of an element $i \in S$ given group $G$ be
+  $$\mathrm{Orb}_G(i) := \left\{ g(i) \vert g \in G \right\}.$$
+  Prove that for any $i$,
+  $$\lvert G \rvert = \lvert \mathrm{Orb}_G(i) \rvert \lvert \mathrm{Stab}_G(i) \rvert.$$
+  &lt;/b&gt;&lt;/summary&gt;
+&lt;p&gt;For fixed element $i$, let&amp;rsquo;s denote $H = \mathrm{Stab}_G(i)$. Since $H$ is a subgroup of $G$ (you should check this), let us consider the left coset decomposition of $G$:
+$$G = t_1 H \cup t_2 H \cup \cdots \cup t_n H,$$
+where $t_1 = e$, the identity.&lt;/p&gt;
+&lt;p&gt;So we can write the orbit as
+$$\mathrm{Orb}_G(i) = \bigcup_{a=1}^n \left\{ g(i) | g \in t_a H \right\}.$$
+We can also iterate over each coset like
+$$\mathrm{Orb}_G(i) = \bigcup_{a=1}^n \left\{ t_a(\phi(i)) | h \in H \right\}.$$
+Since all $\phi(i) = i$, and sets only count &lt;b&gt;unique&lt;/b&gt; elements, we only have one element contributing from each coset at most, so
+$$\mathrm{Orb}_G(i) = \bigcup_{a=1}^n \left\{ t_a(i) \right\} = \left\{ t_a(i) \vert a=1, \dots, n\right\}.$$
+We&amp;rsquo;re almost there, since if $t_a(i)$ are unique with $a$, then we see that $\mathrm{Orb}_G(i)$ counts the number of cosets, so we can use Lagrange&amp;rsquo;s theorem to prove the result.&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s check this. Assume there exists $t_a(i) = t_b(i)$ where $a \neq b$. Then $t_b^{-1} (t_a(i)) = i$ so $t_b^{-1} t_a = h$. This means that $t_a = t_b h$ so $t_a H = t_b H$, so are the same cosets. But this is a contradiction because $t_a H$ and $t_b H$ were supposed to be disjoint. So $t_a(i)$ are unique.&lt;/p&gt;
 &lt;/details&gt;</description>
     </item>
     
