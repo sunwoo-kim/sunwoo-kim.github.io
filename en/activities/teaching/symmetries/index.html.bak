@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- This site was created with Wowchemy. https://www.wowchemy.com -->
-<!-- Last Published: February 13, 2024 --><html lang="en-us" >
+<!-- Last Published: February 21, 2024 --><html lang="en-us" >
 
 
 <head>
@@ -280,7 +280,7 @@
 
   
 
-<meta name="description" content="Here are some questions and solutions on group theory. I tried to be as detailed as possible. Click on the question to see the solution. Credits to Gabriele Pinna for working on these problems with me." />
+<meta name="description" content="Here are some questions and solutions on group theory. I tried to be as detailed as possible. Click on the question to see the solution. Thanks to Gabriele Pinna for working on these problems with me." />
 
 
 
@@ -320,7 +320,7 @@
 <meta property="og:site_name" content="Sun Woo P. Kim" />
 <meta property="og:url" content="https://sunwoo-kim.github.io/en/activities/teaching/symmetries/" />
 <meta property="og:title" content="Notes on group theory | Sun Woo P. Kim" />
-<meta property="og:description" content="Here are some questions and solutions on group theory. I tried to be as detailed as possible. Click on the question to see the solution. Credits to Gabriele Pinna for working on these problems with me." /><meta property="og:image" content="https://sunwoo-kim.github.io/media/icon_hu8b309a9302268010949630654373c3a0_79828_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
+<meta property="og:description" content="Here are some questions and solutions on group theory. I tried to be as detailed as possible. Click on the question to see the solution. Thanks to Gabriele Pinna for working on these problems with me." /><meta property="og:image" content="https://sunwoo-kim.github.io/media/icon_hu8b309a9302268010949630654373c3a0_79828_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
 
   
     <meta
@@ -744,7 +744,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    4 min read
+    5 min read
   </span>
   
 
@@ -772,9 +772,10 @@
   <div class="article-container">
 
     <div class="article-style">
-      <p>Here are some questions and solutions on group theory. I tried to be as detailed as possible. Click on the question to see the solution. Credits to Gabriele Pinna for working on these problems with me.</p>
+      <p>Here are some questions and solutions on group theory. I tried to be as detailed as possible. Click on the question to see the solution. Thanks to Gabriele Pinna for working on these problems with me.</p>
 <details>
-   <summary><b>Prove that the alternating group (even permutations) $A_n$ has order $\frac{n!}{2}$.</b></summary>
+   <summary><b>
+   Prove that the alternating group (even permutations) $A_n$ has order $\frac{n!}{2}$.</b></summary>
 <p>We know that the order of the symmetric group (aka all permutations) $S_n$, is $n!$. We also learned that any permutation $\pi \in S_n$ can be written as a product of transpositions, which, if there are even number of them, then $\pi$ is an even permutation.</p>
 <p>Apart from the fact that we call $A_n$ the alternating <em>group</em>, we can see that it is one, since identity $e=(12)(21)$ and a product of two even permutations are even, since the number of transpositions will add. We know that there are odd permutations too, so we know that $A_n$ is a subgroup of $S_n$, i.e. $A_n \subset S_n$.</p>
 <p>But, we have not shown <em>how many</em> elements in $A_n$ there are. How to show this?</p>
@@ -782,7 +783,27 @@
 <p>First, we know that $A_n e = A_n$ is a valid right coset, and will contain all the even permutations in $S_n$. Let&rsquo;s choose some odd permutation $d \in S_n$ as the next coset representative. We want to check that $A_n d$ contains the rest of $S_n$. Consider some other odd element $d&rsquo; \in S_n$. Then $A_n d&rsquo; = A_n d&rsquo; d^{-1} d$. But $d&rsquo; d^{-1}$ is an even permutation, since the number of transpositions will add and an odd number plus another odd number is an even number. Therefore $A_n d&rsquo; = A_n d$. So we see that $A_n d$ contains <em>all</em> the odd elements in $S_n$. All elements in $A_n d$ must be odd. So $A_n e$ and $A_n d$ are disjoint since the former contains only even elements and $A_n d$ contain only the odd elements, and $S_n = A_n e \cup A_n d$. There are two coset representatives, so $\lvert S_n \rvert = 2 \lvert A_n \rvert \implies \lvert A_n \rvert = n!/2$.</p>
 </details>
 <details>
-  <summary><b>For a group $G$ that has an action on a finite set $S$, such that $\forall g \in G$, $g(i) \in S$, let the stabiliser subgroup of $x$ given group $G$ be defined as 
+  <summary><b>
+  Express the permutation $(abc \cdots k)(al)$, operating <i>right</i> to left, as a product of disjoint cycles.
+  </b></summary>
+  Consider the first operation, $(al)$. This means that $a \rightarrow k$ and $k \rightarrow a$. Let us write this in the <a href="https://en.wikipedia.org/wiki/Permutation#Two-line_notation">two-line notation</a>. Even though this is operating on elements $a$ and $l$ only, we can still write in elements $b c \cdots k$, as long as they stay in place. So we have:
+  $$
+  (al) \leftrightarrow \begin{pmatrix} a & b & c & \cdots & k & l \\ 
+                                       l & b & c & \cdots & k & a \end{pmatrix}.
+  $$
+  Then, let's apply the second operation, $(abc \cdots k)$. Here we just have $a \rightarrow b$, $b \rightarrow c, \cdots, k \rightarrow a$. Applying this on the previous cycle/permutation, we have
+  $$
+  (abc \cdots k) (al) \leftrightarrow \begin{pmatrix} a & b & c & \cdots & k & l \\ 
+                                                      l & c & d & \cdots & a & b \end{pmatrix}.
+  $$
+  Written in this form, it is not clear that it is a product of disjoint cycles. Let's chase how each element is mapped. We have $a \rightarrow l$, $l \rightarrow b$. From $b$ to $k$ in fact we have the mapping we'd expect, $b \rightarrow c$, $c \rightarrow d$, and so on, until $j \rightarrow k$. Then we have $k \rightarrow a$. But we're now back to $a$, so we have completed a cycle! We've also gone through all the elements, so it must be that there is only one cycle in this permutation. Summarising the above, we can write it as a single (and therefore disjoint) cycle:
+  $$
+  (abc \cdots k) (al) = (a l b c \cdots k a).
+  $$
+</details>
+<details>
+  <summary><b>
+  For a group $G$ that has an action on a finite set $S$, such that $\forall g \in G$, $g(i) \in S$, let the stabiliser subgroup of $x$ given group $G$ be defined as 
   $$\mathrm{Stab}_G(i) := \left\{ \phi \in G \vert \phi(i) = i\right\}.$$
   Let the orbit of of an element $i \in S$ given group $G$ be
   $$\mathrm{Orb}_G(i) := \left\{ g(i) \vert g \in G \right\}.$$

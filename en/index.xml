@@ -17,9 +17,10 @@
       <link>https://sunwoo-kim.github.io/en/activities/teaching/symmetries/</link>
       <pubDate>Mon, 12 Feb 2024 00:00:00 +0000</pubDate>
       <guid>https://sunwoo-kim.github.io/en/activities/teaching/symmetries/</guid>
-      <description>&lt;p&gt;Here are some questions and solutions on group theory. I tried to be as detailed as possible. Click on the question to see the solution. Credits to Gabriele Pinna for working on these problems with me.&lt;/p&gt;
+      <description>&lt;p&gt;Here are some questions and solutions on group theory. I tried to be as detailed as possible. Click on the question to see the solution. Thanks to Gabriele Pinna for working on these problems with me.&lt;/p&gt;
 &lt;details&gt;
-   &lt;summary&gt;&lt;b&gt;Prove that the alternating group (even permutations) $A_n$ has order $\frac{n!}{2}$.&lt;/b&gt;&lt;/summary&gt;
+   &lt;summary&gt;&lt;b&gt;
+   Prove that the alternating group (even permutations) $A_n$ has order $\frac{n!}{2}$.&lt;/b&gt;&lt;/summary&gt;
 &lt;p&gt;We know that the order of the symmetric group (aka all permutations) $S_n$, is $n!$. We also learned that any permutation $\pi \in S_n$ can be written as a product of transpositions, which, if there are even number of them, then $\pi$ is an even permutation.&lt;/p&gt;
 &lt;p&gt;Apart from the fact that we call $A_n$ the alternating &lt;em&gt;group&lt;/em&gt;, we can see that it is one, since identity $e=(12)(21)$ and a product of two even permutations are even, since the number of transpositions will add. We know that there are odd permutations too, so we know that $A_n$ is a subgroup of $S_n$, i.e. $A_n \subset S_n$.&lt;/p&gt;
 &lt;p&gt;But, we have not shown &lt;em&gt;how many&lt;/em&gt; elements in $A_n$ there are. How to show this?&lt;/p&gt;
@@ -27,7 +28,27 @@
 &lt;p&gt;First, we know that $A_n e = A_n$ is a valid right coset, and will contain all the even permutations in $S_n$. Let&amp;rsquo;s choose some odd permutation $d \in S_n$ as the next coset representative. We want to check that $A_n d$ contains the rest of $S_n$. Consider some other odd element $d&amp;rsquo; \in S_n$. Then $A_n d&amp;rsquo; = A_n d&amp;rsquo; d^{-1} d$. But $d&amp;rsquo; d^{-1}$ is an even permutation, since the number of transpositions will add and an odd number plus another odd number is an even number. Therefore $A_n d&amp;rsquo; = A_n d$. So we see that $A_n d$ contains &lt;em&gt;all&lt;/em&gt; the odd elements in $S_n$. All elements in $A_n d$ must be odd. So $A_n e$ and $A_n d$ are disjoint since the former contains only even elements and $A_n d$ contain only the odd elements, and $S_n = A_n e \cup A_n d$. There are two coset representatives, so $\lvert S_n \rvert = 2 \lvert A_n \rvert \implies \lvert A_n \rvert = n!/2$.&lt;/p&gt;
 &lt;/details&gt;
 &lt;details&gt;
-  &lt;summary&gt;&lt;b&gt;For a group $G$ that has an action on a finite set $S$, such that $\forall g \in G$, $g(i) \in S$, let the stabiliser subgroup of $x$ given group $G$ be defined as 
+  &lt;summary&gt;&lt;b&gt;
+  Express the permutation $(abc \cdots k)(al)$, operating &lt;i&gt;right&lt;/i&gt; to left, as a product of disjoint cycles.
+  &lt;/b&gt;&lt;/summary&gt;
+  Consider the first operation, $(al)$. This means that $a \rightarrow k$ and $k \rightarrow a$. Let us write this in the &lt;a href=&#34;https://en.wikipedia.org/wiki/Permutation#Two-line_notation&#34;&gt;two-line notation&lt;/a&gt;. Even though this is operating on elements $a$ and $l$ only, we can still write in elements $b c \cdots k$, as long as they stay in place. So we have:
+  $$
+  (al) \leftrightarrow \begin{pmatrix} a &amp; b &amp; c &amp; \cdots &amp; k &amp; l \\ 
+                                       l &amp; b &amp; c &amp; \cdots &amp; k &amp; a \end{pmatrix}.
+  $$
+  Then, let&#39;s apply the second operation, $(abc \cdots k)$. Here we just have $a \rightarrow b$, $b \rightarrow c, \cdots, k \rightarrow a$. Applying this on the previous cycle/permutation, we have
+  $$
+  (abc \cdots k) (al) \leftrightarrow \begin{pmatrix} a &amp; b &amp; c &amp; \cdots &amp; k &amp; l \\ 
+                                                      l &amp; c &amp; d &amp; \cdots &amp; a &amp; b \end{pmatrix}.
+  $$
+  Written in this form, it is not clear that it is a product of disjoint cycles. Let&#39;s chase how each element is mapped. We have $a \rightarrow l$, $l \rightarrow b$. From $b$ to $k$ in fact we have the mapping we&#39;d expect, $b \rightarrow c$, $c \rightarrow d$, and so on, until $j \rightarrow k$. Then we have $k \rightarrow a$. But we&#39;re now back to $a$, so we have completed a cycle! We&#39;ve also gone through all the elements, so it must be that there is only one cycle in this permutation. Summarising the above, we can write it as a single (and therefore disjoint) cycle:
+  $$
+  (abc \cdots k) (al) = (a l b c \cdots k a).
+  $$
+&lt;/details&gt;
+&lt;details&gt;
+  &lt;summary&gt;&lt;b&gt;
+  For a group $G$ that has an action on a finite set $S$, such that $\forall g \in G$, $g(i) \in S$, let the stabiliser subgroup of $x$ given group $G$ be defined as 
   $$\mathrm{Stab}_G(i) := \left\{ \phi \in G \vert \phi(i) = i\right\}.$$
   Let the orbit of of an element $i \in S$ given group $G$ be
   $$\mathrm{Orb}_G(i) := \left\{ g(i) \vert g \in G \right\}.$$
@@ -60,7 +81,7 @@ We&amp;rsquo;re almost there, since if $t_a(i)$ are unique with $a$, then we see
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   title=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;What&amp;#39;s the deal with free energy?&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;,
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   year=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;2023&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;,
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   howpublished=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;\url&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;https://sunwoo-kim.github.io/en/posts/free-energy/&lt;span class=&#34;nb&#34;&gt;}}&lt;/span&gt;,
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   note=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;Accessed: 2024-02-13&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   note=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;Accessed: 2024-02-21&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/details&gt;
 &lt;p&gt;The term &amp;lsquo;free energy&amp;rsquo; confused me for a long time. One one hand, when we learn thermodynamics, people talk about the Helmholtz free energy, $F=U-TS$. On the other hand, in the literature, people seem to describe the logarithm of a partition function to be the &amp;lsquo;free energy&amp;rsquo;, too. They must be related, but how?&lt;/p&gt;
@@ -148,7 +169,7 @@ So, in the thermodynamic limit, we &amp;lsquo;select&amp;rsquo; energies that mi
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   title=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;Continuous and discrete Fourier transforms&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;,
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   year=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;2023&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;,
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   howpublished=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;\url&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;https://sunwoo-kim.github.io/en/posts/fourier-transforms/&lt;span class=&#34;nb&#34;&gt;}}&lt;/span&gt;,
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   note=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;Accessed: 2024-02-13&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   note=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;Accessed: 2024-02-21&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/details&gt;
 &lt;p&gt;The conventions and relationships between discrete Fourier transforms (DFT), Fourier series, and continuous Fourier transforms (FT), are confusing enough that I decided to write a reference on it.&lt;/p&gt;
@@ -368,7 +389,7 @@ $$&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   title=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;Transverse field Ising model&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;,
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   year=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;2023&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;,
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   howpublished=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;\url&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;https://sunwoo-kim.github.io/en/posts/tfi-model/&lt;span class=&#34;nb&#34;&gt;}}&lt;/span&gt;,
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   note=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;Accessed: 2024-02-13&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   note=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;Accessed: 2024-02-21&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/details&gt;
 &lt;p&gt;In condensed matter physics, there are myriads of phenomenological models out there, with information about them scattered throughout different papers and resources. In the field of machine learning, there are efforts such as the &lt;a href=&#34;https://modelzoo.co&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Model Zoo&lt;/a&gt; which tries to organise these models in one place.&lt;/p&gt;
@@ -599,7 +620,7 @@ where $B$ is some constant.&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   title=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;Hello World&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;,
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   year=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;2021&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;,
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   howpublished=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;\url&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;https://sunwoo-kim.github.io/en/posts/hello-world/&lt;span class=&#34;nb&#34;&gt;}}&lt;/span&gt;,
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   note=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;Accessed: 2024-02-13&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   note=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;Accessed: 2024-02-21&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/details&gt;
 &lt;p&gt;Welcome to my new website! I hope to post some expository writeups on my research projects here.&lt;/p&gt;
