@@ -20,6 +20,7 @@
       <description>&lt;p&gt;Here are some questions and solutions on group theory. I tried to be as detailed as possible. Click on the question to see the solution. Thanks to Gabriele Pinna for working on these problems with me.&lt;/p&gt;
 &lt;details&gt;
    &lt;summary&gt;&lt;b&gt;1. Prove that the alternating group (even permutations) $A_n$ has order $\frac{n!}{2}$.&lt;/b&gt;&lt;/summary&gt;
+&lt;hr&gt;
 &lt;p&gt;We know that the order of the symmetric group (aka all permutations) $S_n$, is $n!$. We also learned that any permutation $\pi \in S_n$ can be written as a product of transpositions, which, if there are even number of them, then $\pi$ is an even permutation.
 &lt;br&gt;&lt;br&gt;
 Apart from the fact that we call $A_n$ the alternating &lt;em&gt;group&lt;/em&gt;, we can see that it is one, since identity $e=(12)(21)$ and a product of two even permutations are even, since the number of transpositions will add. We know that there are odd permutations too, so we know that $A_n$ is a subgroup of $S_n$, i.e. $A_n \subset S_n$.
@@ -30,10 +31,12 @@ Our strategy will be to do a coset decomposition of $S_n$, then use Lagrange&amp
 &lt;br&gt;&lt;br&gt;
 First, we know that $A_n e = A_n$ is a valid right coset, and will contain all the even permutations in $S_n$. Let&amp;rsquo;s choose some odd permutation $d \in S_n$ as the next coset representative. We want to check that $A_n d$ contains the rest of $S_n$. Consider some other odd element $d&amp;rsquo; \in S_n$. Then $A_n d&amp;rsquo; = A_n d&amp;rsquo; d^{-1} d$. But $d&amp;rsquo; d^{-1}$ is an even permutation, since the number of transpositions will add and an odd number plus another odd number is an even number. Therefore $A_n d&amp;rsquo; = A_n d$. So we see that $A_n d$ contains &lt;em&gt;all&lt;/em&gt; the odd elements in $S_n$. All elements in $A_n d$ must be odd. So $A_n e$ and $A_n d$ are disjoint since the former contains only even elements and $A_n d$ contain only the odd elements, and $S_n = A_n e \cup A_n d$. There are two coset representatives, so $\lvert S_n \rvert = 2 \lvert A_n \rvert \implies \lvert A_n \rvert = n!/2$.&lt;/p&gt;
 &lt;/details&gt;
+&lt;hr&gt;
 &lt;details&gt;
   &lt;summary&gt;&lt;b&gt;
   2. Express the permutation $(abc \cdots k)(al)$, operating &lt;i&gt;right&lt;/i&gt; to left, as a product of disjoint cycles.
   &lt;/b&gt;&lt;/summary&gt;
+&lt;hr&gt;
 &lt;p&gt;Consider the first operation, $(al)$. This means that $a \rightarrow k$ and $k \rightarrow a$. Let us write this in the &lt;a href=&#34;https://en.wikipedia.org/wiki/Permutation#Two-line_notation&#34;&gt;two-line notation&lt;/a&gt;. Even though this is operating on elements $a$ and $l$ only, we can still write in elements $b c \cdots k$, as long as they stay in place. So we have:
 $$
 (al) \leftrightarrow \begin{pmatrix} a &amp;amp; b &amp;amp; c &amp;amp; \cdots &amp;amp; k &amp;amp; l \
@@ -49,6 +52,7 @@ $$
 (abc \cdots k) (al) = (a l b c \cdots k).
 $$&lt;/p&gt;
 &lt;/details&gt;
+&lt;hr&gt;
 &lt;details&gt;
   &lt;summary&gt;&lt;b&gt;
   3. For a group $G$ that has an action on a finite set $S$, such that $\forall g \in G$, $g(i) \in S$, let the stabiliser subgroup of $x$ given group $G$ be defined as 
@@ -58,6 +62,7 @@ $$&lt;/p&gt;
   Prove that for any $i$,
   $$\lvert G \rvert = \lvert \mathrm{Orb}_G(i) \rvert \lvert \mathrm{Stab}_G(i) \rvert.$$
   &lt;/b&gt;&lt;/summary&gt;
+&lt;hr&gt;
 &lt;p&gt;For fixed element $i$, let&amp;rsquo;s denote $H = \mathrm{Stab}_G(i)$. Since $H$ is a subgroup of $G$ (you should check this), let us consider the left coset decomposition of $G$:
 $$G = t_1 H \cup t_2 H \cup \cdots \cup t_n H,$$
 where $t_1 = e$, the identity.
@@ -72,6 +77,7 @@ We&amp;rsquo;re almost there, since if $t_a(i)$ are unique with $a$, then we see
 &lt;br&gt;&lt;br&gt;
 Let&amp;rsquo;s check this. Assume there exists $t_a(i) = t_b(i)$ where $a \neq b$. Then $t_b^{-1} (t_a(i)) = i$ so $t_b^{-1} t_a = h$. This means that $t_a = t_b h$ so $t_a H = t_b H$, so are the same cosets. But this is a contradiction because $t_a H$ and $t_b H$ were supposed to be disjoint. So $t_a(i)$ are unique.&lt;/p&gt;
 &lt;/details&gt;
+&lt;hr&gt;
 &lt;details&gt;
   &lt;summary&gt;&lt;b&gt;
   4. Let $A$, $B$ be linear operators. For the case where both $A$ and $B$ commute with $[A,B]$ (for example $\hat x$ and $\hat p$!), prove the special case of the Baker-Campbell-Hausdorff formula,
@@ -82,6 +88,7 @@ Let&amp;rsquo;s check this. Assume there exists $t_a(i) = t_b(i)$ where $a \neq 
   $$
   where we define $[A, \, \cdot \,]$ as a &#39;superoperator&#39; that acts on operators like $[A, \, \cdot \,] B = [A, B]$, and for example $[A, \, \cdot \,]^2 B = [A, [A, B]]$.
   &lt;/b&gt;&lt;/summary&gt;
+&lt;hr&gt;
 &lt;p&gt;Let us prove the second statement first. Define
 $$
 f(t) := e^{t A} B e^{-t A},
@@ -136,7 +143,9 @@ Transforming back to the normal coordinates by applying $S^{-1} \left( \, \cdot 
 $$
 g(1) = \exp\left( {A} + {B} + \frac{1}{2} {[A, B]} \right) = \exp(A) \exp(B).
 $$&lt;/p&gt;
-&lt;/details&gt;</description>
+&lt;/details&gt;
+&lt;hr&gt;
+</description>
     </item>
     
   </channel>
