@@ -132,7 +132,7 @@ $$
 &amp;amp; = \exp\left( t \overline{A} + t\overline{B} + \frac{t^2}{2} \overline{[A, B]} \right)_{ii}.
 \end{aligned}
 $$
-Transforming back to the normal coordinates by applying $S^{-1} \cdot S$, then setting $t=1$, we have
+Transforming back to the normal coordinates by applying $S^{-1} \left( \, \cdot \, \right) S$, then setting $t=1$, we have
 $$
 g(1) = \exp\left( {A} + {B} + \frac{1}{2} {[A, B]} \right) = \exp(A) \exp(B).
 $$&lt;/p&gt;
