@@ -19,36 +19,39 @@
       <guid>https://sunwoo-kim.github.io/en/activities/teaching/symmetries/</guid>
       <description>&lt;p&gt;Here are some questions and solutions on group theory. I tried to be as detailed as possible. Click on the question to see the solution. Thanks to Gabriele Pinna for working on these problems with me.&lt;/p&gt;
 &lt;details&gt;
-   &lt;summary&gt;&lt;b&gt;
-   Prove that the alternating group (even permutations) $A_n$ has order $\frac{n!}{2}$.&lt;/b&gt;&lt;/summary&gt;
-&lt;p&gt;We know that the order of the symmetric group (aka all permutations) $S_n$, is $n!$. We also learned that any permutation $\pi \in S_n$ can be written as a product of transpositions, which, if there are even number of them, then $\pi$ is an even permutation.&lt;/p&gt;
-&lt;p&gt;Apart from the fact that we call $A_n$ the alternating &lt;em&gt;group&lt;/em&gt;, we can see that it is one, since identity $e=(12)(21)$ and a product of two even permutations are even, since the number of transpositions will add. We know that there are odd permutations too, so we know that $A_n$ is a subgroup of $S_n$, i.e. $A_n \subset S_n$.&lt;/p&gt;
-&lt;p&gt;But, we have not shown &lt;em&gt;how many&lt;/em&gt; elements in $A_n$ there are. How to show this?&lt;/p&gt;
-&lt;p&gt;Our strategy will be to do a coset decomposition of $S_n$, then use Lagrange&amp;rsquo;s theorem. We will find that there are only two coset representatives (these are elements that label the disjoint cosets), so that there are exactly half the elements of $S_n$ in $A_n$.&lt;/p&gt;
-&lt;p&gt;First, we know that $A_n e = A_n$ is a valid right coset, and will contain all the even permutations in $S_n$. Let&amp;rsquo;s choose some odd permutation $d \in S_n$ as the next coset representative. We want to check that $A_n d$ contains the rest of $S_n$. Consider some other odd element $d&amp;rsquo; \in S_n$. Then $A_n d&amp;rsquo; = A_n d&amp;rsquo; d^{-1} d$. But $d&amp;rsquo; d^{-1}$ is an even permutation, since the number of transpositions will add and an odd number plus another odd number is an even number. Therefore $A_n d&amp;rsquo; = A_n d$. So we see that $A_n d$ contains &lt;em&gt;all&lt;/em&gt; the odd elements in $S_n$. All elements in $A_n d$ must be odd. So $A_n e$ and $A_n d$ are disjoint since the former contains only even elements and $A_n d$ contain only the odd elements, and $S_n = A_n e \cup A_n d$. There are two coset representatives, so $\lvert S_n \rvert = 2 \lvert A_n \rvert \implies \lvert A_n \rvert = n!/2$.&lt;/p&gt;
+   &lt;summary&gt;&lt;b&gt;1. Prove that the alternating group (even permutations) $A_n$ has order $\frac{n!}{2}$.&lt;/b&gt;&lt;/summary&gt;
+&lt;p&gt;We know that the order of the symmetric group (aka all permutations) $S_n$, is $n!$. We also learned that any permutation $\pi \in S_n$ can be written as a product of transpositions, which, if there are even number of them, then $\pi$ is an even permutation.
+&lt;br&gt;&lt;br&gt;
+Apart from the fact that we call $A_n$ the alternating &lt;em&gt;group&lt;/em&gt;, we can see that it is one, since identity $e=(12)(21)$ and a product of two even permutations are even, since the number of transpositions will add. We know that there are odd permutations too, so we know that $A_n$ is a subgroup of $S_n$, i.e. $A_n \subset S_n$.
+&lt;br&gt;&lt;br&gt;
+But, we have not shown &lt;em&gt;how many&lt;/em&gt; elements in $A_n$ there are. How to show this?
+&lt;br&gt;&lt;br&gt;
+Our strategy will be to do a coset decomposition of $S_n$, then use Lagrange&amp;rsquo;s theorem. We will find that there are only two coset representatives (these are elements that label the disjoint cosets), so that there are exactly half the elements of $S_n$ in $A_n$.
+&lt;br&gt;&lt;br&gt;
+First, we know that $A_n e = A_n$ is a valid right coset, and will contain all the even permutations in $S_n$. Let&amp;rsquo;s choose some odd permutation $d \in S_n$ as the next coset representative. We want to check that $A_n d$ contains the rest of $S_n$. Consider some other odd element $d&amp;rsquo; \in S_n$. Then $A_n d&amp;rsquo; = A_n d&amp;rsquo; d^{-1} d$. But $d&amp;rsquo; d^{-1}$ is an even permutation, since the number of transpositions will add and an odd number plus another odd number is an even number. Therefore $A_n d&amp;rsquo; = A_n d$. So we see that $A_n d$ contains &lt;em&gt;all&lt;/em&gt; the odd elements in $S_n$. All elements in $A_n d$ must be odd. So $A_n e$ and $A_n d$ are disjoint since the former contains only even elements and $A_n d$ contain only the odd elements, and $S_n = A_n e \cup A_n d$. There are two coset representatives, so $\lvert S_n \rvert = 2 \lvert A_n \rvert \implies \lvert A_n \rvert = n!/2$.&lt;/p&gt;
 &lt;/details&gt;
 &lt;details&gt;
   &lt;summary&gt;&lt;b&gt;
-  Express the permutation $(abc \cdots k)(al)$, operating &lt;i&gt;right&lt;/i&gt; to left, as a product of disjoint cycles.
+  2. Express the permutation $(abc \cdots k)(al)$, operating &lt;i&gt;right&lt;/i&gt; to left, as a product of disjoint cycles.
   &lt;/b&gt;&lt;/summary&gt;
-  Consider the first operation, $(al)$. This means that $a \rightarrow k$ and $k \rightarrow a$. Let us write this in the &lt;a href=&#34;https://en.wikipedia.org/wiki/Permutation#Two-line_notation&#34;&gt;two-line notation&lt;/a&gt;. Even though this is operating on elements $a$ and $l$ only, we can still write in elements $b c \cdots k$, as long as they stay in place. So we have:
-  $$
-  (al) \leftrightarrow \begin{pmatrix} a &amp; b &amp; c &amp; \cdots &amp; k &amp; l \\ 
-                                       l &amp; b &amp; c &amp; \cdots &amp; k &amp; a \end{pmatrix}.
-  $$
-  Then, let&#39;s apply the second operation, $(abc \cdots k)$. Here we just have $a \rightarrow b$, $b \rightarrow c, \cdots, k \rightarrow a$. Applying this on the previous cycle/permutation, we have
-  $$
-  (abc \cdots k) (al) \leftrightarrow \begin{pmatrix} a &amp; b &amp; c &amp; \cdots &amp; k &amp; l \\ 
-                                                      l &amp; c &amp; d &amp; \cdots &amp; a &amp; b \end{pmatrix}.
-  $$
-  Written in this form, it is not clear that it is a product of disjoint cycles. Let&#39;s chase how each element is mapped. We have $a \rightarrow l$, $l \rightarrow b$. From $b$ to $k$ in fact we have the mapping we&#39;d expect, $b \rightarrow c$, $c \rightarrow d$, and so on, until $j \rightarrow k$. Then we have $k \rightarrow a$. But we&#39;re now back to $a$, so we have completed a cycle! We&#39;ve also gone through all the elements, so it must be that there is only one cycle in this permutation. Summarising the above, we can write it as a single (and therefore disjoint) cycle:
-  $$
-  (abc \cdots k) (al) = (a l b c \cdots k).
-  $$
+&lt;p&gt;Consider the first operation, $(al)$. This means that $a \rightarrow k$ and $k \rightarrow a$. Let us write this in the &lt;a href=&#34;https://en.wikipedia.org/wiki/Permutation#Two-line_notation&#34;&gt;two-line notation&lt;/a&gt;. Even though this is operating on elements $a$ and $l$ only, we can still write in elements $b c \cdots k$, as long as they stay in place. So we have:
+$$
+(al) \leftrightarrow \begin{pmatrix} a &amp;amp; b &amp;amp; c &amp;amp; \cdots &amp;amp; k &amp;amp; l \
+l &amp;amp; b &amp;amp; c &amp;amp; \cdots &amp;amp; k &amp;amp; a \end{pmatrix}.
+$$
+Then, let&amp;rsquo;s apply the second operation, $(abc \cdots k)$. Here we just have $a \rightarrow b$, $b \rightarrow c, \cdots, k \rightarrow a$. Applying this on the previous cycle/permutation, we have
+$$
+(abc \cdots k) (al) \leftrightarrow \begin{pmatrix} a &amp;amp; b &amp;amp; c &amp;amp; \cdots &amp;amp; k &amp;amp; l \
+l &amp;amp; c &amp;amp; d &amp;amp; \cdots &amp;amp; a &amp;amp; b \end{pmatrix}.
+$$
+Written in this form, it is not clear that it is a product of disjoint cycles. Let&amp;rsquo;s chase how each element is mapped. We have $a \rightarrow l$, $l \rightarrow b$. From $b$ to $k$ in fact we have the mapping we&amp;rsquo;d expect, $b \rightarrow c$, $c \rightarrow d$, and so on, until $j \rightarrow k$. Then we have $k \rightarrow a$. But we&amp;rsquo;re now back to $a$, so we have completed a cycle! We&amp;rsquo;ve also gone through all the elements, so it must be that there is only one cycle in this permutation. Summarising the above, we can write it as a single (and therefore disjoint) cycle:
+$$
+(abc \cdots k) (al) = (a l b c \cdots k).
+$$&lt;/p&gt;
 &lt;/details&gt;
 &lt;details&gt;
   &lt;summary&gt;&lt;b&gt;
-  For a group $G$ that has an action on a finite set $S$, such that $\forall g \in G$, $g(i) \in S$, let the stabiliser subgroup of $x$ given group $G$ be defined as 
+  3. For a group $G$ that has an action on a finite set $S$, such that $\forall g \in G$, $g(i) \in S$, let the stabiliser subgroup of $x$ given group $G$ be defined as 
   $$\mathrm{Stab}_G(i) := \left\{ \phi \in G \vert \phi(i) = i\right\}.$$
   Let the orbit of of an element $i \in S$ given group $G$ be
   $$\mathrm{Orb}_G(i) := \left\{ g(i) \vert g \in G \right\}.$$
@@ -57,15 +60,82 @@
   &lt;/b&gt;&lt;/summary&gt;
 &lt;p&gt;For fixed element $i$, let&amp;rsquo;s denote $H = \mathrm{Stab}_G(i)$. Since $H$ is a subgroup of $G$ (you should check this), let us consider the left coset decomposition of $G$:
 $$G = t_1 H \cup t_2 H \cup \cdots \cup t_n H,$$
-where $t_1 = e$, the identity.&lt;/p&gt;
-&lt;p&gt;So we can write the orbit as
+where $t_1 = e$, the identity.
+&lt;br&gt;&lt;br&gt;
+So we can write the orbit as
 $$\mathrm{Orb}_G(i) = \bigcup_{a=1}^n \left\{ g(i) | g \in t_a H \right\}.$$
 We can also iterate over each coset like
 $$\mathrm{Orb}_G(i) = \bigcup_{a=1}^n \left\{ t_a(\phi(i)) | h \in H \right\}.$$
 Since all $\phi(i) = i$, and sets only count &lt;b&gt;unique&lt;/b&gt; elements, we only have one element contributing from each coset at most, so
 $$\mathrm{Orb}_G(i) = \bigcup_{a=1}^n \left\{ t_a(i) \right\} = \left\{ t_a(i) \vert a=1, \dots, n\right\}.$$
-We&amp;rsquo;re almost there, since if $t_a(i)$ are unique with $a$, then we see that $\mathrm{Orb}_G(i)$ counts the number of cosets, so we can use Lagrange&amp;rsquo;s theorem to prove the result.&lt;/p&gt;
-&lt;p&gt;Let&amp;rsquo;s check this. Assume there exists $t_a(i) = t_b(i)$ where $a \neq b$. Then $t_b^{-1} (t_a(i)) = i$ so $t_b^{-1} t_a = h$. This means that $t_a = t_b h$ so $t_a H = t_b H$, so are the same cosets. But this is a contradiction because $t_a H$ and $t_b H$ were supposed to be disjoint. So $t_a(i)$ are unique.&lt;/p&gt;
+We&amp;rsquo;re almost there, since if $t_a(i)$ are unique with $a$, then we see that $\mathrm{Orb}_G(i)$ counts the number of cosets, so we can use Lagrange&amp;rsquo;s theorem to prove the result.
+&lt;br&gt;&lt;br&gt;
+Let&amp;rsquo;s check this. Assume there exists $t_a(i) = t_b(i)$ where $a \neq b$. Then $t_b^{-1} (t_a(i)) = i$ so $t_b^{-1} t_a = h$. This means that $t_a = t_b h$ so $t_a H = t_b H$, so are the same cosets. But this is a contradiction because $t_a H$ and $t_b H$ were supposed to be disjoint. So $t_a(i)$ are unique.&lt;/p&gt;
+&lt;/details&gt;
+&lt;details&gt;
+  &lt;summary&gt;&lt;b&gt;
+  4. Let $A$, $B$ be linear operators. For the case where both $A$ and $B$ commute with $[A,B]$ (for example $\hat x$ and $\hat p$!), prove the special case of the Baker-Campbell-Hausdorff formula,
+  $$e^{A} e^{B} = e^{A+B+[A,B]/2}.$$
+  You might find it useful to prove that, for any linear operators $A$ and $B$, that
+  $$
+  e^{tA} B e^{-tA} = e^{t[A, \, \cdot \,]} B,
+  $$
+  where we define $[A, \, \cdot \,]$ as a &#39;superoperator&#39; that acts on operators like $[A, \, \cdot \,] B = [A, B]$, and for example $[A, \, \cdot \,]^2 B = [A, [A, B]]$.
+  &lt;/b&gt;&lt;/summary&gt;
+&lt;p&gt;Let us prove the second statement first. Define
+$$
+f(t) := e^{t A} B e^{-t A},
+$$
+where $t$ is just a number. If we take the derivative, we have
+$$
+\begin{aligned}
+\frac{df}{d t} &amp;amp; = A e^{t A} B e^{-t A} - e^{t A} B e^{-t A} A \\
+&amp;amp; = [A, \, \cdot \,] f.
+\end{aligned}
+$$
+This is the same operator at every `time&amp;rsquo; $t$. Since we have $f(0) = B$, we can use the usual knowledge of differential equations and find that $f(t) = e^{t[A, \, \cdot \,]} B$.
+&lt;br&gt;&lt;br&gt;
+For our specific case where $[A,B]$ commutes with both $A$ and $B$, let&amp;rsquo;s write out $e^{t[A, \, \cdot \,]} B$:
+$$
+\begin{aligned}
+e^{t[A, \, \cdot \,]} B &amp;amp; = \sum_{n=0}^{\infty} \frac{t^n}{n!} [A, \, \cdot \,]^n B \\
+&amp;amp; = B + t [A, B] + \sum_{n=2}^{\infty} \frac{t^n}{n!} [A, \, \cdot \,]^{n-1} [A, B].
+\end{aligned}
+$$
+But from our assumptions we know that $[A,B]$ commutes with $A$, so all $n \geq 2$ terms vanish. Therefore we have that
+$$
+e^{tA} B e^{-tA} = e^{t[A, \, \cdot \,]} B = B + t[A, B].$$
+Now let&amp;rsquo;s tackle the main result. Define
+$$
+g(t) := e^{tA} e^{tB},
+$$
+where $t$ is just a number. Again differentiating, you should be able to show that
+$$
+\begin{aligned}
+\frac{dg}{dt} &amp;amp; = (A + e^{tA} B e^{-tA}) g = g (B + e^{-tB} A e^{tB}) \\
+&amp;amp; = (A + e^{t[A, \, \cdot \,]} B) g = g (B + e^{-t[B, \, \cdot \,]} A).
+\end{aligned}
+$$
+Therefore we have
+$$
+\frac{dg}{dt} = (A + B + t[A, B]) g.
+$$
+Let us denote $T(t) := A + B + t[A,B]$. It&amp;rsquo;s easy to show that $[T(t), T(t&amp;rsquo;)]=0$ for all $t, t&amp;rsquo;$. Therefore there exists some $U$ independently diagonalises $T(t)$; defining $\overline{M} := S M S^{-1}$, $\overline{T}(x)$ is diagonal. We also have that $[g(0)]_{ij} = \delta_{ij}$, which stays diagonal upon similarity transformation. Therefore in the rotated frame everything stays in the diagonal, and we have
+$$
+\frac{d \overline{g}_{ii}}{dt} = \overline{T}_{ii}(t) \overline{g}_{ii}.
+$$
+Using the initial condition $\overline{g}_{ii}(0) = 1$, we have
+$$
+\begin{aligned}
+\overline{g}_{ii}(t) &amp;amp; = \exp\left( \int_{0}^t dt&amp;rsquo; \overline{T}_{ii} (t&amp;rsquo;) \right) = \exp\left( \sum_{jk} S_{ij} S^{-1}_{ki}\int_{0}^t dt&amp;rsquo; \left(A_{jk} + B_{jk} + x [A, B]_{jk} \right) \right) \\
+&amp;amp; = \exp\left( \sum_{jk} S_{ij} S^{-1}_{ki}\left(tA_{jk} + tB_{jk} + \frac{t^2}{2} [A, B]_{jk} \right) \right) \\
+&amp;amp; = \exp\left( t \overline{A} + t\overline{B} + \frac{t^2}{2} \overline{[A, B]} \right)_{ii}.
+\end{aligned}
+$$
+Transforming back to the normal coordinates by applying $S^{-1} \cdot S$, then setting $t=1$, we have
+$$
+g(1) = \exp\left( {A} + {B} + \frac{1}{2} {[A, B]} \right) = \exp(A) \exp(B).
+$$&lt;/p&gt;
 &lt;/details&gt;</description>
     </item>
     
