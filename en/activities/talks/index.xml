@@ -157,7 +157,7 @@ which is the magnetisation in the random-bond Ising model with $p(\tilde{J}) \pr
            loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
   &lt;/div&gt;&lt;/figure&gt;
 &lt;/p&gt;
-&lt;p&gt;The $p=0$, $T_\mathrm{c} \approx 2.27$  corresponds to the clean 2D Ising transition. For us, $T$ corresponds to $\beta_\mathrm{S}^{-1}$ and $p = p_\mathrm{T}$. Thinking of $\beta_{S,T}$ as the &amp;lsquo;signal strength&amp;rsquo;, we can redraw the phase diagram in the $\beta_\mathrm{T}-\beta_\mathrm{S}$ plane. We know that the Nishimori line is the $45^\circ$ line in this plane.&lt;/p&gt;
+&lt;p&gt;The $p=0$, $T_\mathrm{c} \approx 2.27$  corresponds to the clean 2D Ising transition. For us, $T$ corresponds to $\beta_\mathrm{S}^{-1}$ and $p = \uppi_\mathrm{T}$. Thinking of $\beta_{S,T}$ as the &amp;lsquo;signal strength&amp;rsquo;, we can redraw the phase diagram in the $\beta_\mathrm{T}-\beta_\mathrm{S}$ plane. We know that the Nishimori line is the $45^\circ$ line in this plane.&lt;/p&gt;
 &lt;p&gt;
 
 
