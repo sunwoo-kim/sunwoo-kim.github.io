@@ -940,7 +940,7 @@ $$
 p(x_{1:t})=\left(\prod_{\tau=2}^tp(x_\tau|x_{\tau-1})\right)p(x_1),
 $$
 and measurements $y_{t}$ conditioned on the state are generated through some measurement model $p(y_{t} \vert x_{t})$ at every timestep. As before, we could calculate a posterior for the entire trajectory, $p(x_{1:t} \vert y_{1:t})$, but this is usually intractable computationally. Instead, we can also consider a <i>filtering</i> task, where the state at the current timestep is inferred from data from all previous timesteps, i.e. $p(x_{t} \vert y_{1:t})$.</p>
-<p>Concretely, we consider the case when the states are locations in space, and the Markov process is a random walk on that space. A simple example of a &lsquo;kernel&rsquo; for this process would be
+<p>Concretely, we consider the case when the states are locations in space, and the Markov process is a random walk on that space. A simple example of a &lsquo;kernel&rsquo; for this process would be a random walk,
 $$
 p(x_{t+1} \vert x_{t}) = \frac{1}{2} \delta_{x_{t+1},x_{t}} + \frac{1}{4} \delta_{x_{t+1},x_{t}\pm 1}.
 $$
@@ -972,7 +972,7 @@ An example of such a random walk in 1D is shown below.
 $$
 \phi_{x,t} = \epsilon_\mathrm{T} \delta_{x, x^*_{t}} + \psi_{x,t},
 $$
-which has a peak at the true location of the walker with &lsquo;signal strength&rsquo; $\epsilon_\mathrm{T}$ and $\psi_{x,t}$ is iid random Gaussian noise $\psi_{x,t} \sim \mathcal{N}(0, \sigma_\mathrm{T}^2)$. An example of an image of the above random walk is shown below:</p>
+which has a peak at the true location of the walker with &lsquo;signal strength&rsquo; $\epsilon_\mathrm{T}$, and $\psi_{x,t}$ is iid random Gaussian noise $\psi_{x,t} \sim \mathcal{N}(0, \sigma_\mathrm{T}^2)$. An example of an image of the above random walk is shown below.</p>
 <p>
 
 
@@ -996,8 +996,8 @@ which has a peak at the true location of the walker with &lsquo;signal strength&
            loading="lazy" data-zoomable /></div>
   </div></figure>
 </p>
-<p>Then, we&rsquo;d like to inferring the position of the true path $x^*_{t}$ or trajectory $X^* := (x^*_\tau)_{\tau=1}^T$ given the images at all times. We call it the &lsquo;planted directed polymer problem&rsquo;, as it is related to the directed polymer in a random medium from stat-mech.</p>
-<p>Let $\boldsymbol{\phi}_{t} := (\phi_{x,t})_x$. Then assuming signal strength $\epsilon_\mathrm{S}$ and noise strength $\sigma_\mathrm{S}$, the likelihood for observing an image $\boldsymbol{\phi}_{t}$ given that the walker&rsquo;s position is $x_{t}$ is
+<p>Then, we&rsquo;d like to infer the true position of the walker at the current time, $x^*_{t}$ or the true trajectory $X^* := (x^*_\tau)_{\tau=1}^T$ given the images at all times. We call it the &lsquo;planted directed polymer problem&rsquo;, as it is related to the directed polymer in a random medium from stat-mech. Let&rsquo;s see how.</p>
+<p>Let the whole image at time $t$ be $\boldsymbol{\phi}_{t} := (\phi_{x,t})_x$. Then assuming signal strength $\epsilon_\mathrm{S}$ and noise strength $\sigma_\mathrm{S}$, the likelihood for observing an image $\boldsymbol{\phi}_{t}$ given that the walker&rsquo;s position is $x_{t}$ is
 $$
 \begin{aligned}
 p_\mathrm{S}(\boldsymbol{\phi}_{t} \vert x_{t}) &amp; = \prod_{x&rsquo;_{t}} \frac{1}{\sqrt{2 \pi \sigma_\mathrm{S}^2}} \exp \left[ \frac{-(\phi_{x&rsquo;_{t}, t} - \epsilon_\mathrm{S} \delta_{x_{t}, x&rsquo;_{t}})^2}{2 \sigma_\mathrm{S}^2} \right] \\
@@ -1006,9 +1006,9 @@ p_\mathrm{S}(\boldsymbol{\phi}_{t} \vert x_{t}) &amp; = \prod_{x&rsquo;_{t}} \fr
 $$
 where $\pi_\mathrm{S}(\boldsymbol{\phi}_t)$ denotes the Gaussian measure. Denoting $X := x_{1:t}$ and $\Phi := \boldsymbol{\phi}_{1:t}$, the likelihood for the whole trajectory is
 $$
-p_\mathrm{S}(\Phi \vert X) \propto \exp\left(\frac{\epsilon_\mathrm{S}}{\sigma_\mathrm{S}^2}\sum_{t} \phi_{x_{t}, t} \right)\pi_\mathrm{S}(\Phi),
+p_\mathrm{S}(\Phi \vert X) \propto \exp\left(\frac{\epsilon_\mathrm{S}}{\sigma_\mathrm{S}^2}\sum_{t} \phi_{x_{t}, t} \right)\pi_\mathrm{S}(\Phi).
 $$
-as the $\pi_\mathrm{S}(\Phi)$ term is there for any value of $X$, we can ignore it as we will renormalise anyways. So the student&rsquo;s posterior for the whole path is
+As the $\pi_\mathrm{S}(\Phi)$ term is there for any value of $X$, we can ignore it, since we can just normalise the posterior again. So the student&rsquo;s posterior for the whole path is
 $$
 p_\mathrm{S}(X \vert \Phi) = \frac{q_\mathrm{S}(X \vert \Phi)}{Z_\mathrm{S}(\Phi)},
 $$
@@ -1025,10 +1025,10 @@ q_S(X \vert \Phi)  = \exp\Bigg(
 +\mathcal{O}(a^{3/2})\Bigg) q_S(x_1),
 \end{aligned}
 $$
-where $\nu_\mathrm{S} = \frac{1}{2 \lvert f&rsquo;&rsquo;_\mathrm{S}(0) \rvert}$ is the &lsquo;width&rsquo; of the kernel. We see that the unnormalised posterior now looks like the Boltzmann weight for the for the directed polymer in a random environment. For those who are unfamiliar, it is a well studied stat-mech model for configurations of a polymer. Interpreting time as another dimension $t=y$, it is &lsquo;directed&rsquo; as the polymer cannot loop around itself since $x$ is a single-valued function of $y$.</p>
-<p>The first term in the sum $\sim (x_\tau - x_{\tau-1})^2$ corresponds to the &rsquo;elastic energy&rsquo; of the polymer, where you pay a price whenever you stretch out the polymer. The second term $\sim \phi_{x_t, t}$, where $\phi_{x_t, t}$ usually random iid noise in the directed polymer setting, is a &lsquo;random environment&rsquo; that the polymer is placed in.</p>
-<p>The interesting phenomena for the directed polymer is that even though you need to pay energy to stretch out the polymer, it might be worth it to go through a particular location, if the potential there is deep enough. This creates a &lsquo;roughening&rsquo; of the polymer (you can read more about it in <a href="https://arxiv.org/abs/cond-mat/0402117" target="_blank" rel="noopener">Bhattacharjee 0402117v1</a>, for example).</p>
-<p>For us, $\phi_{x_t, t}$ is not iid but information about the true location of the walker is &lsquo;planted&rsquo; in it, hence the name. In our upcoming work, we studied this problem in detail in 1D and also on the tree (Link coming soon).</p>
+where $\nu_\mathrm{S} = \frac{1}{2 \lvert f&rsquo;&rsquo;_\mathrm{S}(0) \rvert}$ is the &lsquo;width&rsquo; of the kernel. We see that the unnormalised posterior now looks like the Boltzmann weight for the directed polymer in a random environment. For those who are unfamiliar, it is a well studied stat-mech model for configurations of a polymer. Interpreting time as another spatial dimension $t=y$, it is &lsquo;directed&rsquo; in that the polymer cannot loop around itself, since $x$ is a single-valued function of $y$.</p>
+<p>The first term in the sum $\sim (x_\tau - x_{\tau-1})^2$ corresponds to the &rsquo;elastic energy&rsquo; of the polymer, where you pay a price whenever you stretch out the polymer. The second term $\sim \phi_{x_t, t}$, where $\phi_{x_t, t}$, usually random iid noise in the directed polymer setting, is a &lsquo;random environment&rsquo; that the polymer is placed in.</p>
+<p>The interesting phenomena in the directed polymer is that even though you need to pay energy to stretch out the polymer, it might be worth it to go through a particular location, as long as the potential there is deep enough. This creates a &lsquo;roughening&rsquo; of the polymer (you can read more about it in <a href="https://arxiv.org/abs/cond-mat/0402117" target="_blank" rel="noopener">Bhattacharjee 0402117v1</a>, for example).</p>
+<p>For us, $\phi_{x_t, t}$ is not iid, but instead has information about the true location of the walker &lsquo;planted&rsquo; in it. In our upcoming work, we studied this problem in detail in 1D and also on the tree (Link coming soon).</p>
 
     </div>
 
