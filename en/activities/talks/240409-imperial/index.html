@@ -800,12 +800,12 @@ $$
 p(x \vert y) = \frac{p(y \vert x) p(x)}{p(y)},
 $$
 where the &rsquo;evidence&rsquo; $p(y) = \sum_x p(y \vert x) p(x)$ acts as the normalisation for the posterior. If the state space is large, then this is in general intractable. This is very similar to the partition function in statistical physics.</p>
-<p>If $y$ came from the &rsquo;true&rsquo; state $x^*$, then the natural question to ask is, when is inference possible. For example, for continuous variables we may look at the mean-squared error,
+<p>If $y$ came from the &rsquo;true&rsquo; state $x^*$, then the natural question to ask is, is inference possible. To quantify this question, for continuous variables, we may look at the mean-squared error,
 $$
 \mathrm{MSE} = \mathop{\mathbb{E}}_{x \sim p(\cdot \vert y)} [(x-x^*)^2].
 $$
-Is there any way we can prove when inference is possible? And, can we have phase transitions, say, in the mean-squared error as as signal-to-noise is varied?</p>
-<p>We will consider an idealised scenario covered in the above reference, called the teacher-student scenario. The teacher generates some state of a system, $x^*$ from the &rsquo;true/teacher&rsquo;s prior&rsquo; $p_\mathrm{T}(x^*)$. Then, the teacher generates some data/measurements $y$ given the state of the system via the teacher&rsquo;s measurement model/likelihood, $p_\mathrm{T}(y \vert x^*)$. The teacher then hands the student the measurements.</p>
+Is there any way we can prove when inference is possible? And, can we have phase transitions, say, in the mean-squared error as signal-to-noise is varied?</p>
+<p>We will consider an idealised scenario covered in the above reference, called the teacher-student scenario. The teacher generates some state of a system, $x^*$ from the &rsquo;true/teacher&rsquo;s prior&rsquo; $p_\mathrm{T}(x^*)$. Then, the teacher generates some data/measurements $y$ given the state of the system via the teacher&rsquo;s measurement model/likelihood, $p_\mathrm{T}(y \vert x^*)$. The teacher then hands the student the measurements $y$.</p>
 <p>The student then assumes some prior distribution $p_\mathrm{S}(x)$ and measurement model $p_\mathrm{S}(y\vert x)$ to infer a posterior distribution $p_\mathrm{S}(x \vert y)$. Then we can consider the joint distribution,
 $$
 \begin{aligned}
@@ -813,8 +813,8 @@ p(x,y,x^*) &amp; = p_\mathrm{S}(x \vert y) p_\mathrm{T}(y \vert x^*) p_\mathrm{T
 &amp; = \frac{p_\mathrm{S}(y \vert x)p_\mathrm{S}(x) p_\mathrm{T}(y \vert x^*) p_\mathrm{T}(x^*)}{p_\mathrm{S}(y)}.
 \end{aligned}
 $$
-Note that $p(x^*)=p_\mathrm{T}(x^*)$, since we can integrate over $p_\mathrm{S}(x\vert y)$ wrt $x$ then $p_\mathrm{T}(y \vert x^*)$ wrt $y$   but $p(x) \neq p_\mathrm{S}(x)$, since we can&rsquo;t perform the integration over $y$ in general.</p>
-<p>However, we can already immediately notice one thing: if the student&rsquo;s model is equal to the teacher&rsquo;s model, that is $S=T$, then $p(x,y,x^*)$ is symmetric with respect to $x \leftrightarrow x^*$ and therefore $x$ is distributed identically to $x^*$, and $p(x) = p_\mathrm{T}(x^*=x)$. The $S=T$ point is called the Bayes optimal point.</p>
+Note that $p(x^*)=p_\mathrm{T}(x^*)$, since we can integrate over $p_\mathrm{S}(x\vert y)$ wrt $x$ then $p_\mathrm{T}(y \vert x^*)$ wrt $y$. However, $p(x) \neq p_\mathrm{S}(x)$, since we can&rsquo;t perform the integration over and $y$ $x^*$ first in general.</p>
+<p>However, we can already immediately notice one thing: if the student&rsquo;s model is equal to the teacher&rsquo;s model, that is $S=T$, then $p(x,y,x^*)$ is symmetric with respect to $x \leftrightarrow x^*$ and therefore $x$ is distributed identically to $x^*$, and $p(x) = p_\mathrm{T}(x^*=x)$. The $\mathrm{S}=\mathrm{T}$ point is called the Bayes optimal point.</p>
 <p>To make the connection to stat-mech clearer, let&rsquo;s write out the student&rsquo;s posterior in a suggestive way:
 $$
 p_\mathrm{S}(x \vert y) = \frac{e^{-\beta H (x, y)}}{Z(y)},
@@ -823,12 +823,12 @@ where $Z(y) = \sum_x e^{-\beta H(x, y)}$ and
 $$
 -\beta H (x \vert y) = \ln q_\mathrm{S}(y \vert x) + \ln q_\mathrm{S}(x).
 $$
-Here I wrote the unnormalised distributions ex. $q_\mathrm{S}(y \vert x) \propto p_\mathrm{S}(y \vert x)$ as normalisation is ensured by the partition function. We see that the posterior looks like the Boltzmann posterior of disordered system (ex. spin glass), with the &lsquo;data&rsquo; $y$ playing the role of disorder with $p_\mathrm{T}(y) = \sum_{x^*} p_\mathrm{T}(y \vert x^*) p_\mathrm{T}(x^*)$.</p>
-<p>In the limit where the data contains no information about the true/teacher&rsquo;s state, ex. when the data is &lsquo;infinitely&rsquo; noisy, we see that $p_\mathrm{T}(y \vert x^*) \rightarrow p_\mathrm{T}(y)$ really becomes a random disorder - this would be when the student believes that there is some information in the data but the teacher is actually supplying random noise.</p>
-<p>When there is information about the true/teacher&rsquo;s state in the data, this information is &lsquo;planted&rsquo; in the disorder. The distribution of $p_\mathrm{T}(y) = \sum_{x^*} p_\mathrm{T}(y \vert x^*) p_\mathrm{T}(x^*)$ is the &lsquo;planted distribution&rsquo;, and $p(x, y, x^*)$ is the &lsquo;planted ensemble&rsquo;.</p>
+Here I wrote the unnormalised distributions ex. $q_\mathrm{S}(y \vert x) \propto p_\mathrm{S}(y \vert x)$ as normalisation is ensured by the partition function. We see that the posterior looks like the Boltzmann probability of disordered system (ex. spin glass), with the &lsquo;data&rsquo; $y$ playing the role of disorder with $p_\mathrm{T}(y) = \sum_{x^*} p_\mathrm{T}(y \vert x^*) p_\mathrm{T}(x^*)$.</p>
+<p>In the limit where the data contains no information about the true/teacher&rsquo;s state, ex. when the data is &lsquo;infinitely&rsquo; noisy, we see that $p_\mathrm{T}(y \vert x^*) \rightarrow p_\mathrm{T}(y)$ really becomes random disorder - this would be a situation where the student believes that there is some information in the data, but the teacher is actually supplying random noise.</p>
+<p>When there is information about the true/teacher&rsquo;s state in the data, this information is said to be &lsquo;planted&rsquo; in the disorder. The distribution of $p_\mathrm{T}(y) = \sum_{x^*} p_\mathrm{T}(y \vert x^*) p_\mathrm{T}(x^*)$ is the &lsquo;planted distribution&rsquo;, and $p(x, y, x^*)$ is the &lsquo;planted ensemble&rsquo;.</p>
 <p>This is all well and good, but is it actually useful? Let&rsquo;s look at some examples, to see how existing disordered stat-mech problems map onto inference problems.</p>
 <h2 id="the-planted-random-bond-ising-model">The planted random-bond Ising model</h2>
-<p>To make things more concrete let&rsquo;s consider a particular case of a model considered in the review. We consider $L^2$ people standing in a room in a square lattice formation. We randomly hand out a card that can be $S^*_i = \pm 1$ with equal probability to each person, but we don&rsquo;t record this information. Then, we ask each neighbouring pairs to say $1$ if they have the same cards or $-1$ if they have different cards. But there&rsquo;s a twist - for each question the pair may lie with probability $\uppi$. We record the answer that each pair gives us as $J_{ij}$.</p>
+<p>To make things more concrete, let&rsquo;s consider a particular case of a model considered in the review. We consider $L^2$ people standing in a room in a square lattice formation. To each person, we randomly hand out a card that can be $S^*_i = \pm 1$ with equal probability. However, we don&rsquo;t record this information. Then, we ask each neighbouring pair to reply with $1$ if they have the same cards or $-1$ if they have different cards. But there&rsquo;s a twist - for each question the pair may lie with probability $\uppi$. We record the answer that each pair gives us as $J_{ij}$.</p>
 <p>Then, given ${J_{ij}}_{ij}$, can we infer the &lsquo;state&rsquo;, i.e. the cards given to each person? As we have an equal-probability prior over the cards given, we have $p(S) \propto 1$. The &rsquo;likelihood&rsquo; of answer $J_{ij}$ given cards $S_i$ and $S_j$ is
 $$
 p(J_{ij} \vert S_i, S_j) =
@@ -859,7 +859,7 @@ $$
 Z(J) = \sum_{S} \exp\left(\beta \sum_{\langle i, j\rangle} J_{ij} S_i S_j \right).
 $$
 is the partition function for a random-bond Ising model, and the posterior is its Boltzmann probability!</p>
-<p>Let&rsquo;s now consider the teacher-student scenario, where the student&rsquo;s model belief of the rate of lying $\beta_\mathrm{S}(\uppi_\mathrm{S})$ can differ from the true/teacher&rsquo;s $\beta_\mathrm{T}(\uppi_\mathrm{T})$.
+<p>Let&rsquo;s now consider the general teacher-student scenario, where the student&rsquo;s model belief of the rate of lying $\beta_\mathrm{S}(\uppi_\mathrm{S})$ can differ from the true/teacher&rsquo;s $\beta_\mathrm{T}(\uppi_\mathrm{T})$.
 $$
 \begin{aligned}
 p(S, J, S^*) &amp; = p_\mathrm{S}(S \vert J) p_\mathrm{T}(J \vert S^*) p_\mathrm{T}(S^*) \\
@@ -884,7 +884,7 @@ $$
 \end{aligned}
 $$
 which is the magnetisation in the random-bond Ising model with $p(\tilde{J}) \propto \exp(\beta_\mathrm{T} \sum_{\langle ij\rangle}\tilde{J}_{ij})$. So the paramagnetic (PM) state corresponds to the failure of inference, and the ferromagnetic (FM) state corresponds to the success of inference.</p>
-<p>By the way, in the spin-glass literature, what we&rsquo;ve done here is called a &lsquo;gauge transformation&rsquo;. And, there is a special &lsquo;solvable line&rsquo; in this model, called the Nishimori line, where $p(J) \sim Z(J)$. The basic idea was that $p(J)$ just becomes another replica in the problem and so simplifies the calculation, but it turned out that the point where the Nishimori line crosses the phase boundary is very interesting. But this exactly corresponds to the Bayes optimality condition, $\beta_\mathrm{S} = \beta_\mathrm{T}$. Usually, people to show that particular choices for $\uppi$ can Gauge-transform $p(J)$ to look like $Z(J)$, but here, we did it the other way around.</p>
+<p>By the way, in the spin-glass literature, what we&rsquo;ve done here is called a &lsquo;gauge transformation&rsquo;. And, there is a special &lsquo;solvable line&rsquo; in this model, called the Nishimori line, where $p(J) \sim Z(J)$. The basic idea was that $p(J)$ just becomes another replica in the problem and so simplifies the calculation, but it turns out that the point where the Nishimori line crosses the phase boundary is very interesting. But this exactly corresponds to the Bayes optimality condition, $\beta_\mathrm{S} = \beta_\mathrm{T}$. Usually, people show that for particular choices for $\uppi$, we can gauge-transform $p(J)$ to look like $Z(J)$. Here, we did it the other way around.</p>
 <p>People have already studied the phase diagram of the RBIM, so we have the phase diagram for free. Let&rsquo;s look at the phase diagram of the RBIM (for example see <a href="https://arxiv.org/abs/cond-mat/0007254v2" target="_blank" rel="noopener">Gruzberg 0007254v2</a>).</p>
 <p>
 
@@ -909,7 +909,7 @@ which is the magnetisation in the random-bond Ising model with $p(\tilde{J}) \pr
            loading="lazy" data-zoomable /></div>
   </div></figure>
 </p>
-<p>The $p=0$, $T_\mathrm{c} \approx 2.27$ transition corresponds to the clean 2D Ising transition. For us, $T$ corresponds to $\beta_\mathrm{S}^{-1}$ and $p = p_\mathrm{T}$. Thinking of $\beta_{S,T}$ as the &lsquo;signal strength&rsquo;, we can redraw the phase diagram in the $\beta_\mathrm{T}-\beta_\mathrm{S}$ plane. We know that the Nishimori line is the $45^\circ$ line in this plane.</p>
+<p>The $p=0$, $T_\mathrm{c} \approx 2.27$  corresponds to the clean 2D Ising transition. For us, $T$ corresponds to $\beta_\mathrm{S}^{-1}$ and $p = p_\mathrm{T}$. Thinking of $\beta_{S,T}$ as the &lsquo;signal strength&rsquo;, we can redraw the phase diagram in the $\beta_\mathrm{T}-\beta_\mathrm{S}$ plane. We know that the Nishimori line is the $45^\circ$ line in this plane.</p>
 <p>
 
 
@@ -935,11 +935,11 @@ which is the magnetisation in the random-bond Ising model with $p(\tilde{J}) \pr
 </p>
 <p>We see that in this picture, no matter what $\beta_S$ the student chooses, we need sufficient teacher&rsquo;s signal strength $\beta_\mathrm{T} &gt; \beta^\mathrm{c}_\mathrm{T}$ in order for inference to be possible. On the other hand, if the student assumes that the signal strength is too low, $\beta_\mathrm{S} &lt; \beta^\mathrm{c}_\mathrm{S}$, then again inference is not possible.</p>
 <h2 id="the-planted-directed-polymer-problem">The planted directed polymer problem</h2>
-<p>So now the world is our oyster and we can start cooking up planted versions of spin-glass/disordered stat-mech models, and see what inference problem they map on to. We were particularly interested in looking at a class of inference problems involving hidden Markov models. This is where the prior follows a Markov process,
+<p>So now the world is our oyster. We can start cooking up planted versions of spin-glass/disordered stat-mech models, and see what inference problem they map on to. We were particularly interested in looking at a class of inference problems involving hidden Markov models. This is where the prior follows a Markov process,
 $$
 p(x_{1:t})=\left(\prod_{\tau=2}^tp(x_\tau|x_{\tau-1})\right)p(x_1),
 $$
-and measurements $y_{t}$ conditioned on the state are generated through some measurement model $p(y_{t} \vert x_{t})$ at every timestep. As before, we could calculate a posterior for the entire trajectory, $p(x_{1:t} \vert y_{1:t})$, but this is usually intractable computationally. Instead we can also consider a <i>filtering</i> task, where the state at the current timestep is inferred from data from all previous timesteps, i.e. $p(x_{t} \vert y_{1:t})$.</p>
+and measurements $y_{t}$ conditioned on the state are generated through some measurement model $p(y_{t} \vert x_{t})$ at every timestep. As before, we could calculate a posterior for the entire trajectory, $p(x_{1:t} \vert y_{1:t})$, but this is usually intractable computationally. Instead, we can also consider a <i>filtering</i> task, where the state at the current timestep is inferred from data from all previous timesteps, i.e. $p(x_{t} \vert y_{1:t})$.</p>
 <p>Concretely, we consider the case when the states are locations in space, and the Markov process is a random walk on that space. A simple example of a &lsquo;kernel&rsquo; for this process would be
 $$
 p(x_{t+1} \vert x_{t}) = \frac{1}{2} \delta_{x_{t+1},x_{t}} + \frac{1}{4} \delta_{x_{t+1},x_{t}\pm 1}.
@@ -1202,7 +1202,7 @@ where $\nu_\mathrm{S} = \frac{1}{2 \lvert f&rsquo;&rsquo;_\mathrm{S}(0) \rvert}$
   
 
   <p class="powered-by">
-    Site last updated 2024-04-11 21:42:26.231659
+    Site last updated 2024-04-11 23:13:08.522236
   </p>
 
 </footer>
