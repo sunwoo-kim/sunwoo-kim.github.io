@@ -65,18 +65,18 @@ Note that $p(x^*)=p_\mathrm{T}(x^*)$, since we can integrate over $p_\mathrm{S}(
 &lt;p&gt;However, we can already immediately notice one thing: if the student&amp;rsquo;s model is equal to the teacher&amp;rsquo;s model, that is $S=T$, then $p(x,y,x^*)$ is symmetric with respect to $x \leftrightarrow x^*$ and therefore $x$ is distributed identically to $x^*$, and $p(x) = p_\mathrm{T}(x^*=x)$. The $S=T$ point is called the Bayes optimal point.&lt;/p&gt;
 &lt;p&gt;To make the connection to stat-mech clearer, let&amp;rsquo;s write out the student&amp;rsquo;s posterior in a suggestive way:
 $$
-p_\mathrm{S}(x \vert y) = \frac{e^{-\beta H (x \vert y)}}{Z(y)},
+p_\mathrm{S}(x \vert y) = \frac{e^{-\beta H (x, y)}}{Z(y)},
 $$
 where $Z(y) = \sum_x e^{-\beta H(x, y)}$ and
 $$
--\beta H (x \vert y) = \ln q_\mathrm{S}(x\vert y) + \ln q_\mathrm{S}(x).
+-\beta H (x \vert y) = \ln q_\mathrm{S}(y \vert x) + \ln q_\mathrm{S}(x).
 $$
-Here I wrote $q_\mathrm{S}(x \vert y) \propto p_\mathrm{S}(x \vert y)$ as normalisation is ensured by the partition function. We see that the posterior looks like the Boltzmann posterior of disordered system (ex. spin glass), with the &amp;lsquo;data&amp;rsquo; $y$ playing the role of disorder with $p_\mathrm{T}(y) = \sum_{x^*} p_\mathrm{T}(y \vert x^*) p_\mathrm{T}(x^*)$.&lt;/p&gt;
+Here I wrote the unnormalised distributions ex. $q_\mathrm{S}(y \vert x) \propto p_\mathrm{S}(y \vert x)$ as normalisation is ensured by the partition function. We see that the posterior looks like the Boltzmann posterior of disordered system (ex. spin glass), with the &amp;lsquo;data&amp;rsquo; $y$ playing the role of disorder with $p_\mathrm{T}(y) = \sum_{x^*} p_\mathrm{T}(y \vert x^*) p_\mathrm{T}(x^*)$.&lt;/p&gt;
 &lt;p&gt;In the limit where the data contains no information about the true/teacher&amp;rsquo;s state, ex. when the data is &amp;lsquo;infinitely&amp;rsquo; noisy, we see that $p_\mathrm{T}(y \vert x^*) \rightarrow p_\mathrm{T}(y)$ really becomes a random disorder - this would be when the student believes that there is some information in the data but the teacher is actually supplying random noise.&lt;/p&gt;
 &lt;p&gt;When there is information about the true/teacher&amp;rsquo;s state in the data, this information is &amp;lsquo;planted&amp;rsquo; in the disorder. The distribution of $p_\mathrm{T}(y) = \sum_{x^*} p_\mathrm{T}(y \vert x^*) p_\mathrm{T}(x^*)$ is the &amp;lsquo;planted distribution&amp;rsquo;, and $p(x, y, x^*)$ is the &amp;lsquo;planted ensemble&amp;rsquo;.&lt;/p&gt;
 &lt;p&gt;This is all well and good, but is it actually useful? Let&amp;rsquo;s look at some examples, to see how existing disordered stat-mech problems map onto inference problems.&lt;/p&gt;
 &lt;h2 id=&#34;the-planted-random-bond-ising-model&#34;&gt;The planted random-bond Ising model&lt;/h2&gt;
-&lt;p&gt;To make things more concrete let&amp;rsquo;s consider a particular case of a model considered by Zdeborová. We consider $L^2$ people standing in a room in a square lattice formation. We randomly hand out a card that can be $S^*_i = \pm 1$ to each person, but we don&amp;rsquo;t record this information. Then, we ask each neighbouring pairs to say $1$ if they have the same cards or $-1$ if they have different cards. But there&amp;rsquo;s a twist - for each question the pair may lie with probability $\uppi$. We record the answer that each pair gives us as $J_{ij}$.&lt;/p&gt;
+&lt;p&gt;To make things more concrete let&amp;rsquo;s consider a particular case of a model considered in the review. We consider $L^2$ people standing in a room in a square lattice formation. We randomly hand out a card that can be $S^*_i = \pm 1$ with equal probability to each person, but we don&amp;rsquo;t record this information. Then, we ask each neighbouring pairs to say $1$ if they have the same cards or $-1$ if they have different cards. But there&amp;rsquo;s a twist - for each question the pair may lie with probability $\uppi$. We record the answer that each pair gives us as $J_{ij}$.&lt;/p&gt;
 &lt;p&gt;Then, given ${J_{ij}}_{ij}$, can we infer the &amp;lsquo;state&amp;rsquo;, i.e. the cards given to each person? As we have an equal-probability prior over the cards given, we have $p(S) \propto 1$. The &amp;rsquo;likelihood&amp;rsquo; of answer $J_{ij}$ given cards $S_i$ and $S_j$ is
 $$
 p(J_{ij} \vert S_i, S_j) =
