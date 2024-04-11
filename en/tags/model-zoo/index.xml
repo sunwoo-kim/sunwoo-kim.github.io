@@ -20,11 +20,11 @@
       <description>&lt;details&gt;
    &lt;summary&gt;&lt;font color=&#34;grey&#34;&gt; &lt;small&gt;To cite this page&lt;/small&gt; &lt;/font&gt;&lt;/summary&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-latex&#34; data-lang=&#34;latex&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;@misc&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;swpkim2024transverse,
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   author=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;Kim, Sun Woo&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   author=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;P. Kim, Sun Woo&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;,
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   title=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;Transverse field Ising model&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;,
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   year=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;2023&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;,
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   howpublished=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;\url&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;https://sunwoo-kim.github.io/en/posts/tfi-model/&lt;span class=&#34;nb&#34;&gt;}}&lt;/span&gt;,
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   note=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;Accessed: 2024-03-28&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   note=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;Accessed: 2024-04-11&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/details&gt;
 &lt;p&gt;In condensed matter physics, there are myriads of phenomenological models out there, with information about them scattered throughout different papers and resources. In the field of machine learning, there are efforts such as the &lt;a href=&#34;https://modelzoo.co&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Model Zoo&lt;/a&gt; which tries to organise these models in one place.&lt;/p&gt;

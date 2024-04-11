@@ -17,7 +17,7 @@
                 />
   </url><url>
     <loc>https://sunwoo-kim.github.io/en/activities/</loc>
-    <lastmod>2024-02-13T00:00:00+00:00</lastmod>
+    <lastmod>2024-04-09T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <xhtml:link
                 rel="alternate"
@@ -29,6 +29,14 @@
                 hreflang="en"
                 href="https://sunwoo-kim.github.io/en/activities/"
                 />
+  </url><url>
+    <loc>https://sunwoo-kim.github.io/en/activities/talks/240409-imperial/</loc>
+    <lastmod>2024-04-09T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://sunwoo-kim.github.io/en/activities/talks/</loc>
+    <lastmod>2024-04-09T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
   </url><url>
     <loc>https://sunwoo-kim.github.io/en/activities/teaching/symmetries/</loc>
     <lastmod>2024-02-13T00:00:00+00:00</lastmod>
