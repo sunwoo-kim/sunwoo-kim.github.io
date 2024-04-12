@@ -114,7 +114,7 @@ p(S, J, S^*) &amp;amp; = p_\mathrm{S}(S \vert J) p_\mathrm{T}(J \vert S^*) p_\ma
 &amp;amp; \propto \frac{\exp\left( \beta_\mathrm{S} \sum_{\langle ij \rangle} J_{ij} S_i S_j\right)}{Z_\mathrm{S}(J)} \exp\left( \beta_\mathrm{T} \sum_{\langle ij \rangle} J_{ij} S^*_i S^*_j\right).
 \end{aligned}
 $$
-Then consider the observable $S_i S^*_i$. This is $1$ if they are aligned, and $-1$ if they are anti-aligned, so it is a measure of possibility of inference.
+Then consider the observable $S_i S^*_i$. This is $1$ if they are aligned (if the inferred card is same as the true value of the card), and $-1$ if they are anti-aligned, so it is a measure of possibility of inference.
 $$
 \mathop{\mathbb{E}}[S_l S^*_l] \propto \sum_{S^*} \sum_{S} \sum_{J} S_l S^*_l \frac{\exp(\beta_\mathrm{S} \sum_{\langle ij\rangle}J_{ij}S_i S_j) \exp(\beta_\mathrm{T} \sum_{\langle ij\rangle}J_{ij}S^*_i S^*_j)}{Z_\mathrm{S}(J)}.
 $$
