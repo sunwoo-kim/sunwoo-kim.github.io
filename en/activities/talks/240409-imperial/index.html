@@ -813,7 +813,7 @@ p(x,y,x^*) &amp; = p_\mathrm{S}(x \vert y) p_\mathrm{T}(y \vert x^*) p_\mathrm{T
 &amp; = \frac{p_\mathrm{S}(y \vert x)p_\mathrm{S}(x) p_\mathrm{T}(y \vert x^*) p_\mathrm{T}(x^*)}{p_\mathrm{S}(y)}.
 \end{aligned}
 $$
-Note that $p(x^*)=p_\mathrm{T}(x^*)$, since we can integrate over $p_\mathrm{S}(x\vert y)$ wrt $x$ then $p_\mathrm{T}(y \vert x^*)$ wrt $y$. However, $p(x) \neq p_\mathrm{S}(x)$, since we can&rsquo;t perform the integration over and $y$ $x^*$ first in general.</p>
+Note that $p(x^*)=p_\mathrm{T}(x^*)$, since we can integrate over $p_\mathrm{S}(x\vert y)$ wrt $x$ then $p_\mathrm{T}(y \vert x^*)$ wrt $y$. However, $p(x) \neq p_\mathrm{S}(x)$, since we can&rsquo;t perform the integration over $y$ and $x^*$ first in general.</p>
 <p>However, we can already immediately notice one thing: if the student&rsquo;s model is equal to the teacher&rsquo;s model, that is $S=T$, then $p(x,y,x^*)$ is symmetric with respect to $x \leftrightarrow x^*$ and therefore $x$ is distributed identically to $x^*$, and $p(x) = p_\mathrm{T}(x^*=x)$. The $\mathrm{S}=\mathrm{T}$ point is called the Bayes optimal point.</p>
 <p>To make the connection to stat-mech clearer, let&rsquo;s write out the student&rsquo;s posterior in a suggestive way:
 $$
@@ -829,7 +829,7 @@ Here I wrote the unnormalised distributions ex. $q_\mathrm{S}(y \vert x) \propto
 <p>This is all well and good, but is it actually useful? Let&rsquo;s look at some examples, to see how existing disordered stat-mech problems map onto inference problems.</p>
 <h2 id="the-planted-random-bond-ising-model">The planted random-bond Ising model</h2>
 <p>To make things more concrete, let&rsquo;s consider a particular case of a model considered in the review. We consider $L^2$ people standing in a room in a square lattice formation. To each person, we randomly hand out a card that can be $S^*_i = \pm 1$ with equal probability. However, we don&rsquo;t record this information. Then, we ask each neighbouring pair to reply with $1$ if they have the same cards or $-1$ if they have different cards. But there&rsquo;s a twist - for each question the pair may lie with probability $\uppi$. We record the answer that each pair gives us as $J_{ij}$.</p>
-<p>Then, given ${J_{ij}}_{ij}$, can we infer the &lsquo;state&rsquo;, i.e. the cards given to each person? As we have an equal-probability prior over the cards given, we have $p(S) \propto 1$. The &rsquo;likelihood&rsquo; of answer $J_{ij}$ given cards $S_i$ and $S_j$ is
+<p>Then, given $\{J_{ij}\}_{ij}$, can we infer the &lsquo;state&rsquo;, i.e. the cards given to each person? As we have an equal-probability prior over the cards given, we have $p(S) \propto 1$. The &rsquo;likelihood&rsquo; of answer $J_{ij}$ given cards $S_i$ and $S_j$ is
 $$
 p(J_{ij} \vert S_i, S_j) =
 \begin{cases}
@@ -1202,7 +1202,7 @@ where $\nu_\mathrm{S} = \frac{1}{2 \lvert f&rsquo;&rsquo;_\mathrm{S}(0) \rvert}$
   
 
   <p class="powered-by">
-    Site last updated 2024-04-12 10:38:44.692244
+    Site last updated 2024-04-12 14:21:53.876475
   </p>
 
 </footer>
