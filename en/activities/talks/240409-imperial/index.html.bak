@@ -876,7 +876,7 @@ $$
 \mathop{\mathbb{E}}[S_l S^*_l] &amp; \propto \sum_{S^*} \sum_{\tilde{S}} \sum_{\tilde{J}} \tilde{S}_l \frac{\exp(\beta_\mathrm{S} \sum_{\langle ij\rangle} \tilde{J}_{ij} \tilde{S}_i \tilde{S}_j) \exp(\beta_\mathrm{T} \sum_{\langle ij\rangle}\tilde{J}_{ij})}{\sum_{\tilde{S}&rsquo;} \exp\left( \beta_\mathrm{S} \sum_{\langle ij\rangle} \tilde{J}_{ij} \tilde{S}&rsquo;_i \tilde{S}&rsquo;_j\right)}
 \end{aligned}
 $$
-So now $S^*$ is the &lsquo;ferromagnetic configuration&rsquo;. So
+So now $S^*$ has disappeared, and we the true distribution is the &lsquo;ferromagnetic configuration&rsquo;. So
 $$
 \begin{aligned}
 \mathop{\mathbb{E}}[S_l S^*_l] &amp; \propto \sum_{\tilde{S}} \sum_{\tilde{J}} \tilde{S}_l \frac{\exp(\beta_\mathrm{S} \sum_{\langle ij\rangle} \tilde{J}_{ij} \tilde{S}_i \tilde{S}_j) \exp(\beta_\mathrm{T} \sum_{\langle ij\rangle}\tilde{J}_{ij})}{\sum_{S&rsquo;} \exp\left( \beta_\mathrm{S} \sum_{\langle ij\rangle} \tilde{J}_{ij} S&rsquo;_i S&rsquo;_j\right)} \\
