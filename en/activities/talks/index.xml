@@ -220,7 +220,7 @@ An example of such a random walk in 1D is shown below.
 $$
 \phi_{x,t} = \epsilon_\mathrm{T} \delta_{x, x^*_{t}} + \psi_{x,t},
 $$
-which has a peak at the true location of the walker with &amp;lsquo;signal strength&amp;rsquo; $\epsilon_\mathrm{T}$, and $\psi_{x,t}$ is iid random Gaussian noise $\psi_{x,t} \sim \mathcal{N}(0, \sigma_\mathrm{T}^2)$. An example of set of all image from all timesteps for the above random walk is shown below.&lt;/p&gt;
+which has a peak at the true location of the walker with &amp;lsquo;signal strength&amp;rsquo; $\epsilon_\mathrm{T}$, and $\psi_{x,t}$ is iid random Gaussian noise $\psi_{x,t} \sim \mathcal{N}(0, \sigma_\mathrm{T}^2)$. An example of set of all images from each timestep for the above random walk is shown below.&lt;/p&gt;
 &lt;p&gt;
 
 
