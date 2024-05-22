@@ -17,7 +17,7 @@
                 />
   </url><url>
     <loc>https://sunwoo-kim.github.io/en/activities/</loc>
-    <lastmod>2024-04-09T00:00:00+00:00</lastmod>
+    <lastmod>2024-05-13T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <xhtml:link
                 rel="alternate"
@@ -30,11 +30,15 @@
                 href="https://sunwoo-kim.github.io/en/activities/"
                 />
   </url><url>
-    <loc>https://sunwoo-kim.github.io/en/activities/talks/240409-imperial/</loc>
-    <lastmod>2024-04-09T00:00:00+00:00</lastmod>
+    <loc>https://sunwoo-kim.github.io/en/activities/talks/</loc>
+    <lastmod>2024-05-13T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://sunwoo-kim.github.io/en/activities/talks/</loc>
+    <loc>https://sunwoo-kim.github.io/uploads/240513_kias_snu.pdf</loc>
+    <lastmod>2024-05-13T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://sunwoo-kim.github.io/en/activities/talks/240409-imperial/</loc>
     <lastmod>2024-04-09T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
@@ -131,14 +135,6 @@
                 hreflang="en"
                 href="https://sunwoo-kim.github.io/en/projects/mblbosons/"
                 />
-  </url><url>
-    <loc>https://sunwoo-kim.github.io/en/slides/polarons/</loc>
-    <lastmod>2019-02-05T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://sunwoo-kim.github.io/en/slides/</loc>
-    <lastmod>2019-02-05T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
   </url><url>
     <loc>https://sunwoo-kim.github.io/en/projects/nonsymmorphic/</loc>
     <lastmod>2018-08-19T00:00:00+00:00</lastmod>

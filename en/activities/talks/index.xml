@@ -5,12 +5,224 @@
     <link>https://sunwoo-kim.github.io/en/activities/talks/</link>
       <atom:link href="https://sunwoo-kim.github.io/en/activities/talks/index.xml" rel="self" type="application/rss+xml" />
     <description>Talks</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>swk34 [at] cantab [dot] ac [dot] uk</copyright><lastBuildDate>Tue, 09 Apr 2024 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>swk34 [at] cantab [dot] ac [dot] uk</copyright><lastBuildDate>Mon, 13 May 2024 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://sunwoo-kim.github.io/media/icon_hu8b309a9302268010949630654373c3a0_79828_512x512_fill_lanczos_center_3.png</url>
       <title>Talks</title>
       <link>https://sunwoo-kim.github.io/en/activities/talks/</link>
     </image>
+    
+    <item>
+      <title>The planted directed polymer; inferring a random walk from noisy images</title>
+      <link>https://sunwoo-kim.github.io/uploads/240513_kias_snu.pdf</link>
+      <pubDate>Mon, 13 May 2024 00:00:00 +0000</pubDate>
+      <guid>https://sunwoo-kim.github.io/uploads/240513_kias_snu.pdf</guid>
+      <description>&lt;!-- 
+&lt;details&gt;
+   &lt;summary&gt;&lt;font color=&#34;grey&#34;&gt; &lt;small&gt;To cite this page&lt;/small&gt; &lt;/font&gt;&lt;/summary&gt;
+
+   ```latex
+   @misc{swpkim2024the,
+      author={P. Kim, Sun Woo},
+      title={The planted directed polymer; inferring a random walk from noisy images},
+      year={2024},
+      howpublished={\url{https://sunwoo-kim.github.io/uploads/240513_kias_snu.pdf}},
+      note={Accessed: 2024-05-23}
+   }
+   ```
+&lt;/details&gt;
+&lt;small&gt;&lt;i&gt;
+Below are notes for my board talk that I gave on 2024-04-09 at the regular condensed matter theory meeting at Imperial College London.
+&lt;/small&gt;&lt;/i&gt;
+
+---
+
+
+
+&lt;details class=&#34;toc-inpage d-print-none  &#34; open&gt;
+  &lt;summary class=&#34;font-weight-bold&#34;&gt;Table of Contents&lt;/summary&gt;
+  &lt;nav id=&#34;TableOfContents&#34;&gt;&lt;/nav&gt;
+&lt;/details&gt;
+
+
+## Introduction
+
+Recently, there has been a lot of activity in casting problems in Bayesian inference problems as disordered stat-mech problems, then using tools of spin glasses to solve them, see [Zdeborová 1511.02476](https://arxiv.org/abs/1511.02476). Here I wanted to give a quick introduction to this concept.
+
+In Bayesian inference, we try to infer state $x$ given some measurements/data $y$. We assume some prior distribution $p(x)$ and a measurement model/likelihood $p(y \vert x)$ to infer a posterior distribution using Baye&#39;s rule,
+$$
+p(x \vert y) = \frac{p(y \vert x) p(x)}{p(y)},
+$$
+where the &#39;evidence&#39; $p(y) = \sum\_x p(y \vert x) p(x)$ acts as the normalisation for the posterior. If the state space is large, then this is in general intractable. This is very similar to the partition function in statistical physics.
+
+If $y$ came from the &#39;true&#39; state $x^\*$, then the natural question to ask is, is inference possible. To quantify this question, for continuous variables, we may look at the mean-squared error,
+$$
+\mathrm{MSE} = \mathop{\mathbb{E}}\_{x \sim p(\cdot \vert y)} [(x-x^\*)^2].
+$$
+Is there any way we can prove when inference is possible? And, can we have phase transitions, say, in the mean-squared error as signal-to-noise is varied?
+
+We will consider an idealised scenario covered in the above reference, called the teacher-student scenario. The teacher generates some state of a system, $x^\*$ from the &#39;true/teacher&#39;s prior&#39; $p\_\mathrm{T}(x^\*)$. Then, the teacher generates some data/measurements $y$ given the state of the system via the teacher&#39;s measurement model/likelihood, $p\_\mathrm{T}(y \vert x^\*)$. The teacher then hands the student the measurements $y$.
+
+The student then assumes some prior distribution $p\_\mathrm{S}(x)$ and measurement model $p\_\mathrm{S}(y\vert x)$ to infer a posterior distribution $p\_\mathrm{S}(x \vert y)$. Then we can consider the joint distribution,
+$$
+\begin{aligned}
+p(x,y,x^\*) &amp; = p\_\mathrm{S}(x \vert y) p\_\mathrm{T}(y \vert x^\*) p\_\mathrm{T}(x^\*) \\\\
+&amp; = \frac{p\_\mathrm{S}(y \vert x)p\_\mathrm{S}(x) p\_\mathrm{T}(y \vert x^\*) p\_\mathrm{T}(x^\*)}{p\_\mathrm{S}(y)}.
+\end{aligned}
+$$
+Note that $p(x^\*)=p\_\mathrm{T}(x^\*)$, since we can integrate over $p\_\mathrm{S}(x\vert y)$ wrt $x$ then $p\_\mathrm{T}(y \vert x^\*)$ wrt $y$. However, $p(x) \neq p\_\mathrm{S}(x)$, since we can&#39;t perform the integration over $y$ and $x^\*$ first in general.
+
+However, we can already immediately notice one thing: if the student&#39;s model is equal to the teacher&#39;s model, that is $S=T$, then $p(x,y,x^\*)$ is symmetric with respect to $x \leftrightarrow x^\*$ and therefore $x$ is distributed identically to $x^\*$, and $p(x) = p\_\mathrm{T}(x^\*=x)$. The $\mathrm{S}=\mathrm{T}$ point is called the Bayes optimal point.
+
+To make the connection to stat-mech clearer, let&#39;s write out the student&#39;s posterior in a suggestive way:
+$$
+p\_\mathrm{S}(x \vert y) = \frac{e^{-\beta H (x, y)}}{Z(y)},
+$$
+where $Z(y) = \sum\_x e^{-\beta H(x, y)}$ and
+$$
+-\beta H (x \vert y) = \ln q\_\mathrm{S}(y \vert x) + \ln q\_\mathrm{S}(x).
+$$
+Here I wrote the unnormalised distributions ex. $q\_\mathrm{S}(y \vert x) \propto p\_\mathrm{S}(y \vert x)$ as normalisation is ensured by the partition function. We see that the posterior looks like the Boltzmann probability of disordered system (ex. spin glass), with the &#39;data&#39; $y$ playing the role of disorder with $p\_\mathrm{T}(y) = \sum\_{x^\*} p\_\mathrm{T}(y \vert x^\*) p\_\mathrm{T}(x^\*)$.
+
+In the limit where the data contains no information about the true/teacher&#39;s state, ex. when the data is &#39;infinitely&#39; noisy, we see that $p\_\mathrm{T}(y \vert x^\*) \rightarrow p\_\mathrm{T}(y)$ really becomes random disorder - this would be a situation where the student believes that there is some information in the data, but the teacher is actually supplying random noise.
+
+When there is information about the true/teacher&#39;s state in the data, this information is said to be &#39;planted&#39; in the disorder. The distribution of $p\_\mathrm{T}(y) = \sum\_{x^\*} p\_\mathrm{T}(y \vert x^\*) p\_\mathrm{T}(x^\*)$ is the &#39;planted distribution&#39;, and $p(x, y, x^\*)$ is the &#39;planted ensemble&#39;.
+
+This is all well and good, but is it actually useful? Let&#39;s look at some examples, to see how existing disordered stat-mech problems map onto inference problems.
+
+## The planted random-bond Ising model
+To make things more concrete, let&#39;s consider a particular case of a model considered in the review. We consider $L^2$ people standing in a room in a square lattice formation. To each person, we randomly hand out a card that can be $S^\*\_i = \pm 1$ with equal probability. However, we don&#39;t record this information. Then, we ask each neighbouring pair to reply with $1$ if they have the same cards or $-1$ if they have different cards. But there&#39;s a twist - for each question the pair may lie with probability $\uppi$. We record the answer that each pair gives us as $J\_{ij}$. 
+
+Then, given $\\{J\_{ij}\\}\_{ij}$, can we infer the &#39;state&#39;, i.e. the cards given to each person? As we have an equal-probability prior over the cards given, we have $p(S) \propto 1$. The &#39;likelihood&#39; of answer $J\_{ij}$ given cards $S\_i$ and $S\_j$ is
+$$
+p(J\_{ij} \vert S\_i, S\_j) = 
+\begin{cases}
+1 - \uppi &amp; J\_{ij} = S\_i S\_j \\\\
+\uppi &amp; J\_{ij} = -S\_i S\_j.
+\end{cases}
+$$
+As $J\_{ij}$ is an Ising variable we can massage this to look like a Boltzmann weight. If we consider
+$$
+p(J\_{ij} \vert S\_i, S\_i) = N e^{\beta J\_{ij} S\_i S\_j},
+$$
+Then from normalisation over $J\_{ij} \in \{1, -1\}$ we have $N = e^{\beta} + e^{-\beta}$, and 
+$$
+\uppi = \frac{e^{-\beta}}{e^{\beta} + e^{-\beta}}.
+$$
+Therefore if each pair lies half of the time, $\uppi = 1/2$, $\beta = 0$, and if they never lie, $\uppi = 0$, $\beta \rightarrow \infty$.
+
+Then the likelihood over all answers is
+$$
+p(J \vert S) = \prod\_{\langle i,j \rangle} p(J\_{ij} \vert S\_i, S\_j) \propto \exp\left(\beta \sum\_{\langle i, j\rangle} J\_{ij} S\_i S\_j \right).
+$$
+Since the prior is uniform, the posterior is
+$$
+p(S \vert J) = \frac{q(J \vert S)}{Z(J)} = \frac{\exp\left(\beta \sum\_{\langle i, j \rangle}J\_{ij} S\_i S\_j\right)}{Z(J)},
+$$
+where
+$$
+Z(J) = \sum\_{S} \exp\left(\beta \sum\_{\langle i, j\rangle} J\_{ij} S\_i S\_j \right).
+$$
+is the partition function for a random-bond Ising model, and the posterior is its Boltzmann probability!
+
+Let&#39;s now consider the general teacher-student scenario, where the student&#39;s model belief of the rate of lying $\beta\_\mathrm{S}(\uppi\_\mathrm{S})$ can differ from the true/teacher&#39;s $\beta\_\mathrm{T}(\uppi\_\mathrm{T})$. 
+$$
+\begin{aligned}
+p(S, J, S^\*) &amp; = p\_\mathrm{S}(S \vert J) p\_\mathrm{T}(J \vert S^\*) p\_\mathrm{T}(S^\*) \\\\
+&amp; \propto \frac{\exp\left( \beta\_\mathrm{S} \sum\_{\langle ij \rangle} J\_{ij} S\_i S\_j\right)}{Z\_\mathrm{S}(J)} \exp\left( \beta\_\mathrm{T} \sum\_{\langle ij \rangle} J\_{ij} S^\*\_i S^\*\_j\right).
+\end{aligned}
+$$
+Then consider the observable $S\_i S^\*\_i$. This is $1$ if they are aligned (if the inferred card is same as the true value of the card), and $-1$ if they are anti-aligned, so it is a measure of possibility of inference.
+$$
+\mathop{\mathbb{E}}[S\_l S^\*\_l] \propto \sum\_{S^\*} \sum\_{S} \sum\_{J} S\_l S^\*\_l \frac{\exp(\beta\_\mathrm{S} \sum\_{\langle ij\rangle}J\_{ij}S\_i S\_j) \exp(\beta\_\mathrm{T} \sum\_{\langle ij\rangle}J\_{ij}S^\*\_i S^\*\_j)}{Z\_\mathrm{S}(J)}.
+$$
+Since we are summing over $J$, we are free to redefine $J$ such that $J\_{ij} S^\*\_i S^\*\_j = \tilde{J}\_{ij}$. Similarly we can redefine $S$ such that $S\_i S^\*\_i = \tilde{S}\_i$. Inside the partition function we can also redefine $S&#39;$ inside the sum. Therefore
+$$
+\begin{aligned}
+\mathop{\mathbb{E}}[S\_l S^\*\_l] &amp; \propto \sum\_{S^\*} \sum\_{\tilde{S}} \sum\_{\tilde{J}} \tilde{S}\_l \frac{\exp(\beta\_\mathrm{S} \sum\_{\langle ij\rangle} \tilde{J}\_{ij} \tilde{S}\_i \tilde{S}\_j) \exp(\beta\_\mathrm{T} \sum\_{\langle ij\rangle}\tilde{J}\_{ij})}{\sum\_{\tilde{S}&#39;} \exp\left( \beta\_\mathrm{S} \sum\_{\langle ij\rangle} \tilde{J}\_{ij} \tilde{S}&#39;\_i \tilde{S}&#39;\_j\right)}
+\end{aligned}
+$$
+So now $S^\*$ has disappeared, and we the true distribution is the &#39;ferromagnetic configuration&#39;. So
+$$
+\begin{aligned}
+\mathop{\mathbb{E}}[S\_l S^\*\_l] &amp; \propto \sum\_{\tilde{S}} \sum\_{\tilde{J}} \tilde{S}\_l \frac{\exp(\beta\_\mathrm{S} \sum\_{\langle ij\rangle} \tilde{J}\_{ij} \tilde{S}\_i \tilde{S}\_j) \exp(\beta\_\mathrm{T} \sum\_{\langle ij\rangle}\tilde{J}\_{ij})}{\sum\_{S&#39;} \exp\left( \beta\_\mathrm{S} \sum\_{\langle ij\rangle} \tilde{J}\_{ij} S&#39;\_i S&#39;\_j\right)} \\\\
+&amp; = \sum\_{\tilde{J}} \frac{\sum\_{\tilde{S}} \tilde{S}\_l \exp(\beta\_\mathrm{S} \sum\_{\langle ij\rangle} \tilde{J}\_{ij} \tilde{S}\_i \tilde{S}\_j) \exp(\beta\_\mathrm{T} \sum\_{\langle ij\rangle}\tilde{J}\_{ij})}{\sum\_{S&#39;} \exp\left( \beta\_\mathrm{S} \sum\_{\langle ij\rangle} \tilde{J}\_{ij} \tilde{S}&#39;\_i \tilde{S}&#39;\_j\right)},
+\end{aligned}
+$$
+which is the magnetisation in the random-bond Ising model with $p(\tilde{J}) \propto \exp(\beta\_\mathrm{T} \sum\_{\langle ij\rangle}\tilde{J}\_{ij})$. So the paramagnetic (PM) state corresponds to the failure of inference, and the ferromagnetic (FM) state corresponds to the success of inference.
+
+By the way, in the spin-glass literature, what we&#39;ve done here is called a &#39;gauge transformation&#39;. And, there is a special &#39;solvable line&#39; in this model, called the Nishimori line, where $p(J) \sim Z(J)$. The basic idea was that $p(J)$ just becomes another replica in the problem and so simplifies the calculation, but it turns out that the point where the Nishimori line crosses the phase boundary is very interesting. But this exactly corresponds to the Bayes optimality condition, $\beta\_\mathrm{S} = \beta\_\mathrm{T}$. Usually, people show that for particular choices for $\uppi$, we can gauge-transform $p(J)$ to look like $Z(J)$. Here, we did it the other way around.
+
+People have already studied the phase diagram of the RBIM, so we have the phase diagram for free. Let&#39;s look at the phase diagram of the RBIM (for example see [Gruzberg 0007254v2](https://arxiv.org/abs/cond-mat/0007254v2)).
+
+![](rbim_conventional.svg)
+
+The $p=0$, $T\_\mathrm{c} \approx 2.27$  corresponds to the clean 2D Ising transition. For us, $T$ corresponds to $\beta\_\mathrm{S}^{-1}$ and $p = \uppi\_\mathrm{T}$. Thinking of $\beta\_{S,T}$ as the &#39;signal strength&#39;, we can redraw the phase diagram in the $\beta\_\mathrm{T}-\beta\_\mathrm{S}$ plane. We know that the Nishimori line is the $45^\circ$ line in this plane.
+
+![](rbim_inference.svg)
+
+We see that in this picture, no matter what $\beta\_S$ the student chooses, we need sufficient teacher&#39;s signal strength $\beta\_\mathrm{T} &gt; \beta^\mathrm{c}\_\mathrm{T}$ in order for inference to be possible. On the other hand, if the student assumes that the signal strength is too low, $\beta\_\mathrm{S} &lt; \beta^\mathrm{c}\_\mathrm{S}$, then again inference is not possible.
+## The planted directed polymer problem
+So now the world is our oyster. We can start cooking up planted versions of spin-glass/disordered stat-mech models, and see what inference problem they map on to. We were particularly interested in looking at a class of inference problems involving hidden Markov models. This is where the prior follows a Markov process,
+$$
+p(x\_{1:t})=\left(\prod\_{\tau=2}^tp(x\_\tau|x\_{\tau-1})\right)p(x\_1),
+$$
+and measurements $y\_{t}$ conditioned on the state are generated through some measurement model $p(y\_{t} \vert x\_{t})$ at every timestep. As before, we could calculate a posterior for the entire trajectory, $p(x\_{1:t} \vert y\_{1:t})$, but this is usually intractable computationally. Instead, we can also consider a &lt;i&gt;filtering&lt;/i&gt; task, where the state at the current timestep is inferred from data from all previous timesteps, i.e. $p(x\_{t} \vert y\_{1:t})$.
+
+Concretely, we consider the case when the states are locations in space, and the Markov process is a random walk on that space. A simple example of a &#39;kernel&#39; for this process is
+$$
+p(x\_{t+1} \vert x\_{t}) = \frac{1}{2} \delta\_{x\_{t+1},x\_{t}} + \frac{1}{4} \delta\_{x\_{t+1},x\_{t}\pm 1}.
+$$
+An example of such a random walk in 1D is shown below. 
+![](1_true_path.svg)
+
+At every timestep $t$, we will take an &#39;image&#39; of the walker specified by pixel values at positions $x$, 
+$$
+\phi\_{x,t} = \epsilon\_\mathrm{T} \delta\_{x, x^\*\_{t}} + \psi\_{x,t},
+$$
+which has a peak at the true location of the walker with &#39;signal strength&#39; $\epsilon\_\mathrm{T}$, and $\psi\_{x,t}$ is iid random Gaussian noise $\psi\_{x,t} \sim \mathcal{N}(0, \sigma\_\mathrm{T}^2)$. An example of set of all images from each timestep for the above random walk is shown below.
+
+![](2_good_image.svg)
+
+Then, we&#39;d like to infer the true position of the walker at the current time, $x^\*\_{t}$ or the true trajectory $X^\* := (x^\*\_\tau)\_{\tau=1}^T$ given the images at all times. We call it the &#39;planted directed polymer problem&#39;, as it is related to the directed polymer in a random medium from stat-mech. Let&#39;s see how.
+
+Let the whole image at time $t$ be $\boldsymbol{\phi}\_{t} := (\phi\_{x,t})\_x$. Then assuming signal strength $\epsilon\_\mathrm{S}$ and noise strength $\sigma\_\mathrm{S}$, the likelihood for observing an image $\boldsymbol{\phi}\_{t}$ given that the walker&#39;s position is $x\_{t}$ is
+$$
+\begin{aligned} 
+p\_\mathrm{S}(\boldsymbol{\phi}\_{t} \vert x\_{t}) &amp; = \prod\_{x&#39;\_{t}} \frac{1}{\sqrt{2 \pi \sigma\_\mathrm{S}^2}} \exp \left[ \frac{-(\phi\_{x&#39;\_{t}, t} - \epsilon\_\mathrm{S} \delta\_{x\_{t}, x&#39;\_{t}})^2}{2 \sigma\_\mathrm{S}^2} \right] \\\\
+&amp; = \exp\left(\left[\epsilon\_\mathrm{S} \phi\_{x\_{t},t} - \epsilon^2/2\right]/\sigma\_\mathrm{S}^2\right)\pi\_\mathrm{S}(\boldsymbol{\phi}\_{t}),
+\end{aligned}
+$$
+where $\pi\_\mathrm{S}(\boldsymbol{\phi}\_t)$ denotes the Gaussian measure. Denoting $X := x\_{1:t}$ and $\Phi := \boldsymbol{\phi}\_{1:t}$, the likelihood for the whole trajectory is
+$$
+p\_\mathrm{S}(\Phi \vert X) \propto \exp\left(\frac{\epsilon\_\mathrm{S}}{\sigma\_\mathrm{S}^2}\sum\_{t} \phi\_{x\_{t}, t} \right)\pi\_\mathrm{S}(\Phi).
+$$
+As the $\pi\_\mathrm{S}(\Phi)$ term is there for any value of $X$, we can ignore it, since we can just normalise the posterior again. So the student&#39;s posterior for the whole path is 
+$$
+p\_\mathrm{S}(X \vert \Phi) = \frac{q\_\mathrm{S}(X \vert \Phi)}{Z\_\mathrm{S}(\Phi)},
+$$
+where the &lt;i&gt;unnormalised&lt;/i&gt; posterior is
+$$
+q\_\mathrm{S}(X \vert \Phi) = \exp\left(\frac{\epsilon\_\mathrm{S}}{\sigma\_\mathrm{S}^2}\sum\_{t=1}^T \phi\_{x\_{t},t} + \sum\_{t=2}^{T} \ln q\_\mathrm{S}(x\_{t} \vert x\_{t-1}) \right) q\_\mathrm{S}(x\_1),
+$$
+and $Z\_\mathrm{S}(\Phi) = \sum\_X p\_\mathrm{S}(X \vert \Phi)$. 
+
+Let us assume that the kernel $q\_\mathrm{S}(x\_t \vert x\_{t-1})$ only depends on the distance between $x\_t$ and $x\_{t-1}$, and is maximised when the distance is zero. Then, we write $\ln q\_\mathrm{S}(x\_{t} \vert x\_{t-1}) = f(\sqrt{a}(x\_{t} - x\_{t-1}))$ where $a$ is the lattice constant. Expanding, we find
+$$
+\begin{aligned}
+q\_S(X \vert \Phi)  = \exp\Bigg(
+ \sum\_{\tau=1}^{t} \left[-\frac{a}{4 \nu\_\mathrm{S}} \left[x\_\tau - x\_{\tau-1}\right]^2 + \frac{\epsilon\_\mathrm{S}}{\sigma\_\mathrm{S}^2} \phi\_{x\_\tau, \tau} \right]
++\mathcal{O}(a^{3/2})\Bigg) q\_S(x\_1),
+\end{aligned}
+$$
+where $\nu\_\mathrm{S} = \frac{1}{2 \lvert f&#39;&#39;\_\mathrm{S}(0) \rvert}$ is the &#39;width&#39; of the kernel. We see that the unnormalised posterior now looks like the Boltzmann weight for the directed polymer in a random environment. For those who are unfamiliar, it is a well studied stat-mech model for configurations of a polymer. Interpreting time as another spatial dimension $t=y$, it is &#39;directed&#39; in that the polymer cannot loop around itself, since $x$ is a single-valued function of $y$. 
+
+The first term in the sum $\sim (x\_\tau - x\_{\tau-1})^2$ corresponds to the &#39;elastic energy&#39; of the polymer, where you pay a price whenever you stretch out the polymer. The second term $\sim \phi\_{x\_t, t}$, where $\phi\_{x\_t, t}$, usually random iid noise in the directed polymer setting, is a &#39;random environment&#39; that the polymer is placed in.
+
+The interesting phenomena in the directed polymer is that even though you need to pay energy to stretch out the polymer, it might be worth it to go through a particular location, as long as the potential there is deep enough. This creates a &#39;roughening&#39; of the polymer (you can read more about it in [Bhattacharjee 0402117v1](https://arxiv.org/abs/cond-mat/0402117), for example).
+
+For us, $\phi\_{x\_t, t}$ is not iid, but instead has information about the true location of the walker &#39;planted&#39; in it. In recent work, we studied this problem in detail in 1D and also on the tree. Read more here: [P. Kim 2404.07263](https://arxiv.org/abs/2404.07263). --&gt;</description>
+    </item>
     
     <item>
       <title>Bayesian inference, statistical physics, and the planted directed polymer problem</title>
@@ -24,7 +236,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   title=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;Bayesian inference, statistical physics, and the planted directed polymer problem&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;,
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   year=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;2024&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;,
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   howpublished=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;\url&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;https://sunwoo-kim.github.io/en/activities/talks/240409-imperial/&lt;span class=&#34;nb&#34;&gt;}}&lt;/span&gt;,
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   note=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;Accessed: 2024-04-14&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   note=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;Accessed: 2024-05-23&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/details&gt;
 &lt;small&gt;&lt;i&gt;

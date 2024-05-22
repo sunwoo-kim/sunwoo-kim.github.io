@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- This site was created with Wowchemy. https://www.wowchemy.com -->
-<!-- Last Published: April 14, 2024 --><html lang="en-us" >
+<!-- Last Published: May 23, 2024 --><html lang="en-us" >
 
 
 <head>
@@ -690,11 +690,13 @@
   <h2>Latest</h2>
   <ul>
     
+      <li><a href="/uploads/240513_kias_snu.pdf">The planted directed polymer; inferring a random walk from noisy images</a></li>
+    
       <li><a href="/en/activities/talks/">Talks</a></li>
     
-      <li><a href="/en/activities/talks/240409-imperial/">Bayesian inference, statistical physics, and the planted directed polymer problem</a></li>
-    
       <li><a href="/en/activities/">Activities</a></li>
+    
+      <li><a href="/en/activities/talks/240409-imperial/">Bayesian inference, statistical physics, and the planted directed polymer problem</a></li>
     
       <li><a href="/en/activities/teaching/">Teaching</a></li>
     
@@ -707,8 +709,6 @@
       <li><a href="/en/posts/tfi-model/">Transverse field Ising model</a></li>
     
       <li><a href="/en/projects/mblbosons/">Many-body localization in bosons</a></li>
-    
-      <li><a href="/en/posts/hello-world/">Hello World</a></li>
     
   </ul>
   
