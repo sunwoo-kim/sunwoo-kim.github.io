@@ -719,6 +719,9 @@
 
 
 
+  
+  
+
 
 
 
@@ -733,11 +736,11 @@
   <div class="media-body">
 
     <div class="section-subheading article-title mb-0 mt-0">
-      <a href="/uploads/240513_kias_snu.pdf" >The planted directed polymer; inferring a random walk from noisy images</a>
+      <a href="/uploads/240516_kias_snu.pdf" target="_blank" rel="noopener">The planted directed polymer; inferring a random walk from noisy images</a>
     </div>
 
     
-    <a href="/uploads/240513_kias_snu.pdf"  class="summary-link">
+    <a href="/uploads/240516_kias_snu.pdf" target="_blank" rel="noopener" class="summary-link">
       <div class="article-style">
         Slides for talks at Korea Institute of Advanced Studies and Seoul National University.
       </div>
