@@ -1,0 +1,1405 @@
+<!DOCTYPE html>
+<!-- This site was created with Wowchemy. https://www.wowchemy.com -->
+<!-- Last Published: 2024년 9월 7일 --><html lang="ko-kr" >
+
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.7.0 for Hugo" />
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Source+Code+Pro&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Source+Code+Pro&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+
+  
+  
+    
+    <script src="/js/mathjax-config.js"></script>
+  
+
+  
+
+  <link rel="stylesheet" href="/css/vendor-bundle.min.047268c6dd09ad74ba54a0ba71837064.css" media="print" onload="this.media='all'">
+
+  
+  
+  
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.2/css/academicons.min.css" integrity="sha512-KlJCpRsLf+KKu2VQa5vmRuClRFjxc5lXO03ixZt82HZUk41+1I0bD8KBSA0fY290ayMfWYI9udIqeOWSu1/uZg==" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+
+    
+    
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.9afa9c2bcff9e90ceae97e606b94698c.css" />
+
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+    
+    
+    <link rel="stylesheet" href="/css/libs/chroma/github-light.min.css" title="hl-light" media="print" onload="this.media='all'" >
+    <link rel="stylesheet" href="/css/libs/chroma/dracula.min.css" title="hl-dark" media="print" onload="this.media='all'" disabled>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+
+
+
+
+  <meta name="author" content="김선우" />
+
+
+
+
+
+  
+
+<meta name="description" content="Notes for board talk at regular CMT meeting, Imperial College London" />
+
+
+
+  <link rel="alternate" hreflang="en" href="https://sunwoo-kim.github.io/en/activities/talks/240409-imperial/" />
+
+<link rel="alternate" hreflang="ko-kr" href="https://sunwoo-kim.github.io/ko/activities/talks/240409-imperial/" />
+<link rel="canonical" href="https://sunwoo-kim.github.io/ko/activities/talks/240409-imperial/" />
+
+
+
+  <link rel="manifest" href="/ko/manifest.webmanifest" />
+
+
+
+<link rel="icon" type="image/png" href="/media/icon_hu8b309a9302268010949630654373c3a0_79828_32x32_fill_lanczos_center_3.png" />
+<link rel="apple-touch-icon" type="image/png" href="/media/icon_hu8b309a9302268010949630654373c3a0_79828_180x180_fill_lanczos_center_3.png" />
+
+<meta name="theme-color" content="#ffffff" />
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+<meta property="twitter:card" content="summary" />
+<meta property="twitter:image" content="https://sunwoo-kim.github.io/media/icon_hu8b309a9302268010949630654373c3a0_79828_512x512_fill_lanczos_center_3.png" />
+<meta property="og:site_name" content="김선우" />
+<meta property="og:url" content="https://sunwoo-kim.github.io/ko/activities/talks/240409-imperial/" />
+<meta property="og:title" content="Bayesian inference, statistical physics, and the planted directed polymer problem | 김선우" />
+<meta property="og:description" content="Notes for board talk at regular CMT meeting, Imperial College London" /><meta property="og:image" content="https://sunwoo-kim.github.io/media/icon_hu8b309a9302268010949630654373c3a0_79828_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="ko-kr" />
+
+  
+    <meta
+      property="article:published_time"
+      content="2024-04-09T00:00:00&#43;00:00"
+    />
+  
+  
+    <meta property="article:modified_time" content="2024-04-09T00:00:00&#43;00:00">
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+
+  
+  
+
+  
+
+
+  
+  <title>Bayesian inference, statistical physics, and the planted directed polymer problem | 김선우</title>
+
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="8c7f70ab3fea86cba4d7fe003eb895f9" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.ec9d49ca50e4b80bdb08f0417a28ed84.js"></script>
+
+  
+
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>검색</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="검색..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="검색...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header header--fixed">
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+    <div class="container-xl">
+
+      
+      <div class="d-none d-lg-inline-flex">
+        <a class="navbar-brand" href="/ko/">김선우</a>
+      </div>
+      
+
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="네비게이션">
+      <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+      
+      <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+        <a class="navbar-brand" href="/ko/">김선우</a>
+      </div>
+      
+
+      
+      
+      <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+        
+        <ul class="navbar-nav d-md-inline-flex">
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/ko/#about"><span>홈</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/ko/posts"><span>게시물</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/ko/projects"><span>프로젝트</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link  active" href="/ko/activities"><span>활동</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/../uploads/cv.pdf"><span>이력서</span></a>
+          </li>
+
+          
+          
+
+        
+
+          
+        </ul>
+      </div>
+
+      <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+        
+        
+
+        
+        
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#" aria-label="검색"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+        
+        
+        <li class="nav-item dropdown theme-dropdown">
+          <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Display preferences">
+            <i class="fas fa-moon" aria-hidden="true"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="#" class="dropdown-item js-set-theme-light">
+              <span>Light</span>
+            </a>
+            <a href="#" class="dropdown-item js-set-theme-dark">
+              <span>Dark</span>
+            </a>
+            <a href="#" class="dropdown-item js-set-theme-auto">
+              <span>Automatic</span>
+            </a>
+          </div>
+        </li>
+        
+
+        
+        
+        <li class="nav-item dropdown i18n-dropdown">
+          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"
+             aria-haspopup="true" aria-label="Languages">
+            <i class="fas fa-globe mr-1" aria-hidden="true"></i><span class="d-none d-lg-inline">한국어</span></a>
+          <div class="dropdown-menu">
+            <div class="dropdown-item dropdown-item-active">
+              <span>한국어</span>
+            </div>
+            
+            <a class="dropdown-item" href="https://sunwoo-kim.github.io/en/activities/talks/240409-imperial/">
+              <span>English</span>
+            </a>
+            
+          </div>
+        </li>
+        
+
+      </ul>
+
+    </div>
+  </nav>
+</header>
+
+
+  </div>
+
+  <div class="page-body">
+    
+    
+    
+
+    <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>Bayesian inference, statistical physics, and the planted directed polymer problem</h1>
+
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+  <span >
+      <a href="/ko/authors/sunwoo/">김선우</a></span>
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    2024-04-09
+  </span>
+  
+
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    11 분 읽기
+  </span>
+  
+
+  
+  
+  
+  
+
+  
+  
+
+</div>
+
+    
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <details>
+   <summary><font color="grey"> <small>To cite this page</small> </font></summary>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-latex" data-lang="latex"><span class="line"><span class="cl">@misc<span class="nb">{</span>swpkim2024bayesian,
+</span></span><span class="line"><span class="cl">   author=<span class="nb">{</span>P. Kim, Sun Woo<span class="nb">}</span>,
+</span></span><span class="line"><span class="cl">   title=<span class="nb">{</span>Bayesian inference, statistical physics, and the planted directed polymer problem<span class="nb">}</span>,
+</span></span><span class="line"><span class="cl">   year=<span class="nb">{</span>2024<span class="nb">}</span>,
+</span></span><span class="line"><span class="cl">   howpublished=<span class="nb">{</span><span class="k">\url</span><span class="nb">{</span>https://sunwoo-kim.github.io/ko/activities/talks/240409-imperial/<span class="nb">}}</span>,
+</span></span><span class="line"><span class="cl">   note=<span class="nb">{</span>Accessed: 2024-09-07<span class="nb">}</span>
+</span></span><span class="line"><span class="cl"><span class="nb">}</span>
+</span></span></code></pre></div></details>
+<small><i>
+Below are notes for my board talk that I gave on 2024-04-09 at the regular condensed matter theory meeting at Imperial College London.
+</small></i>
+<hr>
+<details class="toc-inpage d-print-none  " open>
+  <summary class="font-weight-bold">차례</summary>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#the-planted-random-bond-ising-model">The planted random-bond Ising model</a></li>
+    <li><a href="#the-planted-directed-polymer-problem">The planted directed polymer problem</a></li>
+  </ul>
+</nav>
+</details>
+<h2 id="introduction">Introduction</h2>
+<p>Recently, there has been a lot of activity in casting problems in Bayesian inference problems as disordered stat-mech problems, then using tools of spin glasses to solve them, see <a href="https://arxiv.org/abs/1511.02476" target="_blank" rel="noopener">Zdeborová 1511.02476</a>. Here I wanted to give a quick introduction to this concept.</p>
+<p>In Bayesian inference, we try to infer state $x$ given some measurements/data $y$. We assume some prior distribution $p(x)$ and a measurement model/likelihood $p(y \vert x)$ to infer a posterior distribution using Baye&rsquo;s rule,
+$$
+p(x \vert y) = \frac{p(y \vert x) p(x)}{p(y)},
+$$
+where the &rsquo;evidence&rsquo; $p(y) = \sum_x p(y \vert x) p(x)$ acts as the normalisation for the posterior. If the state space is large, then this is in general intractable. This is very similar to the partition function in statistical physics.</p>
+<p>If $y$ came from the &rsquo;true&rsquo; state $x^*$, then the natural question to ask is, is inference possible. To quantify this question, for continuous variables, we may look at the mean-squared error,
+$$
+\mathrm{MSE} = \mathop{\mathbb{E}}_{x \sim p(\cdot \vert y)} [(x-x^*)^2].
+$$
+Is there any way we can prove when inference is possible? And, can we have phase transitions, say, in the mean-squared error as signal-to-noise is varied?</p>
+<p>We will consider an idealised scenario covered in the above reference, called the teacher-student scenario. The teacher generates some state of a system, $x^*$ from the &rsquo;true/teacher&rsquo;s prior&rsquo; $p_\mathrm{T}(x^*)$. Then, the teacher generates some data/measurements $y$ given the state of the system via the teacher&rsquo;s measurement model/likelihood, $p_\mathrm{T}(y \vert x^*)$. The teacher then hands the student the measurements $y$.</p>
+<p>The student then assumes some prior distribution $p_\mathrm{S}(x)$ and measurement model $p_\mathrm{S}(y\vert x)$ to infer a posterior distribution $p_\mathrm{S}(x \vert y)$. Then we can consider the joint distribution,
+$$
+\begin{aligned}
+p(x,y,x^*) &amp; = p_\mathrm{S}(x \vert y) p_\mathrm{T}(y \vert x^*) p_\mathrm{T}(x^*) \\
+&amp; = \frac{p_\mathrm{S}(y \vert x)p_\mathrm{S}(x) p_\mathrm{T}(y \vert x^*) p_\mathrm{T}(x^*)}{p_\mathrm{S}(y)}.
+\end{aligned}
+$$
+Note that $p(x^*)=p_\mathrm{T}(x^*)$, since we can integrate over $p_\mathrm{S}(x\vert y)$ wrt $x$ then $p_\mathrm{T}(y \vert x^*)$ wrt $y$. However, $p(x) \neq p_\mathrm{S}(x)$, since we can&rsquo;t perform the integration over $y$ and $x^*$ first in general.</p>
+<p>However, we can already immediately notice one thing: if the student&rsquo;s model is equal to the teacher&rsquo;s model, that is $S=T$, then $p(x,y,x^*)$ is symmetric with respect to $x \leftrightarrow x^*$ and therefore $x$ is distributed identically to $x^*$, and $p(x) = p_\mathrm{T}(x^*=x)$. The $\mathrm{S}=\mathrm{T}$ point is called the Bayes optimal point.</p>
+<p>To make the connection to stat-mech clearer, let&rsquo;s write out the student&rsquo;s posterior in a suggestive way:
+$$
+p_\mathrm{S}(x \vert y) = \frac{e^{-\beta H (x, y)}}{Z(y)},
+$$
+where $Z(y) = \sum_x e^{-\beta H(x, y)}$ and
+$$
+-\beta H (x \vert y) = \ln q_\mathrm{S}(y \vert x) + \ln q_\mathrm{S}(x).
+$$
+Here I wrote the unnormalised distributions ex. $q_\mathrm{S}(y \vert x) \propto p_\mathrm{S}(y \vert x)$ as normalisation is ensured by the partition function. We see that the posterior looks like the Boltzmann probability of disordered system (ex. spin glass), with the &lsquo;data&rsquo; $y$ playing the role of disorder with $p_\mathrm{T}(y) = \sum_{x^*} p_\mathrm{T}(y \vert x^*) p_\mathrm{T}(x^*)$.</p>
+<p>In the limit where the data contains no information about the true/teacher&rsquo;s state, ex. when the data is &lsquo;infinitely&rsquo; noisy, we see that $p_\mathrm{T}(y \vert x^*) \rightarrow p_\mathrm{T}(y)$ really becomes random disorder - this would be a situation where the student believes that there is some information in the data, but the teacher is actually supplying random noise.</p>
+<p>When there is information about the true/teacher&rsquo;s state in the data, this information is said to be &lsquo;planted&rsquo; in the disorder. The distribution of $p_\mathrm{T}(y) = \sum_{x^*} p_\mathrm{T}(y \vert x^*) p_\mathrm{T}(x^*)$ is the &lsquo;planted distribution&rsquo;, and $p(x, y, x^*)$ is the &lsquo;planted ensemble&rsquo;.</p>
+<p>This is all well and good, but is it actually useful? Let&rsquo;s look at some examples, to see how existing disordered stat-mech problems map onto inference problems.</p>
+<h2 id="the-planted-random-bond-ising-model">The planted random-bond Ising model</h2>
+<p>To make things more concrete, let&rsquo;s consider a particular case of a model considered in the review. We consider $L^2$ people standing in a room in a square lattice formation. To each person, we randomly hand out a card that can be $S^*_i = \pm 1$ with equal probability. However, we don&rsquo;t record this information. Then, we ask each neighbouring pair to reply with $1$ if they have the same cards or $-1$ if they have different cards. But there&rsquo;s a twist - for each question the pair may lie with probability $\uppi$. We record the answer that each pair gives us as $J_{ij}$.</p>
+<p>Then, given $\{J_{ij}\}_{ij}$, can we infer the &lsquo;state&rsquo;, i.e. the cards given to each person? As we have an equal-probability prior over the cards given, we have $p(S) \propto 1$. The &rsquo;likelihood&rsquo; of answer $J_{ij}$ given cards $S_i$ and $S_j$ is
+$$
+p(J_{ij} \vert S_i, S_j) =
+\begin{cases}
+1 - \uppi &amp; J_{ij} = S_i S_j \\
+\uppi &amp; J_{ij} = -S_i S_j.
+\end{cases}
+$$
+As $J_{ij}$ is an Ising variable we can massage this to look like a Boltzmann weight. If we consider
+$$
+p(J_{ij} \vert S_i, S_i) = N e^{\beta J_{ij} S_i S_j},
+$$
+Then from normalisation over $J_{ij} \in {1, -1}$ we have $N = e^{\beta} + e^{-\beta}$, and
+$$
+\uppi = \frac{e^{-\beta}}{e^{\beta} + e^{-\beta}}.
+$$
+Therefore if each pair lies half of the time, $\uppi = 1/2$, $\beta = 0$, and if they never lie, $\uppi = 0$, $\beta \rightarrow \infty$.</p>
+<p>Then the likelihood over all answers is
+$$
+p(J \vert S) = \prod_{\langle i,j \rangle} p(J_{ij} \vert S_i, S_j) \propto \exp\left(\beta \sum_{\langle i, j\rangle} J_{ij} S_i S_j \right).
+$$
+Since the prior is uniform, the posterior is
+$$
+p(S \vert J) = \frac{q(J \vert S)}{Z(J)} = \frac{\exp\left(\beta \sum_{\langle i, j \rangle}J_{ij} S_i S_j\right)}{Z(J)},
+$$
+where
+$$
+Z(J) = \sum_{S} \exp\left(\beta \sum_{\langle i, j\rangle} J_{ij} S_i S_j \right).
+$$
+is the partition function for a random-bond Ising model, and the posterior is its Boltzmann probability!</p>
+<p>Let&rsquo;s now consider the general teacher-student scenario, where the student&rsquo;s model belief of the rate of lying $\beta_\mathrm{S}(\uppi_\mathrm{S})$ can differ from the true/teacher&rsquo;s $\beta_\mathrm{T}(\uppi_\mathrm{T})$.
+$$
+\begin{aligned}
+p(S, J, S^*) &amp; = p_\mathrm{S}(S \vert J) p_\mathrm{T}(J \vert S^*) p_\mathrm{T}(S^*) \\
+&amp; \propto \frac{\exp\left( \beta_\mathrm{S} \sum_{\langle ij \rangle} J_{ij} S_i S_j\right)}{Z_\mathrm{S}(J)} \exp\left( \beta_\mathrm{T} \sum_{\langle ij \rangle} J_{ij} S^*_i S^*_j\right).
+\end{aligned}
+$$
+Then consider the observable $S_i S^*_i$. This is $1$ if they are aligned (if the inferred card is same as the true value of the card), and $-1$ if they are anti-aligned, so it is a measure of possibility of inference.
+$$
+\mathop{\mathbb{E}}[S_l S^*_l] \propto \sum_{S^*} \sum_{S} \sum_{J} S_l S^*_l \frac{\exp(\beta_\mathrm{S} \sum_{\langle ij\rangle}J_{ij}S_i S_j) \exp(\beta_\mathrm{T} \sum_{\langle ij\rangle}J_{ij}S^*_i S^*_j)}{Z_\mathrm{S}(J)}.
+$$
+Since we are summing over $J$, we are free to redefine $J$ such that $J_{ij} S^*_i S^*_j = \tilde{J}_{ij}$. Similarly we can redefine $S$ such that $S_i S^*_i = \tilde{S}_i$. Inside the partition function we can also redefine $S&rsquo;$ inside the sum. Therefore
+$$
+\begin{aligned}
+\mathop{\mathbb{E}}[S_l S^*_l] &amp; \propto \sum_{S^*} \sum_{\tilde{S}} \sum_{\tilde{J}} \tilde{S}_l \frac{\exp(\beta_\mathrm{S} \sum_{\langle ij\rangle} \tilde{J}_{ij} \tilde{S}_i \tilde{S}_j) \exp(\beta_\mathrm{T} \sum_{\langle ij\rangle}\tilde{J}_{ij})}{\sum_{\tilde{S}&rsquo;} \exp\left( \beta_\mathrm{S} \sum_{\langle ij\rangle} \tilde{J}_{ij} \tilde{S}&rsquo;_i \tilde{S}&rsquo;_j\right)}
+\end{aligned}
+$$
+So now $S^*$ has disappeared, and we the true distribution is the &lsquo;ferromagnetic configuration&rsquo;. So
+$$
+\begin{aligned}
+\mathop{\mathbb{E}}[S_l S^*_l] &amp; \propto \sum_{\tilde{S}} \sum_{\tilde{J}} \tilde{S}_l \frac{\exp(\beta_\mathrm{S} \sum_{\langle ij\rangle} \tilde{J}_{ij} \tilde{S}_i \tilde{S}_j) \exp(\beta_\mathrm{T} \sum_{\langle ij\rangle}\tilde{J}_{ij})}{\sum_{S&rsquo;} \exp\left( \beta_\mathrm{S} \sum_{\langle ij\rangle} \tilde{J}_{ij} S&rsquo;_i S&rsquo;_j\right)} \\
+&amp; = \sum_{\tilde{J}} \frac{\sum_{\tilde{S}} \tilde{S}_l \exp(\beta_\mathrm{S} \sum_{\langle ij\rangle} \tilde{J}_{ij} \tilde{S}_i \tilde{S}_j) \exp(\beta_\mathrm{T} \sum_{\langle ij\rangle}\tilde{J}_{ij})}{\sum_{S&rsquo;} \exp\left( \beta_\mathrm{S} \sum_{\langle ij\rangle} \tilde{J}_{ij} \tilde{S}&rsquo;_i \tilde{S}&rsquo;_j\right)},
+\end{aligned}
+$$
+which is the magnetisation in the random-bond Ising model with $p(\tilde{J}) \propto \exp(\beta_\mathrm{T} \sum_{\langle ij\rangle}\tilde{J}_{ij})$. So the paramagnetic (PM) state corresponds to the failure of inference, and the ferromagnetic (FM) state corresponds to the success of inference.</p>
+<p>By the way, in the spin-glass literature, what we&rsquo;ve done here is called a &lsquo;gauge transformation&rsquo;. And, there is a special &lsquo;solvable line&rsquo; in this model, called the Nishimori line, where $p(J) \sim Z(J)$. The basic idea was that $p(J)$ just becomes another replica in the problem and so simplifies the calculation, but it turns out that the point where the Nishimori line crosses the phase boundary is very interesting. But this exactly corresponds to the Bayes optimality condition, $\beta_\mathrm{S} = \beta_\mathrm{T}$. Usually, people show that for particular choices for $\uppi$, we can gauge-transform $p(J)$ to look like $Z(J)$. Here, we did it the other way around.</p>
+<p>People have already studied the phase diagram of the RBIM, so we have the phase diagram for free. Let&rsquo;s look at the phase diagram of the RBIM (for example see <a href="https://arxiv.org/abs/cond-mat/0007254v2" target="_blank" rel="noopener">Gruzberg 0007254v2</a>).</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img alt=""
+           src="/ko/activities/talks/240409-imperial/rbim_conventional.svg"
+           loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<p>The $p=0$, $T_\mathrm{c} \approx 2.27$  corresponds to the clean 2D Ising transition. For us, $T$ corresponds to $\beta_\mathrm{S}^{-1}$ and $p = \uppi_\mathrm{T}$. Thinking of $\beta_{S,T}$ as the &lsquo;signal strength&rsquo;, we can redraw the phase diagram in the $\beta_\mathrm{T}-\beta_\mathrm{S}$ plane. We know that the Nishimori line is the $45^\circ$ line in this plane.</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img alt=""
+           src="/ko/activities/talks/240409-imperial/rbim_inference.svg"
+           loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<p>We see that in this picture, no matter what $\beta_S$ the student chooses, we need sufficient teacher&rsquo;s signal strength $\beta_\mathrm{T} &gt; \beta^\mathrm{c}_\mathrm{T}$ in order for inference to be possible. On the other hand, if the student assumes that the signal strength is too low, $\beta_\mathrm{S} &lt; \beta^\mathrm{c}_\mathrm{S}$, then again inference is not possible.</p>
+<h2 id="the-planted-directed-polymer-problem">The planted directed polymer problem</h2>
+<p>So now the world is our oyster. We can start cooking up planted versions of spin-glass/disordered stat-mech models, and see what inference problem they map on to. We were particularly interested in looking at a class of inference problems involving hidden Markov models. This is where the prior follows a Markov process,
+$$
+p(x_{1:t})=\left(\prod_{\tau=2}^tp(x_\tau|x_{\tau-1})\right)p(x_1),
+$$
+and measurements $y_{t}$ conditioned on the state are generated through some measurement model $p(y_{t} \vert x_{t})$ at every timestep. As before, we could calculate a posterior for the entire trajectory, $p(x_{1:t} \vert y_{1:t})$, but this is usually intractable computationally. Instead, we can also consider a <i>filtering</i> task, where the state at the current timestep is inferred from data from all previous timesteps, i.e. $p(x_{t} \vert y_{1:t})$.</p>
+<p>Concretely, we consider the case when the states are locations in space, and the Markov process is a random walk on that space. A simple example of a &lsquo;kernel&rsquo; for this process is
+$$
+p(x_{t+1} \vert x_{t}) = \frac{1}{2} \delta_{x_{t+1},x_{t}} + \frac{1}{4} \delta_{x_{t+1},x_{t}\pm 1}.
+$$
+An example of such a random walk in 1D is shown below.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img alt=""
+           src="/ko/activities/talks/240409-imperial/1_true_path.svg"
+           loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<p>At every timestep $t$, we will take an &lsquo;image&rsquo; of the walker specified by pixel values at positions $x$,
+$$
+\phi_{x,t} = \epsilon_\mathrm{T} \delta_{x, x^*_{t}} + \psi_{x,t},
+$$
+which has a peak at the true location of the walker with &lsquo;signal strength&rsquo; $\epsilon_\mathrm{T}$, and $\psi_{x,t}$ is iid random Gaussian noise $\psi_{x,t} \sim \mathcal{N}(0, \sigma_\mathrm{T}^2)$. An example of set of all images from each timestep for the above random walk is shown below.</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img alt=""
+           src="/ko/activities/talks/240409-imperial/2_good_image.svg"
+           loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<p>Then, we&rsquo;d like to infer the true position of the walker at the current time, $x^*_{t}$ or the true trajectory $X^* := (x^*_\tau)_{\tau=1}^T$ given the images at all times. We call it the &lsquo;planted directed polymer problem&rsquo;, as it is related to the directed polymer in a random medium from stat-mech. Let&rsquo;s see how.</p>
+<p>Let the whole image at time $t$ be $\boldsymbol{\phi}_{t} := (\phi_{x,t})_x$. Then assuming signal strength $\epsilon_\mathrm{S}$ and noise strength $\sigma_\mathrm{S}$, the likelihood for observing an image $\boldsymbol{\phi}_{t}$ given that the walker&rsquo;s position is $x_{t}$ is
+$$
+\begin{aligned}
+p_\mathrm{S}(\boldsymbol{\phi}_{t} \vert x_{t}) &amp; = \prod_{x&rsquo;_{t}} \frac{1}{\sqrt{2 \pi \sigma_\mathrm{S}^2}} \exp \left[ \frac{-(\phi_{x&rsquo;_{t}, t} - \epsilon_\mathrm{S} \delta_{x_{t}, x&rsquo;_{t}})^2}{2 \sigma_\mathrm{S}^2} \right] \\
+&amp; = \exp\left(\left[\epsilon_\mathrm{S} \phi_{x_{t},t} - \epsilon^2/2\right]/\sigma_\mathrm{S}^2\right)\pi_\mathrm{S}(\boldsymbol{\phi}_{t}),
+\end{aligned}
+$$
+where $\pi_\mathrm{S}(\boldsymbol{\phi}_t)$ denotes the Gaussian measure. Denoting $X := x_{1:t}$ and $\Phi := \boldsymbol{\phi}_{1:t}$, the likelihood for the whole trajectory is
+$$
+p_\mathrm{S}(\Phi \vert X) \propto \exp\left(\frac{\epsilon_\mathrm{S}}{\sigma_\mathrm{S}^2}\sum_{t} \phi_{x_{t}, t} \right)\pi_\mathrm{S}(\Phi).
+$$
+As the $\pi_\mathrm{S}(\Phi)$ term is there for any value of $X$, we can ignore it, since we can just normalise the posterior again. So the student&rsquo;s posterior for the whole path is
+$$
+p_\mathrm{S}(X \vert \Phi) = \frac{q_\mathrm{S}(X \vert \Phi)}{Z_\mathrm{S}(\Phi)},
+$$
+where the <i>unnormalised</i> posterior is
+$$
+q_\mathrm{S}(X \vert \Phi) = \exp\left(\frac{\epsilon_\mathrm{S}}{\sigma_\mathrm{S}^2}\sum_{t=1}^T \phi_{x_{t},t} + \sum_{t=2}^{T} \ln q_\mathrm{S}(x_{t} \vert x_{t-1}) \right) q_\mathrm{S}(x_1),
+$$
+and $Z_\mathrm{S}(\Phi) = \sum_X p_\mathrm{S}(X \vert \Phi)$.</p>
+<p>Let us assume that the kernel $q_\mathrm{S}(x_t \vert x_{t-1})$ only depends on the distance between $x_t$ and $x_{t-1}$, and is maximised when the distance is zero. Then, we write $\ln q_\mathrm{S}(x_{t} \vert x_{t-1}) = f(\sqrt{a}(x_{t} - x_{t-1}))$ where $a$ is the lattice constant. Expanding, we find
+$$
+\begin{aligned}
+q_S(X \vert \Phi)  = \exp\Bigg(
+\sum_{\tau=1}^{t} \left[-\frac{a}{4 \nu_\mathrm{S}} \left[x_\tau - x_{\tau-1}\right]^2 + \frac{\epsilon_\mathrm{S}}{\sigma_\mathrm{S}^2} \phi_{x_\tau, \tau} \right]
++\mathcal{O}(a^{3/2})\Bigg) q_S(x_1),
+\end{aligned}
+$$
+where $\nu_\mathrm{S} = \frac{1}{2 \lvert f&rsquo;&rsquo;_\mathrm{S}(0) \rvert}$ is the &lsquo;width&rsquo; of the kernel. We see that the unnormalised posterior now looks like the Boltzmann weight for the directed polymer in a random environment. For those who are unfamiliar, it is a well studied stat-mech model for configurations of a polymer. Interpreting time as another spatial dimension $t=y$, it is &lsquo;directed&rsquo; in that the polymer cannot loop around itself, since $x$ is a single-valued function of $y$.</p>
+<p>The first term in the sum $\sim (x_\tau - x_{\tau-1})^2$ corresponds to the &rsquo;elastic energy&rsquo; of the polymer, where you pay a price whenever you stretch out the polymer. The second term $\sim \phi_{x_t, t}$, where $\phi_{x_t, t}$, usually random iid noise in the directed polymer setting, is a &lsquo;random environment&rsquo; that the polymer is placed in.</p>
+<p>The interesting phenomena in the directed polymer is that even though you need to pay energy to stretch out the polymer, it might be worth it to go through a particular location, as long as the potential there is deep enough. This creates a &lsquo;roughening&rsquo; of the polymer (you can read more about it in <a href="https://arxiv.org/abs/cond-mat/0402117" target="_blank" rel="noopener">Bhattacharjee 0402117v1</a>, for example).</p>
+<p>For us, $\phi_{x_t, t}$ is not iid, but instead has information about the true location of the walker &lsquo;planted&rsquo; in it. In recent work, we studied this problem in detail in 1D and also on the tree. Read more here: <a href="https://arxiv.org/abs/2404.07263" target="_blank" rel="noopener">P. Kim 2404.07263</a>.</p>
+
+    </div>
+
+    
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/ko/tags/talk/">Talk</a>
+  
+</div>
+
+
+
+<div class="share-box">
+  <ul class="share">
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="https://sunwoo-kim.github.io"><img class="avatar mr-3 avatar-square" src="/ko/authors/sunwoo/avatar_hu9405347151a0d7e43c13dd2300fcc4cc_4719879_270x270_fill_q100_lanczos_center.jpg" alt="김선우"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://sunwoo-kim.github.io">김선우</a></h5>
+      
+      
+      <ul class="network-icon" aria-hidden="true">
+  
+</ul>
+
+    </div>
+  </div>
+
+
+  
+
+
+
+
+
+
+
+
+
+<script src="https://giscus.app/client.js"
+        data-repo="sunwoo-kim/sunwoo-kim.github.io"
+        data-repo-id="MDEwOlJlcG9zaXRvcnkyMzE5MjY1MDU="
+        data-category="Comments"
+        data-category-id="DIC_kwDODdLq6c4CY5LG"
+        data-mapping="specific"
+        data-term="240409-imperial"
+        data-strict="1"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang='ko'
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+
+
+
+
+
+  </div>
+</article>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+    
+  
+  
+    
+  
+
+  
+
+  
+  <p class="powered-by copyright-license-text">
+    © 2024 Sun Woo P. Kim. Email: swk34 [at] cantab [dot] ac [dot] uk
+  </p>
+  
+
+  <p class="powered-by footer-license-icons">
+    <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" rel="noopener noreferrer" target="_blank" aria-label="Creative Commons">
+      <i class="fab fa-creative-commons fa-2x" aria-hidden="true"></i>
+      <i class="fab fa-creative-commons-by fa-2x" aria-hidden="true"></i>
+      
+        <i class="fab fa-creative-commons-nc fa-2x" aria-hidden="true"></i>
+      
+      
+        <i class="fab fa-creative-commons-nd fa-2x" aria-hidden="true"></i>
+      
+    </a>
+  </p>
+
+
+
+
+
+  
+
+  <p class="powered-by">
+    Site last updated 2024-09-07 23:17:12.629151
+  </p>
+
+</footer>
+
+    </div>
+    
+  </div>
+
+  
+
+
+<script src="/js/vendor-bundle.min.1d4346c6f7d46c340dc0a9058dd85c13.js"></script>
+
+
+
+
+  
+
+  
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script id="search-hit-fuse-template" type="text/x-template">
+    <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+    </div>
+  </script>
+  
+    <script src="https://cdn.jsdelivr.net/gh/krisk/Fuse@v3.2.1/dist/fuse.min.js" integrity="sha512-o38bmzBGX+hD3JHWUFCDA09btWaqrNmoJ3RXLlrysA7PP01Kgs4UlE4MhelE1v5dJR3+cxlR4qQlotsW7jKsnw==" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/gh/julmot/mark.js@8.11.1/dist/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script id="page-data" type="application/json">{"use_headroom":true}</script>
+
+
+  <script src="/js/wowchemy-headroom.db4755770454eb63685f8de785c0a172.js" type="module"></script>
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+<script src="/ko/js/wowchemy.min.ba010df5e32d750c206a9a338635cdcc.js"></script>
+
+
+
+
+
+
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">인용</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+        <pre><code></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> 복사
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> 다운로드
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <script src="/js/wowchemy-publication.68f8d7090562ca65fc6d3cb3f8f2d2cb.js" type="module"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

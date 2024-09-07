@@ -323,7 +323,7 @@
 <meta property="og:description" content="" /><meta property="og:image" content="https://sunwoo-kim.github.io/ko/authors/sunwoo/avatar_hu9405347151a0d7e43c13dd2300fcc4cc_4719879_270x270_fill_q100_lanczos_center.jpg" /><meta property="og:locale" content="ko-kr" />
 
   
-    <meta property="og:updated_time" content="2021-04-18T00:00:00&#43;00:00" />
+    <meta property="og:updated_time" content="2024-09-07T00:00:00&#43;00:00" />
   
 
 
@@ -778,6 +778,14 @@
     <div class="article-widget content-widget-hr">
       <h3>최신</h3>
       <ul>
+        
+        <li>
+          <a href="/ko/projects/plantedpolymer/">The planted directed polymer; inferring a random walk from noisy images</a>
+        </li>
+        
+        <li>
+          <a href="/ko/activities/talks/240409-imperial/">Bayesian inference, statistical physics, and the planted directed polymer problem</a>
+        </li>
         
         <li>
           <a href="/ko/posts/hello-world/">Hello World</a>

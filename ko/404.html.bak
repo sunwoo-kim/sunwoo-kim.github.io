@@ -702,17 +702,21 @@
   <h2>최신</h2>
   <ul>
     
+      <li><a href="/ko/projects/plantedpolymer/">The planted directed polymer; inferring a random walk from noisy images</a></li>
+    
+      <li><a href="/ko/projects/">프로젝트</a></li>
+    
+      <li><a href="/ko/activities/">활동</a></li>
+    
+      <li><a href="/ko/activities/talks/240409-imperial/">Bayesian inference, statistical physics, and the planted directed polymer problem</a></li>
+    
       <li><a href="/ko/projects/mblbosons/">보손입자의 다체 국소화 (Many-body localization in bosons)</a></li>
     
       <li><a href="/ko/posts/">게시물</a></li>
     
       <li><a href="/ko/posts/hello-world/">Hello World</a></li>
     
-      <li><a href="/ko/projects/">프로젝트</a></li>
-    
       <li><a href="/ko/projects/nonsymmorphic/">Nonsymmorphic crystals and topological waveguiding</a></li>
-    
-      <li><a href="/ko/activities/">활동</a></li>
     
   </ul>
   

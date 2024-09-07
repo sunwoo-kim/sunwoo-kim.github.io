@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://sunwoo-kim.github.io/ko/projects/</loc>
-    <lastmod>2021-04-18T00:00:00+00:00</lastmod>
+    <lastmod>2024-09-07T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <xhtml:link
                 rel="alternate"
@@ -14,6 +14,84 @@
                 rel="alternate"
                 hreflang="ko"
                 href="https://sunwoo-kim.github.io/ko/projects/"
+                />
+  </url><url>
+    <loc>https://sunwoo-kim.github.io/ko/authors/</loc>
+    <lastmod>2024-09-07T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://sunwoo-kim.github.io/ko/projects/plantedpolymer/</loc>
+    <lastmod>2024-09-07T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://sunwoo-kim.github.io/en/projects/plantedpolymer/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ko"
+                href="https://sunwoo-kim.github.io/ko/projects/plantedpolymer/"
+                />
+  </url><url>
+    <loc>https://sunwoo-kim.github.io/ko/authors/sunwoo/</loc>
+    <lastmod>2024-09-07T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://sunwoo-kim.github.io/ko/activities/talks/240409-imperial/</loc>
+    <lastmod>2024-04-09T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://sunwoo-kim.github.io/en/activities/talks/240409-imperial/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ko"
+                href="https://sunwoo-kim.github.io/ko/activities/talks/240409-imperial/"
+                />
+  </url><url>
+    <loc>https://sunwoo-kim.github.io/ko/tags/</loc>
+    <lastmod>2024-04-09T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://sunwoo-kim.github.io/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ko"
+                href="https://sunwoo-kim.github.io/ko/tags/"
+                />
+  </url><url>
+    <loc>https://sunwoo-kim.github.io/ko/tags/talk/</loc>
+    <lastmod>2024-04-09T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://sunwoo-kim.github.io/en/tags/talk/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ko"
+                href="https://sunwoo-kim.github.io/ko/tags/talk/"
+                />
+  </url><url>
+    <loc>https://sunwoo-kim.github.io/ko/activities/</loc>
+    <lastmod>2024-04-09T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://sunwoo-kim.github.io/en/activities/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ko"
+                href="https://sunwoo-kim.github.io/ko/activities/"
                 />
   </url><url>
     <loc>https://sunwoo-kim.github.io/ko/</loc>
@@ -29,10 +107,6 @@
                 hreflang="ko"
                 href="https://sunwoo-kim.github.io/ko/"
                 />
-  </url><url>
-    <loc>https://sunwoo-kim.github.io/ko/authors/</loc>
-    <lastmod>2021-04-18T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
   </url><url>
     <loc>https://sunwoo-kim.github.io/ko/posts/hello-world/</loc>
     <lastmod>2021-04-18T00:00:00+00:00</lastmod>
@@ -61,10 +135,6 @@
                 hreflang="ko"
                 href="https://sunwoo-kim.github.io/ko/posts/"
                 />
-  </url><url>
-    <loc>https://sunwoo-kim.github.io/ko/authors/sunwoo/</loc>
-    <lastmod>2021-04-18T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
   </url><url>
     <loc>https://sunwoo-kim.github.io/ko/projects/mblbosons/</loc>
     <lastmod>2021-04-18T00:00:00+00:00</lastmod>
@@ -118,32 +188,6 @@
                 rel="alternate"
                 hreflang="ko"
                 href="https://sunwoo-kim.github.io/ko/publication_types/"
-                />
-  </url><url>
-    <loc>https://sunwoo-kim.github.io/ko/tags/</loc>
-    <changefreq>weekly</changefreq>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://sunwoo-kim.github.io/en/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ko"
-                href="https://sunwoo-kim.github.io/ko/tags/"
-                />
-  </url><url>
-    <loc>https://sunwoo-kim.github.io/ko/activities/</loc>
-    <changefreq>weekly</changefreq>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://sunwoo-kim.github.io/en/activities/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ko"
-                href="https://sunwoo-kim.github.io/ko/activities/"
                 />
   </url>
 </urlset>
