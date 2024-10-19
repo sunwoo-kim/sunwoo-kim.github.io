@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- This site was created with Wowchemy. https://www.wowchemy.com -->
-<!-- Last Published: October 18, 2024 --><html lang="en-us" >
+<!-- Last Published: October 19, 2024 --><html lang="en-us" >
 
 
 <head>
@@ -225,7 +225,7 @@
   
   
   
-  <link rel="stylesheet" href="/css/wowchemy.972f9ff577d9c8ccf00096d1f20f0349.css" />
+  <link rel="stylesheet" href="/css/wowchemy.b8337e38cef46c2eac38aa6f6ef9880c.css" />
 
   
   
@@ -307,7 +307,7 @@
 <link rel="icon" type="image/png" href="/media/icon_hu8b309a9302268010949630654373c3a0_79828_32x32_fill_lanczos_center_3.png" />
 <link rel="apple-touch-icon" type="image/png" href="/media/icon_hu8b309a9302268010949630654373c3a0_79828_180x180_fill_lanczos_center_3.png" />
 
-<meta name="theme-color" content="#ffffff" />
+<meta name="theme-color" content="#1565c0" />
 
 
 
@@ -1949,11 +1949,11 @@
   
   <a href="/en/projects/mblbosons/"  class="card-image hover-overlay">
     <img src="/en/projects/mblbosons/featured_huaa823ed13e92cde40445d1811d62fd76_57233_550x0_resize_q100_h2_lanczos_3.webp" height="550" width="550"
-         alt="Many-body localization in bosons" class="img-responsive" loading="lazy">
+         alt="Super long-time dynamics of many-body localised bosons" class="img-responsive" loading="lazy">
   </a>
   
   <div class="card-text">
-    <h4><a href="/en/projects/mblbosons/" >Many-body localization in bosons</a></h4>
+    <h4><a href="/en/projects/mblbosons/" >Super long-time dynamics of many-body localised bosons</a></h4>
 
     
 
@@ -2028,6 +2028,162 @@
 <div class="card">
   
   
+  <a href="/en/projects/networks/"  class="card-image hover-overlay">
+    <img src="/en/projects/networks/featured_hu3e0e4b22bebae7f97d7fec3f21b1caca_507692_550x0_resize_q100_h2_lanczos_3.webp" height="550" width="550"
+         alt="Growing network models" class="img-responsive" loading="lazy">
+  </a>
+  
+  <div class="card-text">
+    <h4><a href="/en/projects/networks/" >Growing network models</a></h4>
+
+    
+    <div class="article-style">
+      <p></br></p>
+    </div>
+    
+
+    
+    <div class="btn-links">
+      
+
+
+
+
+
+
+
+
+  
+    
+  
+
+
+
+<a class="btn btn-outline-primary btn-page-header btn-sm" href="/uploads/networks.pdf" target="_blank" rel="noopener">
+  PDF
+</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    
+  </div>
+</div>
+
+      </div>
+    
+      
+        
+          <div class="project-card project-item isotope-item ">
+        
+        
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+<div class="card">
+  
+  
+  <a href="/en/projects/sobolev/"  class="card-image hover-overlay">
+    <img src="/en/projects/sobolev/featured_hu92db59fd8381fe5e67d2cc598e06118e_658340_550x0_resize_q100_h2_lanczos_3.webp" height="550" width="550"
+         alt="MASt Thesis - Metric tomography with Sobolev gradients" class="img-responsive" loading="lazy">
+  </a>
+  
+  <div class="card-text">
+    <h4><a href="/en/projects/sobolev/" >MASt Thesis - Metric tomography with Sobolev gradients</a></h4>
+
+    
+
+    
+    <div class="btn-links">
+      
+
+
+
+
+
+
+
+
+  
+    
+  
+
+
+
+<a class="btn btn-outline-primary btn-page-header btn-sm" href="/uploads/sobolev.pdf" target="_blank" rel="noopener">
+  PDF
+</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    
+  </div>
+</div>
+
+      </div>
+    
+      
+        
+          <div class="project-card project-item isotope-item ">
+        
+        
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+<div class="card">
+  
+  
   <a href="/en/projects/nonsymmorphic/"  class="card-image hover-overlay">
     <img src="/en/projects/nonsymmorphic/featured_huc9f08282645ce26cdc837355589c2eb3_1120058_550x0_resize_q100_h2_lanczos_3.webp" height="551" width="550"
          alt="Nonsymmorphic crystals and topological waveguiding" class="img-responsive" loading="lazy">
@@ -2056,6 +2212,82 @@
 
 
 <a class="btn btn-outline-primary btn-page-header btn-sm" href="/uploads/nonsymmorphic.pdf" target="_blank" rel="noopener">
+  PDF
+</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    
+  </div>
+</div>
+
+      </div>
+    
+      
+        
+          <div class="project-card project-item isotope-item ">
+        
+        
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+<div class="card">
+  
+  
+  <a href="/en/projects/quivers/"  class="card-image hover-overlay">
+    <img src="/en/projects/quivers/featured_hu61adabc6b153fe11aeabbb1acd1652a2_367351_550x0_resize_q100_h2_lanczos_3.webp" height="550" width="550"
+         alt="BSc Thesis - Coulomb branch of 𝓝 = 4, 𝑑 = 2 &#43; 1 supersymmetric gauge field theories" class="img-responsive" loading="lazy">
+  </a>
+  
+  <div class="card-text">
+    <h4><a href="/en/projects/quivers/" >BSc Thesis - Coulomb branch of 𝓝 = 4, 𝑑 = 2 + 1 supersymmetric gauge field theories</a></h4>
+
+    
+
+    
+    <div class="btn-links">
+      
+
+
+
+
+
+
+
+
+  
+    
+  
+
+
+
+<a class="btn btn-outline-primary btn-page-header btn-sm" href="/uploads/quivers.pdf" target="_blank" rel="noopener">
   PDF
 </a>
 
