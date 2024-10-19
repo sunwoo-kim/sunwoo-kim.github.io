@@ -1229,21 +1229,6 @@ If you’d like to know more about this work, please check out the PDF link, whi
     </item>
     
     <item>
-      <title>Growing network models</title>
-      <link>https://sunwoo-kim.github.io/en/projects/networks/</link>
-      <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
-      <guid>https://sunwoo-kim.github.io/en/projects/networks/</guid>
-      <description>&lt;details open&gt; &lt;summary&gt; &lt;b&gt;For the general public&lt;/b&gt; &lt;i&gt;(click to open and close)&lt;/i&gt; &lt;/summary&gt;
-&lt;hr&gt;
-&lt;hr&gt;
-&lt;/details&gt;
-&lt;details&gt; &lt;summary&gt; &lt;b&gt;Abstract&lt;/b&gt; &lt;i&gt;(click to open and close)&lt;/i&gt; &lt;/summary&gt;
-&lt;hr&gt;
-&lt;hr&gt;
-&lt;/details&gt;</description>
-    </item>
-    
-    <item>
       <title>MASt Thesis - Metric tomography with Sobolev gradients</title>
       <link>https://sunwoo-kim.github.io/en/projects/sobolev/</link>
       <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
@@ -1284,16 +1269,44 @@ If you like to know more about the work, please check out the PDF.&lt;/p&gt;
     </item>
     
     <item>
+      <title>Growing network models</title>
+      <link>https://sunwoo-kim.github.io/en/projects/networks/</link>
+      <pubDate>Fri, 01 Jun 2018 00:00:00 +0000</pubDate>
+      <guid>https://sunwoo-kim.github.io/en/projects/networks/</guid>
+      <description>&lt;details open&gt; &lt;summary&gt; &lt;b&gt;For the general public&lt;/b&gt; &lt;i&gt;(click to open and close)&lt;/i&gt; &lt;/summary&gt;
+&lt;hr&gt;
+&lt;p&gt;Growing network models are simple models that model social settings. For example, it could model how much research papers are cited - people tend to cite papers that are already cited (preferential attachment). This effect by itself leads to winner-takes-all effects, with winners randomly chosen due to random fluctuations. We study some of the models and come up with more accurate expressions for certain limits.&lt;/p&gt;
+&lt;hr&gt;
+&lt;/details&gt;
+&lt;details&gt; &lt;summary&gt; &lt;b&gt;Abstract&lt;/b&gt; &lt;i&gt;(click to open and close)&lt;/i&gt; &lt;/summary&gt;
+&lt;hr&gt;
+&lt;p&gt;Three growing network models (GNMs) are studied numerically using Monte Carlo sampling and analytically using mean-field approximation. The first is the Barabási-Albert (BA)/PurePref model, where new nodes are connected preferentially connected to existing nodes with many preexisting links. The second is the PureRand model, where there is no preference. The third is the Mixed model, where node choice probability is chosen between the two models. Apart from rederivation of known results, our original contribution is as follows. We study the node degree evolution directly instead of the steady state distribution, to find an analytic form more accurate with number of edges added per timestep, $m$. We confirm the results with numerics.&lt;/p&gt;
+&lt;hr&gt;
+&lt;/details&gt;</description>
+    </item>
+    
+    <item>
       <title>BSc Thesis - Coulomb branch of 𝓝 = 4, 𝑑 = 2 &#43; 1 supersymmetric gauge field theories</title>
       <link>https://sunwoo-kim.github.io/en/projects/quivers/</link>
       <pubDate>Mon, 19 Feb 2018 00:00:00 +0000</pubDate>
       <guid>https://sunwoo-kim.github.io/en/projects/quivers/</guid>
       <description>&lt;details open&gt; &lt;summary&gt; &lt;b&gt;For the general public&lt;/b&gt; &lt;i&gt;(click to open and close)&lt;/i&gt; &lt;/summary&gt;
 &lt;hr&gt;
+&lt;p&gt;The famous Higgs mechanism, where a scalar (Higgs) field chooses one of the degenerate minima, gives particles their mass. In so-called supersymmetric gauge field theories, the space of degenerate minima is called the moduli space. Information about the moduli space is encoded in diagrams called &amp;lsquo;quiver diagrams&amp;rsquo; and an algebraic series called the Hilbert series. We studied the structure of these moduli spaces for a particular set of these.&lt;/p&gt;
 &lt;hr&gt;
 &lt;/details&gt;
 &lt;details&gt; &lt;summary&gt; &lt;b&gt;Abstract&lt;/b&gt; &lt;i&gt;(click to open and close)&lt;/i&gt; &lt;/summary&gt;
 &lt;hr&gt;
+&lt;p&gt;Moduli space of a gauge ﬁeld theory is an abstract space of vacuum expectation values
+of scalar fields. It is of physical signiﬁcance as a point in this space must be chosen
+before the masses of particles can be determined. For $\mathcal{N} = 4$, $d = 2 + 1$ supersymmetric
+gauge fields theories, whose information can be encoded in quiver diagrams, there are
+two branches in its moduli space: the Higgs branch and the Coulomb branch, where
+the latter can be calculated using the monopole formula. In this article, the Coulomb
+branch of $A_n$, $C_n$, $F_4$, $G_2$ Dynkin quivers and their affine counterparts were studied by
+calculating their Hilbert series using the monopole formula. In addition to conﬁrming
+previous predictions, new implications on the choice of ungauging location (ﬁxing one of
+the phases) were found, which we state as the &lt;em&gt;ungauging hypothesis&lt;/em&gt;.&lt;/p&gt;
 &lt;hr&gt;
 &lt;/details&gt;</description>
     </item>
