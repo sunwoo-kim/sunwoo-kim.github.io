@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- This site was created with Wowchemy. https://www.wowchemy.com -->
-<!-- Last Published: November 10, 2024 --><html lang="en-us" >
+<!-- Last Published: November 18, 2024 --><html lang="en-us" >
 
 
 <head>
@@ -778,7 +778,7 @@
 </span></span><span class="line"><span class="cl">   title=<span class="nb">{</span>Transverse field Ising model<span class="nb">}</span>,
 </span></span><span class="line"><span class="cl">   year=<span class="nb">{</span>2023<span class="nb">}</span>,
 </span></span><span class="line"><span class="cl">   howpublished=<span class="nb">{</span><span class="k">\url</span><span class="nb">{</span>https://sunwoo-kim.github.io/en/posts/tfi-model/<span class="nb">}}</span>,
-</span></span><span class="line"><span class="cl">   note=<span class="nb">{</span>Accessed: 2024-11-10<span class="nb">}</span>
+</span></span><span class="line"><span class="cl">   note=<span class="nb">{</span>Accessed: 2024-11-18<span class="nb">}</span>
 </span></span><span class="line"><span class="cl"><span class="nb">}</span>
 </span></span></code></pre></div></details>
 <p>In condensed matter physics, there are myriads of phenomenological models out there, with information about them scattered throughout different papers and resources. In the field of machine learning, there are efforts such as the <a href="https://modelzoo.co" target="_blank" rel="noopener">Model Zoo</a> which tries to organise these models in one place.</p>
