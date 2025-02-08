@@ -5,12 +5,71 @@
     <link>https://sunwoo-kim.github.io/en/activities/teaching/</link>
       <atom:link href="https://sunwoo-kim.github.io/en/activities/teaching/index.xml" rel="self" type="application/rss+xml" />
     <description>Teaching</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>swk34 [at] cantab [dot] ac [dot] uk</copyright><lastBuildDate>Mon, 12 Feb 2024 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>swk34 [at] cantab [dot] ac [dot] uk</copyright><lastBuildDate>Sat, 08 Feb 2025 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://sunwoo-kim.github.io/media/icon_hu8b309a9302268010949630654373c3a0_79828_512x512_fill_lanczos_center_3.png</url>
       <title>Teaching</title>
       <link>https://sunwoo-kim.github.io/en/activities/teaching/</link>
     </image>
+    
+    <item>
+      <title>Notes on separation of variables</title>
+      <link>https://sunwoo-kim.github.io/en/activities/teaching/pdes/</link>
+      <pubDate>Sat, 08 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>https://sunwoo-kim.github.io/en/activities/teaching/pdes/</guid>
+      <description>&lt;h1 id=&#34;arbitrary-boundary-conditions-for-spherical-polar-coordinates&#34;&gt;Arbitrary boundary conditions for spherical polar coordinates&lt;/h1&gt;
+&lt;p&gt;In the lectures you learned that the Laplacian in 3D has the eigenfunctions
+$$
+\Delta u_{nlm}(r,\theta, \phi) = \lambda_{nlm} u(r,\theta, \phi),
+$$
+where
+$$
+u_{nlm}(r,\theta,\phi) = R_{nl}(r) \tilde P_{lm}(\theta) \Phi_m(\phi),
+$$
+where $\tilde P_{lm}(\theta) = C_{lm} P_{lm}(\cos \theta)$. As it is separable, it can be thought of a tensor product of three vectors living in separate spaces $1,2,3$, as
+$$
+\ket{u_{nlm}} = \ket{R_{nl}}_1 \ket{\tilde P_{lm}}_2 \ket{\Phi_m}_3.
+$$
+with $u_{nlm}(r, \theta, \phi) = \langle r \vert R_{nl} \rangle_1 \langle \theta \vert \tilde P_{lm} \rangle_2 \langle \phi \vert \Phi_m \rangle_3$. Since inner product on the joint space is defined as
+$$
+\langle u \vert u&amp;rsquo; \rangle := \int_0^\infty r^2 dr \int_0^\pi \sin\theta d \theta \int_0^{2\pi} d \phi ,u^*(r, \theta, \phi) u(r, \theta, \phi),
+$$
+The individual factors can be normalised under the inner products
+$$
+\langle R \vert R&amp;rsquo; \rangle_1 := \int_0^\infty r^2 dr R^*(r) R&amp;rsquo;(r),
+$$
+$$
+\langle \tilde P \vert \tilde P&amp;rsquo; \rangle_2 := \int_0^\pi \sin \theta d \theta \tilde{P}^*(\theta) \tilde{P}&amp;rsquo;(\theta),
+$$
+and
+$$
+\langle \Phi \vert \Phi&amp;rsquo; \rangle_3 := \int_0^{2\pi} d\phi \Phi^*(r) \Phi&amp;rsquo;(r).
+$$
+${u_{nlm}}_{nlm}$ form a CONS (complete set of orthonomal basis) and therefore any solution can be written as
+$$
+\psi(r, \theta, \phi) = \sum_{nlm} A_{nlm} R_{nl}(r) \tilde P_{lm}(\theta) \Phi_m(\phi),
+$$
+or abstractly as
+$$
+\ket{\psi} = \sum_{nlm} A_{nlm} \ket{R_{nl}}_1 \ket{\tilde P_{lm}}_2 \ket{\Phi_m}_3.
+$$
+We can evaluate this abstract vector on a subset of variables, for example only for $r$, as:
+$$
+\ket{\psi(r)} := \bra{r}_1\ket{\psi} = \sum_{nlm} A_{nlm} R_{nl}(r) \ket{\tilde P_{lm}}_2 \ket{\Phi_m}_3.
+$$
+In the lectures, you had a simple boundary condition $u(R, \theta, \phi) = \cos(\theta)$. What if it is more complicated? Consider we have a boundary condition like $u(R, \theta, \phi) = f(\theta, \phi)$.&lt;/p&gt;
+&lt;p&gt;This can be written as an abstract vector in spaces $2, 3$ as
+$$
+\ket{u(R)} = \sum_{nlm} B_{nlm} R_{nl}(R) R_{nl}(r) \ket{\tilde P_{lm}}_2 \ket{\Phi_m}_3.
+$$
+The coefficient $B_{nlm}$ can be found by taking the inner product of $\ket{u(R)}$ with basis vectors for spaces $2, 3$, as
+$$
+B_{nlm} = \frac{1}{R_{nl}(R)} \int_0^\pi \sin\theta d \theta \int_0^{2\pi} d \phi , \tilde P^*_{lm}(\theta) \Phi^*_m(\phi) f(\theta, \phi).
+$$
+Then to obey the boundary conditions, we must have that $B_{nlm} = A_{nlm}$, such that $\psi(R, \theta, \phi) = u(R,\theta,\phi) = f(\theta, \phi)$.&lt;/p&gt;
+&lt;p&gt;For example, our boundary condition $u(R, \theta, \phi) = \cos(\theta)$ is proportional to $\tilde P_{10}(\theta) \Phi_m(\phi)$. Therefore $B_{nlm} = \delta_{l,1} \delta_{m,0}$.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Notes on group and representation theory</title>

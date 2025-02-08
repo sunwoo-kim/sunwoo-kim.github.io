@@ -13,6 +13,65 @@
     </image>
     
     <item>
+      <title>Notes on separation of variables</title>
+      <link>https://sunwoo-kim.github.io/en/activities/teaching/pdes/</link>
+      <pubDate>Sat, 08 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>https://sunwoo-kim.github.io/en/activities/teaching/pdes/</guid>
+      <description>&lt;h1 id=&#34;arbitrary-boundary-conditions-for-spherical-polar-coordinates&#34;&gt;Arbitrary boundary conditions for spherical polar coordinates&lt;/h1&gt;
+&lt;p&gt;In the lectures you learned that the Laplacian in 3D has the eigenfunctions
+$$
+\Delta u_{nlm}(r,\theta, \phi) = \lambda_{nlm} u(r,\theta, \phi),
+$$
+where
+$$
+u_{nlm}(r,\theta,\phi) = R_{nl}(r) \tilde P_{lm}(\theta) \Phi_m(\phi),
+$$
+where $\tilde P_{lm}(\theta) = C_{lm} P_{lm}(\cos \theta)$. As it is separable, it can be thought of a tensor product of three vectors living in separate spaces $1,2,3$, as
+$$
+\ket{u_{nlm}} = \ket{R_{nl}}_1 \ket{\tilde P_{lm}}_2 \ket{\Phi_m}_3.
+$$
+with $u_{nlm}(r, \theta, \phi) = \langle r \vert R_{nl} \rangle_1 \langle \theta \vert \tilde P_{lm} \rangle_2 \langle \phi \vert \Phi_m \rangle_3$. Since inner product on the joint space is defined as
+$$
+\langle u \vert u&amp;rsquo; \rangle := \int_0^\infty r^2 dr \int_0^\pi \sin\theta d \theta \int_0^{2\pi} d \phi ,u^*(r, \theta, \phi) u(r, \theta, \phi),
+$$
+The individual factors can be normalised under the inner products
+$$
+\langle R \vert R&amp;rsquo; \rangle_1 := \int_0^\infty r^2 dr R^*(r) R&amp;rsquo;(r),
+$$
+$$
+\langle \tilde P \vert \tilde P&amp;rsquo; \rangle_2 := \int_0^\pi \sin \theta d \theta \tilde{P}^*(\theta) \tilde{P}&amp;rsquo;(\theta),
+$$
+and
+$$
+\langle \Phi \vert \Phi&amp;rsquo; \rangle_3 := \int_0^{2\pi} d\phi \Phi^*(r) \Phi&amp;rsquo;(r).
+$$
+${u_{nlm}}_{nlm}$ form a CONS (complete set of orthonomal basis) and therefore any solution can be written as
+$$
+\psi(r, \theta, \phi) = \sum_{nlm} A_{nlm} R_{nl}(r) \tilde P_{lm}(\theta) \Phi_m(\phi),
+$$
+or abstractly as
+$$
+\ket{\psi} = \sum_{nlm} A_{nlm} \ket{R_{nl}}_1 \ket{\tilde P_{lm}}_2 \ket{\Phi_m}_3.
+$$
+We can evaluate this abstract vector on a subset of variables, for example only for $r$, as:
+$$
+\ket{\psi(r)} := \bra{r}_1\ket{\psi} = \sum_{nlm} A_{nlm} R_{nl}(r) \ket{\tilde P_{lm}}_2 \ket{\Phi_m}_3.
+$$
+In the lectures, you had a simple boundary condition $u(R, \theta, \phi) = \cos(\theta)$. What if it is more complicated? Consider we have a boundary condition like $u(R, \theta, \phi) = f(\theta, \phi)$.&lt;/p&gt;
+&lt;p&gt;This can be written as an abstract vector in spaces $2, 3$ as
+$$
+\ket{u(R)} = \sum_{nlm} B_{nlm} R_{nl}(R) R_{nl}(r) \ket{\tilde P_{lm}}_2 \ket{\Phi_m}_3.
+$$
+The coefficient $B_{nlm}$ can be found by taking the inner product of $\ket{u(R)}$ with basis vectors for spaces $2, 3$, as
+$$
+B_{nlm} = \frac{1}{R_{nl}(R)} \int_0^\pi \sin\theta d \theta \int_0^{2\pi} d \phi , \tilde P^*_{lm}(\theta) \Phi^*_m(\phi) f(\theta, \phi).
+$$
+Then to obey the boundary conditions, we must have that $B_{nlm} = A_{nlm}$, such that $\psi(R, \theta, \phi) = u(R,\theta,\phi) = f(\theta, \phi)$.&lt;/p&gt;
+&lt;p&gt;For example, our boundary condition $u(R, \theta, \phi) = \cos(\theta)$ is proportional to $\tilde P_{10}(\theta) \Phi_m(\phi)$. Therefore $B_{nlm} = \delta_{l,1} \delta_{m,0}$.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>The planted directed polymer; inferring a random walk from noisy images</title>
       <link>https://sunwoo-kim.github.io/en/projects/plantedpolymer/</link>
       <pubDate>Sat, 07 Sep 2024 00:00:00 +0000</pubDate>
@@ -35,7 +94,7 @@
       title={The planted directed polymer; inferring a random walk from noisy images},
       year={2024},
       howpublished={\url{https://sunwoo-kim.github.io/en/activities/talks/240513-kias/}},
-      note={Accessed: 2025-01-14}
+      note={Accessed: 2025-02-08}
    }
    ```
 &lt;/details&gt;
@@ -244,7 +303,7 @@ For us, $\phi\_{x\_t, t}$ is not iid, but instead has information about the true
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   title=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;Bayesian inference, statistical physics, and the planted directed polymer problem&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;,
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   year=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;2024&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;,
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   howpublished=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;\url&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;https://sunwoo-kim.github.io/en/activities/talks/240409-imperial/&lt;span class=&#34;nb&#34;&gt;}}&lt;/span&gt;,
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   note=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;Accessed: 2025-01-14&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   note=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;Accessed: 2025-02-08&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/details&gt;
 &lt;small&gt;&lt;i&gt;
@@ -954,7 +1013,7 @@ $$&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   title=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;Transverse field Ising model&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;,
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   year=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;2023&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;,
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   howpublished=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;\url&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;https://sunwoo-kim.github.io/en/posts/tfi-model/&lt;span class=&#34;nb&#34;&gt;}}&lt;/span&gt;,
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   note=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;Accessed: 2025-01-14&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   note=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;Accessed: 2025-02-08&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/details&gt;
 &lt;p&gt;In condensed matter physics, there are myriads of phenomenological models out there, with information about them scattered throughout different papers and resources. In the field of machine learning, there are efforts such as the &lt;a href=&#34;https://modelzoo.co&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Model Zoo&lt;/a&gt; which tries to organise these models in one place.&lt;/p&gt;
@@ -1185,7 +1244,7 @@ where $B$ is some constant.&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   title=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;Hello World&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;,
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   year=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;2021&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;,
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   howpublished=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;\url&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;https://sunwoo-kim.github.io/en/posts/hello-world/&lt;span class=&#34;nb&#34;&gt;}}&lt;/span&gt;,
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   note=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;Accessed: 2025-01-14&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   note=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;Accessed: 2025-02-08&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/details&gt;
 &lt;p&gt;Welcome to my new website! I hope to post some expository writeups on my research projects here.&lt;/p&gt;

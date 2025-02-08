@@ -16,6 +16,28 @@
                 href="https://sunwoo-kim.github.io/en/projects/"
                 />
   </url><url>
+    <loc>https://sunwoo-kim.github.io/en/activities/</loc>
+    <lastmod>2025-02-08T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ko"
+                href="https://sunwoo-kim.github.io/ko/activities/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://sunwoo-kim.github.io/en/activities/"
+                />
+  </url><url>
+    <loc>https://sunwoo-kim.github.io/en/activities/teaching/pdes/</loc>
+    <lastmod>2025-02-08T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://sunwoo-kim.github.io/en/activities/teaching/</loc>
+    <lastmod>2025-02-08T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
     <loc>https://sunwoo-kim.github.io/en/projects/plantedpolymer/</loc>
     <lastmod>2024-09-07T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -28,20 +50,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://sunwoo-kim.github.io/en/projects/plantedpolymer/"
-                />
-  </url><url>
-    <loc>https://sunwoo-kim.github.io/en/activities/</loc>
-    <lastmod>2024-05-13T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ko"
-                href="https://sunwoo-kim.github.io/ko/activities/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://sunwoo-kim.github.io/en/activities/"
                 />
   </url><url>
     <loc>https://sunwoo-kim.github.io/en/tags/</loc>
@@ -95,10 +103,6 @@
                 />
   </url><url>
     <loc>https://sunwoo-kim.github.io/en/activities/teaching/symmetries/</loc>
-    <lastmod>2024-02-13T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://sunwoo-kim.github.io/en/activities/teaching/</loc>
     <lastmod>2024-02-13T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
