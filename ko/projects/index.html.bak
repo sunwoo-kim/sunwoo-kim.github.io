@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- This site was created with Wowchemy. https://www.wowchemy.com -->
-<!-- Last Published: 2025년 2월 22일 --><html lang="ko-kr" >
+<!-- Last Published: 2025년 4월 19일 --><html lang="ko-kr" >
 
 
 <head>
@@ -331,7 +331,7 @@
 <meta property="og:description" content="" /><meta property="og:image" content="https://sunwoo-kim.github.io/media/icon_hu8b309a9302268010949630654373c3a0_79828_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="ko-kr" />
 
   
-    <meta property="og:updated_time" content="2024-09-07T00:00:00&#43;00:00" />
+    <meta property="og:updated_time" content="2025-04-19T00:00:00&#43;00:00" />
   
 
 
@@ -752,6 +752,288 @@
   
 
   
+  
+    
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  
+
+
+<div class="card-simple view-card">
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+  <span >
+      <a href="/ko/authors/sunwoo/">김선우</a></span>
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    2025-04-19
+  </span>
+  
+
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    0 분 읽기
+  </span>
+  
+
+  
+  
+  
+  
+
+  
+  
+
+</div>
+
+  
+
+  
+  
+  
+    
+    <a href="https://arxiv.org/pdf/2504.08888" target="_blank" rel="noopener">
+      <div class="img-hover-zoom">
+        <img src="/ko/projects/quantuminference/featured_huf66e5b723658d7551e6dc56455c1b684_4443579_808x455_fill_q100_h2_lanczos_smart1_3.webp" height="455" width="808"
+            class="article-banner" alt="Quantum inference problems and quantum hidden Markov models" loading="lazy">
+      </div>
+    </a>
+  
+
+  <div class="section-subheading article-title mb-1 mt-3">
+    <a href="https://arxiv.org/pdf/2504.08888" target="_blank" rel="noopener">Quantum inference problems and quantum hidden Markov models</a>
+  </div>
+
+  
+
+  
+  <div class="btn-links">
+    
+
+
+
+
+
+
+
+
+  
+    
+  
+
+
+
+<a class="btn btn-outline-primary btn-page-header btn-sm" href="https://arxiv.org/pdf/2504.08888" target="_blank" rel="noopener">
+  PDF
+</a>
+
+
+
+<a href="#" class="btn btn-outline-primary btn-page-header btn-sm js-cite-modal"
+        data-filename="/ko/projects/quantuminference/cite.bib">
+  인용
+</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+  
+
+</div>
+
+  
+    
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  
+
+
+<div class="card-simple view-card">
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+  <span >
+      <a href="/ko/authors/sunwoo/">김선우</a></span>
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    2025-03-20
+  </span>
+  
+
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    0 분 읽기
+  </span>
+  
+
+  
+  
+  
+  
+
+  
+  
+
+</div>
+
+  
+
+  
+  
+  
+    
+    <a href="https://arxiv.org/pdf/2503.08788" target="_blank" rel="noopener">
+      <div class="img-hover-zoom">
+        <img src="/ko/projects/gateshydro/featured_huf1a44b2e3ef8d615ae24647e9b532bd1_1555249_808x455_fill_q100_h2_lanczos_smart1_3.webp" height="455" width="808"
+            class="article-banner" alt="Hydrodynamics in deterministic circuits" loading="lazy">
+      </div>
+    </a>
+  
+
+  <div class="section-subheading article-title mb-1 mt-3">
+    <a href="https://arxiv.org/pdf/2503.08788" target="_blank" rel="noopener">Hydrodynamics in deterministic circuits</a>
+  </div>
+
+  
+  <a href="https://arxiv.org/pdf/2503.08788" target="_blank" rel="noopener" class="summary-link">
+    <div class="article-style">
+      <p></br></p>
+    </div>
+  </a>
+  
+
+  
+  <div class="btn-links">
+    
+
+
+
+
+
+
+
+
+  
+    
+  
+
+
+
+<a class="btn btn-outline-primary btn-page-header btn-sm" href="https://arxiv.org/pdf/2503.08788" target="_blank" rel="noopener">
+  PDF
+</a>
+
+
+
+<a href="#" class="btn btn-outline-primary btn-page-header btn-sm js-cite-modal"
+        data-filename="/ko/projects/gateshydro/cite.bib">
+  인용
+</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+  
+
+</div>
+
   
     
 

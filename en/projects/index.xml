@@ -5,12 +5,28 @@
     <link>https://sunwoo-kim.github.io/en/projects/</link>
       <atom:link href="https://sunwoo-kim.github.io/en/projects/index.xml" rel="self" type="application/rss+xml" />
     <description>Projects</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>swk34 [at] cantab [dot] ac [dot] uk</copyright><lastBuildDate>Sat, 07 Sep 2024 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>swk34 [at] cantab [dot] ac [dot] uk</copyright><lastBuildDate>Sat, 19 Apr 2025 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://sunwoo-kim.github.io/media/icon_hu8b309a9302268010949630654373c3a0_79828_512x512_fill_lanczos_center_3.png</url>
       <title>Projects</title>
       <link>https://sunwoo-kim.github.io/en/projects/</link>
     </image>
+    
+    <item>
+      <title>Quantum inference problems and quantum hidden Markov models</title>
+      <link>https://sunwoo-kim.github.io/en/projects/quantuminference/</link>
+      <pubDate>Sat, 19 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>https://sunwoo-kim.github.io/en/projects/quantuminference/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hydrodynamics in deterministic circuits</title>
+      <link>https://sunwoo-kim.github.io/en/projects/gateshydro/</link>
+      <pubDate>Thu, 20 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://sunwoo-kim.github.io/en/projects/gateshydro/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>The planted directed polymer; inferring a random walk from noisy images</title>

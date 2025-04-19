@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://sunwoo-kim.github.io/ko/projects/</loc>
-    <lastmod>2024-09-07T00:00:00+00:00</lastmod>
+    <lastmod>2025-04-19T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <xhtml:link
                 rel="alternate"
@@ -17,8 +17,40 @@
                 />
   </url><url>
     <loc>https://sunwoo-kim.github.io/ko/authors/</loc>
-    <lastmod>2024-09-07T00:00:00+00:00</lastmod>
+    <lastmod>2025-04-19T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://sunwoo-kim.github.io/ko/projects/quantuminference/</loc>
+    <lastmod>2025-04-19T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://sunwoo-kim.github.io/en/projects/quantuminference/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ko"
+                href="https://sunwoo-kim.github.io/ko/projects/quantuminference/"
+                />
+  </url><url>
+    <loc>https://sunwoo-kim.github.io/ko/authors/sunwoo/</loc>
+    <lastmod>2025-04-19T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://sunwoo-kim.github.io/ko/projects/gateshydro/</loc>
+    <lastmod>2025-03-20T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://sunwoo-kim.github.io/en/projects/gateshydro/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ko"
+                href="https://sunwoo-kim.github.io/ko/projects/gateshydro/"
+                />
   </url><url>
     <loc>https://sunwoo-kim.github.io/ko/projects/plantedpolymer/</loc>
     <lastmod>2024-09-07T00:00:00+00:00</lastmod>
@@ -33,10 +65,6 @@
                 hreflang="ko"
                 href="https://sunwoo-kim.github.io/ko/projects/plantedpolymer/"
                 />
-  </url><url>
-    <loc>https://sunwoo-kim.github.io/ko/authors/sunwoo/</loc>
-    <lastmod>2024-09-07T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
   </url><url>
     <loc>https://sunwoo-kim.github.io/ko/activities/talks/240409-imperial/</loc>
     <lastmod>2024-04-09T00:00:00+00:00</lastmod>
