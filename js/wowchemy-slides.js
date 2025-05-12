@@ -1,6 +1,6 @@
 (() => {
   // ns-params:@params
-  var slides = { highlight_style: "dracula", reveal_options: { hash: true, overview: true, progress: true, slide_number: true, transition: "none" }, theme: "black" };
+  var slides = { highlight_style: "dracula", reveal_options: { hash: true, overview: true, progress: true, slide_number: "c/t", transition: "none", view_distance: 1 }, theme: "white" };
 
   // <stdin>
   var enabledPlugins = [RevealMarkdown, RevealSearch, RevealNotes, RevealMath.KaTeX, RevealZoom];
