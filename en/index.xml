@@ -100,17 +100,93 @@ Then to obey the boundary conditions, we must have that $B_{nlm} = A_{nlm}$, suc
       <link>https://sunwoo-kim.github.io/en/slides/gateshydro/</link>
       <pubDate>Mon, 13 May 2024 00:00:00 +0000</pubDate>
       <guid>https://sunwoo-kim.github.io/en/slides/gateshydro/</guid>
-      <description>&lt;h2 id=&#34;hydrodynamics-of-classical-deterministic-circuits&#34;&gt;Hydrodynamics of classical deterministic circuits&lt;/h2&gt;
+      <description>&lt;h1 id=&#34;hydrodynamics-of-classical-deterministic-circuits&#34;&gt;Hydrodynamics of classical deterministic circuits&lt;/h1&gt;
 &lt;p&gt;&lt;b&gt;&lt;a href=&#34;https://arxiv.org/abs/2503.08788&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;arXiv:2503.08788&lt;/a&gt;&lt;/b&gt;&lt;/p&gt;
-&lt;p&gt;With Friedrich Hübner (KCL), Juan P. Garrahan (Nottingham), Benjamin Doyon (KCL)&lt;/p&gt;
-&lt;br&gt;
-&lt;br&gt;
+&lt;p&gt;&lt;text style=&#34;fontsize: 75%;&#34;&gt;Work with&lt;/text&gt;&lt;/p&gt;
+&lt;div style=&#34;display: flex; gap: 2em; fontsize: 75%;&#34;&gt;
+  &lt;div style=&#34;flex: 1;&#34;&gt;
+    &lt;small&gt;Friedrich Hübner (KCL)&lt;/small&gt;
+    &lt;br&gt;
+    &lt;img src=&#34;fred.jpg&#34; style=&#34;width: 35%;&#34;&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;flex: 1;&#34;&gt;
+    &lt;small&gt;Juan P. Garrahan (Nottingham)&lt;/small&gt;
+    &lt;br&gt;
+    &lt;img src=&#34;juan.jpg&#34; style=&#34;width: 35%;&#34;&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;flex: 1;&#34;&gt;
+    &lt;small&gt;Benjamin Doyon (KCL)&lt;/small&gt;
+    &lt;br&gt;
+    &lt;img src=&#34;ben.jpg&#34; style=&#34;width: 35%;&#34;&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
 &lt;p&gt;&lt;small&gt;&lt;b&gt;Sun Woo P. Kim &lt;br&gt; 25-05-13, CPGM&lt;/b&gt;
 &lt;br&gt;
 Slides at &lt;a href=&#34;https://sunwoo-kim.github.io/en/slides/gateshydro&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;sunwoo-kim.github.io/en/slides/gateshydro&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;img src=&#34;zoomin.svg&#34; style=&#34;width: 70%;&#34;&gt;
-</description>
+&lt;hr&gt;
+&lt;h2 id=&#34;hydrodynamics&#34;&gt;Hydrodynamics&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Large-scale, coarse-grained description of locally-interacting many-body systems with extensive conserved quantities with local densities away from equilibrium&lt;/li&gt;
+&lt;li&gt;It is universal in that&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;classical-deterministic-circuits&#34;&gt;Classical deterministic circuits&lt;/h2&gt;
+&lt;h3 id=&#34;gates&#34;&gt;Gates&lt;/h3&gt;
+&lt;div style=&#34;display: flex; gap: 2em;&#34;&gt;
+  &lt;div style=&#34;flex: 1;&#34;&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Local states $\mathcal{D}=\{0, 1, \dots, d-1\}$&lt;/li&gt;
+      &lt;li&gt;Two-site determinisitic gates are maps on $\sigma: \mathcal{D} \times \mathcal{D} \rightarrow \mathcal{D} \times \mathcal{D}$&lt;/li&gt;
+      &lt;li&gt;Reversible $\Rightarrow$ $\sigma$ is a bijection, i.e. a permutation on $\{(0,0), (0,1), \dots, (d-1, d-1)\}$&lt;/li&gt;
+      &lt;li&gt;There are $(d^2)!$ reversible deterministic gates&lt;/li&gt;
+      &lt;li&gt;Also known as block cellular automata with Margolius neighbourhoods&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;flex: 0.5;&#34;&gt;
+    &lt;small&gt;$(d, \sigma) = (3, 996)$&lt;/small&gt;
+    &lt;img src=&#34;rules.svg&#34; style=&#34;width: 100%;&#34;&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;classical-deterministic-circuits-1&#34;&gt;Classical deterministic circuits&lt;/h2&gt;
+&lt;h3 id=&#34;gates-cont&#34;&gt;Gates (cont.)&lt;/h3&gt;
+&lt;div style=&#34;display: flex; gap: 2em;&#34;&gt;
+  &lt;div style=&#34;flex: 1;&#34;&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Promote configurations to basis vectors ￼$a \rightarrow | a \rangle$&lt;/li&gt;
+      &lt;li&gt;Then gate $\mathsf{u}$ can be written as
+      $$\mathsf{u}=\sum_{a, b}|\sigma_1(a, b), \sigma_2(a, b)\rangle\langle a, b|$$
+      &lt;/li&gt;
+      &lt;li&gt;Equivalently in tensor network notation
+      &lt;img src=&#34;gatetn.svg&#34; style=&#34;width: 100%;&#34;&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;flex: 0.5;&#34;&gt;
+    &lt;small&gt;$(d, \sigma) = (3, 996)$&lt;/small&gt;
+    &lt;img src=&#34;rulesbk.svg&#34; style=&#34;width: 60%;&#34;&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;classical-deterministic-circuits-2&#34;&gt;Classical deterministic circuits&lt;/h2&gt;
+&lt;h3 id=&#34;brickwork-circuit-structure&#34;&gt;Brickwork circuit structure&lt;/h3&gt;
+&lt;div style=&#34;display: flex; gap: 2em;&#34;&gt;
+  &lt;div style=&#34;flex: 1;&#34;&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Arrange configurations 1D chain of length $L$ then apply gates in a brickwork fashion for $T$ timesteps&lt;/li&gt;
+      &lt;li&gt;At each timestep $\tau$, a layer of gates is
+      &lt;br&gt;
+      &lt;center&gt;&lt;img src=&#34;u_tau.svg&#34; style=&#34;width: 50%;&#34;&gt;&lt;/center&gt;
+      Here $\mathcal{R}_\tau$: even(odd) sites on even(odd) times
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;flex: 0.5;&#34;&gt;
+    &lt;img src=&#34;brickwork.svg&#34; style=&#34;width: 100%;&#34;&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</description>
     </item>
     
     <item>

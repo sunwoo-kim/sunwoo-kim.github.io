@@ -49,24 +49,42 @@
     text-transform: none; 
     text-align: left;
     font-family: "Helvetica Neue", "Helvetica Neue", "Helvetica Neue";
-    font-size: 150%;
     font-weight: bold;
   }
   </style>
+
+<style>
+  .reveal h1 {
+    font-size: 150%;
+  }
+</style>
+
+<style>
+  .reveal h2 {
+    font-size: 140%;
+  }
+</style>
+
+<style>
+  .reveal h3, .reveal h4, .reveal h5 {
+    font-size: 100%;
+  }
+</style>
+
 
   <style>
   .reveal p {
     text-align: left;
     font-family: "Helvetica Neue";
-    font-size: 80%;
-    line-height: 100%;
+    font-size: 70%;
+     
   }
   </style>
 
   <style>
   .reveal ul {
-    font-size: 80%;
-    line-height: 100%;
+    font-size: 70%;
+     
   }
   </style>
 
@@ -78,7 +96,7 @@
 
 <style>
   .reveal .slide-number {
-  font-size: 75%;
+  font-size: 60%;
 } 
 </style>
 <style>
@@ -111,11 +129,26 @@
     
     <section>
     
-      <h2 id="hydrodynamics-of-classical-deterministic-circuits">Hydrodynamics of classical deterministic circuits</h2>
+      <h1 id="hydrodynamics-of-classical-deterministic-circuits">Hydrodynamics of classical deterministic circuits</h1>
 <p><b><a href="https://arxiv.org/abs/2503.08788" target="_blank" rel="noopener">arXiv:2503.08788</a></b></p>
-<p>With Friedrich Hübner (KCL), Juan P. Garrahan (Nottingham), Benjamin Doyon (KCL)</p>
-<br>
-<br>
+<p><text style="fontsize: 75%;">Work with</text></p>
+<div style="display: flex; gap: 2em; fontsize: 75%;">
+  <div style="flex: 1;">
+    <small>Friedrich Hübner (KCL)</small>
+    <br>
+    <img src="fred.jpg" style="width: 35%;">
+  </div>
+  <div style="flex: 1;">
+    <small>Juan P. Garrahan (Nottingham)</small>
+    <br>
+    <img src="juan.jpg" style="width: 35%;">
+  </div>
+  <div style="flex: 1;">
+    <small>Benjamin Doyon (KCL)</small>
+    <br>
+    <img src="ben.jpg" style="width: 35%;">
+  </div>
+</div>
 <p><small><b>Sun Woo P. Kim <br> 25-05-13, CPGM</b>
 <br>
 Slides at <a href="https://sunwoo-kim.github.io/en/slides/gateshydro" target="_blank" rel="noopener">sunwoo-kim.github.io/en/slides/gateshydro</a></small></p>
@@ -131,6 +164,103 @@ Slides at <a href="https://sunwoo-kim.github.io/en/slides/gateshydro" target="_b
       
 <img src="zoomin.svg" style="width: 70%;">
 
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<h2 id="hydrodynamics">Hydrodynamics</h2>
+<ul>
+<li>Large-scale, coarse-grained description of locally-interacting many-body systems with extensive conserved quantities with local densities away from equilibrium</li>
+<li>It is universal in that</li>
+</ul>
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<h2 id="classical-deterministic-circuits">Classical deterministic circuits</h2>
+<h3 id="gates">Gates</h3>
+<div style="display: flex; gap: 2em;">
+  <div style="flex: 1;">
+    <ul>
+      <li>Local states $\mathcal{D}=\{0, 1, \dots, d-1\}$</li>
+      <li>Two-site determinisitic gates are maps on $\sigma: \mathcal{D} \times \mathcal{D} \rightarrow \mathcal{D} \times \mathcal{D}$</li>
+      <li>Reversible $\Rightarrow$ $\sigma$ is a bijection, i.e. a permutation on $\{(0,0), (0,1), \dots, (d-1, d-1)\}$</li>
+      <li>There are $(d^2)!$ reversible deterministic gates</li>
+      <li>Also known as block cellular automata with Margolius neighbourhoods</li>
+    </ul>
+  </div>
+  <div style="flex: 0.5;">
+    <small>$(d, \sigma) = (3, 996)$</small>
+    <img src="rules.svg" style="width: 100%;">
+  </div>
+</div>
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<h2 id="classical-deterministic-circuits-1">Classical deterministic circuits</h2>
+<h3 id="gates-cont">Gates (cont.)</h3>
+<div style="display: flex; gap: 2em;">
+  <div style="flex: 1;">
+    <ul>
+      <li>Promote configurations to basis vectors ￼$a \rightarrow | a \rangle$</li>
+      <li>Then gate $\mathsf{u}$ can be written as
+      $$\mathsf{u}=\sum_{a, b}|\sigma_1(a, b), \sigma_2(a, b)\rangle\langle a, b|$$
+      </li>
+      <li>Equivalently in tensor network notation
+      <img src="gatetn.svg" style="width: 100%;">
+      </li>
+    </ul>
+  </div>
+  <div style="flex: 0.5;">
+    <small>$(d, \sigma) = (3, 996)$</small>
+    <img src="rulesbk.svg" style="width: 60%;">
+  </div>
+</div>
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<h2 id="classical-deterministic-circuits-2">Classical deterministic circuits</h2>
+<h3 id="brickwork-circuit-structure">Brickwork circuit structure</h3>
+<div style="display: flex; gap: 2em;">
+  <div style="flex: 1;">
+    <ul>
+      <li>Arrange configurations 1D chain of length $L$ then apply gates in a brickwork fashion for $T$ timesteps</li>
+      <li>At each timestep $\tau$, a layer of gates is
+      <br>
+      <center><img src="u_tau.svg" style="width: 50%;"></center>
+      Here $\mathcal{R}_\tau$: even(odd) sites on even(odd) times
+      </li>
+    </ul>
+  </div>
+  <div style="flex: 0.5;">
+    <img src="brickwork.svg" style="width: 100%;">
+  </div>
+</div>
     </section>
     
 

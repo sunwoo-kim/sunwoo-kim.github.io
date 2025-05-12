@@ -19,14 +19,14 @@ window.MathJax = {
       ['\\[', '\\]'],
     ],
     processEscapes: false,
-    packages: {'[+]': ['noerrors', 'mathtools', 'upgreek']},
+    packages: {'[+]': ['noerrors', 'mathtools', 'upgreek', 'boldsymbol', 'mmltoken', 'mml']},
     tags: 'ams',
     macros: {
-      bm: ["\\boldsymbol{ #1}", 1],
+      // bm: ["\\boldsymbol{ #1}", 1],
       E: ["\\mathop{\\mathbb{E}}"]
     }
   },
   loader: {
-    load: ['[tex]/noerrors', '[tex]/mathtools', '[tex]/upgreek'],
+    load: ['[tex]/boldsymbol', '[tex]/noerrors', '[tex]/mathtools', '[tex]/upgreek'],
   },
 };
