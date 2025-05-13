@@ -137,15 +137,13 @@ Slides at &lt;a href=&#34;https://sunwoo-kim.github.io/en/slides/gateshydro&#34;
 &lt;li&gt;Extensive CQs, ex. $\vec Q = (N, \bm{P}, E)$&lt;/li&gt;
 &lt;li&gt;Local densities
 $$\vec Q = \int dx \vec q(x, t)$$&lt;/li&gt;
-&lt;li&gt;Assuming periodic boundary condition $\frac{d}{dt} \vec Q = 0$
-$$ \partial_t \vec q(x, t) = \partial_x \vec{j}[\vec q]$$&lt;/li&gt;
-&lt;li&gt;Assuming that the currents only depend on local properties
+&lt;li&gt;Assuming periodic boundary condition $\frac{d}{dt} \vec Q = 0$ if
 $$ \partial_t \vec q(x, t) = \partial_x \vec j \left(\vec q(x,t), \partial_x \vec q(x,t), \dots \right)$$&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;euler-scale-hydrodynamics&#34;&gt;Euler-scale hydrodynamics&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Taylor expand the current around some equilibrium charge value (set to $\vec 0$)
+&lt;li&gt;Taylor expand the current wrt gradients
 $$\partial_t \vec q(x,t) = \partial_x \Big( f(\vec q) + g(\vec q) \partial_x \vec q + \cdots \Big)$$&lt;/li&gt;
 &lt;li&gt;Rescale space and time $t = t^\prime L$, $x = x^\prime L$ (i.e. look in terms of $\mathrm{km}$ and $\mathrm{days}$ instead of $\mathrm{cm}$ and $\mathrm{sec}$)
 $$\partial_{t^\prime} \vec q(x,t) = \partial_{x^\prime} \Bigg( f(\vec q) + \frac{g(\vec q)}{L} \partial_{x^\prime} \vec q + \mathcal{O}(L^{-2}) \Bigg)$$&lt;/li&gt;
@@ -227,7 +225,7 @@ $$\vec q(x, t) = \langle \vec {\mathsf{q}}_{x} \rangle_{\vec \beta(x, t)}, \quad
   &lt;div style=&#34;flex: 1;&#34;&gt;
     &lt;ul&gt;
       &lt;li&gt;Local states $\mathcal{D}=\{0, 1, \dots, d-1\}$&lt;/li&gt;
-      &lt;li&gt;Two-site determinisitic gates are maps on $\sigma: \mathcal{D} \times \mathcal{D} \rightarrow \mathcal{D} \times \mathcal{D}$&lt;/li&gt;
+      &lt;li&gt;Two-site determinisitic gates are maps $\sigma: \mathcal{D} \times \mathcal{D} \rightarrow \mathcal{D} \times \mathcal{D}$&lt;/li&gt;
       &lt;li&gt;Reversible $\Rightarrow$ $\sigma$ is a bijection, i.e. a permutation on $\{(0,0), (0,1), \dots, (d-1, d-1)\}$&lt;/li&gt;
       &lt;li&gt;There are $(d^2)!$ reversible deterministic gates&lt;/li&gt;
       &lt;li&gt;Also known as block cellular automata with Margolius neighbourhoods&lt;/li&gt;
@@ -245,7 +243,7 @@ $$\vec q(x, t) = \langle \vec {\mathsf{q}}_{x} \rangle_{\vec \beta(x, t)}, \quad
     &lt;ul&gt;
       &lt;li&gt;Promote configurations to basis vectors ￼$a \rightarrow | a \rangle$&lt;/li&gt;
       &lt;li&gt;Then can represent distributions as &lt;br&gt;$\ket{p} = \sum_{\bm{a}} p(\bm{a}) \ket{\bm{a}}$&lt;/li&gt;
-      &lt;li&gt;gate $\mathsf{u}$ can be written as
+      &lt;li&gt;Gate $\mathsf{u}$ can be written as
       $$\mathsf{u}=\sum_{a, b}|\sigma_1(a, b), \sigma_2(a, b)\rangle\langle a, b|$$
       &lt;/li&gt;
       &lt;li&gt;Equivalently in tensor network notation
@@ -276,7 +274,7 @@ $$\vec q(x, t) = \langle \vec {\mathsf{q}}_{x} \rangle_{\vec \beta(x, t)}, \quad
 &lt;ol&gt;
 &lt;li&gt;Determine the CQs with local densities of (1D classical deterministic) brickwork circuits up to desired locality&lt;/li&gt;
 &lt;li&gt;Confirm the number of CQs by confirming relaxation onto (generalised) Gibbs states&lt;/li&gt;
-&lt;li&gt;Derive the Euler-scale hydrodynamic equations for &amp;ldquo;simple gates&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;Derive the Euler-scale hydrodynamic equations&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;li&gt;Go out there and search through possible deterministic reversible gates, look for gates with finite number of CQs&lt;/li&gt;
@@ -293,7 +291,7 @@ $$\vec q(x, t) = \langle \vec {\mathsf{q}}_{x} \rangle_{\vec \beta(x, t)}, \quad
 &lt;li&gt;No continuous temporal or spatial translational invariance &lt;br&gt;
 $\Rightarrow$ no pesky conserved energy, momentum or particle number to deal with &lt;br&gt;
 $\Rightarrow$ can have models with &lt;strong&gt;minimum&lt;/strong&gt; ingredients for hydrodynamic phenomenon&lt;/li&gt;
-&lt;li&gt;If CQs are 1-local, then Gibbs state is factorisable
+&lt;li&gt;If CQs are 1-local, then Gibbs states are factorisable
 $$p(\bm{a}) = \exp\left[-\sum_x \vec \beta(x, t) \cdot \vec{\mathsf{q}}_x(a_x) \right] = \prod_x p(a_x)$$&lt;/li&gt;
 &lt;li&gt;Classical circuits are very simulable ($L \approx 10^6$)&lt;/li&gt;
 &lt;/ul&gt;
@@ -327,7 +325,7 @@ $$p(\bm{a}) = \exp\left[-\sum_x \vec \beta(x, t) \cdot \vec{\mathsf{q}}_x(a_x) \
 &lt;li&gt;Find $\approx 2000$ gates with only 1-local CQs&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;ex. For $(d, \sigma) = (3, 996)$, $\lambda=\mu=1$ and $\bra{f_\mathrm{e}} = \bra{1}$, $\bra{f_\mathrm{o}} = -\bra{0}$&lt;/li&gt;
+&lt;li&gt;ex. For $(d, \sigma) = (3, 996)$, $\lambda=\mu=1$, $\bra{f_\mathrm{e}} = \bra{1}$, &lt;br&gt; $\bra{f_\mathrm{o}} = -\bra{0}$ and no more!&lt;/li&gt;
 &lt;li&gt;For $(3, 229117)$, there are two 1-local CQs, one with $\lambda_1=\mu_1=1$ and another with $\mu_2=\lambda_2=e^{i \pi/2}$&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;

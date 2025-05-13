@@ -203,9 +203,7 @@ Slides at <a href="https://sunwoo-kim.github.io/en/slides/gateshydro" target="_b
 <li>Extensive CQs, ex. $\vec Q = (N, \bm{P}, E)$</li>
 <li>Local densities
 $$\vec Q = \int dx \vec q(x, t)$$</li>
-<li>Assuming periodic boundary condition $\frac{d}{dt} \vec Q = 0$
-$$ \partial_t \vec q(x, t) = \partial_x \vec{j}[\vec q]$$</li>
-<li>Assuming that the currents only depend on local properties
+<li>Assuming periodic boundary condition $\frac{d}{dt} \vec Q = 0$ if
 $$ \partial_t \vec q(x, t) = \partial_x \vec j \left(\vec q(x,t), \partial_x \vec q(x,t), \dots \right)$$</li>
 </ul>
 
@@ -220,7 +218,7 @@ $$ \partial_t \vec q(x, t) = \partial_x \vec j \left(\vec q(x,t), \partial_x \ve
       
 <h2 id="euler-scale-hydrodynamics">Euler-scale hydrodynamics</h2>
 <ul>
-<li>Taylor expand the current around some equilibrium charge value (set to $\vec 0$)
+<li>Taylor expand the current wrt gradients
 $$\partial_t \vec q(x,t) = \partial_x \Big( f(\vec q) + g(\vec q) \partial_x \vec q + \cdots \Big)$$</li>
 <li>Rescale space and time $t = t^\prime L$, $x = x^\prime L$ (i.e. look in terms of $\mathrm{km}$ and $\mathrm{days}$ instead of $\mathrm{cm}$ and $\mathrm{sec}$)
 $$\partial_{t^\prime} \vec q(x,t) = \partial_{x^\prime} \Bigg( f(\vec q) + \frac{g(\vec q)}{L} \partial_{x^\prime} \vec q + \mathcal{O}(L^{-2}) \Bigg)$$</li>
@@ -356,7 +354,7 @@ $$\vec q(x, t) = \langle \vec {\mathsf{q}}_{x} \rangle_{\vec \beta(x, t)}, \quad
   <div style="flex: 1;">
     <ul>
       <li>Local states $\mathcal{D}=\{0, 1, \dots, d-1\}$</li>
-      <li>Two-site determinisitic gates are maps on $\sigma: \mathcal{D} \times \mathcal{D} \rightarrow \mathcal{D} \times \mathcal{D}$</li>
+      <li>Two-site determinisitic gates are maps $\sigma: \mathcal{D} \times \mathcal{D} \rightarrow \mathcal{D} \times \mathcal{D}$</li>
       <li>Reversible $\Rightarrow$ $\sigma$ is a bijection, i.e. a permutation on $\{(0,0), (0,1), \dots, (d-1, d-1)\}$</li>
       <li>There are $(d^2)!$ reversible deterministic gates</li>
       <li>Also known as block cellular automata with Margolius neighbourhoods</li>
@@ -383,7 +381,7 @@ $$\vec q(x, t) = \langle \vec {\mathsf{q}}_{x} \rangle_{\vec \beta(x, t)}, \quad
     <ul>
       <li>Promote configurations to basis vectors ￼$a \rightarrow | a \rangle$</li>
       <li>Then can represent distributions as <br>$\ket{p} = \sum_{\bm{a}} p(\bm{a}) \ket{\bm{a}}$</li>
-      <li>gate $\mathsf{u}$ can be written as
+      <li>Gate $\mathsf{u}$ can be written as
       $$\mathsf{u}=\sum_{a, b}|\sigma_1(a, b), \sigma_2(a, b)\rangle\langle a, b|$$
       </li>
       <li>Equivalently in tensor network notation
@@ -423,7 +421,7 @@ $$\vec q(x, t) = \langle \vec {\mathsf{q}}_{x} \rangle_{\vec \beta(x, t)}, \quad
 <ol>
 <li>Determine the CQs with local densities of (1D classical deterministic) brickwork circuits up to desired locality</li>
 <li>Confirm the number of CQs by confirming relaxation onto (generalised) Gibbs states</li>
-<li>Derive the Euler-scale hydrodynamic equations for &ldquo;simple gates&rdquo;</li>
+<li>Derive the Euler-scale hydrodynamic equations</li>
 </ol>
 </li>
 <li>Go out there and search through possible deterministic reversible gates, look for gates with finite number of CQs</li>
@@ -449,7 +447,7 @@ $$\vec q(x, t) = \langle \vec {\mathsf{q}}_{x} \rangle_{\vec \beta(x, t)}, \quad
 <li>No continuous temporal or spatial translational invariance <br>
 $\Rightarrow$ no pesky conserved energy, momentum or particle number to deal with <br>
 $\Rightarrow$ can have models with <strong>minimum</strong> ingredients for hydrodynamic phenomenon</li>
-<li>If CQs are 1-local, then Gibbs state is factorisable
+<li>If CQs are 1-local, then Gibbs states are factorisable
 $$p(\bm{a}) = \exp\left[-\sum_x \vec \beta(x, t) \cdot \vec{\mathsf{q}}_x(a_x) \right] = \prod_x p(a_x)$$</li>
 <li>Classical circuits are very simulable ($L \approx 10^6$)</li>
 </ul>
@@ -510,7 +508,7 @@ $$p(\bm{a}) = \exp\left[-\sum_x \vec \beta(x, t) \cdot \vec{\mathsf{q}}_x(a_x) \
 <li>Find $\approx 2000$ gates with only 1-local CQs</li>
 </ul>
 </li>
-<li>ex. For $(d, \sigma) = (3, 996)$, $\lambda=\mu=1$ and $\bra{f_\mathrm{e}} = \bra{1}$, $\bra{f_\mathrm{o}} = -\bra{0}$</li>
+<li>ex. For $(d, \sigma) = (3, 996)$, $\lambda=\mu=1$, $\bra{f_\mathrm{e}} = \bra{1}$, <br> $\bra{f_\mathrm{o}} = -\bra{0}$ and no more!</li>
 <li>For $(3, 229117)$, there are two 1-local CQs, one with $\lambda_1=\mu_1=1$ and another with $\mu_2=\lambda_2=e^{i \pi/2}$</li>
 </ul>
 
