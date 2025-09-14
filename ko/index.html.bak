@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- This site was created with Wowchemy. https://www.wowchemy.com -->
-<!-- Last Published: 2025년 5월 13일 --><html lang="ko-kr" >
+<!-- Last Published: 2025년 9월 14일 --><html lang="ko-kr" >
 
 
 <head>
@@ -596,6 +596,36 @@
 
           <li class="nav-item">
             <a class="nav-link " href="/ko/projects"><span>프로젝트</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/ko/talks"><span>Talks</span></a>
           </li>
 
           
@@ -1277,6 +1307,94 @@
     
     
 
+    
+      
+        
+          <div class="project-card project-item isotope-item ">
+        
+        
+
+
+
+
+
+  
+  
+
+
+
+
+
+  
+
+
+
+
+<div class="card">
+  
+  
+  <a href="https://arxiv.org/abs/2509.04568" target="_blank" rel="noopener" class="card-image hover-overlay">
+    <img src="/ko/projects/osculating/featured_hu29dca37fcf28ef914c98a98190cb45c7_1725674_550x0_resize_q100_h2_lanczos_3.webp" height="549" width="550"
+         alt="Self-osculating walks and surfaces" class="img-responsive" loading="lazy">
+  </a>
+  
+  <div class="card-text">
+    <h4><a href="https://arxiv.org/abs/2509.04568" target="_blank" rel="noopener">Self-osculating walks and surfaces</a></h4>
+
+    
+    <div class="article-style">
+      <p></br></p>
+    </div>
+    
+
+    
+    <div class="btn-links">
+      
+
+
+
+
+
+
+
+
+  
+    
+  
+
+
+
+<a class="btn btn-outline-primary btn-page-header btn-sm" href="https://arxiv.org/pdf/2509.04568" target="_blank" rel="noopener">
+  PDF
+</a>
+
+
+
+<a href="#" class="btn btn-outline-primary btn-page-header btn-sm js-cite-modal"
+        data-filename="/ko/projects/osculating/cite.bib">
+  인용
+</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    
+  </div>
+</div>
+
+      </div>
     
       
         

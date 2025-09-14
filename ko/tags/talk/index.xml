@@ -14,17 +14,17 @@
     
     <item>
       <title>Bayesian inference, statistical physics, and the planted directed polymer problem</title>
-      <link>https://sunwoo-kim.github.io/ko/activities/talks/240409-imperial/</link>
+      <link>https://sunwoo-kim.github.io/ko/talks/240409-imperial/</link>
       <pubDate>Tue, 09 Apr 2024 00:00:00 +0000</pubDate>
-      <guid>https://sunwoo-kim.github.io/ko/activities/talks/240409-imperial/</guid>
+      <guid>https://sunwoo-kim.github.io/ko/talks/240409-imperial/</guid>
       <description>&lt;details&gt;
    &lt;summary&gt;&lt;font color=&#34;grey&#34;&gt; &lt;small&gt;To cite this page&lt;/small&gt; &lt;/font&gt;&lt;/summary&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-latex&#34; data-lang=&#34;latex&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;@misc&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;swpkim2025bayesian,
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   author=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;P. Kim, Sun Woo&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;,
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   title=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;Bayesian inference, statistical physics, and the planted directed polymer problem&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;,
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   year=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;2024&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;,
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   howpublished=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;\url&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;https://sunwoo-kim.github.io/ko/activities/talks/240409-imperial/&lt;span class=&#34;nb&#34;&gt;}}&lt;/span&gt;,
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   note=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;Accessed: 2025-05-13&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   howpublished=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;\url&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;https://sunwoo-kim.github.io/ko/talks/240409-imperial/&lt;span class=&#34;nb&#34;&gt;}}&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   note=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;Accessed: 2025-09-14&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/details&gt;
 &lt;small&gt;&lt;i&gt;
@@ -153,7 +153,7 @@ which is the magnetisation in the random-bond Ising model with $p(\tilde{J}) \pr
 &lt;figure  &gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
     &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;&#34;
-           src=&#34;https://sunwoo-kim.github.io/ko/activities/talks/240409-imperial/rbim_conventional.svg&#34;
+           src=&#34;https://sunwoo-kim.github.io/ko/talks/240409-imperial/rbim_conventional.svg&#34;
            loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
   &lt;/div&gt;&lt;/figure&gt;
 &lt;/p&gt;
@@ -177,7 +177,7 @@ which is the magnetisation in the random-bond Ising model with $p(\tilde{J}) \pr
 &lt;figure  &gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
     &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;&#34;
-           src=&#34;https://sunwoo-kim.github.io/ko/activities/talks/240409-imperial/rbim_inference.svg&#34;
+           src=&#34;https://sunwoo-kim.github.io/ko/talks/240409-imperial/rbim_inference.svg&#34;
            loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
   &lt;/div&gt;&lt;/figure&gt;
 &lt;/p&gt;
@@ -212,7 +212,7 @@ An example of such a random walk in 1D is shown below.
 &lt;figure  &gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
     &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;&#34;
-           src=&#34;https://sunwoo-kim.github.io/ko/activities/talks/240409-imperial/1_true_path.svg&#34;
+           src=&#34;https://sunwoo-kim.github.io/ko/talks/240409-imperial/1_true_path.svg&#34;
            loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
   &lt;/div&gt;&lt;/figure&gt;
 &lt;/p&gt;
@@ -240,7 +240,7 @@ which has a peak at the true location of the walker with &amp;lsquo;signal stren
 &lt;figure  &gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
     &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;&#34;
-           src=&#34;https://sunwoo-kim.github.io/ko/activities/talks/240409-imperial/2_good_image.svg&#34;
+           src=&#34;https://sunwoo-kim.github.io/ko/talks/240409-imperial/2_good_image.svg&#34;
            loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
   &lt;/div&gt;&lt;/figure&gt;
 &lt;/p&gt;

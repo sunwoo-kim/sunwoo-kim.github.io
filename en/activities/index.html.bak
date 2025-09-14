@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- This site was created with Wowchemy. https://www.wowchemy.com -->
-<!-- Last Published: May 13, 2025 --><html lang="en-us" >
+<!-- Last Published: September 14, 2025 --><html lang="en-us" >
 
 
 <head>
@@ -589,6 +589,36 @@
           
 
           <li class="nav-item">
+            <a class="nav-link " href="/en/talks"><span>Talks</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+          
+
+          <li class="nav-item">
             <a class="nav-link  active" href="/en/activities"><span>Activities</span></a>
           </li>
 
@@ -765,82 +795,6 @@
     <a href="/en/activities/teaching/"  class="summary-link">
       <div class="article-style">
         Click here for a list of my teaching activities and resources.
-      </div>
-    </a>
-    
-
-    <div class="stream-meta article-metadata">
-
-      
-
-      
-        
-
-
-<div class="article-metadata">
-
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-  
-  
-
-  
-  
-
-</div>
-
-      
-    </div>
-
-    
-
-  </div>
-  <div class="ml-3">
-    
-    
-  </div>
-</div>
-
-  
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<div class="media stream-item view-compact">
-  <div class="media-body">
-
-    <div class="section-subheading article-title mb-0 mt-0">
-      <a href="/en/activities/talks/" >Talks</a>
-    </div>
-
-    
-    <a href="/en/activities/talks/"  class="summary-link">
-      <div class="article-style">
-        Click here for notes and slides for talks/lectures given.
       </div>
     </a>
     

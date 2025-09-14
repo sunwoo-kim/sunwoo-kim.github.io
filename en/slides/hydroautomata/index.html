@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  
+  
+  
+  
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Wowchemy 5.7.0 for Hugo">
+
+  
+    <link rel="manifest" href="/en/manifest.webmanifest">
+  
+
+  <link rel="icon" type="image/png" href="/media/icon_hu8b309a9302268010949630654373c3a0_79828_32x32_fill_lanczos_center_3.png">
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hu8b309a9302268010949630654373c3a0_79828_192x192_fill_lanczos_center_3.png">
+
+  <link rel="canonical" href="https://sunwoo-kim.github.io/en/slides/hydroautomata/">
+
+  <title>Hydrodynamics of classical deterministic circuits | Sun Woo P. Kim</title>
+
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/theme/white.min.css">
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="/css/libs/chroma/dracula.min.css">
+  
+
+  
+  
+  
+
+  <style>
+  .reveal {
+    font-family: "Helvetica Neue";
+  }
+  </style>
+
+  <style>
+  .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5 {
+    text-transform: none; 
+    text-align: left;
+    font-family: "Helvetica Neue", "Helvetica Neue", "Helvetica Neue";
+    font-weight: bold;
+  }
+  </style>
+
+<style>
+  .reveal h1 {
+    font-size: 150%;
+  }
+</style>
+
+<style>
+  .reveal h2 {
+    font-size: 140%;
+  }
+</style>
+
+<style>
+  .reveal h3, .reveal h4, .reveal h5 {
+    font-size: 100%;
+  }
+</style>
+
+
+<style>
+.reveal p {
+  text-align: left;
+  font-family: "Helvetica Neue";
+  font-size: 70%;
+   
+}
+</style>
+
+<style>
+.reveal ul {
+  font-size: 70%;
+  text-align: left;
+  line-height: 130%;
+}
+</style>
+
+<style>
+  .reveal .controls {
+display: none !important;
+}
+</style>
+
+<style>
+  .reveal .slide-number {
+  font-size: 60%;
+} 
+</style>
+<style>
+  .reveal .slide-menu-button {
+  display: none !important;
+}
+</style>
+
+<style>
+  .reveal ol,
+.reveal dl,
+.reveal ul {
+  display: block;
+  text-align: left;
+  margin: 0 0 0 1em; }
+</style>
+
+</head>
+<body>
+
+  
+<div class="reveal">
+  <div class="slides">
+    
+    
+    
+
+    
+    
+    
+    
+    
+
+    
+    
+
+    
+    
+    
+    <section>
+    
+      <h1 id="hydrodynamics-of-classical-deterministic-circuits">Hydrodynamics of classical deterministic circuits</h1>
+<p><b><a href="https://arxiv.org/abs/2503.08788" target="_blank" rel="noopener">arXiv:2503.08788</a></b></p>
+<p><text style="fontsize: 75%;">Work with</text></p>
+<div style="display: flex; gap: 2em; fontsize: 75%;">
+  <div style="flex: 1;">
+    <small>Friedrich Hübner (KCL)</small>
+    <br>
+    <img src="fred.jpg" style="width: 35%;">
+  </div>
+  <div style="flex: 1;">
+    <small>Juan P. Garrahan (Nottingham)</small>
+    <br>
+    <img src="juan.jpg" style="width: 35%;">
+  </div>
+  <div style="flex: 1;">
+    <small>Benjamin Doyon (KCL)</small>
+    <br>
+    <img src="ben.jpg" style="width: 35%;">
+  </div>
+</div>
+<!-- <small><b>Sun Woo P. Kim <br> 25-05-13, CPGM</b> -->
+<!-- <small><b>Sun Woo P. Kim <br> 25-06-17, BME</b> -->
+<p><small><b>Sun Woo P. Kim, King&rsquo;s College London <br> 25-07-09, Budapest Integrability Online Seminar</b>
+<br>
+Slides at <a href="https://sunwoo-kim.github.io/en/slides/hydroautomata" target="_blank" rel="noopener">sunwoo-kim.github.io/en/slides/gateshydro</a></small></p>
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<img src="zoomin.svg" style="width: 70%;">
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<h2 id="hydrodynamics">Hydrodynamics</h2>
+<ul>
+<li>Large-scale, coarse-grained description of locally-interacting many-body systems with extensive conserved quantities (CQs) with <strong>local densities</strong> away from equilibrium</li>
+<li>Thought to be <strong>universal</strong> in that many microscopic models/systems give rise to the same family of hydrodynamic equations</li>
+</ul>
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<h2 id="local-conservation-laws">Local conservation laws</h2>
+<ul>
+<li>Extensive CQs, ex. $\vec Q = (N, \bm{P}, E)$</li>
+<li>Local densities
+$$\vec Q = \int dx \vec q(x, t)$$</li>
+<li>Assuming periodic boundary condition $\frac{d}{dt} \vec Q = 0$ if
+$$ \partial_t \vec q(x, t) = \partial_x \vec j \left(\vec q(x,t), \partial_x \vec q(x,t), \dots \right)$$</li>
+</ul>
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<h2 id="euler-scale-hydrodynamics">Euler-scale hydrodynamics</h2>
+<ul>
+<li>Taylor expand the current wrt gradients
+$$\partial_t \vec q(x,t) = \partial_x \Big( f(\vec q) + g(\vec q) \partial_x \vec q + \cdots \Big)$$</li>
+<li>Rescale space and time $t = t^\prime L$, $x = x^\prime L$ (i.e. look in terms of $\mathrm{km}$ and $\mathrm{days}$ instead of $\mathrm{cm}$ and $\mathrm{sec}$)
+$$\partial_{t^\prime} \vec q(x,t) = \partial_{x^\prime} \Bigg( f(\vec q) + \frac{g(\vec q)}{L} \partial_{x^\prime} \vec q + \mathcal{O}(L^{-2}) \Bigg)$$</li>
+<li>As $L \rightarrow \infty$, we can just consider the effects of the first term; this is known as Euler-scale hydrodynamics.</li>
+</ul>
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<h2 id="two-approaches">Two approaches</h2>
+<p><strong>Top-down</strong>:</p>
+<ul>
+<li>(Sensible) guess of hydrodynamic equation from physical principles ex. The Navier-Stokes, with $\vec q = (\rho, \rho \mathbf{u})$:</li>
+</ul>
+<font size="5em">
+$$\frac{\partial}{\partial t}(\rho \mathbf{u}) = -\nabla \cdot\left(\rho \mathbf{u} \otimes \mathbf{u}+[p-\zeta(\nabla \cdot \mathbf{u})] \mathbf{I}-\mu\left[\nabla \mathbf{u}+(\nabla \mathbf{u})^{\mathrm{T}}-\frac{2}{3}(\nabla \cdot \mathbf{u}) \mathbf{I}\right]\right)$$
+$$\frac{\partial \rho}{\partial t}= - \nabla \cdot(\rho \mathbf{u})$$
+</font>
+<ul>
+<li>Does this equation make sense? i.e. Navier–Stokes existence and smoothness (Millenium prize problem)</li>
+<li>Efficient simulations? ex. GenCast by Google, Tensor network methods (Gourianov &lsquo;25)</li>
+</ul>
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<h2 id="two-approaches-1">Two approaches</h2>
+<p><strong>Bottom-up</strong>:</p>
+<ul>
+<li>Microscopic laws $\Rightarrow$ hydrodynamic equations</li>
+<li>Assume thermal relaxation in coarse-grained fluid cells
+$$ p(\bm{a}) \propto \exp\left[- \sum_x \vec \beta(x,t) \cdot \vec {\mathsf{q}}_x(a_{x:x+l})\right]$$</li>
+<li>Then obtain Euler-scale hydrodynamics with
+$$\vec q(x, t) = \langle \vec {\mathsf{q}}_{x} \rangle_{\vec \beta(x, t)}, \quad \vec{j}(x,t) = \langle \vec {\mathsf{j}}_{x} \rangle_{\vec \beta(\vec q(x,t))}$$</li>
+<li>Generally hard to evaluate, as $p(\bm{a})$ is not separable ex. Hamiltonian systems. Exceptions: 1D systems (transfer matrix), integrable systems (GHD)</li>
+</ul>
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<h2 id="two-approaches-2">Two approaches</h2>
+<p><strong>Bottom-up</strong>:</p>
+<ul>
+<li>Very hard to prove that relaxation occurs in general, or that coarse-grained dynamics reduces to hydrodynamic description (Hilbert&rsquo;s 6th problem).</li>
+<li>Recently (maybe) proven for hard spheres (Deng &lsquo;25)</li>
+</ul>
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<h2 id="brickwork-circuits">Brickwork circuits</h2>
+<div style="display: flex; gap: 2em;">
+  <div style="flex: 1;">
+    <ul>
+      <li>Time-discrete many-body system</li>
+      <li>Arrange states in a 1D chain (of length $L$ with periodic boundary conditions) then apply a layer of two-site gates at each timestep in a brickwork fashion</li>
+      <li>Can be classical (block cellular automata with Margolius neighbourhoods) or quantum</li>
+      <li>Can be deterministic or stochastic</li>
+      <!-- <li>At each timestep $\tau$, a layer of gates is
+      <center><img src="u_tau.svg" style="width: 50%;"></center>
+      $\mathcal{R}_\tau$: even(odd) sites on even(odd) times, $\mathsf{u}_{i:i+1}$ acts on states on sites $\{i, i+1\}$
+      </li> -->
+      <!-- <li> Analytically tractable examples
+        <ul>
+          <li>Quantum: <b>dual unitaries</b> (Gopalakrishnan '19, Bertini '19), <b>Haar-random  unitaries</b> (von Keyserlingk '18)</li>
+          <li>Classical: <b>east gate</b> (Klobas '24), <b>stochastic charged automata</b> (Klobas '18, Krajnik '22)</li>
+        </ul>
+      </li>
+      <li>Can generalise to $D$ spatial dimensions $\rightarrow$ each gate acts on $2D$ sites</li> -->
+    </ul>
+  </div>
+  <div style="flex: 0.5;">
+    <img src="brickwork.svg" style="width: 100%;">
+  </div>
+</div>
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<h2 id="brickwork-circuits-1">Brickwork circuits</h2>
+<ul>
+<li>Analytically tractable examples
+<ul>
+<li>Quantum: <strong>dual unitaries</strong> (Gopalakrishnan &lsquo;19, Bertini &lsquo;19), <strong>Haar-random  unitaries</strong> (von Keyserlingk &lsquo;18)</li>
+<li>Classical: <strong>east gate</strong> (Klobas &lsquo;24), <strong>stochastic charged automata</strong> (Klobas &lsquo;18, Krajnik &lsquo;22)</li>
+</ul>
+</li>
+<li>Can implement them on a quantum computer ($$$)</li>
+<li>Can generalise to $D$ spatial dimensions $\rightarrow$ each gate acts on $2D$ sites</li>
+</ul>
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<h2 id="classical-deterministic-gates">Classical deterministic gates</h2>
+<div style="display: flex; gap: 2em;">
+  <div style="flex: 1;">
+    <ul>
+      <li>Local states $\mathcal{D}=\{0, 1, \dots, d-1\}$</li>
+      <li>Two-site determinisitic gates are maps $\sigma: \mathcal{D} \times \mathcal{D} \rightarrow \mathcal{D} \times \mathcal{D}$</li>
+      <li>Reversible $\Rightarrow$ $\sigma$ is a bijection, i.e. a permutation on $\{(0,0), (0,1), \dots, (d-1, d-1)\}$</li>
+      <li>There are $(d^2)!$ reversible deterministic gates</li>
+      <li>Also known as block cellular automata with Margolius neighbourhoods</li>
+    </ul>
+  </div>
+  <div style="flex: 0.4;">
+    <small>$(d, \sigma) = (3, 996)$</small>
+    <img src="rules.svg" style="width: 100%;">
+  </div>
+</div>
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<h2 id="classical-deterministic-gates-1">Classical deterministic gates</h2>
+<div style="display: flex; gap: 2em;">
+  <div style="flex: 1;">
+    <ul>
+      <li>Promote configurations to basis vectors ￼$a \rightarrow | a \rangle$</li>
+      <li>Then can represent distributions as <br>$\ket{p} = \sum_{\bm{a}} p(\bm{a}) \ket{\bm{a}}$</li>
+      <li>Gate $\mathsf{u}$ can be written as
+      $$\mathsf{u}=\sum_{a, b}|\sigma_1(a, b), \sigma_2(a, b)\rangle\langle a, b|$$
+      </li>
+      <li>Equivalently in tensor network notation
+      <img src="gatetn.svg" style="width: 100%;">
+      </li>
+    </ul>
+  </div>
+  <div style="flex: 0.4;">
+    <small>$(d, \sigma) = (3, 996)$</small>
+    <!-- <img src="rulesbk.svg" style="width: 60%;"> -->
+    $$\tiny{\begin{aligned}
+      & |00\rangle \rightarrow|00\rangle \\
+      & |01\rangle \rightarrow|01\rangle \\
+      & |02\rangle \rightarrow|10\rangle \\
+      & |10\rangle \rightarrow|12\rangle \\
+      & |11\rangle \rightarrow|11\rangle \\
+      & |12\rangle \rightarrow|21\rangle \\
+      & |20\rangle \rightarrow|02\rangle \\
+      & |21\rangle \rightarrow|20\rangle \\
+      & |22\rangle \rightarrow|22\rangle
+\end{aligned}}$$
+  </div>
+</div>
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<h2 id="this-work">This work</h2>
+<ul>
+<li>Develop machinery to
+<ol>
+<li>Determine the CQs with local densities of (1D classical deterministic) brickwork circuits up to desired locality</li>
+<li>Confirm the number of CQs by confirming relaxation onto (generalised) Gibbs states</li>
+<li>Derive the Euler-scale hydrodynamic equations</li>
+</ol>
+</li>
+<li>Go out there and search through possible deterministic reversible gates, look for gates with finite number of CQs</li>
+<li>Compare theory with numerics
+<ol>
+<li>Compare Euler-scale hydrodynamics</li>
+<li>Develop non-linear fluctuating hydrodynamics and quantitatively predict KPZ superdiffusion</li>
+</ol>
+</li>
+</ul>
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<h2 id="why-circuits">Why circuits?</h2>
+<ul>
+<li>No continuous temporal or spatial translational invariance <br>
+$\Rightarrow$ no pesky conserved energy, momentum or particle number to deal with <br>
+$\Rightarrow$ can have models with <strong>minimum</strong> ingredients for hydrodynamic phenomenon</li>
+<li>If CQs are 1-local, then Gibbs states are factorisable
+$$p(\bm{a}) = \exp\left[-\sum_x \vec \beta(x, t) \cdot \vec{\mathsf{q}}_x(a_x) \right] = \prod_x p(a_x)$$</li>
+<li>Classical circuits are very simulable ($L \approx 10^6$)</li>
+</ul>
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<h2 id="finding-conserved-quantities">Finding conserved quantities</h2>
+<ul>
+<li>Conserved quantity can be represented as $\bra{F}$ and evaluated as $\langle F | p \rangle$</li>
+<li>Two layer of time evolution (at even timestep) is</li>
+</ul>
+<center><img src="twolayers.svg" style="width: 80%;"></center>
+<ul>
+<li>If conserved after (say) $n$ timesteps, then $\bra{F} \mathsf{U} = \bra{F} \lambda^2$ with $\lambda^n = 1$ (such that $\bra{F}{\mathsf{U}}^{n/2}\ket{p} = \bra{F}{p}\rangle \forall \ket{p}$)</li>
+<li>Assume that CQ is translationally invariant under $m$ translations: $\bra{F} \mathsf{T}^2 = \bra{F} \mu^2$, with $\mu^m = 1$</li>
+</ul>
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<h2 id="finding-conserved-quantities-1">Finding conserved quantities</h2>
+<ul>
+<li>Construct ansatz of local densities that may differ on even and odd sites</li>
+<li>ex. for 1-local conserved quantities, the condition for the CQ is</li>
+</ul>
+<center><img src="1local.svg" style="width: 70%;"></center>
+<ul>
+<li>Can be solved to find exact expressions for CQs or rule out CQs up to $\sim 10$-local densities</li>
+</ul>
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<h2 id="finding-conserved-quantities-2">Finding conserved quantities</h2>
+<ul>
+<li>For local dimension $d=2$, find that all reversible gates are either fully chaotic (i.e. no CQs at all) or (super) integrable (i.e. a tower of CQs)</li>
+<li>Go through all $d=3$ gates ($(3^2)!=362880$ gates)
+<ul>
+<li>Find $\approx 2000$ gates with only 1-local CQs</li>
+</ul>
+</li>
+<li>ex. For $(d, \sigma) = (3, 996)$, $\lambda=\mu=1$, $\bra{f_\mathrm{e}} = \bra{1}$, <br> $\bra{f_\mathrm{o}} = -\bra{0}$ and no more!</li>
+<li>For $(3, 229117)$, there are two 1-local CQs, one with $\lambda_1=\mu_1=1$ and another with $\mu_2=\lambda_2=e^{i \pi/2}$</li>
+</ul>
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<h2 id="confirming-the-number-of-conserved-quantities">Confirming the number of conserved quantities</h2>
+<ul>
+<li>To construct the hydrodynamics, require <strong>all</strong> CQs. How to rule out further CQs ex. 41293-local CQ?</li>
+<li>Dimension of linear equation for $l$-local CQ $\sim \exp(l)$</li>
+<li>Previous method cannot capture quasi-local CQs, i.e. those with exp. decaying tails (Sharipov &lsquo;25)</li>
+</ul>
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<h2 id="confirming-the-number-of-conserved-quantities-1">Confirming the number of conserved quantities</h2>
+<ul>
+<li>Use / test assumptions of hydrodynamics: relaxation onto (generalised) Gibbs states</li>
+<li>Degree of freedom for Gibbs states is $N_\mathrm{cq}$ <br> $\Rightarrow$ local expectation values of local observables should lie on a $N_\mathrm{cq}$-dimensional manifold and agree with microscopic predictions</li>
+</ul>
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<center><img src="nike.png" style="width: 70%;"></center>
+$(d,\sigma)=(3, 996)$
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<center><img src="nike_3d.png" style="width: 70%;"></center>
+$(d,\sigma)=(3, 229117)$
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<h2 id="constructing-the-euler-scale-hydrodynamic-equations">Constructing the Euler-scale hydrodynamic equations</h2>
+<ul>
+<li>Once <strong>all</strong> CQs have been found, can construct Euler-scale hydrodynamics</li>
+<li>For 1-local CQs with $\lambda=\mu=1$,
+$$\braket{\mathsf{q}}_\beta = \braket{f_\mathrm{o}}_\beta + \braket{f_\mathrm{e}}_\beta \quad \braket{\mathsf{j}}_\beta = \braket{f_\mathrm{o}}_\beta - \braket{f_\mathrm{e}}_\beta$$
+where the current is given by</li>
+</ul>
+<center><img src="current.svg" style="width: 55%;"></center>
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<h2 id="constructing-the-euler-scale-hydrodynamic-equations-1">Constructing the Euler-scale hydrodynamic equations</h2>
+<ul>
+<li>For $(d, \sigma) = (3, 996)$,</li>
+</ul>
+<p>$$
+\braket{\mathsf{q}}_{\beta} = \frac{1}{2 e^{\beta}+1}+\frac{2}{e^{\beta}+2}-1
+$$
+$$
+\braket{\mathsf{j}}_{\beta} = \frac{1}{-2 e^{\beta }-1}+\frac{2}{e^{\beta}+2}-1
+$$</p>
+<ul>
+<li>So $j(q) = \frac{1}{3} \left(2 - \sqrt{9 q^2+16}\right)$ and
+$$
+\partial_t q(x) = -v(q(x)) \partial_x q(x)
+$$
+with $v(q) = {3q}/{\sqrt{16+9q^2}}$</li>
+</ul>
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<h2 id="constructing-the-euler-scale-hydrodynamic-equations-2">Constructing the Euler-scale hydrodynamic equations</h2>
+<ul>
+<li>With change of variables $\rho = v(q)$, obtain Burger&rsquo;s equation</li>
+<li>First example of deterministic and closed microscopic model with one giving rise to Burger&rsquo;s equation</li>
+<li>Impossible to get with Hamiltonian systems with one CQ</li>
+</ul>
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<center><img src="shocks.png" style="width: 70%;"></center>
+$(d,\sigma)=(3, 996)$
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<center><img src="entropy.png" style="width: 70%;"></center>
+$(d,\sigma)=(3, 996)$
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<center><img src="beach.svg" style="width: 60%;"></center>
+<small>From just one sample; Hydrodynamics is self-averaging</small>
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<h2 id="non-linear-fluctuating-hydrodynamics">Non-linear fluctuating hydrodynamics</h2>
+<ul>
+<li>The hydrodynamic equations are for averages, i.e. one-point functions</li>
+<li>Now consider fluctuations around the mean, $\delta q(x,t) = q(x,t) - q_0$ where $q_0 = \langle \mathsf{q} \rangle_\beta$</li>
+<li>Expanding the Euler-scale equation (and considering higher order terms),
+<font size="5em">
+$$\partial_t \delta q(x,t) + j^\prime(q_0) \partial_x \delta q + \frac{1}{2} j^{\prime \prime}(q_0) \partial_x \delta q^2 + D \partial_x^2 \delta q + (\mathrm{noise}) = 0$$
+</font></li>
+</ul>
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<h2 id="non-linear-fluctuating-hydrodynamics-1">Non-linear fluctuating hydrodynamics</h2>
+<ul>
+<li>Can be mapped onto KPZ equation ($\partial_x h = \delta q/C$) from which we can predict the fluctuations (Spohn &lsquo;14)
+$$\langle\delta q(t, x) \delta q(0,0)\rangle \sim \frac{1}{(\lambda t)^{2 / 3}} f_{\mathrm{KPZ}}\left(\frac{x-j^{\prime}(q_0) t}{(\lambda t)^{2 / 3}}\right)$$
+where superdiffusion constant $\lambda$ is
+$$\lambda = \sqrt{2 \langle \delta q^2\rangle} j^{\prime \prime}(q_0)$$</li>
+</ul>
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<center><img src="kpz.svg" style="width: 100%;"></center>
+$(d,\sigma)=(3, 996)$
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<center><img src="diffusion.svg" style="width: 100%;"></center>
+$(d,\sigma)=(3, 1092)$
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<h2 id="other-phenomenology">Other phenomenology</h2>
+<center><img src="fput.png" style="width: 70%;"></center>
+$(d,\sigma)=(3, 2312)$
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<h2 id="outlook">Outlook</h2>
+<ul>
+<li>Machinery is straight-forward to extend to quantum and higher $D$ and other topologies</li>
+<li>Currently: identifying interesting quantum gates and gates in higher $D$
+<ul>
+<li>We find non-integrable models with exact hydrodynamic predictions!</li>
+</ul>
+</li>
+<li>Study quasi-local charges</li>
+<li>Combine with other circuit techniques? &ldquo;Solvability&rdquo; or generalisation of dual-unitarity</li>
+</ul>
+
+    </section>
+    
+
+    
+    
+  </div>
+</div>
+
+
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/markdown/markdown.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/notes/notes.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/search/search.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/math/math.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/zoom/zoom.min.js" crossorigin="anonymous"></script>
+
+  
+  
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js-menu@2.1.0/plugin.js" integrity="sha256-M6JwAjnRAWmi+sbXURR/yAhWZKYhAw7YXnnLvIxrdGs=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js-menu@2.1.0/menu.js" integrity="sha256-l14dklFcW5mWar6w/9KaW0fWVerf3mYr7Wt0+rXzFAA=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-menu@2.1.0/menu.css" integrity="sha256-0fU8HKLaTjgzfaV9CgSqbsN8ilA3zo6zK1M6rlgULd8=" crossorigin="anonymous">
+  
+
+  
+  
+
+  
+  
+  <script src="/js/wowchemy-slides.js"></script>
+
+</body>
+</html>

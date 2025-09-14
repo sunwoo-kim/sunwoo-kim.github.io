@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://sunwoo-kim.github.io/ko/projects/</loc>
-    <lastmod>2025-04-19T00:00:00+00:00</lastmod>
+    <lastmod>2025-09-04T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <xhtml:link
                 rel="alternate"
@@ -17,7 +17,25 @@
                 />
   </url><url>
     <loc>https://sunwoo-kim.github.io/ko/authors/</loc>
-    <lastmod>2025-04-19T00:00:00+00:00</lastmod>
+    <lastmod>2025-09-04T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://sunwoo-kim.github.io/ko/projects/osculating/</loc>
+    <lastmod>2025-09-04T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://sunwoo-kim.github.io/en/projects/osculating/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ko"
+                href="https://sunwoo-kim.github.io/ko/projects/osculating/"
+                />
+  </url><url>
+    <loc>https://sunwoo-kim.github.io/ko/authors/sunwoo/</loc>
+    <lastmod>2025-09-04T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
     <loc>https://sunwoo-kim.github.io/ko/projects/quantuminference/</loc>
@@ -33,10 +51,6 @@
                 hreflang="ko"
                 href="https://sunwoo-kim.github.io/ko/projects/quantuminference/"
                 />
-  </url><url>
-    <loc>https://sunwoo-kim.github.io/ko/authors/sunwoo/</loc>
-    <lastmod>2025-04-19T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
   </url><url>
     <loc>https://sunwoo-kim.github.io/ko/projects/gateshydro/</loc>
     <lastmod>2025-03-20T00:00:00+00:00</lastmod>
@@ -66,18 +80,18 @@
                 href="https://sunwoo-kim.github.io/ko/projects/plantedpolymer/"
                 />
   </url><url>
-    <loc>https://sunwoo-kim.github.io/ko/activities/talks/240409-imperial/</loc>
+    <loc>https://sunwoo-kim.github.io/ko/talks/240409-imperial/</loc>
     <lastmod>2024-04-09T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://sunwoo-kim.github.io/en/activities/talks/240409-imperial/"
+                href="https://sunwoo-kim.github.io/en/talks/240409-imperial/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://sunwoo-kim.github.io/ko/activities/talks/240409-imperial/"
+                href="https://sunwoo-kim.github.io/ko/talks/240409-imperial/"
                 />
   </url><url>
     <loc>https://sunwoo-kim.github.io/ko/tags/</loc>
@@ -108,18 +122,18 @@
                 href="https://sunwoo-kim.github.io/ko/tags/talk/"
                 />
   </url><url>
-    <loc>https://sunwoo-kim.github.io/ko/activities/</loc>
+    <loc>https://sunwoo-kim.github.io/ko/talks/</loc>
     <lastmod>2024-04-09T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://sunwoo-kim.github.io/en/activities/"
+                href="https://sunwoo-kim.github.io/en/talks/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://sunwoo-kim.github.io/ko/activities/"
+                href="https://sunwoo-kim.github.io/ko/talks/"
                 />
   </url><url>
     <loc>https://sunwoo-kim.github.io/ko/</loc>
@@ -216,6 +230,19 @@
                 rel="alternate"
                 hreflang="ko"
                 href="https://sunwoo-kim.github.io/ko/publication_types/"
+                />
+  </url><url>
+    <loc>https://sunwoo-kim.github.io/ko/activities/</loc>
+    <changefreq>weekly</changefreq>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://sunwoo-kim.github.io/en/activities/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ko"
+                href="https://sunwoo-kim.github.io/ko/activities/"
                 />
   </url>
 </urlset>

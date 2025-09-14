@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://sunwoo-kim.github.io/en/projects/</loc>
-    <lastmod>2025-04-19T00:00:00+00:00</lastmod>
+    <lastmod>2025-09-04T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <xhtml:link
                 rel="alternate"
@@ -15,6 +15,84 @@
                 hreflang="en"
                 href="https://sunwoo-kim.github.io/en/projects/"
                 />
+  </url><url>
+    <loc>https://sunwoo-kim.github.io/en/talks/quantuminference/</loc>
+    <lastmod>2025-09-12T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://sunwoo-kim.github.io/en/tags/</loc>
+    <lastmod>2025-09-12T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ko"
+                href="https://sunwoo-kim.github.io/ko/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://sunwoo-kim.github.io/en/tags/"
+                />
+  </url><url>
+    <loc>https://sunwoo-kim.github.io/en/tags/talk/</loc>
+    <lastmod>2025-09-12T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ko"
+                href="https://sunwoo-kim.github.io/ko/tags/talk/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://sunwoo-kim.github.io/en/tags/talk/"
+                />
+  </url><url>
+    <loc>https://sunwoo-kim.github.io/en/talks/</loc>
+    <lastmod>2025-09-12T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ko"
+                href="https://sunwoo-kim.github.io/ko/talks/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://sunwoo-kim.github.io/en/talks/"
+                />
+  </url><url>
+    <loc>https://sunwoo-kim.github.io/en/projects/osculating/</loc>
+    <lastmod>2025-09-04T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ko"
+                href="https://sunwoo-kim.github.io/ko/projects/osculating/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://sunwoo-kim.github.io/en/projects/osculating/"
+                />
+  </url><url>
+    <loc>https://sunwoo-kim.github.io/en/</loc>
+    <lastmod>2025-07-29T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ko"
+                href="https://sunwoo-kim.github.io/ko/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://sunwoo-kim.github.io/en/"
+                />
+  </url><url>
+    <loc>https://sunwoo-kim.github.io/en/talks/hydroautomata/</loc>
+    <lastmod>2025-07-09T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
   </url><url>
     <loc>https://sunwoo-kim.github.io/en/projects/quantuminference/</loc>
     <lastmod>2025-04-19T00:00:00+00:00</lastmod>
@@ -80,7 +158,7 @@
                 href="https://sunwoo-kim.github.io/en/projects/plantedpolymer/"
                 />
   </url><url>
-    <loc>https://sunwoo-kim.github.io/en/slides/gateshydro/</loc>
+    <loc>https://sunwoo-kim.github.io/en/slides/hydroautomata/</loc>
     <lastmod>2024-05-13T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
@@ -88,54 +166,22 @@
     <lastmod>2024-05-13T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://sunwoo-kim.github.io/en/tags/</loc>
-    <lastmod>2024-05-13T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ko"
-                href="https://sunwoo-kim.github.io/ko/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://sunwoo-kim.github.io/en/tags/"
-                />
-  </url><url>
-    <loc>https://sunwoo-kim.github.io/en/tags/talk/</loc>
-    <lastmod>2024-05-13T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ko"
-                href="https://sunwoo-kim.github.io/ko/tags/talk/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://sunwoo-kim.github.io/en/tags/talk/"
-                />
-  </url><url>
-    <loc>https://sunwoo-kim.github.io/en/activities/talks/</loc>
+    <loc>https://sunwoo-kim.github.io/en/talks/240513-kias/</loc>
     <lastmod>2024-05-13T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://sunwoo-kim.github.io/en/activities/talks/240513-kias/</loc>
-    <lastmod>2024-05-13T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://sunwoo-kim.github.io/en/activities/talks/240409-imperial/</loc>
+    <loc>https://sunwoo-kim.github.io/en/talks/240409-imperial/</loc>
     <lastmod>2024-04-09T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://sunwoo-kim.github.io/ko/activities/talks/240409-imperial/"
+                href="https://sunwoo-kim.github.io/ko/talks/240409-imperial/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://sunwoo-kim.github.io/en/activities/talks/240409-imperial/"
+                href="https://sunwoo-kim.github.io/en/talks/240409-imperial/"
                 />
   </url><url>
     <loc>https://sunwoo-kim.github.io/en/activities/teaching/symmetries/</loc>
@@ -171,20 +217,6 @@
     <loc>https://sunwoo-kim.github.io/en/posts/tfi-model/</loc>
     <lastmod>2023-11-16T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://sunwoo-kim.github.io/en/</loc>
-    <lastmod>2022-10-24T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ko"
-                href="https://sunwoo-kim.github.io/ko/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://sunwoo-kim.github.io/en/"
-                />
   </url><url>
     <loc>https://sunwoo-kim.github.io/en/posts/hello-world/</loc>
     <lastmod>2023-08-14T00:00:00+00:00</lastmod>
