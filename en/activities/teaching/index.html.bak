@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- This site was created with Wowchemy. https://www.wowchemy.com -->
-<!-- Last Published: September 14, 2025 --><html lang="en-us" >
+<!-- Last Published: September 16, 2025 --><html lang="en-us" >
 
 
 <head>
@@ -265,6 +265,7 @@
 
 
 
+  <meta name="robots" content="noindex" />
 
 
 
@@ -743,29 +744,17 @@
 
 <div class="universal-wrapper">
   
-    <div class="article-style"><h2 id="cambridge-2024-">Cambridge (2024-)</h2>
-<h3 id="spring-2025">Spring 2025</h3>
-<ul>
-<li>TA for Part II course <a href="https://computational-physics.tripos.org" target="_blank" rel="noopener">Computational Physics</a>.</li>
-</ul>
-<h3 id="fall-2024">Fall 2024</h3>
-<ul>
-<li>TA for Part III course <a href="https://tqm.tripos.org" target="_blank" rel="noopener">Theories of Quantum Matter</a>, taught by Austen Lamacraft. Answers to &lsquo;check&rsquo; boxes and problem sheet of the first part of the course <a href="/uploads/tqm-part-1-answers.pdf">here</a> (password protected).</li>
-</ul>
-<h2 id="kcl-2023-">KCL (2023-)</h2>
-<h3 id="spring-2025-1">Spring 2025</h3>
-<ul>
-<li>TA for 5CCP9200 Mathematical Methods for Theoretical Physics (Hilbert spaces, Green&rsquo;s functions, complex Hamiltonian mechanics, Laplace transforms), taught by Evgeny Kozik. Notes <a href="https://sunwoo-kim.github.io/en/activities/teaching/pdes/">here</a>.</li>
-</ul>
-<h3 id="spring-2024">Spring 2024</h3>
-<ul>
-<li>TA for 5CCP2332 Symmetry in Physics (group and representation theory applied to physics), taught by Sarben Sarkar. Some notes <a href="https://sunwoo-kim.github.io/en/activities/teaching/symmetries/">here</a>.</li>
-</ul>
-<h3 id="fall-2023">Fall 2023</h3>
-<ul>
-<li>TA for 5CCP3000 Mathematical Methods for Physics (DEs, special functions, Fourier, integral theorems), taught by George Booth and Curt von Keyserlingk.</li>
-</ul>
-</div>
+    <div class="article-style"><!-- * **Fall 2025** (KCL): TA for 4CCP1200 Classical Physics - Mechanics, taught by Georg Rohringer.
+
+* **Spring 2025** (Cambridge): TA for Part II course [Computational Physics](https://computational-physics.tripos.org).
+
+* **Spring 2025** (KCL): TA for 5CCP9200 Mathematical Methods for Theoretical Physics (Hilbert spaces, Green's functions, complex Hamiltonian mechanics, Laplace transforms), taught by Evgeny Kozik. Notes [here](https://sunwoo-kim.github.io/en/activities/teaching/pdes/).
+
+* **Fall 2024** (Cambridge): TA for Part III course [Theories of Quantum Matter](https://tqm.tripos.org), taught by Austen Lamacraft. Answers to 'check' boxes and problem sheet of the first part of the course [here](/uploads/tqm-part-1-answers.pdf) (password protected).
+
+* **Spring 2024** (KCL): TA for 5CCP2332 Symmetry in Physics (group and representation theory applied to physics), taught by Sarben Sarkar. Some notes [here](https://sunwoo-kim.github.io/en/activities/teaching/symmetries/).
+
+* **Fall 2023** (KCL): TA for 5CCP3000 Mathematical Methods for Physics (DEs, special functions, Fourier, integral theorems), taught by George Booth and Curt von Keyserlingk. --></div>
   
 
 

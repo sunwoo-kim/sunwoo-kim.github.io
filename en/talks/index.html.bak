@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- This site was created with Wowchemy. https://www.wowchemy.com -->
-<!-- Last Published: September 14, 2025 --><html lang="en-us" >
+<!-- Last Published: September 16, 2025 --><html lang="en-us" >
 
 
 <head>
@@ -761,24 +761,56 @@
 
 <div class="universal-wrapper">
   
-    <div class="article-style"><p>Here is a list of talks I&rsquo;ve given. Scroll down to see the most updated version of the slides or notes for them.</p>
+    <div class="article-style"><p>Here is a list of talks I&rsquo;ve given. Scroll all the way down to see the most updated version of the slides or notes for them.</p>
 <ul>
-<li><strong>250917</strong> - UBC - Probability group seminar - <em>Existence and bounds of growth constants for restricted walks, surfaces, and generalisations.</em></li>
-<li><strong>250912</strong> - Christ&rsquo;s College, Cambridge - &lsquo;Quantum computation through the lens of many-body physics&rsquo; conference - <a href="/uploads/quantum-inference-christ.pdf"><em>Measurement-induced phase transitions in quantum inference problems.</em></a></li>
-<li><strong>250908</strong> - KCL - Probability group seminar - <em>Existence and bounds of growth constants for restricted walks, surfaces, and generalisations.</em></li>
-<li><strong>250709</strong> - Budapest Integrability Seminar Balázs Pozsgay&rsquo;s group seminar - <a href="/en/slides/hydroautomata"><em>Circuits as a simple platform for the emergence of hydrodynamics in deterministic chaotic many-body systems.</em></a></li>
-<li><strong>250617</strong> - BME, Budapest - Tibor Rakovszky&rsquo;s group - <a href="/en/slides/hydroautomata"><em>Circuits as a simple platform for the emergence of hydrodynamics in deterministic chaotic many-body systems.</em></a></li>
-<li><strong>250513</strong> - Cambridge - CPGM at TCM - <a href="/en/slides/hydroautomata"><em>Circuits as a simple platform for the emergence of hydrodynamics in deterministic chaotic many-body systems.</em></a></li>
-<li><strong>250430</strong> - Harvard - Norman Yao&rsquo;s group - <a href="/uploads/quantum-inference-christ.pdf"><em>Measurement-induced phase transitions in quantum inference problems.</em></a></li>
-<li><strong>250424</strong> - NYU - Dries Sel&rsquo;s group - <a href="/uploads/quantum-inference-christ.pdf"><em>Measurement-induced phase transitions in quantum inference problems.</em></a></li>
-<li><strong>250423</strong> - Princeton - Sarang Gopalakrishnan&rsquo;s group - <a href="/uploads/quantum-inference-christ.pdf"><em>Measurement-induced phase transitions in quantum inference problems.</em></a></li>
-<li><strong>250402</strong> - KCL - Disorderd Systems seminar - <a href="/uploads/240516_kias_snu.pdf"><em>Planted directed polymer: inferring a random walk from noisy images.</em></a></li>
-<li><strong>241204</strong> - Cambridge - TCM Journal Club - <em>Topological quantum memory and quantum error correction as a Bayesian inference problem.</em></li>
-<li><strong>240902</strong> - London - &lsquo;Advances in Quantum Transport in Low Dimensional Systems&rsquo; workshop - <a href="/uploads/quantum-inference-christ.pdf"><em>Measurement-induced phase transitions in quantum inference problems.</em></a></li>
-<li><strong>240520</strong> - SNU - Yongjoo Baek&rsquo;s Group - <a href="/uploads/240516_kias_snu.pdf"><em>Planted directed polymer: inferring a random walk from noisy images.</em></a></li>
-<li><strong>240516</strong> - KIAS - Statistical Physics seminar (Jae Sung Lee&rsquo;s group) - <a href="/uploads/240516_kias_snu.pdf"><em>Planted directed polymer: inferring a random walk from noisy images.</em></a></li>
-<li><strong>240410</strong> - Imperial - Theory of Topological Matter group seminar (Frank Schindler&rsquo;s group) - <a href="./240409-imperial/"><em>Bayesian inference and statistical physics.</em></a></li>
-<li><strong>240306</strong> - KCL - Many Body Circle seminar - <em>Polarons.</em></li>
+<li>
+<p><strong>25-09-17</strong> @ UBC (Probability group seminar): <em>Existence and bounds of growth constants for restricted walks, surfaces, and generalisations.</em></p>
+</li>
+<li>
+<p><strong>25-09-12</strong> @ Christ&rsquo;s College, Cambridge (Quantum computation through the lens of many-body physics workshop): <a href="/uploads/quantum-inference-christ.pdf"><em>Measurement-induced phase transitions in quantum inference problems.</em></a></p>
+</li>
+<li>
+<p><strong>25-09-08</strong> @ KCL (Probability group seminar): <em>Existence and bounds of growth constants for restricted walks, surfaces, and generalisations.</em></p>
+</li>
+<li>
+<p><strong>25-07-09</strong> @ Budapest Integrability Seminar: <a href="/en/slides/hydroautomata"><em>Circuits as a simple platform for the emergence of hydrodynamics in deterministic chaotic many-body systems.</em></a></p>
+</li>
+<li>
+<p><strong>25-06-17</strong> @ BME, Budapest (Tibor Rakovszky&rsquo;s group): <a href="/en/slides/hydroautomata"><em>Circuits as a simple platform for the emergence of hydrodynamics in deterministic chaotic many-body systems.</em></a></p>
+</li>
+<li>
+<p><strong>25-05-13</strong> @ Cambridge (CPGM at TCM): <a href="/en/slides/hydroautomata"><em>Circuits as a simple platform for the emergence of hydrodynamics in deterministic chaotic many-body systems.</em></a></p>
+</li>
+<li>
+<p><strong>25-04-30</strong> @ Harvard (Norman Yao&rsquo;s group): <a href="/uploads/quantum-inference-christ.pdf"><em>Measurement-induced phase transitions in quantum inference problems.</em></a></p>
+</li>
+<li>
+<p><strong>25-04-24</strong> @ NYU (Dries Sel&rsquo;s group): <a href="/uploads/quantum-inference-christ.pdf"><em>Measurement-induced phase transitions in quantum inference problems.</em></a></p>
+</li>
+<li>
+<p><strong>25-04-23</strong> @ Princeton (Sarang Gopalakrishnan&rsquo;s group): <a href="/uploads/quantum-inference-christ.pdf"><em>Measurement-induced phase transitions in quantum inference problems.</em></a></p>
+</li>
+<li>
+<p><strong>25-04-02</strong> @ KCL (Disorderd Systems seminar): <a href="/uploads/240516_kias_snu.pdf"><em>Planted directed polymer: inferring a random walk from noisy images.</em></a></p>
+</li>
+<li>
+<p><strong>24-12-04</strong> @ Cambridge (TCM Journal Club): <em>Topological quantum memory and quantum error correction as a Bayesian inference problem.</em></p>
+</li>
+<li>
+<p><strong>24-09-02</strong> (Advances in Quantum Transport in Low Dimensional Systems workshop): <a href="/uploads/quantum-inference-christ.pdf"><em>Measurement-induced phase transitions in quantum inference problems.</em></a></p>
+</li>
+<li>
+<p><strong>24-05-20</strong> @ SNU (Yongjoo Baek&rsquo;s Group): <a href="/uploads/240516_kias_snu.pdf"><em>Planted directed polymer: inferring a random walk from noisy images.</em></a></p>
+</li>
+<li>
+<p><strong>24-05-16</strong> @ KIAS (Statistical physics seminar): <a href="/uploads/240516_kias_snu.pdf"><em>Planted directed polymer: inferring a random walk from noisy images.</em></a></p>
+</li>
+<li>
+<p><strong>24-04-10</strong> @ Imperial (Theory of Topological Matter group seminar with Frank Schindler&rsquo;s group): <a href="./240409-imperial/"><em>Bayesian inference and statistical physics.</em></a></p>
+</li>
+<li>
+<p><strong>24-03-06</strong> @ KCL (Many Body Circle seminar): <em>Polarons.</em></p>
+</li>
 </ul>
 <hr>
 </div>
