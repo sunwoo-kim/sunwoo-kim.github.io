@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- This site was created with Wowchemy. https://www.wowchemy.com -->
-<!-- Last Published: 2026년 2월 25일 --><html lang="ko-kr" >
+<!-- Last Published: 2026년 3월 14일 --><html lang="ko-kr" >
 
 
 <head>
@@ -815,6 +815,10 @@
     <div class="article-widget content-widget-hr">
       <h3>최신</h3>
       <ul>
+        
+        <li>
+          <a href="/ko/projects/optimalrecovery/">Optimal recovery in quantum error correction</a>
+        </li>
         
         <li>
           <a href="/ko/projects/osculating/">Self-osculating walks and surfaces</a>

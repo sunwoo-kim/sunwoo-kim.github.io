@@ -20,6 +20,20 @@
     <lastmod>2025-09-04T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
+    <loc>https://sunwoo-kim.github.io/ko/projects/optimalrecovery/</loc>
+    <lastmod>2025-09-04T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://sunwoo-kim.github.io/en/projects/optimalrecovery/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ko"
+                href="https://sunwoo-kim.github.io/ko/projects/optimalrecovery/"
+                />
+  </url><url>
     <loc>https://sunwoo-kim.github.io/ko/projects/osculating/</loc>
     <lastmod>2025-09-04T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>

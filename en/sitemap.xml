@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://sunwoo-kim.github.io/en/projects/</loc>
-    <lastmod>2025-09-04T00:00:00+00:00</lastmod>
+    <lastmod>2026-03-14T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <xhtml:link
                 rel="alternate"
@@ -14,6 +14,20 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://sunwoo-kim.github.io/en/projects/"
+                />
+  </url><url>
+    <loc>https://sunwoo-kim.github.io/en/projects/optimalrecovery/</loc>
+    <lastmod>2026-03-14T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ko"
+                href="https://sunwoo-kim.github.io/ko/projects/optimalrecovery/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://sunwoo-kim.github.io/en/projects/optimalrecovery/"
                 />
   </url><url>
     <loc>https://sunwoo-kim.github.io/en/talks/osculating/</loc>
