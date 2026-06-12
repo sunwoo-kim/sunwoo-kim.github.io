@@ -5,12 +5,436 @@
     <link>https://sunwoo-kim.github.io/ko/</link>
       <atom:link href="https://sunwoo-kim.github.io/ko/index.xml" rel="self" type="application/rss+xml" />
     <description>김선우</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>ko-kr</language><copyright>swk34 [at] cantab [dot] ac [dot] uk</copyright><lastBuildDate>Mon, 24 Oct 2022 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>ko-kr</language><copyright>swk34 [at] cantab [dot] ac [dot] uk</copyright><lastBuildDate>Tue, 29 Jul 2025 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://sunwoo-kim.github.io/media/icon_hu8b309a9302268010949630654373c3a0_79828_512x512_fill_lanczos_center_3.png</url>
       <title>김선우</title>
       <link>https://sunwoo-kim.github.io/ko/</link>
     </image>
+    
+    <item>
+      <title>Existence and bounds of growth constants for restricted walks, surfaces, and generalisations</title>
+      <link>https://sunwoo-kim.github.io/ko/talks/osculating/</link>
+      <pubDate>Wed, 17 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>https://sunwoo-kim.github.io/ko/talks/osculating/</guid>
+      <description>&lt;!-- 
+&lt;details&gt;
+   &lt;summary&gt;&lt;font color=&#34;grey&#34;&gt; &lt;small&gt;To cite this page&lt;/small&gt; &lt;/font&gt;&lt;/summary&gt;
+
+   ```latex
+   @misc{swpkim2026existence,
+      author={P. Kim, Sun Woo},
+      title={Existence and bounds of growth constants for restricted walks, surfaces, and generalisations},
+      year={2025},
+      howpublished={\url{https://sunwoo-kim.github.io/ko/talks/osculating/}},
+      note={Accessed: 2026-06-12}
+   }
+   ```
+&lt;/details&gt;
+&lt;small&gt;&lt;i&gt;
+Below are notes for my board talk that I gave on 2024-04-09 at the regular condensed matter theory meeting at Imperial College London.
+&lt;/small&gt;&lt;/i&gt;
+
+---
+
+
+
+&lt;details class=&#34;toc-inpage d-print-none  &#34; open&gt;
+  &lt;summary class=&#34;font-weight-bold&#34;&gt;차례&lt;/summary&gt;
+  &lt;nav id=&#34;TableOfContents&#34;&gt;&lt;/nav&gt;
+&lt;/details&gt;
+
+
+## Introduction
+
+Recently, there has been a lot of activity in casting problems in Bayesian inference problems as disordered stat-mech problems, then using tools of spin glasses to solve them, see [Zdeborová 1511.02476](https://arxiv.org/abs/1511.02476). Here I wanted to give a quick introduction to this concept.
+
+In Bayesian inference, we try to infer state $x$ given some measurements/data $y$. We assume some prior distribution $p(x)$ and a measurement model/likelihood $p(y \vert x)$ to infer a posterior distribution using Baye&#39;s rule,
+$$
+p(x \vert y) = \frac{p(y \vert x) p(x)}{p(y)},
+$$
+where the &#39;evidence&#39; $p(y) = \sum\_x p(y \vert x) p(x)$ acts as the normalisation for the posterior. If the state space is large, then this is in general intractable. This is very similar to the partition function in statistical physics.
+
+If $y$ came from the &#39;true&#39; state $x^\*$, then the natural question to ask is, is inference possible. To quantify this question, for continuous variables, we may look at the mean-squared error,
+$$
+\mathrm{MSE} = \mathop{\mathbb{E}}\_{x \sim p(\cdot \vert y)} [(x-x^\*)^2].
+$$
+Is there any way we can prove when inference is possible? And, can we have phase transitions, say, in the mean-squared error as signal-to-noise is varied?
+
+We will consider an idealised scenario covered in the above reference, called the teacher-student scenario. The teacher generates some state of a system, $x^\*$ from the &#39;true/teacher&#39;s prior&#39; $p\_\mathrm{T}(x^\*)$. Then, the teacher generates some data/measurements $y$ given the state of the system via the teacher&#39;s measurement model/likelihood, $p\_\mathrm{T}(y \vert x^\*)$. The teacher then hands the student the measurements $y$.
+
+The student then assumes some prior distribution $p\_\mathrm{S}(x)$ and measurement model $p\_\mathrm{S}(y\vert x)$ to infer a posterior distribution $p\_\mathrm{S}(x \vert y)$. Then we can consider the joint distribution,
+$$
+\begin{aligned}
+p(x,y,x^\*) &amp; = p\_\mathrm{S}(x \vert y) p\_\mathrm{T}(y \vert x^\*) p\_\mathrm{T}(x^\*) \\\\
+&amp; = \frac{p\_\mathrm{S}(y \vert x)p\_\mathrm{S}(x) p\_\mathrm{T}(y \vert x^\*) p\_\mathrm{T}(x^\*)}{p\_\mathrm{S}(y)}.
+\end{aligned}
+$$
+Note that $p(x^\*)=p\_\mathrm{T}(x^\*)$, since we can integrate over $p\_\mathrm{S}(x\vert y)$ wrt $x$ then $p\_\mathrm{T}(y \vert x^\*)$ wrt $y$. However, $p(x) \neq p\_\mathrm{S}(x)$, since we can&#39;t perform the integration over $y$ and $x^\*$ first in general.
+
+However, we can already immediately notice one thing: if the student&#39;s model is equal to the teacher&#39;s model, that is $S=T$, then $p(x,y,x^\*)$ is symmetric with respect to $x \leftrightarrow x^\*$ and therefore $x$ is distributed identically to $x^\*$, and $p(x) = p\_\mathrm{T}(x^\*=x)$. The $\mathrm{S}=\mathrm{T}$ point is called the Bayes optimal point.
+
+To make the connection to stat-mech clearer, let&#39;s write out the student&#39;s posterior in a suggestive way:
+$$
+p\_\mathrm{S}(x \vert y) = \frac{e^{-\beta H (x, y)}}{Z(y)},
+$$
+where $Z(y) = \sum\_x e^{-\beta H(x, y)}$ and
+$$
+-\beta H (x \vert y) = \ln q\_\mathrm{S}(y \vert x) + \ln q\_\mathrm{S}(x).
+$$
+Here I wrote the unnormalised distributions ex. $q\_\mathrm{S}(y \vert x) \propto p\_\mathrm{S}(y \vert x)$ as normalisation is ensured by the partition function. We see that the posterior looks like the Boltzmann probability of disordered system (ex. spin glass), with the &#39;data&#39; $y$ playing the role of disorder with $p\_\mathrm{T}(y) = \sum\_{x^\*} p\_\mathrm{T}(y \vert x^\*) p\_\mathrm{T}(x^\*)$.
+
+In the limit where the data contains no information about the true/teacher&#39;s state, ex. when the data is &#39;infinitely&#39; noisy, we see that $p\_\mathrm{T}(y \vert x^\*) \rightarrow p\_\mathrm{T}(y)$ really becomes random disorder - this would be a situation where the student believes that there is some information in the data, but the teacher is actually supplying random noise.
+
+When there is information about the true/teacher&#39;s state in the data, this information is said to be &#39;planted&#39; in the disorder. The distribution of $p\_\mathrm{T}(y) = \sum\_{x^\*} p\_\mathrm{T}(y \vert x^\*) p\_\mathrm{T}(x^\*)$ is the &#39;planted distribution&#39;, and $p(x, y, x^\*)$ is the &#39;planted ensemble&#39;.
+
+This is all well and good, but is it actually useful? Let&#39;s look at some examples, to see how existing disordered stat-mech problems map onto inference problems.
+
+## The planted random-bond Ising model
+To make things more concrete, let&#39;s consider a particular case of a model considered in the review. We consider $L^2$ people standing in a room in a square lattice formation. To each person, we randomly hand out a card that can be $S^\*\_i = \pm 1$ with equal probability. However, we don&#39;t record this information. Then, we ask each neighbouring pair to reply with $1$ if they have the same cards or $-1$ if they have different cards. But there&#39;s a twist - for each question the pair may lie with probability $\uppi$. We record the answer that each pair gives us as $J\_{ij}$. 
+
+Then, given $\\{J\_{ij}\\}\_{ij}$, can we infer the &#39;state&#39;, i.e. the cards given to each person? As we have an equal-probability prior over the cards given, we have $p(S) \propto 1$. The &#39;likelihood&#39; of answer $J\_{ij}$ given cards $S\_i$ and $S\_j$ is
+$$
+p(J\_{ij} \vert S\_i, S\_j) = 
+\begin{cases}
+1 - \uppi &amp; J\_{ij} = S\_i S\_j \\\\
+\uppi &amp; J\_{ij} = -S\_i S\_j.
+\end{cases}
+$$
+As $J\_{ij}$ is an Ising variable we can massage this to look like a Boltzmann weight. If we consider
+$$
+p(J\_{ij} \vert S\_i, S\_i) = N e^{\beta J\_{ij} S\_i S\_j},
+$$
+Then from normalisation over $J\_{ij} \in \{1, -1\}$ we have $N = e^{\beta} + e^{-\beta}$, and 
+$$
+\uppi = \frac{e^{-\beta}}{e^{\beta} + e^{-\beta}}.
+$$
+Therefore if each pair lies half of the time, $\uppi = 1/2$, $\beta = 0$, and if they never lie, $\uppi = 0$, $\beta \rightarrow \infty$.
+
+Then the likelihood over all answers is
+$$
+p(J \vert S) = \prod\_{\langle i,j \rangle} p(J\_{ij} \vert S\_i, S\_j) \propto \exp\left(\beta \sum\_{\langle i, j\rangle} J\_{ij} S\_i S\_j \right).
+$$
+Since the prior is uniform, the posterior is
+$$
+p(S \vert J) = \frac{q(J \vert S)}{Z(J)} = \frac{\exp\left(\beta \sum\_{\langle i, j \rangle}J\_{ij} S\_i S\_j\right)}{Z(J)},
+$$
+where
+$$
+Z(J) = \sum\_{S} \exp\left(\beta \sum\_{\langle i, j\rangle} J\_{ij} S\_i S\_j \right).
+$$
+is the partition function for a random-bond Ising model, and the posterior is its Boltzmann probability!
+
+Let&#39;s now consider the general teacher-student scenario, where the student&#39;s model belief of the rate of lying $\beta\_\mathrm{S}(\uppi\_\mathrm{S})$ can differ from the true/teacher&#39;s $\beta\_\mathrm{T}(\uppi\_\mathrm{T})$. 
+$$
+\begin{aligned}
+p(S, J, S^\*) &amp; = p\_\mathrm{S}(S \vert J) p\_\mathrm{T}(J \vert S^\*) p\_\mathrm{T}(S^\*) \\\\
+&amp; \propto \frac{\exp\left( \beta\_\mathrm{S} \sum\_{\langle ij \rangle} J\_{ij} S\_i S\_j\right)}{Z\_\mathrm{S}(J)} \exp\left( \beta\_\mathrm{T} \sum\_{\langle ij \rangle} J\_{ij} S^\*\_i S^\*\_j\right).
+\end{aligned}
+$$
+Then consider the observable $S\_i S^\*\_i$. This is $1$ if they are aligned (if the inferred card is same as the true value of the card), and $-1$ if they are anti-aligned, so it is a measure of possibility of inference.
+$$
+\mathop{\mathbb{E}}[S\_l S^\*\_l] \propto \sum\_{S^\*} \sum\_{S} \sum\_{J} S\_l S^\*\_l \frac{\exp(\beta\_\mathrm{S} \sum\_{\langle ij\rangle}J\_{ij}S\_i S\_j) \exp(\beta\_\mathrm{T} \sum\_{\langle ij\rangle}J\_{ij}S^\*\_i S^\*\_j)}{Z\_\mathrm{S}(J)}.
+$$
+Since we are summing over $J$, we are free to redefine $J$ such that $J\_{ij} S^\*\_i S^\*\_j = \tilde{J}\_{ij}$. Similarly we can redefine $S$ such that $S\_i S^\*\_i = \tilde{S}\_i$. Inside the partition function we can also redefine $S&#39;$ inside the sum. Therefore
+$$
+\begin{aligned}
+\mathop{\mathbb{E}}[S\_l S^\*\_l] &amp; \propto \sum\_{S^\*} \sum\_{\tilde{S}} \sum\_{\tilde{J}} \tilde{S}\_l \frac{\exp(\beta\_\mathrm{S} \sum\_{\langle ij\rangle} \tilde{J}\_{ij} \tilde{S}\_i \tilde{S}\_j) \exp(\beta\_\mathrm{T} \sum\_{\langle ij\rangle}\tilde{J}\_{ij})}{\sum\_{\tilde{S}&#39;} \exp\left( \beta\_\mathrm{S} \sum\_{\langle ij\rangle} \tilde{J}\_{ij} \tilde{S}&#39;\_i \tilde{S}&#39;\_j\right)}
+\end{aligned}
+$$
+So now $S^\*$ has disappeared, and we the true distribution is the &#39;ferromagnetic configuration&#39;. So
+$$
+\begin{aligned}
+\mathop{\mathbb{E}}[S\_l S^\*\_l] &amp; \propto \sum\_{\tilde{S}} \sum\_{\tilde{J}} \tilde{S}\_l \frac{\exp(\beta\_\mathrm{S} \sum\_{\langle ij\rangle} \tilde{J}\_{ij} \tilde{S}\_i \tilde{S}\_j) \exp(\beta\_\mathrm{T} \sum\_{\langle ij\rangle}\tilde{J}\_{ij})}{\sum\_{S&#39;} \exp\left( \beta\_\mathrm{S} \sum\_{\langle ij\rangle} \tilde{J}\_{ij} S&#39;\_i S&#39;\_j\right)} \\\\
+&amp; = \sum\_{\tilde{J}} \frac{\sum\_{\tilde{S}} \tilde{S}\_l \exp(\beta\_\mathrm{S} \sum\_{\langle ij\rangle} \tilde{J}\_{ij} \tilde{S}\_i \tilde{S}\_j) \exp(\beta\_\mathrm{T} \sum\_{\langle ij\rangle}\tilde{J}\_{ij})}{\sum\_{S&#39;} \exp\left( \beta\_\mathrm{S} \sum\_{\langle ij\rangle} \tilde{J}\_{ij} \tilde{S}&#39;\_i \tilde{S}&#39;\_j\right)},
+\end{aligned}
+$$
+which is the magnetisation in the random-bond Ising model with $p(\tilde{J}) \propto \exp(\beta\_\mathrm{T} \sum\_{\langle ij\rangle}\tilde{J}\_{ij})$. So the paramagnetic (PM) state corresponds to the failure of inference, and the ferromagnetic (FM) state corresponds to the success of inference.
+
+By the way, in the spin-glass literature, what we&#39;ve done here is called a &#39;gauge transformation&#39;. And, there is a special &#39;solvable line&#39; in this model, called the Nishimori line, where $p(J) \sim Z(J)$. The basic idea was that $p(J)$ just becomes another replica in the problem and so simplifies the calculation, but it turns out that the point where the Nishimori line crosses the phase boundary is very interesting. But this exactly corresponds to the Bayes optimality condition, $\beta\_\mathrm{S} = \beta\_\mathrm{T}$. Usually, people show that for particular choices for $\uppi$, we can gauge-transform $p(J)$ to look like $Z(J)$. Here, we did it the other way around.
+
+People have already studied the phase diagram of the RBIM, so we have the phase diagram for free. Let&#39;s look at the phase diagram of the RBIM (for example see [Gruzberg 0007254v2](https://arxiv.org/abs/cond-mat/0007254v2)).
+
+![](rbim_conventional.svg)
+
+The $p=0$, $T\_\mathrm{c} \approx 2.27$  corresponds to the clean 2D Ising transition. For us, $T$ corresponds to $\beta\_\mathrm{S}^{-1}$ and $p = \uppi\_\mathrm{T}$. Thinking of $\beta\_{S,T}$ as the &#39;signal strength&#39;, we can redraw the phase diagram in the $\beta\_\mathrm{T}-\beta\_\mathrm{S}$ plane. We know that the Nishimori line is the $45^\circ$ line in this plane.
+
+![](rbim_inference.svg)
+
+We see that in this picture, no matter what $\beta\_S$ the student chooses, we need sufficient teacher&#39;s signal strength $\beta\_\mathrm{T} &gt; \beta^\mathrm{c}\_\mathrm{T}$ in order for inference to be possible. On the other hand, if the student assumes that the signal strength is too low, $\beta\_\mathrm{S} &lt; \beta^\mathrm{c}\_\mathrm{S}$, then again inference is not possible.
+## The planted directed polymer problem
+So now the world is our oyster. We can start cooking up planted versions of spin-glass/disordered stat-mech models, and see what inference problem they map on to. We were particularly interested in looking at a class of inference problems involving hidden Markov models. This is where the prior follows a Markov process,
+$$
+p(x\_{1:t})=\left(\prod\_{\tau=2}^tp(x\_\tau|x\_{\tau-1})\right)p(x\_1),
+$$
+and measurements $y\_{t}$ conditioned on the state are generated through some measurement model $p(y\_{t} \vert x\_{t})$ at every timestep. As before, we could calculate a posterior for the entire trajectory, $p(x\_{1:t} \vert y\_{1:t})$, but this is usually intractable computationally. Instead, we can also consider a &lt;i&gt;filtering&lt;/i&gt; task, where the state at the current timestep is inferred from data from all previous timesteps, i.e. $p(x\_{t} \vert y\_{1:t})$.
+
+Concretely, we consider the case when the states are locations in space, and the Markov process is a random walk on that space. A simple example of a &#39;kernel&#39; for this process is
+$$
+p(x\_{t+1} \vert x\_{t}) = \frac{1}{2} \delta\_{x\_{t+1},x\_{t}} + \frac{1}{4} \delta\_{x\_{t+1},x\_{t}\pm 1}.
+$$
+An example of such a random walk in 1D is shown below. 
+![](1_true_path.svg)
+
+At every timestep $t$, we will take an &#39;image&#39; of the walker specified by pixel values at positions $x$, 
+$$
+\phi\_{x,t} = \epsilon\_\mathrm{T} \delta\_{x, x^\*\_{t}} + \psi\_{x,t},
+$$
+which has a peak at the true location of the walker with &#39;signal strength&#39; $\epsilon\_\mathrm{T}$, and $\psi\_{x,t}$ is iid random Gaussian noise $\psi\_{x,t} \sim \mathcal{N}(0, \sigma\_\mathrm{T}^2)$. An example of set of all images from each timestep for the above random walk is shown below.
+
+![](2_good_image.svg)
+
+Then, we&#39;d like to infer the true position of the walker at the current time, $x^\*\_{t}$ or the true trajectory $X^\* := (x^\*\_\tau)\_{\tau=1}^T$ given the images at all times. We call it the &#39;planted directed polymer problem&#39;, as it is related to the directed polymer in a random medium from stat-mech. Let&#39;s see how.
+
+Let the whole image at time $t$ be $\boldsymbol{\phi}\_{t} := (\phi\_{x,t})\_x$. Then assuming signal strength $\epsilon\_\mathrm{S}$ and noise strength $\sigma\_\mathrm{S}$, the likelihood for observing an image $\boldsymbol{\phi}\_{t}$ given that the walker&#39;s position is $x\_{t}$ is
+$$
+\begin{aligned} 
+p\_\mathrm{S}(\boldsymbol{\phi}\_{t} \vert x\_{t}) &amp; = \prod\_{x&#39;\_{t}} \frac{1}{\sqrt{2 \pi \sigma\_\mathrm{S}^2}} \exp \left[ \frac{-(\phi\_{x&#39;\_{t}, t} - \epsilon\_\mathrm{S} \delta\_{x\_{t}, x&#39;\_{t}})^2}{2 \sigma\_\mathrm{S}^2} \right] \\\\
+&amp; = \exp\left(\left[\epsilon\_\mathrm{S} \phi\_{x\_{t},t} - \epsilon^2/2\right]/\sigma\_\mathrm{S}^2\right)\pi\_\mathrm{S}(\boldsymbol{\phi}\_{t}),
+\end{aligned}
+$$
+where $\pi\_\mathrm{S}(\boldsymbol{\phi}\_t)$ denotes the Gaussian measure. Denoting $X := x\_{1:t}$ and $\Phi := \boldsymbol{\phi}\_{1:t}$, the likelihood for the whole trajectory is
+$$
+p\_\mathrm{S}(\Phi \vert X) \propto \exp\left(\frac{\epsilon\_\mathrm{S}}{\sigma\_\mathrm{S}^2}\sum\_{t} \phi\_{x\_{t}, t} \right)\pi\_\mathrm{S}(\Phi).
+$$
+As the $\pi\_\mathrm{S}(\Phi)$ term is there for any value of $X$, we can ignore it, since we can just normalise the posterior again. So the student&#39;s posterior for the whole path is 
+$$
+p\_\mathrm{S}(X \vert \Phi) = \frac{q\_\mathrm{S}(X \vert \Phi)}{Z\_\mathrm{S}(\Phi)},
+$$
+where the &lt;i&gt;unnormalised&lt;/i&gt; posterior is
+$$
+q\_\mathrm{S}(X \vert \Phi) = \exp\left(\frac{\epsilon\_\mathrm{S}}{\sigma\_\mathrm{S}^2}\sum\_{t=1}^T \phi\_{x\_{t},t} + \sum\_{t=2}^{T} \ln q\_\mathrm{S}(x\_{t} \vert x\_{t-1}) \right) q\_\mathrm{S}(x\_1),
+$$
+and $Z\_\mathrm{S}(\Phi) = \sum\_X p\_\mathrm{S}(X \vert \Phi)$. 
+
+Let us assume that the kernel $q\_\mathrm{S}(x\_t \vert x\_{t-1})$ only depends on the distance between $x\_t$ and $x\_{t-1}$, and is maximised when the distance is zero. Then, we write $\ln q\_\mathrm{S}(x\_{t} \vert x\_{t-1}) = f(\sqrt{a}(x\_{t} - x\_{t-1}))$ where $a$ is the lattice constant. Expanding, we find
+$$
+\begin{aligned}
+q\_S(X \vert \Phi)  = \exp\Bigg(
+ \sum\_{\tau=1}^{t} \left[-\frac{a}{4 \nu\_\mathrm{S}} \left[x\_\tau - x\_{\tau-1}\right]^2 + \frac{\epsilon\_\mathrm{S}}{\sigma\_\mathrm{S}^2} \phi\_{x\_\tau, \tau} \right]
++\mathcal{O}(a^{3/2})\Bigg) q\_S(x\_1),
+\end{aligned}
+$$
+where $\nu\_\mathrm{S} = \frac{1}{2 \lvert f&#39;&#39;\_\mathrm{S}(0) \rvert}$ is the &#39;width&#39; of the kernel. We see that the unnormalised posterior now looks like the Boltzmann weight for the directed polymer in a random environment. For those who are unfamiliar, it is a well studied stat-mech model for configurations of a polymer. Interpreting time as another spatial dimension $t=y$, it is &#39;directed&#39; in that the polymer cannot loop around itself, since $x$ is a single-valued function of $y$. 
+
+The first term in the sum $\sim (x\_\tau - x\_{\tau-1})^2$ corresponds to the &#39;elastic energy&#39; of the polymer, where you pay a price whenever you stretch out the polymer. The second term $\sim \phi\_{x\_t, t}$, where $\phi\_{x\_t, t}$, usually random iid noise in the directed polymer setting, is a &#39;random environment&#39; that the polymer is placed in.
+
+The interesting phenomena in the directed polymer is that even though you need to pay energy to stretch out the polymer, it might be worth it to go through a particular location, as long as the potential there is deep enough. This creates a &#39;roughening&#39; of the polymer (you can read more about it in [Bhattacharjee 0402117v1](https://arxiv.org/abs/cond-mat/0402117), for example).
+
+For us, $\phi\_{x\_t, t}$ is not iid, but instead has information about the true location of the walker &#39;planted&#39; in it. In recent work, we studied this problem in detail in 1D and also on the tree. Read more here: [P. Kim 2404.07263](https://arxiv.org/abs/2404.07263). --&gt;</description>
+    </item>
+    
+    <item>
+      <title>Measurement-induced phase transitions in quantum inference problems</title>
+      <link>https://sunwoo-kim.github.io/ko/talks/quantuminference/</link>
+      <pubDate>Fri, 12 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>https://sunwoo-kim.github.io/ko/talks/quantuminference/</guid>
+      <description>&lt;!-- 
+&lt;details&gt;
+   &lt;summary&gt;&lt;font color=&#34;grey&#34;&gt; &lt;small&gt;To cite this page&lt;/small&gt; &lt;/font&gt;&lt;/summary&gt;
+
+   ```latex
+   @misc{swpkim2026measurement-induced,
+      author={P. Kim, Sun Woo},
+      title={Measurement-induced phase transitions in quantum inference problems},
+      year={2025},
+      howpublished={\url{https://sunwoo-kim.github.io/ko/talks/quantuminference/}},
+      note={Accessed: 2026-06-12}
+   }
+   ```
+&lt;/details&gt;
+&lt;small&gt;&lt;i&gt;
+Below are notes for my board talk that I gave on 2024-04-09 at the regular condensed matter theory meeting at Imperial College London.
+&lt;/small&gt;&lt;/i&gt;
+
+---
+
+
+
+&lt;details class=&#34;toc-inpage d-print-none  &#34; open&gt;
+  &lt;summary class=&#34;font-weight-bold&#34;&gt;차례&lt;/summary&gt;
+  &lt;nav id=&#34;TableOfContents&#34;&gt;&lt;/nav&gt;
+&lt;/details&gt;
+
+
+## Introduction
+
+Recently, there has been a lot of activity in casting problems in Bayesian inference problems as disordered stat-mech problems, then using tools of spin glasses to solve them, see [Zdeborová 1511.02476](https://arxiv.org/abs/1511.02476). Here I wanted to give a quick introduction to this concept.
+
+In Bayesian inference, we try to infer state $x$ given some measurements/data $y$. We assume some prior distribution $p(x)$ and a measurement model/likelihood $p(y \vert x)$ to infer a posterior distribution using Baye&#39;s rule,
+$$
+p(x \vert y) = \frac{p(y \vert x) p(x)}{p(y)},
+$$
+where the &#39;evidence&#39; $p(y) = \sum\_x p(y \vert x) p(x)$ acts as the normalisation for the posterior. If the state space is large, then this is in general intractable. This is very similar to the partition function in statistical physics.
+
+If $y$ came from the &#39;true&#39; state $x^\*$, then the natural question to ask is, is inference possible. To quantify this question, for continuous variables, we may look at the mean-squared error,
+$$
+\mathrm{MSE} = \mathop{\mathbb{E}}\_{x \sim p(\cdot \vert y)} [(x-x^\*)^2].
+$$
+Is there any way we can prove when inference is possible? And, can we have phase transitions, say, in the mean-squared error as signal-to-noise is varied?
+
+We will consider an idealised scenario covered in the above reference, called the teacher-student scenario. The teacher generates some state of a system, $x^\*$ from the &#39;true/teacher&#39;s prior&#39; $p\_\mathrm{T}(x^\*)$. Then, the teacher generates some data/measurements $y$ given the state of the system via the teacher&#39;s measurement model/likelihood, $p\_\mathrm{T}(y \vert x^\*)$. The teacher then hands the student the measurements $y$.
+
+The student then assumes some prior distribution $p\_\mathrm{S}(x)$ and measurement model $p\_\mathrm{S}(y\vert x)$ to infer a posterior distribution $p\_\mathrm{S}(x \vert y)$. Then we can consider the joint distribution,
+$$
+\begin{aligned}
+p(x,y,x^\*) &amp; = p\_\mathrm{S}(x \vert y) p\_\mathrm{T}(y \vert x^\*) p\_\mathrm{T}(x^\*) \\\\
+&amp; = \frac{p\_\mathrm{S}(y \vert x)p\_\mathrm{S}(x) p\_\mathrm{T}(y \vert x^\*) p\_\mathrm{T}(x^\*)}{p\_\mathrm{S}(y)}.
+\end{aligned}
+$$
+Note that $p(x^\*)=p\_\mathrm{T}(x^\*)$, since we can integrate over $p\_\mathrm{S}(x\vert y)$ wrt $x$ then $p\_\mathrm{T}(y \vert x^\*)$ wrt $y$. However, $p(x) \neq p\_\mathrm{S}(x)$, since we can&#39;t perform the integration over $y$ and $x^\*$ first in general.
+
+However, we can already immediately notice one thing: if the student&#39;s model is equal to the teacher&#39;s model, that is $S=T$, then $p(x,y,x^\*)$ is symmetric with respect to $x \leftrightarrow x^\*$ and therefore $x$ is distributed identically to $x^\*$, and $p(x) = p\_\mathrm{T}(x^\*=x)$. The $\mathrm{S}=\mathrm{T}$ point is called the Bayes optimal point.
+
+To make the connection to stat-mech clearer, let&#39;s write out the student&#39;s posterior in a suggestive way:
+$$
+p\_\mathrm{S}(x \vert y) = \frac{e^{-\beta H (x, y)}}{Z(y)},
+$$
+where $Z(y) = \sum\_x e^{-\beta H(x, y)}$ and
+$$
+-\beta H (x \vert y) = \ln q\_\mathrm{S}(y \vert x) + \ln q\_\mathrm{S}(x).
+$$
+Here I wrote the unnormalised distributions ex. $q\_\mathrm{S}(y \vert x) \propto p\_\mathrm{S}(y \vert x)$ as normalisation is ensured by the partition function. We see that the posterior looks like the Boltzmann probability of disordered system (ex. spin glass), with the &#39;data&#39; $y$ playing the role of disorder with $p\_\mathrm{T}(y) = \sum\_{x^\*} p\_\mathrm{T}(y \vert x^\*) p\_\mathrm{T}(x^\*)$.
+
+In the limit where the data contains no information about the true/teacher&#39;s state, ex. when the data is &#39;infinitely&#39; noisy, we see that $p\_\mathrm{T}(y \vert x^\*) \rightarrow p\_\mathrm{T}(y)$ really becomes random disorder - this would be a situation where the student believes that there is some information in the data, but the teacher is actually supplying random noise.
+
+When there is information about the true/teacher&#39;s state in the data, this information is said to be &#39;planted&#39; in the disorder. The distribution of $p\_\mathrm{T}(y) = \sum\_{x^\*} p\_\mathrm{T}(y \vert x^\*) p\_\mathrm{T}(x^\*)$ is the &#39;planted distribution&#39;, and $p(x, y, x^\*)$ is the &#39;planted ensemble&#39;.
+
+This is all well and good, but is it actually useful? Let&#39;s look at some examples, to see how existing disordered stat-mech problems map onto inference problems.
+
+## The planted random-bond Ising model
+To make things more concrete, let&#39;s consider a particular case of a model considered in the review. We consider $L^2$ people standing in a room in a square lattice formation. To each person, we randomly hand out a card that can be $S^\*\_i = \pm 1$ with equal probability. However, we don&#39;t record this information. Then, we ask each neighbouring pair to reply with $1$ if they have the same cards or $-1$ if they have different cards. But there&#39;s a twist - for each question the pair may lie with probability $\uppi$. We record the answer that each pair gives us as $J\_{ij}$. 
+
+Then, given $\\{J\_{ij}\\}\_{ij}$, can we infer the &#39;state&#39;, i.e. the cards given to each person? As we have an equal-probability prior over the cards given, we have $p(S) \propto 1$. The &#39;likelihood&#39; of answer $J\_{ij}$ given cards $S\_i$ and $S\_j$ is
+$$
+p(J\_{ij} \vert S\_i, S\_j) = 
+\begin{cases}
+1 - \uppi &amp; J\_{ij} = S\_i S\_j \\\\
+\uppi &amp; J\_{ij} = -S\_i S\_j.
+\end{cases}
+$$
+As $J\_{ij}$ is an Ising variable we can massage this to look like a Boltzmann weight. If we consider
+$$
+p(J\_{ij} \vert S\_i, S\_i) = N e^{\beta J\_{ij} S\_i S\_j},
+$$
+Then from normalisation over $J\_{ij} \in \{1, -1\}$ we have $N = e^{\beta} + e^{-\beta}$, and 
+$$
+\uppi = \frac{e^{-\beta}}{e^{\beta} + e^{-\beta}}.
+$$
+Therefore if each pair lies half of the time, $\uppi = 1/2$, $\beta = 0$, and if they never lie, $\uppi = 0$, $\beta \rightarrow \infty$.
+
+Then the likelihood over all answers is
+$$
+p(J \vert S) = \prod\_{\langle i,j \rangle} p(J\_{ij} \vert S\_i, S\_j) \propto \exp\left(\beta \sum\_{\langle i, j\rangle} J\_{ij} S\_i S\_j \right).
+$$
+Since the prior is uniform, the posterior is
+$$
+p(S \vert J) = \frac{q(J \vert S)}{Z(J)} = \frac{\exp\left(\beta \sum\_{\langle i, j \rangle}J\_{ij} S\_i S\_j\right)}{Z(J)},
+$$
+where
+$$
+Z(J) = \sum\_{S} \exp\left(\beta \sum\_{\langle i, j\rangle} J\_{ij} S\_i S\_j \right).
+$$
+is the partition function for a random-bond Ising model, and the posterior is its Boltzmann probability!
+
+Let&#39;s now consider the general teacher-student scenario, where the student&#39;s model belief of the rate of lying $\beta\_\mathrm{S}(\uppi\_\mathrm{S})$ can differ from the true/teacher&#39;s $\beta\_\mathrm{T}(\uppi\_\mathrm{T})$. 
+$$
+\begin{aligned}
+p(S, J, S^\*) &amp; = p\_\mathrm{S}(S \vert J) p\_\mathrm{T}(J \vert S^\*) p\_\mathrm{T}(S^\*) \\\\
+&amp; \propto \frac{\exp\left( \beta\_\mathrm{S} \sum\_{\langle ij \rangle} J\_{ij} S\_i S\_j\right)}{Z\_\mathrm{S}(J)} \exp\left( \beta\_\mathrm{T} \sum\_{\langle ij \rangle} J\_{ij} S^\*\_i S^\*\_j\right).
+\end{aligned}
+$$
+Then consider the observable $S\_i S^\*\_i$. This is $1$ if they are aligned (if the inferred card is same as the true value of the card), and $-1$ if they are anti-aligned, so it is a measure of possibility of inference.
+$$
+\mathop{\mathbb{E}}[S\_l S^\*\_l] \propto \sum\_{S^\*} \sum\_{S} \sum\_{J} S\_l S^\*\_l \frac{\exp(\beta\_\mathrm{S} \sum\_{\langle ij\rangle}J\_{ij}S\_i S\_j) \exp(\beta\_\mathrm{T} \sum\_{\langle ij\rangle}J\_{ij}S^\*\_i S^\*\_j)}{Z\_\mathrm{S}(J)}.
+$$
+Since we are summing over $J$, we are free to redefine $J$ such that $J\_{ij} S^\*\_i S^\*\_j = \tilde{J}\_{ij}$. Similarly we can redefine $S$ such that $S\_i S^\*\_i = \tilde{S}\_i$. Inside the partition function we can also redefine $S&#39;$ inside the sum. Therefore
+$$
+\begin{aligned}
+\mathop{\mathbb{E}}[S\_l S^\*\_l] &amp; \propto \sum\_{S^\*} \sum\_{\tilde{S}} \sum\_{\tilde{J}} \tilde{S}\_l \frac{\exp(\beta\_\mathrm{S} \sum\_{\langle ij\rangle} \tilde{J}\_{ij} \tilde{S}\_i \tilde{S}\_j) \exp(\beta\_\mathrm{T} \sum\_{\langle ij\rangle}\tilde{J}\_{ij})}{\sum\_{\tilde{S}&#39;} \exp\left( \beta\_\mathrm{S} \sum\_{\langle ij\rangle} \tilde{J}\_{ij} \tilde{S}&#39;\_i \tilde{S}&#39;\_j\right)}
+\end{aligned}
+$$
+So now $S^\*$ has disappeared, and we the true distribution is the &#39;ferromagnetic configuration&#39;. So
+$$
+\begin{aligned}
+\mathop{\mathbb{E}}[S\_l S^\*\_l] &amp; \propto \sum\_{\tilde{S}} \sum\_{\tilde{J}} \tilde{S}\_l \frac{\exp(\beta\_\mathrm{S} \sum\_{\langle ij\rangle} \tilde{J}\_{ij} \tilde{S}\_i \tilde{S}\_j) \exp(\beta\_\mathrm{T} \sum\_{\langle ij\rangle}\tilde{J}\_{ij})}{\sum\_{S&#39;} \exp\left( \beta\_\mathrm{S} \sum\_{\langle ij\rangle} \tilde{J}\_{ij} S&#39;\_i S&#39;\_j\right)} \\\\
+&amp; = \sum\_{\tilde{J}} \frac{\sum\_{\tilde{S}} \tilde{S}\_l \exp(\beta\_\mathrm{S} \sum\_{\langle ij\rangle} \tilde{J}\_{ij} \tilde{S}\_i \tilde{S}\_j) \exp(\beta\_\mathrm{T} \sum\_{\langle ij\rangle}\tilde{J}\_{ij})}{\sum\_{S&#39;} \exp\left( \beta\_\mathrm{S} \sum\_{\langle ij\rangle} \tilde{J}\_{ij} \tilde{S}&#39;\_i \tilde{S}&#39;\_j\right)},
+\end{aligned}
+$$
+which is the magnetisation in the random-bond Ising model with $p(\tilde{J}) \propto \exp(\beta\_\mathrm{T} \sum\_{\langle ij\rangle}\tilde{J}\_{ij})$. So the paramagnetic (PM) state corresponds to the failure of inference, and the ferromagnetic (FM) state corresponds to the success of inference.
+
+By the way, in the spin-glass literature, what we&#39;ve done here is called a &#39;gauge transformation&#39;. And, there is a special &#39;solvable line&#39; in this model, called the Nishimori line, where $p(J) \sim Z(J)$. The basic idea was that $p(J)$ just becomes another replica in the problem and so simplifies the calculation, but it turns out that the point where the Nishimori line crosses the phase boundary is very interesting. But this exactly corresponds to the Bayes optimality condition, $\beta\_\mathrm{S} = \beta\_\mathrm{T}$. Usually, people show that for particular choices for $\uppi$, we can gauge-transform $p(J)$ to look like $Z(J)$. Here, we did it the other way around.
+
+People have already studied the phase diagram of the RBIM, so we have the phase diagram for free. Let&#39;s look at the phase diagram of the RBIM (for example see [Gruzberg 0007254v2](https://arxiv.org/abs/cond-mat/0007254v2)).
+
+![](rbim_conventional.svg)
+
+The $p=0$, $T\_\mathrm{c} \approx 2.27$  corresponds to the clean 2D Ising transition. For us, $T$ corresponds to $\beta\_\mathrm{S}^{-1}$ and $p = \uppi\_\mathrm{T}$. Thinking of $\beta\_{S,T}$ as the &#39;signal strength&#39;, we can redraw the phase diagram in the $\beta\_\mathrm{T}-\beta\_\mathrm{S}$ plane. We know that the Nishimori line is the $45^\circ$ line in this plane.
+
+![](rbim_inference.svg)
+
+We see that in this picture, no matter what $\beta\_S$ the student chooses, we need sufficient teacher&#39;s signal strength $\beta\_\mathrm{T} &gt; \beta^\mathrm{c}\_\mathrm{T}$ in order for inference to be possible. On the other hand, if the student assumes that the signal strength is too low, $\beta\_\mathrm{S} &lt; \beta^\mathrm{c}\_\mathrm{S}$, then again inference is not possible.
+## The planted directed polymer problem
+So now the world is our oyster. We can start cooking up planted versions of spin-glass/disordered stat-mech models, and see what inference problem they map on to. We were particularly interested in looking at a class of inference problems involving hidden Markov models. This is where the prior follows a Markov process,
+$$
+p(x\_{1:t})=\left(\prod\_{\tau=2}^tp(x\_\tau|x\_{\tau-1})\right)p(x\_1),
+$$
+and measurements $y\_{t}$ conditioned on the state are generated through some measurement model $p(y\_{t} \vert x\_{t})$ at every timestep. As before, we could calculate a posterior for the entire trajectory, $p(x\_{1:t} \vert y\_{1:t})$, but this is usually intractable computationally. Instead, we can also consider a &lt;i&gt;filtering&lt;/i&gt; task, where the state at the current timestep is inferred from data from all previous timesteps, i.e. $p(x\_{t} \vert y\_{1:t})$.
+
+Concretely, we consider the case when the states are locations in space, and the Markov process is a random walk on that space. A simple example of a &#39;kernel&#39; for this process is
+$$
+p(x\_{t+1} \vert x\_{t}) = \frac{1}{2} \delta\_{x\_{t+1},x\_{t}} + \frac{1}{4} \delta\_{x\_{t+1},x\_{t}\pm 1}.
+$$
+An example of such a random walk in 1D is shown below. 
+![](1_true_path.svg)
+
+At every timestep $t$, we will take an &#39;image&#39; of the walker specified by pixel values at positions $x$, 
+$$
+\phi\_{x,t} = \epsilon\_\mathrm{T} \delta\_{x, x^\*\_{t}} + \psi\_{x,t},
+$$
+which has a peak at the true location of the walker with &#39;signal strength&#39; $\epsilon\_\mathrm{T}$, and $\psi\_{x,t}$ is iid random Gaussian noise $\psi\_{x,t} \sim \mathcal{N}(0, \sigma\_\mathrm{T}^2)$. An example of set of all images from each timestep for the above random walk is shown below.
+
+![](2_good_image.svg)
+
+Then, we&#39;d like to infer the true position of the walker at the current time, $x^\*\_{t}$ or the true trajectory $X^\* := (x^\*\_\tau)\_{\tau=1}^T$ given the images at all times. We call it the &#39;planted directed polymer problem&#39;, as it is related to the directed polymer in a random medium from stat-mech. Let&#39;s see how.
+
+Let the whole image at time $t$ be $\boldsymbol{\phi}\_{t} := (\phi\_{x,t})\_x$. Then assuming signal strength $\epsilon\_\mathrm{S}$ and noise strength $\sigma\_\mathrm{S}$, the likelihood for observing an image $\boldsymbol{\phi}\_{t}$ given that the walker&#39;s position is $x\_{t}$ is
+$$
+\begin{aligned} 
+p\_\mathrm{S}(\boldsymbol{\phi}\_{t} \vert x\_{t}) &amp; = \prod\_{x&#39;\_{t}} \frac{1}{\sqrt{2 \pi \sigma\_\mathrm{S}^2}} \exp \left[ \frac{-(\phi\_{x&#39;\_{t}, t} - \epsilon\_\mathrm{S} \delta\_{x\_{t}, x&#39;\_{t}})^2}{2 \sigma\_\mathrm{S}^2} \right] \\\\
+&amp; = \exp\left(\left[\epsilon\_\mathrm{S} \phi\_{x\_{t},t} - \epsilon^2/2\right]/\sigma\_\mathrm{S}^2\right)\pi\_\mathrm{S}(\boldsymbol{\phi}\_{t}),
+\end{aligned}
+$$
+where $\pi\_\mathrm{S}(\boldsymbol{\phi}\_t)$ denotes the Gaussian measure. Denoting $X := x\_{1:t}$ and $\Phi := \boldsymbol{\phi}\_{1:t}$, the likelihood for the whole trajectory is
+$$
+p\_\mathrm{S}(\Phi \vert X) \propto \exp\left(\frac{\epsilon\_\mathrm{S}}{\sigma\_\mathrm{S}^2}\sum\_{t} \phi\_{x\_{t}, t} \right)\pi\_\mathrm{S}(\Phi).
+$$
+As the $\pi\_\mathrm{S}(\Phi)$ term is there for any value of $X$, we can ignore it, since we can just normalise the posterior again. So the student&#39;s posterior for the whole path is 
+$$
+p\_\mathrm{S}(X \vert \Phi) = \frac{q\_\mathrm{S}(X \vert \Phi)}{Z\_\mathrm{S}(\Phi)},
+$$
+where the &lt;i&gt;unnormalised&lt;/i&gt; posterior is
+$$
+q\_\mathrm{S}(X \vert \Phi) = \exp\left(\frac{\epsilon\_\mathrm{S}}{\sigma\_\mathrm{S}^2}\sum\_{t=1}^T \phi\_{x\_{t},t} + \sum\_{t=2}^{T} \ln q\_\mathrm{S}(x\_{t} \vert x\_{t-1}) \right) q\_\mathrm{S}(x\_1),
+$$
+and $Z\_\mathrm{S}(\Phi) = \sum\_X p\_\mathrm{S}(X \vert \Phi)$. 
+
+Let us assume that the kernel $q\_\mathrm{S}(x\_t \vert x\_{t-1})$ only depends on the distance between $x\_t$ and $x\_{t-1}$, and is maximised when the distance is zero. Then, we write $\ln q\_\mathrm{S}(x\_{t} \vert x\_{t-1}) = f(\sqrt{a}(x\_{t} - x\_{t-1}))$ where $a$ is the lattice constant. Expanding, we find
+$$
+\begin{aligned}
+q\_S(X \vert \Phi)  = \exp\Bigg(
+ \sum\_{\tau=1}^{t} \left[-\frac{a}{4 \nu\_\mathrm{S}} \left[x\_\tau - x\_{\tau-1}\right]^2 + \frac{\epsilon\_\mathrm{S}}{\sigma\_\mathrm{S}^2} \phi\_{x\_\tau, \tau} \right]
++\mathcal{O}(a^{3/2})\Bigg) q\_S(x\_1),
+\end{aligned}
+$$
+where $\nu\_\mathrm{S} = \frac{1}{2 \lvert f&#39;&#39;\_\mathrm{S}(0) \rvert}$ is the &#39;width&#39; of the kernel. We see that the unnormalised posterior now looks like the Boltzmann weight for the directed polymer in a random environment. For those who are unfamiliar, it is a well studied stat-mech model for configurations of a polymer. Interpreting time as another spatial dimension $t=y$, it is &#39;directed&#39; in that the polymer cannot loop around itself, since $x$ is a single-valued function of $y$. 
+
+The first term in the sum $\sim (x\_\tau - x\_{\tau-1})^2$ corresponds to the &#39;elastic energy&#39; of the polymer, where you pay a price whenever you stretch out the polymer. The second term $\sim \phi\_{x\_t, t}$, where $\phi\_{x\_t, t}$, usually random iid noise in the directed polymer setting, is a &#39;random environment&#39; that the polymer is placed in.
+
+The interesting phenomena in the directed polymer is that even though you need to pay energy to stretch out the polymer, it might be worth it to go through a particular location, as long as the potential there is deep enough. This creates a &#39;roughening&#39; of the polymer (you can read more about it in [Bhattacharjee 0402117v1](https://arxiv.org/abs/cond-mat/0402117), for example).
+
+For us, $\phi\_{x\_t, t}$ is not iid, but instead has information about the true location of the walker &#39;planted&#39; in it. In recent work, we studied this problem in detail in 1D and also on the tree. Read more here: [P. Kim 2404.07263](https://arxiv.org/abs/2404.07263). --&gt;</description>
+    </item>
     
     <item>
       <title>Optimal recovery in quantum error correction</title>
@@ -26,6 +450,218 @@
       <pubDate>Thu, 04 Sep 2025 00:00:00 +0000</pubDate>
       <guid>https://sunwoo-kim.github.io/ko/projects/osculating/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>Hydrodynamics of classical deterministic circuits</title>
+      <link>https://sunwoo-kim.github.io/ko/talks/hydroautomata/</link>
+      <pubDate>Wed, 09 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://sunwoo-kim.github.io/ko/talks/hydroautomata/</guid>
+      <description>&lt;!-- 
+&lt;details&gt;
+   &lt;summary&gt;&lt;font color=&#34;grey&#34;&gt; &lt;small&gt;To cite this page&lt;/small&gt; &lt;/font&gt;&lt;/summary&gt;
+
+   ```latex
+   @misc{swpkim2026hydrodynamics,
+      author={P. Kim, Sun Woo},
+      title={Hydrodynamics of classical deterministic circuits},
+      year={2025},
+      howpublished={\url{https://sunwoo-kim.github.io/ko/talks/hydroautomata/}},
+      note={Accessed: 2026-06-12}
+   }
+   ```
+&lt;/details&gt;
+&lt;small&gt;&lt;i&gt;
+Below are notes for my board talk that I gave on 2024-04-09 at the regular condensed matter theory meeting at Imperial College London.
+&lt;/small&gt;&lt;/i&gt;
+
+---
+
+
+
+&lt;details class=&#34;toc-inpage d-print-none  &#34; open&gt;
+  &lt;summary class=&#34;font-weight-bold&#34;&gt;차례&lt;/summary&gt;
+  &lt;nav id=&#34;TableOfContents&#34;&gt;&lt;/nav&gt;
+&lt;/details&gt;
+
+
+## Introduction
+
+Recently, there has been a lot of activity in casting problems in Bayesian inference problems as disordered stat-mech problems, then using tools of spin glasses to solve them, see [Zdeborová 1511.02476](https://arxiv.org/abs/1511.02476). Here I wanted to give a quick introduction to this concept.
+
+In Bayesian inference, we try to infer state $x$ given some measurements/data $y$. We assume some prior distribution $p(x)$ and a measurement model/likelihood $p(y \vert x)$ to infer a posterior distribution using Baye&#39;s rule,
+$$
+p(x \vert y) = \frac{p(y \vert x) p(x)}{p(y)},
+$$
+where the &#39;evidence&#39; $p(y) = \sum\_x p(y \vert x) p(x)$ acts as the normalisation for the posterior. If the state space is large, then this is in general intractable. This is very similar to the partition function in statistical physics.
+
+If $y$ came from the &#39;true&#39; state $x^\*$, then the natural question to ask is, is inference possible. To quantify this question, for continuous variables, we may look at the mean-squared error,
+$$
+\mathrm{MSE} = \mathop{\mathbb{E}}\_{x \sim p(\cdot \vert y)} [(x-x^\*)^2].
+$$
+Is there any way we can prove when inference is possible? And, can we have phase transitions, say, in the mean-squared error as signal-to-noise is varied?
+
+We will consider an idealised scenario covered in the above reference, called the teacher-student scenario. The teacher generates some state of a system, $x^\*$ from the &#39;true/teacher&#39;s prior&#39; $p\_\mathrm{T}(x^\*)$. Then, the teacher generates some data/measurements $y$ given the state of the system via the teacher&#39;s measurement model/likelihood, $p\_\mathrm{T}(y \vert x^\*)$. The teacher then hands the student the measurements $y$.
+
+The student then assumes some prior distribution $p\_\mathrm{S}(x)$ and measurement model $p\_\mathrm{S}(y\vert x)$ to infer a posterior distribution $p\_\mathrm{S}(x \vert y)$. Then we can consider the joint distribution,
+$$
+\begin{aligned}
+p(x,y,x^\*) &amp; = p\_\mathrm{S}(x \vert y) p\_\mathrm{T}(y \vert x^\*) p\_\mathrm{T}(x^\*) \\\\
+&amp; = \frac{p\_\mathrm{S}(y \vert x)p\_\mathrm{S}(x) p\_\mathrm{T}(y \vert x^\*) p\_\mathrm{T}(x^\*)}{p\_\mathrm{S}(y)}.
+\end{aligned}
+$$
+Note that $p(x^\*)=p\_\mathrm{T}(x^\*)$, since we can integrate over $p\_\mathrm{S}(x\vert y)$ wrt $x$ then $p\_\mathrm{T}(y \vert x^\*)$ wrt $y$. However, $p(x) \neq p\_\mathrm{S}(x)$, since we can&#39;t perform the integration over $y$ and $x^\*$ first in general.
+
+However, we can already immediately notice one thing: if the student&#39;s model is equal to the teacher&#39;s model, that is $S=T$, then $p(x,y,x^\*)$ is symmetric with respect to $x \leftrightarrow x^\*$ and therefore $x$ is distributed identically to $x^\*$, and $p(x) = p\_\mathrm{T}(x^\*=x)$. The $\mathrm{S}=\mathrm{T}$ point is called the Bayes optimal point.
+
+To make the connection to stat-mech clearer, let&#39;s write out the student&#39;s posterior in a suggestive way:
+$$
+p\_\mathrm{S}(x \vert y) = \frac{e^{-\beta H (x, y)}}{Z(y)},
+$$
+where $Z(y) = \sum\_x e^{-\beta H(x, y)}$ and
+$$
+-\beta H (x \vert y) = \ln q\_\mathrm{S}(y \vert x) + \ln q\_\mathrm{S}(x).
+$$
+Here I wrote the unnormalised distributions ex. $q\_\mathrm{S}(y \vert x) \propto p\_\mathrm{S}(y \vert x)$ as normalisation is ensured by the partition function. We see that the posterior looks like the Boltzmann probability of disordered system (ex. spin glass), with the &#39;data&#39; $y$ playing the role of disorder with $p\_\mathrm{T}(y) = \sum\_{x^\*} p\_\mathrm{T}(y \vert x^\*) p\_\mathrm{T}(x^\*)$.
+
+In the limit where the data contains no information about the true/teacher&#39;s state, ex. when the data is &#39;infinitely&#39; noisy, we see that $p\_\mathrm{T}(y \vert x^\*) \rightarrow p\_\mathrm{T}(y)$ really becomes random disorder - this would be a situation where the student believes that there is some information in the data, but the teacher is actually supplying random noise.
+
+When there is information about the true/teacher&#39;s state in the data, this information is said to be &#39;planted&#39; in the disorder. The distribution of $p\_\mathrm{T}(y) = \sum\_{x^\*} p\_\mathrm{T}(y \vert x^\*) p\_\mathrm{T}(x^\*)$ is the &#39;planted distribution&#39;, and $p(x, y, x^\*)$ is the &#39;planted ensemble&#39;.
+
+This is all well and good, but is it actually useful? Let&#39;s look at some examples, to see how existing disordered stat-mech problems map onto inference problems.
+
+## The planted random-bond Ising model
+To make things more concrete, let&#39;s consider a particular case of a model considered in the review. We consider $L^2$ people standing in a room in a square lattice formation. To each person, we randomly hand out a card that can be $S^\*\_i = \pm 1$ with equal probability. However, we don&#39;t record this information. Then, we ask each neighbouring pair to reply with $1$ if they have the same cards or $-1$ if they have different cards. But there&#39;s a twist - for each question the pair may lie with probability $\uppi$. We record the answer that each pair gives us as $J\_{ij}$. 
+
+Then, given $\\{J\_{ij}\\}\_{ij}$, can we infer the &#39;state&#39;, i.e. the cards given to each person? As we have an equal-probability prior over the cards given, we have $p(S) \propto 1$. The &#39;likelihood&#39; of answer $J\_{ij}$ given cards $S\_i$ and $S\_j$ is
+$$
+p(J\_{ij} \vert S\_i, S\_j) = 
+\begin{cases}
+1 - \uppi &amp; J\_{ij} = S\_i S\_j \\\\
+\uppi &amp; J\_{ij} = -S\_i S\_j.
+\end{cases}
+$$
+As $J\_{ij}$ is an Ising variable we can massage this to look like a Boltzmann weight. If we consider
+$$
+p(J\_{ij} \vert S\_i, S\_i) = N e^{\beta J\_{ij} S\_i S\_j},
+$$
+Then from normalisation over $J\_{ij} \in \{1, -1\}$ we have $N = e^{\beta} + e^{-\beta}$, and 
+$$
+\uppi = \frac{e^{-\beta}}{e^{\beta} + e^{-\beta}}.
+$$
+Therefore if each pair lies half of the time, $\uppi = 1/2$, $\beta = 0$, and if they never lie, $\uppi = 0$, $\beta \rightarrow \infty$.
+
+Then the likelihood over all answers is
+$$
+p(J \vert S) = \prod\_{\langle i,j \rangle} p(J\_{ij} \vert S\_i, S\_j) \propto \exp\left(\beta \sum\_{\langle i, j\rangle} J\_{ij} S\_i S\_j \right).
+$$
+Since the prior is uniform, the posterior is
+$$
+p(S \vert J) = \frac{q(J \vert S)}{Z(J)} = \frac{\exp\left(\beta \sum\_{\langle i, j \rangle}J\_{ij} S\_i S\_j\right)}{Z(J)},
+$$
+where
+$$
+Z(J) = \sum\_{S} \exp\left(\beta \sum\_{\langle i, j\rangle} J\_{ij} S\_i S\_j \right).
+$$
+is the partition function for a random-bond Ising model, and the posterior is its Boltzmann probability!
+
+Let&#39;s now consider the general teacher-student scenario, where the student&#39;s model belief of the rate of lying $\beta\_\mathrm{S}(\uppi\_\mathrm{S})$ can differ from the true/teacher&#39;s $\beta\_\mathrm{T}(\uppi\_\mathrm{T})$. 
+$$
+\begin{aligned}
+p(S, J, S^\*) &amp; = p\_\mathrm{S}(S \vert J) p\_\mathrm{T}(J \vert S^\*) p\_\mathrm{T}(S^\*) \\\\
+&amp; \propto \frac{\exp\left( \beta\_\mathrm{S} \sum\_{\langle ij \rangle} J\_{ij} S\_i S\_j\right)}{Z\_\mathrm{S}(J)} \exp\left( \beta\_\mathrm{T} \sum\_{\langle ij \rangle} J\_{ij} S^\*\_i S^\*\_j\right).
+\end{aligned}
+$$
+Then consider the observable $S\_i S^\*\_i$. This is $1$ if they are aligned (if the inferred card is same as the true value of the card), and $-1$ if they are anti-aligned, so it is a measure of possibility of inference.
+$$
+\mathop{\mathbb{E}}[S\_l S^\*\_l] \propto \sum\_{S^\*} \sum\_{S} \sum\_{J} S\_l S^\*\_l \frac{\exp(\beta\_\mathrm{S} \sum\_{\langle ij\rangle}J\_{ij}S\_i S\_j) \exp(\beta\_\mathrm{T} \sum\_{\langle ij\rangle}J\_{ij}S^\*\_i S^\*\_j)}{Z\_\mathrm{S}(J)}.
+$$
+Since we are summing over $J$, we are free to redefine $J$ such that $J\_{ij} S^\*\_i S^\*\_j = \tilde{J}\_{ij}$. Similarly we can redefine $S$ such that $S\_i S^\*\_i = \tilde{S}\_i$. Inside the partition function we can also redefine $S&#39;$ inside the sum. Therefore
+$$
+\begin{aligned}
+\mathop{\mathbb{E}}[S\_l S^\*\_l] &amp; \propto \sum\_{S^\*} \sum\_{\tilde{S}} \sum\_{\tilde{J}} \tilde{S}\_l \frac{\exp(\beta\_\mathrm{S} \sum\_{\langle ij\rangle} \tilde{J}\_{ij} \tilde{S}\_i \tilde{S}\_j) \exp(\beta\_\mathrm{T} \sum\_{\langle ij\rangle}\tilde{J}\_{ij})}{\sum\_{\tilde{S}&#39;} \exp\left( \beta\_\mathrm{S} \sum\_{\langle ij\rangle} \tilde{J}\_{ij} \tilde{S}&#39;\_i \tilde{S}&#39;\_j\right)}
+\end{aligned}
+$$
+So now $S^\*$ has disappeared, and we the true distribution is the &#39;ferromagnetic configuration&#39;. So
+$$
+\begin{aligned}
+\mathop{\mathbb{E}}[S\_l S^\*\_l] &amp; \propto \sum\_{\tilde{S}} \sum\_{\tilde{J}} \tilde{S}\_l \frac{\exp(\beta\_\mathrm{S} \sum\_{\langle ij\rangle} \tilde{J}\_{ij} \tilde{S}\_i \tilde{S}\_j) \exp(\beta\_\mathrm{T} \sum\_{\langle ij\rangle}\tilde{J}\_{ij})}{\sum\_{S&#39;} \exp\left( \beta\_\mathrm{S} \sum\_{\langle ij\rangle} \tilde{J}\_{ij} S&#39;\_i S&#39;\_j\right)} \\\\
+&amp; = \sum\_{\tilde{J}} \frac{\sum\_{\tilde{S}} \tilde{S}\_l \exp(\beta\_\mathrm{S} \sum\_{\langle ij\rangle} \tilde{J}\_{ij} \tilde{S}\_i \tilde{S}\_j) \exp(\beta\_\mathrm{T} \sum\_{\langle ij\rangle}\tilde{J}\_{ij})}{\sum\_{S&#39;} \exp\left( \beta\_\mathrm{S} \sum\_{\langle ij\rangle} \tilde{J}\_{ij} \tilde{S}&#39;\_i \tilde{S}&#39;\_j\right)},
+\end{aligned}
+$$
+which is the magnetisation in the random-bond Ising model with $p(\tilde{J}) \propto \exp(\beta\_\mathrm{T} \sum\_{\langle ij\rangle}\tilde{J}\_{ij})$. So the paramagnetic (PM) state corresponds to the failure of inference, and the ferromagnetic (FM) state corresponds to the success of inference.
+
+By the way, in the spin-glass literature, what we&#39;ve done here is called a &#39;gauge transformation&#39;. And, there is a special &#39;solvable line&#39; in this model, called the Nishimori line, where $p(J) \sim Z(J)$. The basic idea was that $p(J)$ just becomes another replica in the problem and so simplifies the calculation, but it turns out that the point where the Nishimori line crosses the phase boundary is very interesting. But this exactly corresponds to the Bayes optimality condition, $\beta\_\mathrm{S} = \beta\_\mathrm{T}$. Usually, people show that for particular choices for $\uppi$, we can gauge-transform $p(J)$ to look like $Z(J)$. Here, we did it the other way around.
+
+People have already studied the phase diagram of the RBIM, so we have the phase diagram for free. Let&#39;s look at the phase diagram of the RBIM (for example see [Gruzberg 0007254v2](https://arxiv.org/abs/cond-mat/0007254v2)).
+
+![](rbim_conventional.svg)
+
+The $p=0$, $T\_\mathrm{c} \approx 2.27$  corresponds to the clean 2D Ising transition. For us, $T$ corresponds to $\beta\_\mathrm{S}^{-1}$ and $p = \uppi\_\mathrm{T}$. Thinking of $\beta\_{S,T}$ as the &#39;signal strength&#39;, we can redraw the phase diagram in the $\beta\_\mathrm{T}-\beta\_\mathrm{S}$ plane. We know that the Nishimori line is the $45^\circ$ line in this plane.
+
+![](rbim_inference.svg)
+
+We see that in this picture, no matter what $\beta\_S$ the student chooses, we need sufficient teacher&#39;s signal strength $\beta\_\mathrm{T} &gt; \beta^\mathrm{c}\_\mathrm{T}$ in order for inference to be possible. On the other hand, if the student assumes that the signal strength is too low, $\beta\_\mathrm{S} &lt; \beta^\mathrm{c}\_\mathrm{S}$, then again inference is not possible.
+## The planted directed polymer problem
+So now the world is our oyster. We can start cooking up planted versions of spin-glass/disordered stat-mech models, and see what inference problem they map on to. We were particularly interested in looking at a class of inference problems involving hidden Markov models. This is where the prior follows a Markov process,
+$$
+p(x\_{1:t})=\left(\prod\_{\tau=2}^tp(x\_\tau|x\_{\tau-1})\right)p(x\_1),
+$$
+and measurements $y\_{t}$ conditioned on the state are generated through some measurement model $p(y\_{t} \vert x\_{t})$ at every timestep. As before, we could calculate a posterior for the entire trajectory, $p(x\_{1:t} \vert y\_{1:t})$, but this is usually intractable computationally. Instead, we can also consider a &lt;i&gt;filtering&lt;/i&gt; task, where the state at the current timestep is inferred from data from all previous timesteps, i.e. $p(x\_{t} \vert y\_{1:t})$.
+
+Concretely, we consider the case when the states are locations in space, and the Markov process is a random walk on that space. A simple example of a &#39;kernel&#39; for this process is
+$$
+p(x\_{t+1} \vert x\_{t}) = \frac{1}{2} \delta\_{x\_{t+1},x\_{t}} + \frac{1}{4} \delta\_{x\_{t+1},x\_{t}\pm 1}.
+$$
+An example of such a random walk in 1D is shown below. 
+![](1_true_path.svg)
+
+At every timestep $t$, we will take an &#39;image&#39; of the walker specified by pixel values at positions $x$, 
+$$
+\phi\_{x,t} = \epsilon\_\mathrm{T} \delta\_{x, x^\*\_{t}} + \psi\_{x,t},
+$$
+which has a peak at the true location of the walker with &#39;signal strength&#39; $\epsilon\_\mathrm{T}$, and $\psi\_{x,t}$ is iid random Gaussian noise $\psi\_{x,t} \sim \mathcal{N}(0, \sigma\_\mathrm{T}^2)$. An example of set of all images from each timestep for the above random walk is shown below.
+
+![](2_good_image.svg)
+
+Then, we&#39;d like to infer the true position of the walker at the current time, $x^\*\_{t}$ or the true trajectory $X^\* := (x^\*\_\tau)\_{\tau=1}^T$ given the images at all times. We call it the &#39;planted directed polymer problem&#39;, as it is related to the directed polymer in a random medium from stat-mech. Let&#39;s see how.
+
+Let the whole image at time $t$ be $\boldsymbol{\phi}\_{t} := (\phi\_{x,t})\_x$. Then assuming signal strength $\epsilon\_\mathrm{S}$ and noise strength $\sigma\_\mathrm{S}$, the likelihood for observing an image $\boldsymbol{\phi}\_{t}$ given that the walker&#39;s position is $x\_{t}$ is
+$$
+\begin{aligned} 
+p\_\mathrm{S}(\boldsymbol{\phi}\_{t} \vert x\_{t}) &amp; = \prod\_{x&#39;\_{t}} \frac{1}{\sqrt{2 \pi \sigma\_\mathrm{S}^2}} \exp \left[ \frac{-(\phi\_{x&#39;\_{t}, t} - \epsilon\_\mathrm{S} \delta\_{x\_{t}, x&#39;\_{t}})^2}{2 \sigma\_\mathrm{S}^2} \right] \\\\
+&amp; = \exp\left(\left[\epsilon\_\mathrm{S} \phi\_{x\_{t},t} - \epsilon^2/2\right]/\sigma\_\mathrm{S}^2\right)\pi\_\mathrm{S}(\boldsymbol{\phi}\_{t}),
+\end{aligned}
+$$
+where $\pi\_\mathrm{S}(\boldsymbol{\phi}\_t)$ denotes the Gaussian measure. Denoting $X := x\_{1:t}$ and $\Phi := \boldsymbol{\phi}\_{1:t}$, the likelihood for the whole trajectory is
+$$
+p\_\mathrm{S}(\Phi \vert X) \propto \exp\left(\frac{\epsilon\_\mathrm{S}}{\sigma\_\mathrm{S}^2}\sum\_{t} \phi\_{x\_{t}, t} \right)\pi\_\mathrm{S}(\Phi).
+$$
+As the $\pi\_\mathrm{S}(\Phi)$ term is there for any value of $X$, we can ignore it, since we can just normalise the posterior again. So the student&#39;s posterior for the whole path is 
+$$
+p\_\mathrm{S}(X \vert \Phi) = \frac{q\_\mathrm{S}(X \vert \Phi)}{Z\_\mathrm{S}(\Phi)},
+$$
+where the &lt;i&gt;unnormalised&lt;/i&gt; posterior is
+$$
+q\_\mathrm{S}(X \vert \Phi) = \exp\left(\frac{\epsilon\_\mathrm{S}}{\sigma\_\mathrm{S}^2}\sum\_{t=1}^T \phi\_{x\_{t},t} + \sum\_{t=2}^{T} \ln q\_\mathrm{S}(x\_{t} \vert x\_{t-1}) \right) q\_\mathrm{S}(x\_1),
+$$
+and $Z\_\mathrm{S}(\Phi) = \sum\_X p\_\mathrm{S}(X \vert \Phi)$. 
+
+Let us assume that the kernel $q\_\mathrm{S}(x\_t \vert x\_{t-1})$ only depends on the distance between $x\_t$ and $x\_{t-1}$, and is maximised when the distance is zero. Then, we write $\ln q\_\mathrm{S}(x\_{t} \vert x\_{t-1}) = f(\sqrt{a}(x\_{t} - x\_{t-1}))$ where $a$ is the lattice constant. Expanding, we find
+$$
+\begin{aligned}
+q\_S(X \vert \Phi)  = \exp\Bigg(
+ \sum\_{\tau=1}^{t} \left[-\frac{a}{4 \nu\_\mathrm{S}} \left[x\_\tau - x\_{\tau-1}\right]^2 + \frac{\epsilon\_\mathrm{S}}{\sigma\_\mathrm{S}^2} \phi\_{x\_\tau, \tau} \right]
++\mathcal{O}(a^{3/2})\Bigg) q\_S(x\_1),
+\end{aligned}
+$$
+where $\nu\_\mathrm{S} = \frac{1}{2 \lvert f&#39;&#39;\_\mathrm{S}(0) \rvert}$ is the &#39;width&#39; of the kernel. We see that the unnormalised posterior now looks like the Boltzmann weight for the directed polymer in a random environment. For those who are unfamiliar, it is a well studied stat-mech model for configurations of a polymer. Interpreting time as another spatial dimension $t=y$, it is &#39;directed&#39; in that the polymer cannot loop around itself, since $x$ is a single-valued function of $y$. 
+
+The first term in the sum $\sim (x\_\tau - x\_{\tau-1})^2$ corresponds to the &#39;elastic energy&#39; of the polymer, where you pay a price whenever you stretch out the polymer. The second term $\sim \phi\_{x\_t, t}$, where $\phi\_{x\_t, t}$, usually random iid noise in the directed polymer setting, is a &#39;random environment&#39; that the polymer is placed in.
+
+The interesting phenomena in the directed polymer is that even though you need to pay energy to stretch out the polymer, it might be worth it to go through a particular location, as long as the potential there is deep enough. This creates a &#39;roughening&#39; of the polymer (you can read more about it in [Bhattacharjee 0402117v1](https://arxiv.org/abs/cond-mat/0402117), for example).
+
+For us, $\phi\_{x\_t, t}$ is not iid, but instead has information about the true location of the walker &#39;planted&#39; in it. In recent work, we studied this problem in detail in 1D and also on the tree. Read more here: [P. Kim 2404.07263](https://arxiv.org/abs/2404.07263). --&gt;</description>
     </item>
     
     <item>
@@ -45,11 +681,622 @@
     </item>
     
     <item>
+      <title>Notes on separation of variables</title>
+      <link>https://sunwoo-kim.github.io/ko/activities/teaching/pdes/</link>
+      <pubDate>Sat, 08 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>https://sunwoo-kim.github.io/ko/activities/teaching/pdes/</guid>
+      <description>&lt;h1 id=&#34;arbitrary-boundary-conditions-for-spherical-polar-coordinates&#34;&gt;Arbitrary boundary conditions for spherical polar coordinates&lt;/h1&gt;
+&lt;p&gt;In the lectures you learned that the Laplacian in 3D has the eigenfunctions
+$$
+\Delta u_{nlm}(r,\theta, \phi) = \lambda_{nlm} u(r,\theta, \phi),
+$$
+where
+$$
+u_{nlm}(r,\theta,\phi) = R_{nl}(r) \tilde P_{lm}(\theta) \Phi_m(\phi),
+$$
+where $\tilde P_{lm}(\theta) = C_{lm} P_{lm}(\cos \theta)$. As it is separable, it can be thought of a tensor product of three vectors living in separate spaces $1,2,3$, as
+$$
+\ket{u_{nlm}} = \ket{R_{nl}}_1 \ket{\tilde P_{lm}}_2 \ket{\Phi_m}_3.
+$$
+with $u_{nlm}(r, \theta, \phi) = \langle r \vert R_{nl} \rangle_1 \langle \theta \vert \tilde P_{lm} \rangle_2 \langle \phi \vert \Phi_m \rangle_3$. Since inner product on the joint space is defined as
+$$
+\langle u \vert u&amp;rsquo; \rangle := \int_0^\infty r^2 dr \int_0^\pi \sin\theta d \theta \int_0^{2\pi} d \phi ,u^*(r, \theta, \phi) u(r, \theta, \phi),
+$$
+The individual factors can be normalised under the inner products
+$$
+\langle R \vert R&amp;rsquo; \rangle_1 := \int_0^\infty r^2 dr R^*(r) R&amp;rsquo;(r),
+$$
+$$
+\langle \tilde P \vert \tilde P&amp;rsquo; \rangle_2 := \int_0^\pi \sin \theta d \theta \tilde{P}^*(\theta) \tilde{P}&amp;rsquo;(\theta),
+$$
+and
+$$
+\langle \Phi \vert \Phi&amp;rsquo; \rangle_3 := \int_0^{2\pi} d\phi \Phi^*(r) \Phi&amp;rsquo;(r).
+$$
+${u_{nlm}}_{nlm}$ form a CONS (complete set of orthonomal basis) and therefore any solution can be written as
+$$
+\psi(r, \theta, \phi) = \sum_{nlm} A_{nlm} R_{nl}(r) \tilde P_{lm}(\theta) \Phi_m(\phi),
+$$
+or abstractly as
+$$
+\ket{\psi} = \sum_{nlm} A_{nlm} \ket{R_{nl}}_1 \ket{\tilde P_{lm}}_2 \ket{\Phi_m}_3.
+$$
+We can evaluate this abstract vector on a subset of variables, for example only for $r$, as:
+$$
+\ket{\psi(r)} := \bra{r}_1\ket{\psi} = \sum_{nlm} A_{nlm} R_{nl}(r) \ket{\tilde P_{lm}}_2 \ket{\Phi_m}_3.
+$$
+In the lectures, you had a simple boundary condition $u(R, \theta, \phi) = \cos(\theta)$. What if it is more complicated? Consider we have a boundary condition like $u(R, \theta, \phi) = f(\theta, \phi)$.&lt;/p&gt;
+&lt;p&gt;This can be written as an abstract vector in spaces $2, 3$ as
+$$
+\ket{u(R)} = \sum_{nlm} B_{nlm} R_{nl}(R) R_{nl}(r) \ket{\tilde P_{lm}}_2 \ket{\Phi_m}_3.
+$$
+The coefficient $B_{nlm}$ can be found by taking the inner product of $\ket{u(R)}$ with basis vectors for spaces $2, 3$, as
+$$
+B_{nlm} = \frac{1}{R_{nl}(R)} \int_0^\pi \sin\theta d \theta \int_0^{2\pi} d \phi , \tilde P^*_{lm}(\theta) \Phi^*_m(\phi) f(\theta, \phi).
+$$
+Then to obey the boundary conditions, we must have that $B_{nlm} = A_{nlm}$, such that $\psi(R, \theta, \phi) = u(R,\theta,\phi) = f(\theta, \phi)$.&lt;/p&gt;
+&lt;p&gt;For example, our boundary condition $u(R, \theta, \phi) = \cos(\theta)$ is proportional to $\tilde P_{10}(\theta) \Phi_m(\phi)$. Therefore $B_{nlm} = \delta_{l,1} \delta_{m,0}$.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>The planted directed polymer; inferring a random walk from noisy images</title>
       <link>https://sunwoo-kim.github.io/ko/projects/plantedpolymer/</link>
       <pubDate>Sat, 07 Sep 2024 00:00:00 +0000</pubDate>
       <guid>https://sunwoo-kim.github.io/ko/projects/plantedpolymer/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>Hydrodynamics of classical deterministic circuits</title>
+      <link>https://sunwoo-kim.github.io/ko/slides/hydroautomata/</link>
+      <pubDate>Mon, 13 May 2024 00:00:00 +0000</pubDate>
+      <guid>https://sunwoo-kim.github.io/ko/slides/hydroautomata/</guid>
+      <description>&lt;h1 id=&#34;hydrodynamics-of-classical-deterministic-circuits&#34;&gt;Hydrodynamics of classical deterministic circuits&lt;/h1&gt;
+&lt;p&gt;&lt;b&gt;&lt;a href=&#34;https://arxiv.org/abs/2503.08788&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;arXiv:2503.08788&lt;/a&gt;&lt;/b&gt;&lt;/p&gt;
+&lt;p&gt;&lt;text style=&#34;fontsize: 75%;&#34;&gt;Work with&lt;/text&gt;&lt;/p&gt;
+&lt;div style=&#34;display: flex; gap: 2em; fontsize: 75%;&#34;&gt;
+  &lt;div style=&#34;flex: 1;&#34;&gt;
+    &lt;small&gt;Friedrich Hübner (KCL)&lt;/small&gt;
+    &lt;br&gt;
+    &lt;img src=&#34;fred.jpg&#34; style=&#34;width: 35%;&#34;&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;flex: 1;&#34;&gt;
+    &lt;small&gt;Juan P. Garrahan (Nottingham)&lt;/small&gt;
+    &lt;br&gt;
+    &lt;img src=&#34;juan.jpg&#34; style=&#34;width: 35%;&#34;&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;flex: 1;&#34;&gt;
+    &lt;small&gt;Benjamin Doyon (KCL)&lt;/small&gt;
+    &lt;br&gt;
+    &lt;img src=&#34;ben.jpg&#34; style=&#34;width: 35%;&#34;&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- &lt;small&gt;&lt;b&gt;Sun Woo P. Kim &lt;br&gt; 25-05-13, CPGM&lt;/b&gt; --&gt;
+&lt;!-- &lt;small&gt;&lt;b&gt;Sun Woo P. Kim &lt;br&gt; 25-06-17, BME&lt;/b&gt; --&gt;
+&lt;p&gt;&lt;small&gt;&lt;b&gt;Sun Woo P. Kim, King&amp;rsquo;s College London &lt;br&gt; 25-07-09, Budapest Integrability Online Seminar&lt;/b&gt;
+&lt;br&gt;
+Slides at &lt;a href=&#34;https://sunwoo-kim.github.io/en/slides/hydroautomata&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;sunwoo-kim.github.io/en/slides/gateshydro&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;img src=&#34;zoomin.svg&#34; style=&#34;width: 70%;&#34;&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;hydrodynamics&#34;&gt;Hydrodynamics&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Large-scale, coarse-grained description of locally-interacting many-body systems with extensive conserved quantities (CQs) with &lt;strong&gt;local densities&lt;/strong&gt; away from equilibrium&lt;/li&gt;
+&lt;li&gt;Thought to be &lt;strong&gt;universal&lt;/strong&gt; in that many microscopic models/systems give rise to the same family of hydrodynamic equations&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;local-conservation-laws&#34;&gt;Local conservation laws&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Extensive CQs, ex. $\vec Q = (N, \bm{P}, E)$&lt;/li&gt;
+&lt;li&gt;Local densities
+$$\vec Q = \int dx \vec q(x, t)$$&lt;/li&gt;
+&lt;li&gt;Assuming periodic boundary condition $\frac{d}{dt} \vec Q = 0$ if
+$$ \partial_t \vec q(x, t) = \partial_x \vec j \left(\vec q(x,t), \partial_x \vec q(x,t), \dots \right)$$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;euler-scale-hydrodynamics&#34;&gt;Euler-scale hydrodynamics&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Taylor expand the current wrt gradients
+$$\partial_t \vec q(x,t) = \partial_x \Big( f(\vec q) + g(\vec q) \partial_x \vec q + \cdots \Big)$$&lt;/li&gt;
+&lt;li&gt;Rescale space and time $t = t^\prime L$, $x = x^\prime L$ (i.e. look in terms of $\mathrm{km}$ and $\mathrm{days}$ instead of $\mathrm{cm}$ and $\mathrm{sec}$)
+$$\partial_{t^\prime} \vec q(x,t) = \partial_{x^\prime} \Bigg( f(\vec q) + \frac{g(\vec q)}{L} \partial_{x^\prime} \vec q + \mathcal{O}(L^{-2}) \Bigg)$$&lt;/li&gt;
+&lt;li&gt;As $L \rightarrow \infty$, we can just consider the effects of the first term; this is known as Euler-scale hydrodynamics.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;two-approaches&#34;&gt;Two approaches&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Top-down&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;(Sensible) guess of hydrodynamic equation from physical principles ex. The Navier-Stokes, with $\vec q = (\rho, \rho \mathbf{u})$:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;font size=&#34;5em&#34;&gt;
+$$\frac{\partial}{\partial t}(\rho \mathbf{u}) = -\nabla \cdot\left(\rho \mathbf{u} \otimes \mathbf{u}+[p-\zeta(\nabla \cdot \mathbf{u})] \mathbf{I}-\mu\left[\nabla \mathbf{u}+(\nabla \mathbf{u})^{\mathrm{T}}-\frac{2}{3}(\nabla \cdot \mathbf{u}) \mathbf{I}\right]\right)$$
+$$\frac{\partial \rho}{\partial t}= - \nabla \cdot(\rho \mathbf{u})$$
+&lt;/font&gt;
+&lt;ul&gt;
+&lt;li&gt;Does this equation make sense? i.e. Navier–Stokes existence and smoothness (Millenium prize problem)&lt;/li&gt;
+&lt;li&gt;Efficient simulations? ex. GenCast by Google, Tensor network methods (Gourianov &amp;lsquo;25)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;two-approaches-1&#34;&gt;Two approaches&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Bottom-up&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Microscopic laws $\Rightarrow$ hydrodynamic equations&lt;/li&gt;
+&lt;li&gt;Assume thermal relaxation in coarse-grained fluid cells
+$$ p(\bm{a}) \propto \exp\left[- \sum_x \vec \beta(x,t) \cdot \vec {\mathsf{q}}_x(a_{x:x+l})\right]$$&lt;/li&gt;
+&lt;li&gt;Then obtain Euler-scale hydrodynamics with
+$$\vec q(x, t) = \langle \vec {\mathsf{q}}_{x} \rangle_{\vec \beta(x, t)}, \quad \vec{j}(x,t) = \langle \vec {\mathsf{j}}_{x} \rangle_{\vec \beta(\vec q(x,t))}$$&lt;/li&gt;
+&lt;li&gt;Generally hard to evaluate, as $p(\bm{a})$ is not separable ex. Hamiltonian systems. Exceptions: 1D systems (transfer matrix), integrable systems (GHD)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;two-approaches-2&#34;&gt;Two approaches&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Bottom-up&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Very hard to prove that relaxation occurs in general, or that coarse-grained dynamics reduces to hydrodynamic description (Hilbert&amp;rsquo;s 6th problem).&lt;/li&gt;
+&lt;li&gt;Recently (maybe) proven for hard spheres (Deng &amp;lsquo;25)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;brickwork-circuits&#34;&gt;Brickwork circuits&lt;/h2&gt;
+&lt;div style=&#34;display: flex; gap: 2em;&#34;&gt;
+  &lt;div style=&#34;flex: 1;&#34;&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Time-discrete many-body system&lt;/li&gt;
+      &lt;li&gt;Arrange states in a 1D chain (of length $L$ with periodic boundary conditions) then apply a layer of two-site gates at each timestep in a brickwork fashion&lt;/li&gt;
+      &lt;li&gt;Can be classical (block cellular automata with Margolius neighbourhoods) or quantum&lt;/li&gt;
+      &lt;li&gt;Can be deterministic or stochastic&lt;/li&gt;
+      &lt;!-- &lt;li&gt;At each timestep $\tau$, a layer of gates is
+      &lt;center&gt;&lt;img src=&#34;u_tau.svg&#34; style=&#34;width: 50%;&#34;&gt;&lt;/center&gt;
+      $\mathcal{R}_\tau$: even(odd) sites on even(odd) times, $\mathsf{u}_{i:i+1}$ acts on states on sites $\{i, i+1\}$
+      &lt;/li&gt; --&gt;
+      &lt;!-- &lt;li&gt; Analytically tractable examples
+        &lt;ul&gt;
+          &lt;li&gt;Quantum: &lt;b&gt;dual unitaries&lt;/b&gt; (Gopalakrishnan &#39;19, Bertini &#39;19), &lt;b&gt;Haar-random  unitaries&lt;/b&gt; (von Keyserlingk &#39;18)&lt;/li&gt;
+          &lt;li&gt;Classical: &lt;b&gt;east gate&lt;/b&gt; (Klobas &#39;24), &lt;b&gt;stochastic charged automata&lt;/b&gt; (Klobas &#39;18, Krajnik &#39;22)&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Can generalise to $D$ spatial dimensions $\rightarrow$ each gate acts on $2D$ sites&lt;/li&gt; --&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;flex: 0.5;&#34;&gt;
+    &lt;img src=&#34;brickwork.svg&#34; style=&#34;width: 100%;&#34;&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;brickwork-circuits-1&#34;&gt;Brickwork circuits&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Analytically tractable examples
+&lt;ul&gt;
+&lt;li&gt;Quantum: &lt;strong&gt;dual unitaries&lt;/strong&gt; (Gopalakrishnan &amp;lsquo;19, Bertini &amp;lsquo;19), &lt;strong&gt;Haar-random  unitaries&lt;/strong&gt; (von Keyserlingk &amp;lsquo;18)&lt;/li&gt;
+&lt;li&gt;Classical: &lt;strong&gt;east gate&lt;/strong&gt; (Klobas &amp;lsquo;24), &lt;strong&gt;stochastic charged automata&lt;/strong&gt; (Klobas &amp;lsquo;18, Krajnik &amp;lsquo;22)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Can implement them on a quantum computer ($$$)&lt;/li&gt;
+&lt;li&gt;Can generalise to $D$ spatial dimensions $\rightarrow$ each gate acts on $2D$ sites&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;classical-deterministic-gates&#34;&gt;Classical deterministic gates&lt;/h2&gt;
+&lt;div style=&#34;display: flex; gap: 2em;&#34;&gt;
+  &lt;div style=&#34;flex: 1;&#34;&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Local states $\mathcal{D}=\{0, 1, \dots, d-1\}$&lt;/li&gt;
+      &lt;li&gt;Two-site determinisitic gates are maps $\sigma: \mathcal{D} \times \mathcal{D} \rightarrow \mathcal{D} \times \mathcal{D}$&lt;/li&gt;
+      &lt;li&gt;Reversible $\Rightarrow$ $\sigma$ is a bijection, i.e. a permutation on $\{(0,0), (0,1), \dots, (d-1, d-1)\}$&lt;/li&gt;
+      &lt;li&gt;There are $(d^2)!$ reversible deterministic gates&lt;/li&gt;
+      &lt;li&gt;Also known as block cellular automata with Margolius neighbourhoods&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;flex: 0.4;&#34;&gt;
+    &lt;small&gt;$(d, \sigma) = (3, 996)$&lt;/small&gt;
+    &lt;img src=&#34;rules.svg&#34; style=&#34;width: 100%;&#34;&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;classical-deterministic-gates-1&#34;&gt;Classical deterministic gates&lt;/h2&gt;
+&lt;div style=&#34;display: flex; gap: 2em;&#34;&gt;
+  &lt;div style=&#34;flex: 1;&#34;&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Promote configurations to basis vectors ￼$a \rightarrow | a \rangle$&lt;/li&gt;
+      &lt;li&gt;Then can represent distributions as &lt;br&gt;$\ket{p} = \sum_{\bm{a}} p(\bm{a}) \ket{\bm{a}}$&lt;/li&gt;
+      &lt;li&gt;Gate $\mathsf{u}$ can be written as
+      $$\mathsf{u}=\sum_{a, b}|\sigma_1(a, b), \sigma_2(a, b)\rangle\langle a, b|$$
+      &lt;/li&gt;
+      &lt;li&gt;Equivalently in tensor network notation
+      &lt;img src=&#34;gatetn.svg&#34; style=&#34;width: 100%;&#34;&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;flex: 0.4;&#34;&gt;
+    &lt;small&gt;$(d, \sigma) = (3, 996)$&lt;/small&gt;
+    &lt;!-- &lt;img src=&#34;rulesbk.svg&#34; style=&#34;width: 60%;&#34;&gt; --&gt;
+    $$\tiny{\begin{aligned}
+      &amp; |00\rangle \rightarrow|00\rangle \\
+      &amp; |01\rangle \rightarrow|01\rangle \\
+      &amp; |02\rangle \rightarrow|10\rangle \\
+      &amp; |10\rangle \rightarrow|12\rangle \\
+      &amp; |11\rangle \rightarrow|11\rangle \\
+      &amp; |12\rangle \rightarrow|21\rangle \\
+      &amp; |20\rangle \rightarrow|02\rangle \\
+      &amp; |21\rangle \rightarrow|20\rangle \\
+      &amp; |22\rangle \rightarrow|22\rangle
+\end{aligned}}$$
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;this-work&#34;&gt;This work&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Develop machinery to
+&lt;ol&gt;
+&lt;li&gt;Determine the CQs with local densities of (1D classical deterministic) brickwork circuits up to desired locality&lt;/li&gt;
+&lt;li&gt;Confirm the number of CQs by confirming relaxation onto (generalised) Gibbs states&lt;/li&gt;
+&lt;li&gt;Derive the Euler-scale hydrodynamic equations&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;Go out there and search through possible deterministic reversible gates, look for gates with finite number of CQs&lt;/li&gt;
+&lt;li&gt;Compare theory with numerics
+&lt;ol&gt;
+&lt;li&gt;Compare Euler-scale hydrodynamics&lt;/li&gt;
+&lt;li&gt;Develop non-linear fluctuating hydrodynamics and quantitatively predict KPZ superdiffusion&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;why-circuits&#34;&gt;Why circuits?&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;No continuous temporal or spatial translational invariance &lt;br&gt;
+$\Rightarrow$ no pesky conserved energy, momentum or particle number to deal with &lt;br&gt;
+$\Rightarrow$ can have models with &lt;strong&gt;minimum&lt;/strong&gt; ingredients for hydrodynamic phenomenon&lt;/li&gt;
+&lt;li&gt;If CQs are 1-local, then Gibbs states are factorisable
+$$p(\bm{a}) = \exp\left[-\sum_x \vec \beta(x, t) \cdot \vec{\mathsf{q}}_x(a_x) \right] = \prod_x p(a_x)$$&lt;/li&gt;
+&lt;li&gt;Classical circuits are very simulable ($L \approx 10^6$)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;finding-conserved-quantities&#34;&gt;Finding conserved quantities&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Conserved quantity can be represented as $\bra{F}$ and evaluated as $\langle F | p \rangle$&lt;/li&gt;
+&lt;li&gt;Two layer of time evolution (at even timestep) is&lt;/li&gt;
+&lt;/ul&gt;
+&lt;center&gt;&lt;img src=&#34;twolayers.svg&#34; style=&#34;width: 80%;&#34;&gt;&lt;/center&gt;
+&lt;ul&gt;
+&lt;li&gt;If conserved after (say) $n$ timesteps, then $\bra{F} \mathsf{U} = \bra{F} \lambda^2$ with $\lambda^n = 1$ (such that $\bra{F}{\mathsf{U}}^{n/2}\ket{p} = \bra{F}{p}\rangle \forall \ket{p}$)&lt;/li&gt;
+&lt;li&gt;Assume that CQ is translationally invariant under $m$ translations: $\bra{F} \mathsf{T}^2 = \bra{F} \mu^2$, with $\mu^m = 1$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;finding-conserved-quantities-1&#34;&gt;Finding conserved quantities&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Construct ansatz of local densities that may differ on even and odd sites&lt;/li&gt;
+&lt;li&gt;ex. for 1-local conserved quantities, the condition for the CQ is&lt;/li&gt;
+&lt;/ul&gt;
+&lt;center&gt;&lt;img src=&#34;1local.svg&#34; style=&#34;width: 70%;&#34;&gt;&lt;/center&gt;
+&lt;ul&gt;
+&lt;li&gt;Can be solved to find exact expressions for CQs or rule out CQs up to $\sim 10$-local densities&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;finding-conserved-quantities-2&#34;&gt;Finding conserved quantities&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;For local dimension $d=2$, find that all reversible gates are either fully chaotic (i.e. no CQs at all) or (super) integrable (i.e. a tower of CQs)&lt;/li&gt;
+&lt;li&gt;Go through all $d=3$ gates ($(3^2)!=362880$ gates)
+&lt;ul&gt;
+&lt;li&gt;Find $\approx 2000$ gates with only 1-local CQs&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;ex. For $(d, \sigma) = (3, 996)$, $\lambda=\mu=1$, $\bra{f_\mathrm{e}} = \bra{1}$, &lt;br&gt; $\bra{f_\mathrm{o}} = -\bra{0}$ and no more!&lt;/li&gt;
+&lt;li&gt;For $(3, 229117)$, there are two 1-local CQs, one with $\lambda_1=\mu_1=1$ and another with $\mu_2=\lambda_2=e^{i \pi/2}$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;confirming-the-number-of-conserved-quantities&#34;&gt;Confirming the number of conserved quantities&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;To construct the hydrodynamics, require &lt;strong&gt;all&lt;/strong&gt; CQs. How to rule out further CQs ex. 41293-local CQ?&lt;/li&gt;
+&lt;li&gt;Dimension of linear equation for $l$-local CQ $\sim \exp(l)$&lt;/li&gt;
+&lt;li&gt;Previous method cannot capture quasi-local CQs, i.e. those with exp. decaying tails (Sharipov &amp;lsquo;25)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;confirming-the-number-of-conserved-quantities-1&#34;&gt;Confirming the number of conserved quantities&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Use / test assumptions of hydrodynamics: relaxation onto (generalised) Gibbs states&lt;/li&gt;
+&lt;li&gt;Degree of freedom for Gibbs states is $N_\mathrm{cq}$ &lt;br&gt; $\Rightarrow$ local expectation values of local observables should lie on a $N_\mathrm{cq}$-dimensional manifold and agree with microscopic predictions&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;center&gt;&lt;img src=&#34;nike.png&#34; style=&#34;width: 70%;&#34;&gt;&lt;/center&gt;
+$(d,\sigma)=(3, 996)$
+&lt;hr&gt;
+&lt;center&gt;&lt;img src=&#34;nike_3d.png&#34; style=&#34;width: 70%;&#34;&gt;&lt;/center&gt;
+$(d,\sigma)=(3, 229117)$
+&lt;hr&gt;
+&lt;h2 id=&#34;constructing-the-euler-scale-hydrodynamic-equations&#34;&gt;Constructing the Euler-scale hydrodynamic equations&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Once &lt;strong&gt;all&lt;/strong&gt; CQs have been found, can construct Euler-scale hydrodynamics&lt;/li&gt;
+&lt;li&gt;For 1-local CQs with $\lambda=\mu=1$,
+$$\braket{\mathsf{q}}_\beta = \braket{f_\mathrm{o}}_\beta + \braket{f_\mathrm{e}}_\beta \quad \braket{\mathsf{j}}_\beta = \braket{f_\mathrm{o}}_\beta - \braket{f_\mathrm{e}}_\beta$$
+where the current is given by&lt;/li&gt;
+&lt;/ul&gt;
+&lt;center&gt;&lt;img src=&#34;current.svg&#34; style=&#34;width: 55%;&#34;&gt;&lt;/center&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;constructing-the-euler-scale-hydrodynamic-equations-1&#34;&gt;Constructing the Euler-scale hydrodynamic equations&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;For $(d, \sigma) = (3, 996)$,&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;$$
+\braket{\mathsf{q}}_{\beta} = \frac{1}{2 e^{\beta}+1}+\frac{2}{e^{\beta}+2}-1
+$$
+$$
+\braket{\mathsf{j}}_{\beta} = \frac{1}{-2 e^{\beta }-1}+\frac{2}{e^{\beta}+2}-1
+$$&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;So $j(q) = \frac{1}{3} \left(2 - \sqrt{9 q^2+16}\right)$ and
+$$
+\partial_t q(x) = -v(q(x)) \partial_x q(x)
+$$
+with $v(q) = {3q}/{\sqrt{16+9q^2}}$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;constructing-the-euler-scale-hydrodynamic-equations-2&#34;&gt;Constructing the Euler-scale hydrodynamic equations&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;With change of variables $\rho = v(q)$, obtain Burger&amp;rsquo;s equation&lt;/li&gt;
+&lt;li&gt;First example of deterministic and closed microscopic model with one giving rise to Burger&amp;rsquo;s equation&lt;/li&gt;
+&lt;li&gt;Impossible to get with Hamiltonian systems with one CQ&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;center&gt;&lt;img src=&#34;shocks.png&#34; style=&#34;width: 70%;&#34;&gt;&lt;/center&gt;
+$(d,\sigma)=(3, 996)$
+&lt;hr&gt;
+&lt;center&gt;&lt;img src=&#34;entropy.png&#34; style=&#34;width: 70%;&#34;&gt;&lt;/center&gt;
+$(d,\sigma)=(3, 996)$
+&lt;hr&gt;
+&lt;center&gt;&lt;img src=&#34;beach.svg&#34; style=&#34;width: 60%;&#34;&gt;&lt;/center&gt;
+&lt;small&gt;From just one sample; Hydrodynamics is self-averaging&lt;/small&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;non-linear-fluctuating-hydrodynamics&#34;&gt;Non-linear fluctuating hydrodynamics&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;The hydrodynamic equations are for averages, i.e. one-point functions&lt;/li&gt;
+&lt;li&gt;Now consider fluctuations around the mean, $\delta q(x,t) = q(x,t) - q_0$ where $q_0 = \langle \mathsf{q} \rangle_\beta$&lt;/li&gt;
+&lt;li&gt;Expanding the Euler-scale equation (and considering higher order terms),
+&lt;font size=&#34;5em&#34;&gt;
+$$\partial_t \delta q(x,t) + j^\prime(q_0) \partial_x \delta q + \frac{1}{2} j^{\prime \prime}(q_0) \partial_x \delta q^2 + D \partial_x^2 \delta q + (\mathrm{noise}) = 0$$
+&lt;/font&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;non-linear-fluctuating-hydrodynamics-1&#34;&gt;Non-linear fluctuating hydrodynamics&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Can be mapped onto KPZ equation ($\partial_x h = \delta q/C$) from which we can predict the fluctuations (Spohn &amp;lsquo;14)
+$$\langle\delta q(t, x) \delta q(0,0)\rangle \sim \frac{1}{(\lambda t)^{2 / 3}} f_{\mathrm{KPZ}}\left(\frac{x-j^{\prime}(q_0) t}{(\lambda t)^{2 / 3}}\right)$$
+where superdiffusion constant $\lambda$ is
+$$\lambda = \sqrt{2 \langle \delta q^2\rangle} j^{\prime \prime}(q_0)$$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;center&gt;&lt;img src=&#34;kpz.svg&#34; style=&#34;width: 100%;&#34;&gt;&lt;/center&gt;
+$(d,\sigma)=(3, 996)$
+&lt;hr&gt;
+&lt;center&gt;&lt;img src=&#34;diffusion.svg&#34; style=&#34;width: 100%;&#34;&gt;&lt;/center&gt;
+$(d,\sigma)=(3, 1092)$
+&lt;hr&gt;
+&lt;h2 id=&#34;other-phenomenology&#34;&gt;Other phenomenology&lt;/h2&gt;
+&lt;center&gt;&lt;img src=&#34;fput.png&#34; style=&#34;width: 70%;&#34;&gt;&lt;/center&gt;
+$(d,\sigma)=(3, 2312)$
+&lt;hr&gt;
+&lt;h2 id=&#34;outlook&#34;&gt;Outlook&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Machinery is straight-forward to extend to quantum and higher $D$ and other topologies&lt;/li&gt;
+&lt;li&gt;Currently: identifying interesting quantum gates and gates in higher $D$
+&lt;ul&gt;
+&lt;li&gt;We find non-integrable models with exact hydrodynamic predictions!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Study quasi-local charges&lt;/li&gt;
+&lt;li&gt;Combine with other circuit techniques? &amp;ldquo;Solvability&amp;rdquo; or generalisation of dual-unitarity&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The planted directed polymer; inferring a random walk from noisy images</title>
+      <link>https://sunwoo-kim.github.io/ko/talks/240513-kias/</link>
+      <pubDate>Mon, 13 May 2024 00:00:00 +0000</pubDate>
+      <guid>https://sunwoo-kim.github.io/ko/talks/240513-kias/</guid>
+      <description>&lt;!-- 
+&lt;details&gt;
+   &lt;summary&gt;&lt;font color=&#34;grey&#34;&gt; &lt;small&gt;To cite this page&lt;/small&gt; &lt;/font&gt;&lt;/summary&gt;
+
+   ```latex
+   @misc{swpkim2026the,
+      author={P. Kim, Sun Woo},
+      title={The planted directed polymer; inferring a random walk from noisy images},
+      year={2024},
+      howpublished={\url{https://sunwoo-kim.github.io/ko/talks/240513-kias/}},
+      note={Accessed: 2026-06-12}
+   }
+   ```
+&lt;/details&gt;
+&lt;small&gt;&lt;i&gt;
+Below are notes for my board talk that I gave on 2024-04-09 at the regular condensed matter theory meeting at Imperial College London.
+&lt;/small&gt;&lt;/i&gt;
+
+---
+
+
+
+&lt;details class=&#34;toc-inpage d-print-none  &#34; open&gt;
+  &lt;summary class=&#34;font-weight-bold&#34;&gt;차례&lt;/summary&gt;
+  &lt;nav id=&#34;TableOfContents&#34;&gt;&lt;/nav&gt;
+&lt;/details&gt;
+
+
+## Introduction
+
+Recently, there has been a lot of activity in casting problems in Bayesian inference problems as disordered stat-mech problems, then using tools of spin glasses to solve them, see [Zdeborová 1511.02476](https://arxiv.org/abs/1511.02476). Here I wanted to give a quick introduction to this concept.
+
+In Bayesian inference, we try to infer state $x$ given some measurements/data $y$. We assume some prior distribution $p(x)$ and a measurement model/likelihood $p(y \vert x)$ to infer a posterior distribution using Baye&#39;s rule,
+$$
+p(x \vert y) = \frac{p(y \vert x) p(x)}{p(y)},
+$$
+where the &#39;evidence&#39; $p(y) = \sum\_x p(y \vert x) p(x)$ acts as the normalisation for the posterior. If the state space is large, then this is in general intractable. This is very similar to the partition function in statistical physics.
+
+If $y$ came from the &#39;true&#39; state $x^\*$, then the natural question to ask is, is inference possible. To quantify this question, for continuous variables, we may look at the mean-squared error,
+$$
+\mathrm{MSE} = \mathop{\mathbb{E}}\_{x \sim p(\cdot \vert y)} [(x-x^\*)^2].
+$$
+Is there any way we can prove when inference is possible? And, can we have phase transitions, say, in the mean-squared error as signal-to-noise is varied?
+
+We will consider an idealised scenario covered in the above reference, called the teacher-student scenario. The teacher generates some state of a system, $x^\*$ from the &#39;true/teacher&#39;s prior&#39; $p\_\mathrm{T}(x^\*)$. Then, the teacher generates some data/measurements $y$ given the state of the system via the teacher&#39;s measurement model/likelihood, $p\_\mathrm{T}(y \vert x^\*)$. The teacher then hands the student the measurements $y$.
+
+The student then assumes some prior distribution $p\_\mathrm{S}(x)$ and measurement model $p\_\mathrm{S}(y\vert x)$ to infer a posterior distribution $p\_\mathrm{S}(x \vert y)$. Then we can consider the joint distribution,
+$$
+\begin{aligned}
+p(x,y,x^\*) &amp; = p\_\mathrm{S}(x \vert y) p\_\mathrm{T}(y \vert x^\*) p\_\mathrm{T}(x^\*) \\\\
+&amp; = \frac{p\_\mathrm{S}(y \vert x)p\_\mathrm{S}(x) p\_\mathrm{T}(y \vert x^\*) p\_\mathrm{T}(x^\*)}{p\_\mathrm{S}(y)}.
+\end{aligned}
+$$
+Note that $p(x^\*)=p\_\mathrm{T}(x^\*)$, since we can integrate over $p\_\mathrm{S}(x\vert y)$ wrt $x$ then $p\_\mathrm{T}(y \vert x^\*)$ wrt $y$. However, $p(x) \neq p\_\mathrm{S}(x)$, since we can&#39;t perform the integration over $y$ and $x^\*$ first in general.
+
+However, we can already immediately notice one thing: if the student&#39;s model is equal to the teacher&#39;s model, that is $S=T$, then $p(x,y,x^\*)$ is symmetric with respect to $x \leftrightarrow x^\*$ and therefore $x$ is distributed identically to $x^\*$, and $p(x) = p\_\mathrm{T}(x^\*=x)$. The $\mathrm{S}=\mathrm{T}$ point is called the Bayes optimal point.
+
+To make the connection to stat-mech clearer, let&#39;s write out the student&#39;s posterior in a suggestive way:
+$$
+p\_\mathrm{S}(x \vert y) = \frac{e^{-\beta H (x, y)}}{Z(y)},
+$$
+where $Z(y) = \sum\_x e^{-\beta H(x, y)}$ and
+$$
+-\beta H (x \vert y) = \ln q\_\mathrm{S}(y \vert x) + \ln q\_\mathrm{S}(x).
+$$
+Here I wrote the unnormalised distributions ex. $q\_\mathrm{S}(y \vert x) \propto p\_\mathrm{S}(y \vert x)$ as normalisation is ensured by the partition function. We see that the posterior looks like the Boltzmann probability of disordered system (ex. spin glass), with the &#39;data&#39; $y$ playing the role of disorder with $p\_\mathrm{T}(y) = \sum\_{x^\*} p\_\mathrm{T}(y \vert x^\*) p\_\mathrm{T}(x^\*)$.
+
+In the limit where the data contains no information about the true/teacher&#39;s state, ex. when the data is &#39;infinitely&#39; noisy, we see that $p\_\mathrm{T}(y \vert x^\*) \rightarrow p\_\mathrm{T}(y)$ really becomes random disorder - this would be a situation where the student believes that there is some information in the data, but the teacher is actually supplying random noise.
+
+When there is information about the true/teacher&#39;s state in the data, this information is said to be &#39;planted&#39; in the disorder. The distribution of $p\_\mathrm{T}(y) = \sum\_{x^\*} p\_\mathrm{T}(y \vert x^\*) p\_\mathrm{T}(x^\*)$ is the &#39;planted distribution&#39;, and $p(x, y, x^\*)$ is the &#39;planted ensemble&#39;.
+
+This is all well and good, but is it actually useful? Let&#39;s look at some examples, to see how existing disordered stat-mech problems map onto inference problems.
+
+## The planted random-bond Ising model
+To make things more concrete, let&#39;s consider a particular case of a model considered in the review. We consider $L^2$ people standing in a room in a square lattice formation. To each person, we randomly hand out a card that can be $S^\*\_i = \pm 1$ with equal probability. However, we don&#39;t record this information. Then, we ask each neighbouring pair to reply with $1$ if they have the same cards or $-1$ if they have different cards. But there&#39;s a twist - for each question the pair may lie with probability $\uppi$. We record the answer that each pair gives us as $J\_{ij}$. 
+
+Then, given $\\{J\_{ij}\\}\_{ij}$, can we infer the &#39;state&#39;, i.e. the cards given to each person? As we have an equal-probability prior over the cards given, we have $p(S) \propto 1$. The &#39;likelihood&#39; of answer $J\_{ij}$ given cards $S\_i$ and $S\_j$ is
+$$
+p(J\_{ij} \vert S\_i, S\_j) = 
+\begin{cases}
+1 - \uppi &amp; J\_{ij} = S\_i S\_j \\\\
+\uppi &amp; J\_{ij} = -S\_i S\_j.
+\end{cases}
+$$
+As $J\_{ij}$ is an Ising variable we can massage this to look like a Boltzmann weight. If we consider
+$$
+p(J\_{ij} \vert S\_i, S\_i) = N e^{\beta J\_{ij} S\_i S\_j},
+$$
+Then from normalisation over $J\_{ij} \in \{1, -1\}$ we have $N = e^{\beta} + e^{-\beta}$, and 
+$$
+\uppi = \frac{e^{-\beta}}{e^{\beta} + e^{-\beta}}.
+$$
+Therefore if each pair lies half of the time, $\uppi = 1/2$, $\beta = 0$, and if they never lie, $\uppi = 0$, $\beta \rightarrow \infty$.
+
+Then the likelihood over all answers is
+$$
+p(J \vert S) = \prod\_{\langle i,j \rangle} p(J\_{ij} \vert S\_i, S\_j) \propto \exp\left(\beta \sum\_{\langle i, j\rangle} J\_{ij} S\_i S\_j \right).
+$$
+Since the prior is uniform, the posterior is
+$$
+p(S \vert J) = \frac{q(J \vert S)}{Z(J)} = \frac{\exp\left(\beta \sum\_{\langle i, j \rangle}J\_{ij} S\_i S\_j\right)}{Z(J)},
+$$
+where
+$$
+Z(J) = \sum\_{S} \exp\left(\beta \sum\_{\langle i, j\rangle} J\_{ij} S\_i S\_j \right).
+$$
+is the partition function for a random-bond Ising model, and the posterior is its Boltzmann probability!
+
+Let&#39;s now consider the general teacher-student scenario, where the student&#39;s model belief of the rate of lying $\beta\_\mathrm{S}(\uppi\_\mathrm{S})$ can differ from the true/teacher&#39;s $\beta\_\mathrm{T}(\uppi\_\mathrm{T})$. 
+$$
+\begin{aligned}
+p(S, J, S^\*) &amp; = p\_\mathrm{S}(S \vert J) p\_\mathrm{T}(J \vert S^\*) p\_\mathrm{T}(S^\*) \\\\
+&amp; \propto \frac{\exp\left( \beta\_\mathrm{S} \sum\_{\langle ij \rangle} J\_{ij} S\_i S\_j\right)}{Z\_\mathrm{S}(J)} \exp\left( \beta\_\mathrm{T} \sum\_{\langle ij \rangle} J\_{ij} S^\*\_i S^\*\_j\right).
+\end{aligned}
+$$
+Then consider the observable $S\_i S^\*\_i$. This is $1$ if they are aligned (if the inferred card is same as the true value of the card), and $-1$ if they are anti-aligned, so it is a measure of possibility of inference.
+$$
+\mathop{\mathbb{E}}[S\_l S^\*\_l] \propto \sum\_{S^\*} \sum\_{S} \sum\_{J} S\_l S^\*\_l \frac{\exp(\beta\_\mathrm{S} \sum\_{\langle ij\rangle}J\_{ij}S\_i S\_j) \exp(\beta\_\mathrm{T} \sum\_{\langle ij\rangle}J\_{ij}S^\*\_i S^\*\_j)}{Z\_\mathrm{S}(J)}.
+$$
+Since we are summing over $J$, we are free to redefine $J$ such that $J\_{ij} S^\*\_i S^\*\_j = \tilde{J}\_{ij}$. Similarly we can redefine $S$ such that $S\_i S^\*\_i = \tilde{S}\_i$. Inside the partition function we can also redefine $S&#39;$ inside the sum. Therefore
+$$
+\begin{aligned}
+\mathop{\mathbb{E}}[S\_l S^\*\_l] &amp; \propto \sum\_{S^\*} \sum\_{\tilde{S}} \sum\_{\tilde{J}} \tilde{S}\_l \frac{\exp(\beta\_\mathrm{S} \sum\_{\langle ij\rangle} \tilde{J}\_{ij} \tilde{S}\_i \tilde{S}\_j) \exp(\beta\_\mathrm{T} \sum\_{\langle ij\rangle}\tilde{J}\_{ij})}{\sum\_{\tilde{S}&#39;} \exp\left( \beta\_\mathrm{S} \sum\_{\langle ij\rangle} \tilde{J}\_{ij} \tilde{S}&#39;\_i \tilde{S}&#39;\_j\right)}
+\end{aligned}
+$$
+So now $S^\*$ has disappeared, and we the true distribution is the &#39;ferromagnetic configuration&#39;. So
+$$
+\begin{aligned}
+\mathop{\mathbb{E}}[S\_l S^\*\_l] &amp; \propto \sum\_{\tilde{S}} \sum\_{\tilde{J}} \tilde{S}\_l \frac{\exp(\beta\_\mathrm{S} \sum\_{\langle ij\rangle} \tilde{J}\_{ij} \tilde{S}\_i \tilde{S}\_j) \exp(\beta\_\mathrm{T} \sum\_{\langle ij\rangle}\tilde{J}\_{ij})}{\sum\_{S&#39;} \exp\left( \beta\_\mathrm{S} \sum\_{\langle ij\rangle} \tilde{J}\_{ij} S&#39;\_i S&#39;\_j\right)} \\\\
+&amp; = \sum\_{\tilde{J}} \frac{\sum\_{\tilde{S}} \tilde{S}\_l \exp(\beta\_\mathrm{S} \sum\_{\langle ij\rangle} \tilde{J}\_{ij} \tilde{S}\_i \tilde{S}\_j) \exp(\beta\_\mathrm{T} \sum\_{\langle ij\rangle}\tilde{J}\_{ij})}{\sum\_{S&#39;} \exp\left( \beta\_\mathrm{S} \sum\_{\langle ij\rangle} \tilde{J}\_{ij} \tilde{S}&#39;\_i \tilde{S}&#39;\_j\right)},
+\end{aligned}
+$$
+which is the magnetisation in the random-bond Ising model with $p(\tilde{J}) \propto \exp(\beta\_\mathrm{T} \sum\_{\langle ij\rangle}\tilde{J}\_{ij})$. So the paramagnetic (PM) state corresponds to the failure of inference, and the ferromagnetic (FM) state corresponds to the success of inference.
+
+By the way, in the spin-glass literature, what we&#39;ve done here is called a &#39;gauge transformation&#39;. And, there is a special &#39;solvable line&#39; in this model, called the Nishimori line, where $p(J) \sim Z(J)$. The basic idea was that $p(J)$ just becomes another replica in the problem and so simplifies the calculation, but it turns out that the point where the Nishimori line crosses the phase boundary is very interesting. But this exactly corresponds to the Bayes optimality condition, $\beta\_\mathrm{S} = \beta\_\mathrm{T}$. Usually, people show that for particular choices for $\uppi$, we can gauge-transform $p(J)$ to look like $Z(J)$. Here, we did it the other way around.
+
+People have already studied the phase diagram of the RBIM, so we have the phase diagram for free. Let&#39;s look at the phase diagram of the RBIM (for example see [Gruzberg 0007254v2](https://arxiv.org/abs/cond-mat/0007254v2)).
+
+![](rbim_conventional.svg)
+
+The $p=0$, $T\_\mathrm{c} \approx 2.27$  corresponds to the clean 2D Ising transition. For us, $T$ corresponds to $\beta\_\mathrm{S}^{-1}$ and $p = \uppi\_\mathrm{T}$. Thinking of $\beta\_{S,T}$ as the &#39;signal strength&#39;, we can redraw the phase diagram in the $\beta\_\mathrm{T}-\beta\_\mathrm{S}$ plane. We know that the Nishimori line is the $45^\circ$ line in this plane.
+
+![](rbim_inference.svg)
+
+We see that in this picture, no matter what $\beta\_S$ the student chooses, we need sufficient teacher&#39;s signal strength $\beta\_\mathrm{T} &gt; \beta^\mathrm{c}\_\mathrm{T}$ in order for inference to be possible. On the other hand, if the student assumes that the signal strength is too low, $\beta\_\mathrm{S} &lt; \beta^\mathrm{c}\_\mathrm{S}$, then again inference is not possible.
+## The planted directed polymer problem
+So now the world is our oyster. We can start cooking up planted versions of spin-glass/disordered stat-mech models, and see what inference problem they map on to. We were particularly interested in looking at a class of inference problems involving hidden Markov models. This is where the prior follows a Markov process,
+$$
+p(x\_{1:t})=\left(\prod\_{\tau=2}^tp(x\_\tau|x\_{\tau-1})\right)p(x\_1),
+$$
+and measurements $y\_{t}$ conditioned on the state are generated through some measurement model $p(y\_{t} \vert x\_{t})$ at every timestep. As before, we could calculate a posterior for the entire trajectory, $p(x\_{1:t} \vert y\_{1:t})$, but this is usually intractable computationally. Instead, we can also consider a &lt;i&gt;filtering&lt;/i&gt; task, where the state at the current timestep is inferred from data from all previous timesteps, i.e. $p(x\_{t} \vert y\_{1:t})$.
+
+Concretely, we consider the case when the states are locations in space, and the Markov process is a random walk on that space. A simple example of a &#39;kernel&#39; for this process is
+$$
+p(x\_{t+1} \vert x\_{t}) = \frac{1}{2} \delta\_{x\_{t+1},x\_{t}} + \frac{1}{4} \delta\_{x\_{t+1},x\_{t}\pm 1}.
+$$
+An example of such a random walk in 1D is shown below. 
+![](1_true_path.svg)
+
+At every timestep $t$, we will take an &#39;image&#39; of the walker specified by pixel values at positions $x$, 
+$$
+\phi\_{x,t} = \epsilon\_\mathrm{T} \delta\_{x, x^\*\_{t}} + \psi\_{x,t},
+$$
+which has a peak at the true location of the walker with &#39;signal strength&#39; $\epsilon\_\mathrm{T}$, and $\psi\_{x,t}$ is iid random Gaussian noise $\psi\_{x,t} \sim \mathcal{N}(0, \sigma\_\mathrm{T}^2)$. An example of set of all images from each timestep for the above random walk is shown below.
+
+![](2_good_image.svg)
+
+Then, we&#39;d like to infer the true position of the walker at the current time, $x^\*\_{t}$ or the true trajectory $X^\* := (x^\*\_\tau)\_{\tau=1}^T$ given the images at all times. We call it the &#39;planted directed polymer problem&#39;, as it is related to the directed polymer in a random medium from stat-mech. Let&#39;s see how.
+
+Let the whole image at time $t$ be $\boldsymbol{\phi}\_{t} := (\phi\_{x,t})\_x$. Then assuming signal strength $\epsilon\_\mathrm{S}$ and noise strength $\sigma\_\mathrm{S}$, the likelihood for observing an image $\boldsymbol{\phi}\_{t}$ given that the walker&#39;s position is $x\_{t}$ is
+$$
+\begin{aligned} 
+p\_\mathrm{S}(\boldsymbol{\phi}\_{t} \vert x\_{t}) &amp; = \prod\_{x&#39;\_{t}} \frac{1}{\sqrt{2 \pi \sigma\_\mathrm{S}^2}} \exp \left[ \frac{-(\phi\_{x&#39;\_{t}, t} - \epsilon\_\mathrm{S} \delta\_{x\_{t}, x&#39;\_{t}})^2}{2 \sigma\_\mathrm{S}^2} \right] \\\\
+&amp; = \exp\left(\left[\epsilon\_\mathrm{S} \phi\_{x\_{t},t} - \epsilon^2/2\right]/\sigma\_\mathrm{S}^2\right)\pi\_\mathrm{S}(\boldsymbol{\phi}\_{t}),
+\end{aligned}
+$$
+where $\pi\_\mathrm{S}(\boldsymbol{\phi}\_t)$ denotes the Gaussian measure. Denoting $X := x\_{1:t}$ and $\Phi := \boldsymbol{\phi}\_{1:t}$, the likelihood for the whole trajectory is
+$$
+p\_\mathrm{S}(\Phi \vert X) \propto \exp\left(\frac{\epsilon\_\mathrm{S}}{\sigma\_\mathrm{S}^2}\sum\_{t} \phi\_{x\_{t}, t} \right)\pi\_\mathrm{S}(\Phi).
+$$
+As the $\pi\_\mathrm{S}(\Phi)$ term is there for any value of $X$, we can ignore it, since we can just normalise the posterior again. So the student&#39;s posterior for the whole path is 
+$$
+p\_\mathrm{S}(X \vert \Phi) = \frac{q\_\mathrm{S}(X \vert \Phi)}{Z\_\mathrm{S}(\Phi)},
+$$
+where the &lt;i&gt;unnormalised&lt;/i&gt; posterior is
+$$
+q\_\mathrm{S}(X \vert \Phi) = \exp\left(\frac{\epsilon\_\mathrm{S}}{\sigma\_\mathrm{S}^2}\sum\_{t=1}^T \phi\_{x\_{t},t} + \sum\_{t=2}^{T} \ln q\_\mathrm{S}(x\_{t} \vert x\_{t-1}) \right) q\_\mathrm{S}(x\_1),
+$$
+and $Z\_\mathrm{S}(\Phi) = \sum\_X p\_\mathrm{S}(X \vert \Phi)$. 
+
+Let us assume that the kernel $q\_\mathrm{S}(x\_t \vert x\_{t-1})$ only depends on the distance between $x\_t$ and $x\_{t-1}$, and is maximised when the distance is zero. Then, we write $\ln q\_\mathrm{S}(x\_{t} \vert x\_{t-1}) = f(\sqrt{a}(x\_{t} - x\_{t-1}))$ where $a$ is the lattice constant. Expanding, we find
+$$
+\begin{aligned}
+q\_S(X \vert \Phi)  = \exp\Bigg(
+ \sum\_{\tau=1}^{t} \left[-\frac{a}{4 \nu\_\mathrm{S}} \left[x\_\tau - x\_{\tau-1}\right]^2 + \frac{\epsilon\_\mathrm{S}}{\sigma\_\mathrm{S}^2} \phi\_{x\_\tau, \tau} \right]
++\mathcal{O}(a^{3/2})\Bigg) q\_S(x\_1),
+\end{aligned}
+$$
+where $\nu\_\mathrm{S} = \frac{1}{2 \lvert f&#39;&#39;\_\mathrm{S}(0) \rvert}$ is the &#39;width&#39; of the kernel. We see that the unnormalised posterior now looks like the Boltzmann weight for the directed polymer in a random environment. For those who are unfamiliar, it is a well studied stat-mech model for configurations of a polymer. Interpreting time as another spatial dimension $t=y$, it is &#39;directed&#39; in that the polymer cannot loop around itself, since $x$ is a single-valued function of $y$. 
+
+The first term in the sum $\sim (x\_\tau - x\_{\tau-1})^2$ corresponds to the &#39;elastic energy&#39; of the polymer, where you pay a price whenever you stretch out the polymer. The second term $\sim \phi\_{x\_t, t}$, where $\phi\_{x\_t, t}$, usually random iid noise in the directed polymer setting, is a &#39;random environment&#39; that the polymer is placed in.
+
+The interesting phenomena in the directed polymer is that even though you need to pay energy to stretch out the polymer, it might be worth it to go through a particular location, as long as the potential there is deep enough. This creates a &#39;roughening&#39; of the polymer (you can read more about it in [Bhattacharjee 0402117v1](https://arxiv.org/abs/cond-mat/0402117), for example).
+
+For us, $\phi\_{x\_t, t}$ is not iid, but instead has information about the true location of the walker &#39;planted&#39; in it. In recent work, we studied this problem in detail in 1D and also on the tree. Read more here: [P. Kim 2404.07263](https://arxiv.org/abs/2404.07263). --&gt;</description>
     </item>
     
     <item>
@@ -64,7 +1311,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   title=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;Bayesian inference, statistical physics, and the planted directed polymer problem&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;,
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   year=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;2024&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;,
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   howpublished=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;\url&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;https://sunwoo-kim.github.io/ko/talks/240409-imperial/&lt;span class=&#34;nb&#34;&gt;}}&lt;/span&gt;,
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   note=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;Accessed: 2026-03-16&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   note=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;Accessed: 2026-06-12&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/details&gt;
 &lt;small&gt;&lt;i&gt;
@@ -321,6 +1568,679 @@ where $\nu_\mathrm{S} = \frac{1}{2 \lvert f&amp;rsquo;&amp;rsquo;_\mathrm{S}(0) 
     </item>
     
     <item>
+      <title>Notes on group and representation theory</title>
+      <link>https://sunwoo-kim.github.io/ko/activities/teaching/symmetries/</link>
+      <pubDate>Mon, 12 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>https://sunwoo-kim.github.io/ko/activities/teaching/symmetries/</guid>
+      <description>&lt;p&gt;Here are some questions and solutions on group theory. I tried to be as detailed as possible. Click on the question to see the solution. Thanks to Gabriele Pinna for working on these problems with me.&lt;/p&gt;
+&lt;details&gt;
+   &lt;summary&gt;&lt;b&gt;1. Prove that the alternating group (even permutations) $A_n$ has order $\frac{n!}{2}$.&lt;/b&gt;&lt;/summary&gt;
+&lt;hr&gt;
+&lt;p&gt;We know that the order of the symmetric group (aka all permutations) $S_n$, is $n!$. We also learned that any permutation $\pi \in S_n$ can be written as a product of transpositions, which, if there are even number of them, then $\pi$ is an even permutation.
+&lt;br&gt;&lt;br&gt;
+Apart from the fact that we call $A_n$ the alternating &lt;em&gt;group&lt;/em&gt;, we can see that it is one, since identity $e=(12)(21)$ and a product of two even permutations are even, since the number of transpositions will add. We know that there are odd permutations too, so we know that $A_n$ is a subgroup of $S_n$, i.e. $A_n \subset S_n$.
+&lt;br&gt;&lt;br&gt;
+But, we have not shown &lt;em&gt;how many&lt;/em&gt; elements in $A_n$ there are. How to show this?
+&lt;br&gt;&lt;br&gt;
+Our strategy will be to do a coset decomposition of $S_n$, then use Lagrange&amp;rsquo;s theorem. We will find that there are only two coset representatives (these are elements that label the disjoint cosets), so that there are exactly half the elements of $S_n$ in $A_n$.
+&lt;br&gt;&lt;br&gt;
+First, we know that $A_n e = A_n$ is a valid right coset, and will contain all the even permutations in $S_n$. Let&amp;rsquo;s choose some odd permutation $d \in S_n$ as the next coset representative. We want to check that $A_n d$ contains the rest of $S_n$. Consider some other odd element $d&amp;rsquo; \in S_n$. Then $A_n d&amp;rsquo; = A_n d&amp;rsquo; d^{-1} d$. But $d&amp;rsquo; d^{-1}$ is an even permutation, since the number of transpositions will add and an odd number plus another odd number is an even number. Therefore $A_n d&amp;rsquo; = A_n d$. So we see that $A_n d$ contains &lt;em&gt;all&lt;/em&gt; the odd elements in $S_n$. All elements in $A_n d$ must be odd. So $A_n e$ and $A_n d$ are disjoint since the former contains only even elements and $A_n d$ contain only the odd elements, and $S_n = A_n e \cup A_n d$. There are two coset representatives, so $\lvert S_n \rvert = 2 \lvert A_n \rvert \implies \lvert A_n \rvert = n!/2$.&lt;/p&gt;
+&lt;/details&gt;
+&lt;hr&gt;
+&lt;details&gt;
+  &lt;summary&gt;&lt;b&gt;
+  2. Express the permutation $(abc \cdots k)(al)$, operating &lt;i&gt;right&lt;/i&gt; to left, as a product of disjoint cycles.
+  &lt;/b&gt;&lt;/summary&gt;
+&lt;hr&gt;
+&lt;p&gt;Consider the first operation, $(al)$. This means that $a \rightarrow k$ and $k \rightarrow a$. Let us write this in the &lt;a href=&#34;https://en.wikipedia.org/wiki/Permutation#Two-line_notation&#34;&gt;two-line notation&lt;/a&gt;. Even though this is operating on elements $a$ and $l$ only, we can still write in elements $b c \cdots k$, as long as they stay in place. So we have:
+$$
+(al) \leftrightarrow \begin{pmatrix} a &amp;amp; b &amp;amp; c &amp;amp; \cdots &amp;amp; k &amp;amp; l \
+l &amp;amp; b &amp;amp; c &amp;amp; \cdots &amp;amp; k &amp;amp; a \end{pmatrix}.
+$$
+Then, let&amp;rsquo;s apply the second operation, $(abc \cdots k)$. Here we just have $a \rightarrow b$, $b \rightarrow c, \cdots, k \rightarrow a$. Applying this on the previous cycle/permutation, we have
+$$
+(abc \cdots k) (al) \leftrightarrow \begin{pmatrix} a &amp;amp; b &amp;amp; c &amp;amp; \cdots &amp;amp; k &amp;amp; l \
+l &amp;amp; c &amp;amp; d &amp;amp; \cdots &amp;amp; a &amp;amp; b \end{pmatrix}.
+$$
+Written in this form, it is not clear that it is a product of disjoint cycles. Let&amp;rsquo;s chase how each element is mapped. We have $a \rightarrow l$, $l \rightarrow b$. From $b$ to $k$ in fact we have the mapping we&amp;rsquo;d expect, $b \rightarrow c$, $c \rightarrow d$, and so on, until $j \rightarrow k$. Then we have $k \rightarrow a$. But we&amp;rsquo;re now back to $a$, so we have completed a cycle! We&amp;rsquo;ve also gone through all the elements, so it must be that there is only one cycle in this permutation. Summarising the above, we can write it as a single (and therefore disjoint) cycle:
+$$
+(abc \cdots k) (al) = (a l b c \cdots k).
+$$&lt;/p&gt;
+&lt;/details&gt;
+&lt;hr&gt;
+&lt;details&gt;
+  &lt;summary&gt;&lt;b&gt;
+  3. For a group $G$ that has an action on a finite set $S$, such that $\forall g \in G$, $g(i) \in S$, let the stabiliser subgroup of $x$ given group $G$ be defined as 
+  $$\mathrm{Stab}_G(i) := \left\{ \phi \in G \vert \phi(i) = i\right\}.$$
+  Let the orbit of of an element $i \in S$ given group $G$ be
+  $$\mathrm{Orb}_G(i) := \left\{ g(i) \vert g \in G \right\}.$$
+  Prove that for any $i$,
+  $$\lvert G \rvert = \lvert \mathrm{Orb}_G(i) \rvert \lvert \mathrm{Stab}_G(i) \rvert.$$
+  &lt;/b&gt;&lt;/summary&gt;
+&lt;hr&gt;
+&lt;p&gt;For fixed element $i$, let&amp;rsquo;s denote $H = \mathrm{Stab}_G(i)$. Since $H$ is a subgroup of $G$ (you should check this), let us consider the left coset decomposition of $G$:
+$$G = t_1 H \cup t_2 H \cup \cdots \cup t_n H,$$
+where $t_1 = e$, the identity.
+&lt;br&gt;&lt;br&gt;
+So we can write the orbit as
+$$\mathrm{Orb}_G(i) = \bigcup_{a=1}^n \left\{ g(i) | g \in t_a H \right\}.$$
+We can also iterate over each coset like
+$$\mathrm{Orb}_G(i) = \bigcup_{a=1}^n \left\{ t_a(\phi(i)) | h \in H \right\}.$$
+Since all $\phi(i) = i$, and sets only count &lt;b&gt;unique&lt;/b&gt; elements, we only have one element contributing from each coset at most, so
+$$\mathrm{Orb}_G(i) = \bigcup_{a=1}^n \left\{ t_a(i) \right\} = \left\{ t_a(i) \vert a=1, \dots, n\right\}.$$
+We&amp;rsquo;re almost there, since if $t_a(i)$ are unique with $a$, then we see that $\mathrm{Orb}_G(i)$ counts the number of cosets, so we can use Lagrange&amp;rsquo;s theorem to prove the result.
+&lt;br&gt;&lt;br&gt;
+Let&amp;rsquo;s check this. Assume there exists $t_a(i) = t_b(i)$ where $a \neq b$. Then $t_b^{-1} (t_a(i)) = i$ so $t_b^{-1} t_a = h$. This means that $t_a = t_b h$ so $t_a H = t_b H$, so are the same cosets. But this is a contradiction because $t_a H$ and $t_b H$ were supposed to be disjoint. So $t_a(i)$ are unique.&lt;/p&gt;
+&lt;/details&gt;
+&lt;hr&gt;
+&lt;details&gt;
+  &lt;summary&gt;&lt;b&gt;
+  4. Let $A$, $B$ be linear operators. For the case where both $A$ and $B$ commute with $[A,B]$ (for example $\hat x$ and $\hat p$!), prove the special case of the Baker-Campbell-Hausdorff formula,
+  $$e^{A} e^{B} = e^{A+B+[A,B]/2}.$$
+  You might find it useful to prove that, for any linear operators $A$ and $B$, that
+  $$
+  e^{tA} B e^{-tA} = e^{t[A, \, \cdot \,]} B,
+  $$
+  where we define $[A, \, \cdot \,]$ as a &#39;superoperator&#39; that acts on operators like $[A, \, \cdot \,] B = [A, B]$, and for example $[A, \, \cdot \,]^2 B = [A, [A, B]]$.
+  &lt;/b&gt;&lt;/summary&gt;
+&lt;hr&gt;
+&lt;p&gt;Let us prove the second statement first. Define
+$$
+f(t) := e^{t A} B e^{-t A},
+$$
+where $t$ is just a number. If we take the derivative, we have
+$$
+\begin{aligned}
+\frac{df}{d t} &amp;amp; = A e^{t A} B e^{-t A} - e^{t A} B e^{-t A} A \\
+&amp;amp; = [A, \, \cdot \,] f.
+\end{aligned}
+$$
+This is the same operator at every `time&amp;rsquo; $t$. Since we have $f(0) = B$, we can use the usual knowledge of differential equations and find that $f(t) = e^{t[A, \, \cdot \,]} B$.
+&lt;br&gt;&lt;br&gt;
+For our specific case where $[A,B]$ commutes with both $A$ and $B$, let&amp;rsquo;s write out $e^{t[A, \, \cdot \,]} B$:
+$$
+\begin{aligned}
+e^{t[A, \, \cdot \,]} B &amp;amp; = \sum_{n=0}^{\infty} \frac{t^n}{n!} [A, \, \cdot \,]^n B \\
+&amp;amp; = B + t [A, B] + \sum_{n=2}^{\infty} \frac{t^n}{n!} [A, \, \cdot \,]^{n-1} [A, B].
+\end{aligned}
+$$
+But from our assumptions we know that $[A,B]$ commutes with $A$, so all $n \geq 2$ terms vanish. Therefore we have that
+$$
+e^{tA} B e^{-tA} = e^{t[A, \, \cdot \,]} B = B + t[A, B].$$
+Now let&amp;rsquo;s tackle the main result. Define
+$$
+g(t) := e^{tA} e^{tB},
+$$
+where $t$ is just a number. Again differentiating, you should be able to show that
+$$
+\begin{aligned}
+\frac{dg}{dt} &amp;amp; = (A + e^{tA} B e^{-tA}) g = g (B + e^{-tB} A e^{tB}) \\
+&amp;amp; = (A + e^{t[A, \, \cdot \,]} B) g = g (B + e^{-t[B, \, \cdot \,]} A).
+\end{aligned}
+$$
+Therefore we have
+$$
+\frac{dg}{dt} = (A + B + t[A, B]) g.
+$$
+Let us denote $T(t) := A + B + t[A,B]$. It&amp;rsquo;s easy to show that $[T(t), T(t&amp;rsquo;)]=0$ for all $t, t&amp;rsquo;$. Therefore there exists some $U$ independently diagonalises $T(t)$; defining $\overline{M} := S M S^{-1}$, $\overline{T}(x)$ is diagonal. We also have that $[g(0)]_{ij} = \delta_{ij}$, which stays diagonal upon similarity transformation. Therefore in the rotated frame everything stays in the diagonal, and we have
+$$
+\frac{d \overline{g}_{ii}}{dt} = \overline{T}_{ii}(t) \overline{g}_{ii}.
+$$
+Using the initial condition $\overline{g}_{ii}(0) = 1$, we have
+$$
+\begin{aligned}
+\overline{g}_{ii}(t) &amp;amp; = \exp\left( \int_{0}^t dt&amp;rsquo; \overline{T}_{ii} (t&amp;rsquo;) \right) = \exp\left( \sum_{jk} S_{ij} S^{-1}_{ki}\int_{0}^t dt&amp;rsquo; \left(A_{jk} + B_{jk} + x [A, B]_{jk} \right) \right) \\
+&amp;amp; = \exp\left( \sum_{jk} S_{ij} S^{-1}_{ki}\left(tA_{jk} + tB_{jk} + \frac{t^2}{2} [A, B]_{jk} \right) \right) \\
+&amp;amp; = \exp\left( t \overline{A} + t\overline{B} + \frac{t^2}{2} \overline{[A, B]} \right)_{ii}.
+\end{aligned}
+$$
+Transforming back to the normal coordinates by applying $S^{-1} \left( \, \cdot \, \right) S$, then setting $t=1$, we have
+$$
+g(1) = \exp\left( {A} + {B} + \frac{1}{2} {[A, B]} \right) = \exp(A) \exp(B).
+$$&lt;/p&gt;
+&lt;/details&gt;
+&lt;hr&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>What&#39;s the deal with free energy?</title>
+      <link>https://sunwoo-kim.github.io/ko/posts/free-energy/</link>
+      <pubDate>Thu, 16 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://sunwoo-kim.github.io/ko/posts/free-energy/</guid>
+      <description>&lt;details&gt;
+   &lt;summary&gt;&lt;font color=&#34;grey&#34;&gt; &lt;small&gt;To cite this page&lt;/small&gt; &lt;/font&gt;&lt;/summary&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-latex&#34; data-lang=&#34;latex&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;@misc&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;swpkim2026what&amp;#39;s,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   author=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;P. Kim, Sun Woo&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   title=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;What&amp;#39;s the deal with free energy?&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   year=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;2023&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   howpublished=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;\url&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;https://sunwoo-kim.github.io/ko/posts/free-energy/&lt;span class=&#34;nb&#34;&gt;}}&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/details&gt;
+&lt;p&gt;The term &amp;lsquo;free energy&amp;rsquo; confused me for a long time. One one hand, when we learn thermodynamics, people talk about the Helmholtz free energy, $F=U-TS$. On the other hand, in the literature, people seem to describe the logarithm of a partition function to be the &amp;lsquo;free energy&amp;rsquo;, too. They must be related, but how?&lt;/p&gt;
+&lt;p&gt;In this post, I&amp;rsquo;m going to try to make the connection clear as I can, starting from the basic assumptions of statistical mechanics. To do this I will essentially re-derive the canonical ensemble, and point out some things along the way. I will also work in units of energy where $k_B=1$. I assume that you have read some notes on statistical physics, but was left confused as I certainly was.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Consider a system $S$ that is in contact with with a bath $R$, and that $S$ and $R$ together are isolated. Let&amp;rsquo;s say we know what the total energy, $E_T$, is. We know that $E_T$ is fixed since we said $S$ and $R$ together are isolated.&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s say that $S$ can have energies ${ E_S}$, and that the number of states (some people call it the statistical weight) that $S$ has with energy $E_S$ is $\Omega_S(E_S)$. $R$ has energies ${E_R}$, and the number of states that $R$ has with energy $E_R$ is $\Omega_R(E_R)$.&lt;/p&gt;
+&lt;p&gt;We are going to apply the &amp;lsquo;fundamental postulate of statistical mechanics&amp;rsquo; on the combined system $S$ and $R$, which just means that we will assume that any state of the combined system, as long as it has total energy $E_T$, is equally likely.&lt;/p&gt;
+&lt;p&gt;The total number of states for the joint system $S$ and $R$ is then &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;
+$$
+\Omega(E_{T}) = \sum_{E_S} \Omega_R(E_R=E_T - E_S) \Omega_S(E_S).
+$$
+This is counting all the different ways that the total energy can be shared between $S$ and $R$. Entropy is defined as $S := \ln \Omega$. So then we have
+$$
+\Omega(E_T) = \sum_{E_S} e^{S_R(E_T - E_S) + S_S(E_S)}.
+$$
+Let us assume that the bath is large, and so its energy is much larger than the system&amp;rsquo;s $E_S \ll E_T$. Taylor expanding to first order, we have
+$$
+\Omega (E_T) \approx \sum_{E_S} e^{S_S(E_S)} \exp \left(S_R(E_T)- \frac{\partial S_R}{\partial E_R} E_S\right).
+$$&lt;/p&gt;
+&lt;details&gt;
+   &lt;summary&gt;Inverse temperature is defined as $T^{-1} = \partial_{E_R} S_R$. So the total number of states is given by&lt;/summary&gt;
+&lt;p&gt;Here, we made the assumption that $\partial_{E_R} S_R$ is positive. This means that we assume that the entropy of the bath at some energy increases with its energy, or put in another way, that the number of states for the bath increase with energy. This is a sensible assumption; we expect there to be more states at higher energies.&lt;/p&gt;
+&lt;/details&gt;
+$$
+\Omega (E_T) \approx e^{S_R(E_T)} \sum_{E_S} e^{S_S(E_S)} e^{-E_S /T}.
+$$
+The number of states where $S$ has a *particular* energy $E_S$ is given by
+$$
+\Omega(E_T = E_R+E_S) = \Omega_R(E_R=E_T-E_S) \Omega_S(E_S).
+$$
+Then since all states are equally likely, the probability that the system will have energy $E_S$ is just the ratio of number of states for particular energy and the total number of states,
+$$
+\begin{aligned}
+p(E_S) &amp; = \frac{\Omega_R(E_R=E_T-E_S) \Omega_S(E_S)}{\Omega(E_T)} \\\\
+&amp; = \frac{e^{S_S(E_S)}e^{-E_S /T}}{\sum_{E_S&#39;} e^{S_S(E_S&#39;)} e^{-E_S&#39;/T}}.
+\end{aligned}
+$$
+Since the bath variables are now gone (except sneakily in the temperature), we will drop the subscript $S$ from here on. We also notice another thing: we can write $p(E)$ in terms of the Helmholtz free energy, $F(E) := E - T S(E)$. So we have
+$$
+p(E) = \frac{e^{-F(E)/T}}{\sum_{E&#39;} e^{-F(E&#39;)/T}}.
+$$
+In most cases, $F(E)$ is extensive, meaning that $F(E) = N f(E)$, where the free energy density does not scale with system size $f(E) \sim \mathcal{O}(1)$. Let&#39;s also define the partition function $Z = \sum_E e^{-F(E)/T}$.
+&lt;p&gt;Now consider $E^*$, which is the energy that maximises the Boltzmann weight $e^{-F(E)/T}$ and therefore minimises $F(E)$ and $f(E)$. We can write the probability as
+$$
+p(E) = \frac{e^{N(f(E^*)-f(E))/T}}{1 + \sum_{E&amp;rsquo; \neq E^*} e^{-N(f(E&amp;rsquo;)-f(E^*))/T}}.
+$$
+In the thermodynamic limit, $N \rightarrow \infty$, $p(E)$ sharply peaks around $E^*$, since the numerator is zero unless $E=E^*$, and the denominator converges to $1$, since inside the sum, we always have $f(E&amp;rsquo;) - f(E^*) &amp;gt; 0$.&lt;/p&gt;
+&lt;p&gt;We can also write the partition function in a similar fashion,
+$$
+Z = e^{-F(E^*)/T} \left(1 + \sum_{E&amp;rsquo; \neq E^*} e^{-N(f(E&amp;rsquo;)-f(E^*))/T} \right).
+$$
+Let&amp;rsquo;s define a mystery quantity $\tilde{f} = -\frac{T}{N} \ln Z$. Then we have
+$$
+\begin{align}
+\tilde{f} &amp;amp; = f(E^*) - \frac{T}{N} \ln \left(1 + \sum_{E&amp;rsquo; \neq E^*} e^{-N(f(E&amp;rsquo;)-f(E^*))/T} \right) \\
+&amp;amp; \mathop{\rightarrow}_{N \rightarrow \infty} f(E^*).
+\end{align}
+$$
+So, in the thermodynamic limit, we &amp;lsquo;select&amp;rsquo; energies that minimise the free energy (density) $f(E)$. But we also see that $f(E^*)$ also tends to $\tilde{f}=-\frac{T}{N} \ln Z$ in the thermodynamic limit. This is why physicists refer to both $F(E)$ and $\tilde{F} := N \tilde{f}$ as the &amp;lsquo;free energy&amp;rsquo;. What&amp;rsquo;s even more confusing is that sometimes we even call anything proportional to $\ln Z$ as the &amp;lsquo;free energy&amp;rsquo;, and don&amp;rsquo;t even distinguish between free energy densities $f$ and free energies $F$.&lt;/p&gt;
+&lt;p&gt;Above, we defined the partition function as a sum over energies. But when we study statistical models, such as the Ising model and so on, we write it as a sum over configurations $\sigma$. In fact, they are one and the same. Notice that we can also write $Z = \sum_\sigma e^{-E(\sigma)/T} = \sum_E (\sum_{\sigma \vert E(\sigma) = E} 1) e^{-E/T} = \sum_E e^{S(E)} e^{-E/T}$.&lt;/p&gt;
+&lt;p&gt;Back to the Helmholtz free energy, which we can write as $F(E) = T (E/T- S(E))$. Hopefully with the previous discussion it is more clear why this quantity represents a &amp;lsquo;fight&amp;rsquo; between entropy maximisation and energy minimisation.&lt;/p&gt;
+&lt;p&gt;The first term is proportional to $E/T$, which appeared when expanding the entropy of the bath. When the system given energy $E$, this is due to the bath losing the energy by that much. The more energy the bath has to give to the system, the less likely that it will occur. So, increasing the system&amp;rsquo;s energy decreases its probability, and hence increase the free energy. As $T \rightarrow 0$, the cost for energy becomes more and more expensive, and as $T \rightarrow \infty$, energy becomes free, so only the entropy matters.&lt;/p&gt;
+&lt;p&gt;The second term is entropy. Remember that the entropy $S(E)$ appeared in the partition function due to the number of configurations with energy $E$. It increases the weight of energies with many configurations and correspondingly reduces the free energy of such energies.&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;Tong, D. (2012). Statistical Physics, &lt;a href=&#34;https://www.damtp.cam.ac.uk/user/tong/statphys/one.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Ch. 1&lt;/a&gt;, University of Cambridge Part II Mathematical Tripos.&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Continuous and discrete Fourier transforms</title>
+      <link>https://sunwoo-kim.github.io/ko/posts/fourier-transforms/</link>
+      <pubDate>Thu, 31 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://sunwoo-kim.github.io/ko/posts/fourier-transforms/</guid>
+      <description>&lt;details&gt;
+   &lt;summary&gt;&lt;font color=&#34;grey&#34;&gt; &lt;small&gt;To cite this page&lt;/small&gt; &lt;/font&gt;&lt;/summary&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-latex&#34; data-lang=&#34;latex&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;@misc&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;swpkim2026continuous,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   author=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;P. Kim, Sun Woo&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   title=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;Continuous and discrete Fourier transforms&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   year=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;2023&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   howpublished=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;\url&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;https://sunwoo-kim.github.io/ko/posts/fourier-transforms/&lt;span class=&#34;nb&#34;&gt;}}&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/details&gt;
+&lt;p&gt;The conventions and relationships between discrete Fourier transforms (DFT), Fourier series, and continuous Fourier transforms (FT), are confusing enough that I decided to write a reference on it.&lt;/p&gt;
+&lt;p&gt;These notes closely follow the appendix of &lt;a href=&#34;https://austen.uk/courses/tqm/elastic-chain/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Austen Lamacraft&lt;/a&gt;’s notes, but with some different choices in notation to explain each step as clearly as I can.&lt;/p&gt;
+&lt;h2 id=&#34;discrete-fourier-transform&#34;&gt;Discrete Fourier transform&lt;/h2&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Discrete lattice&#34;
+           src=&#34;https://sunwoo-kim.github.io/ko/posts/fourier-transforms/discrete.svg&#34;
+           loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;Consider a function $f_j$ defined for discrete inputs $j = {0, \dots, N-1}$.&lt;/p&gt;
+&lt;p&gt;Then we can define the discrete fourier transform (DFT) by&lt;/p&gt;
+&lt;p&gt;$$
+\tilde{f}_n = C(N) \sum_{j=0}^{N-1} f_j e^{-i 2 \pi n j/N},
+$$&lt;/p&gt;
+&lt;p&gt;where $C(N)$ is a normalisation constant. Since $\tilde{f}_n$ is periodic in $n$ with period $N$, there are many choices for the domain for $n$. We could choose $n \in {0, \dots, N-1}$, or choose the domain to be symmetric(ish),&lt;/p&gt;
+&lt;p&gt;\begin{equation} \label{symmetric_domain}
+n \in
+\begin{dcases}
+\left \{ -\frac{N}{2}, \dots, \frac{N}{2}-1 \right\} &amp;amp; N \text{ even} \\
+\left \{  -\frac{N-1}{2}, \dots, \frac{N-1}{2} \right\} &amp;amp; N\text{ odd}.
+\end{dcases}
+\end{equation}&lt;/p&gt;
+&lt;p&gt;Whichever convention we choose, we can use the identity $\sum_n e^{+i 2 \pi n j /N} = N\delta_{j,0 \text{mod} N}$, to show that&lt;/p&gt;
+&lt;p&gt;$$
+f_j = \tilde C(N) \sum_{n} \tilde{f}_n e^{+i 2 \pi n j/N},
+$$&lt;/p&gt;
+&lt;p&gt;where the normalisation constants $C(N)$, $\tilde C(N)$ can be chosen to be anything, as long as $C(N) \tilde C(N) = 1/N$. The popular choice is $C, \tilde C = 1/\sqrt{N}$.&lt;/p&gt;
+&lt;p&gt;Later, we will want to look at the limits of $N \rightarrow \infty$. There we will choose the appropriate normalisations $C(N), \tilde C(N)$ such that the integrals have a well-defined limit.&lt;/p&gt;
+&lt;p&gt;(Of course, the sign in the exponential is also a convention in defining the Fourier transforms, but the convention used here is used almost everywhere, so let’s not be worried about that.)&lt;/p&gt;
+&lt;/br&gt;
+&lt;h2 id=&#34;adding-space&#34;&gt;Adding space&lt;/h2&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Discrete lattice with space&#34;
+           src=&#34;https://sunwoo-kim.github.io/ko/posts/fourier-transforms/space.svg&#34;
+           loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;We can consider the case where our function is a function on discrete space $x_j = aj$, where $a$ is the lattice spacing. Then the system size is $L=Na$, and $N$ the number of discrete sptial points. Then the Fourier transform becomes&lt;/p&gt;
+&lt;p&gt;$$
+\tilde{f}_n = C(N) \sum_{j=1}^N f(x_j) e^{-i 2 \pi n x_j/L}.
+$$&lt;/p&gt;
+&lt;p&gt;We can also define the wavevector $k_n = 2 \pi n /L$, and write&lt;/p&gt;
+&lt;p&gt;$$
+\tilde{f}(k_n) = {C}(N) \sum_{j=1}^N f(x_j) e^{-i k_n x_j},
+$$&lt;/p&gt;
+&lt;p&gt;whilst the inverse transform becomes&lt;/p&gt;
+&lt;p&gt;$$
+f(x_j) = \tilde{C}(N) \sum_{n} \tilde{f}(k_n) e^{+i k_n x_j}.
+$$&lt;/p&gt;
+&lt;p&gt;Now, let’s make two choices from this point onwards:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;First, let’s choose the symmetric domain for $n$.&lt;/li&gt;
+&lt;li&gt;And, let’s expand the domain for $j$ to be $\mathbb Z$, and say that $f_j$ is periodic in $N$, $f_{j} = f_{j+N}$. This doesn’t do anything, as we can just look at the function in the domain we were interested in the end. But it does mean that we can also choose the symmetric domain Eq. \eqref{symmetric_domain} for $j$ as well.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/br&gt;
+&lt;h2 id=&#34;n-rightarrow-infty-and-a-rightarrow-0-keeping-na--l-fixed&#34;&gt;$N \rightarrow \infty$ and $a \rightarrow 0$ keeping $Na = L$ fixed&lt;/h2&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Continuous space only&#34;
+           src=&#34;https://sunwoo-kim.github.io/ko/posts/fourier-transforms/conti_space.svg&#34;
+           loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;Here, we are going to continuous real-space, but fix the length of the system. This will result in a countably infinite wavevector space. We can write the discrete Fourier transform as&lt;/p&gt;
+&lt;p&gt;$$
+\tilde{f}(k_n) = {C}(N) \sum_{j} f(x_j) e^{-i k_n x_j}.
+$$&lt;/p&gt;
+&lt;p&gt;Then, the spacing between positions becomes $\delta x_j = a$. We can choose $C(N) = a$, so we have the limit&lt;/p&gt;
+&lt;p&gt;$$
+\tilde{f}(k_n) = \int_{-L/2}^{L/2} dx f(x) e^{-i k_n x},
+$$&lt;/p&gt;
+&lt;p&gt;which then means that we require $\tilde C(N) = 1/L$, so we have the inverse transform as&lt;/p&gt;
+&lt;p&gt;$$
+f(x) = \frac{1}{L} \sum_{n \in \mathbb{Z}} \tilde{f}(k_n) e^{+i k_n x}.
+$$&lt;/p&gt;
+&lt;p&gt;where now $n \in \mathbb{Z}$.&lt;/p&gt;
+&lt;p&gt;This then is just the Fourier series of a periodic function $f(x)$.&lt;/p&gt;
+&lt;/br&gt;
+&lt;h2 id=&#34;n-rightarrow-infty-and-l-rightarrow-infty-keeping-a-fixed&#34;&gt;$N \rightarrow \infty$ and $L \rightarrow \infty$, keeping $a$ fixed&lt;/h2&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Continuous kspace only&#34;
+           src=&#34;https://sunwoo-kim.github.io/ko/posts/fourier-transforms/conti_kspace.svg&#34;
+           loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;Here, we are going to keep the real-space discrete, but just make it infinitely long. This will result in a continuously varying wavevector space. We have&lt;/p&gt;
+&lt;p&gt;$$
+\tilde{f}(k) = {C}(N) \sum_{j \in \mathbb{Z}} f(x_j) e^{-i k x_j},
+$$&lt;/p&gt;
+&lt;p&gt;and&lt;/p&gt;
+&lt;p&gt;$$
+f(x_j) = \tilde{C}(N) \sum_{n} \tilde{f}(k_n) e^{+i k_n x_j}.
+$$&lt;/p&gt;
+&lt;p&gt;Since $k_n = 2 \pi n /L = 2\pi n /Na$, our spacing between wavevectors goes to zero. We have $\delta k_n = 2 \pi /N a$. The most popular convention is to choose $\tilde C (N) = 1/Na$, so that we have&lt;/p&gt;
+&lt;p&gt;$$
+f(x_j) = \int_{-\pi/a}^{\pi /a} \frac{dk}{2 \pi} \tilde{f}(k) e^{+i k x_j}.
+$$&lt;/p&gt;
+&lt;p&gt;This means that the forward Fourier transform must be&lt;/p&gt;
+&lt;p&gt;$$
+\tilde{f}(k) = a \sum_{j \in \mathbb{Z}} f(x_j) e^{-i k x_j}.
+$$&lt;/p&gt;
+&lt;p&gt;Normally, in this limit, people work with $a=1$ with $x_j =j$.&lt;/p&gt;
+&lt;/br&gt;
+&lt;h2 id=&#34;sending-n-rightarrow-infty-l-rightarrow-infty-a-rightarrow-0&#34;&gt;Sending $N \rightarrow \infty$, $L \rightarrow \infty$, $a \rightarrow 0$&lt;/h2&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Both continuous&#34;
+           src=&#34;https://sunwoo-kim.github.io/ko/posts/fourier-transforms/conti_both.svg&#34;
+           loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;From the expressions for the $N \rightarrow \infty$, $L \rightarrow \infty$, and $a$ fixed, we just send $a \rightarrow 0$. Since the spacing between spatial points is $\delta x_j = a$, we can just write down&lt;/p&gt;
+&lt;p&gt;$$
+\tilde{f}(k) = \int_{-\infty}^{\infty} dxf(x) e^{-i k x},
+$$&lt;/p&gt;
+&lt;p&gt;and&lt;/p&gt;
+&lt;p&gt;$$
+f(x) = \int_{-\infty}^{\infty} \frac{dk}{2 \pi} \tilde{f}(k) e^{+i k x}.
+$$&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Transverse field Ising model</title>
+      <link>https://sunwoo-kim.github.io/ko/posts/tfi-model/</link>
+      <pubDate>Mon, 14 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://sunwoo-kim.github.io/ko/posts/tfi-model/</guid>
+      <description>&lt;details&gt;
+   &lt;summary&gt;&lt;font color=&#34;grey&#34;&gt; &lt;small&gt;To cite this page&lt;/small&gt; &lt;/font&gt;&lt;/summary&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-latex&#34; data-lang=&#34;latex&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;@misc&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;swpkim2026transverse,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   author=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;P. Kim, Sun Woo&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   title=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;Transverse field Ising model&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   year=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;2023&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   howpublished=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;\url&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;https://sunwoo-kim.github.io/ko/posts/tfi-model/&lt;span class=&#34;nb&#34;&gt;}}&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   note=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;Accessed: 2026-06-12&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/details&gt;
+&lt;p&gt;In condensed matter physics, there are myriads of phenomenological models out there, with information about them scattered throughout different papers and resources. In the field of machine learning, there are efforts such as the &lt;a href=&#34;https://modelzoo.co&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Model Zoo&lt;/a&gt; which tries to organise these models in one place.&lt;/p&gt;
+&lt;p&gt;In this new series, I wanted to write down an overview of some of the models I looked at in my studies, with, where possible, the precise definition of what physicists mean when they say things like &amp;rsquo;this model has a $U(1)$ symmetry&amp;rsquo;, or &amp;rsquo;the FM case is dual to the AFM case&amp;rsquo;, etc., which were confusing to me when I was first reading about them. I will also try to support the discussion with some simulations from exact diagonalisation (ED) or Monté Carlo results. Since websites are interactive, I&amp;rsquo;ll try to nest the finer details in collapsibles. Lastly, this page may be updated periodically with new information.&lt;/p&gt;
+&lt;hr&gt;
+&lt;details class=&#34;toc-inpage d-print-none  &#34; open&gt;
+  &lt;summary class=&#34;font-weight-bold&#34;&gt;차례&lt;/summary&gt;
+  &lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#introduction&#34;&gt;Introduction&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#hamiltonian&#34;&gt;Hamiltonian&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#symmetries&#34;&gt;Symmetries&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#phases-of-the-ground-state&#34;&gt;Phases of the ground state&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#quantum-to-classical-mapping&#34;&gt;Quantum to classical mapping&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#d1-case&#34;&gt;$d=1$ case&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#mapping-to-free-fermions&#34;&gt;Mapping to free fermions&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#wavefunction&#34;&gt;Wavefunction&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#entanglement&#34;&gt;Entanglement&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#d2-case&#34;&gt;$d=2$ case&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;/details&gt;
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;The transverse-field Ising (TFI) model is a prototypical model of a quantum magnet, where quantum fluctuations are used to generate paramagnetism instead of temperature. Another common name is &amp;lsquo;quantum Ising model&amp;rsquo;, or &amp;rsquo;transverse Ising model&amp;rsquo; (TIM). There is already a pretty good &lt;a href=&#34;https://en.wikipedia.org/wiki/Transverse-field_Ising_model&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Wikipedia article&lt;/a&gt; about this model, but I wanted to just write it down in a more technical way, and fill in some missing gaps.
+&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;h2 id=&#34;hamiltonian&#34;&gt;Hamiltonian&lt;/h2&gt;
+&lt;p&gt;Broadly, I will use the following conventions for the TFI model,&lt;/p&gt;
+&lt;p&gt;\begin{equation}
+\hat{H} = J\sum_{\langle i,j \rangle} \hat{\sigma}^z_i \hat{\sigma}^z_j - g \sum_i \hat{\sigma}^x_i - b \sum_i \hat{\sigma}^z_i,
+\end{equation}
+where $\langle i, j\rangle$ denotes nearest neighbours, and $\sigma^\alpha_i$ are Pauli matrices. We consider periodic boundary conditions (PBC). Without a loss of generalisation, we can set $J=\pm 1$. Then $J=-1$ corresponds to ferrmomagnetic (FM) couplings, $J=1$ to antiferromagnetic couplings (AFM), respectively. $g$ is the transverse field strength, and $b$ the longitudinal field strength, which we will take as $b=0$ unless stated otherwise.
+&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;h2 id=&#34;symmetries&#34;&gt;Symmetries&lt;/h2&gt;
+&lt;p&gt;For $b=0$, the Hamiltonian is $\mathbb{Z}_2$ symmetric, in the sense that we can globally send $\hat{\sigma}^z_i \rightarrow - \hat{\sigma}^z_i$ and keep the Hamiltonian invariant, or concretely, $[\hat{H}, \hat{U}] = 0$ for $\hat{U} = \vec{\prod_i} \hat{\sigma}^x_i$.
+&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;h2 id=&#34;phases-of-the-ground-state&#34;&gt;Phases of the ground state&lt;/h2&gt;
+&lt;p&gt;The TFI model admits 3 phases: the ordered phase $g&amp;lt;g_c$, the critical/gapless phase $g=g_c$, and the disordered phase $g&amp;gt;g_c$.
+&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;h2 id=&#34;quantum-to-classical-mapping&#34;&gt;Quantum to classical mapping&lt;/h2&gt;
+&lt;details&gt;
+   &lt;summary&gt;The TFI model in spatial dimensions $d$ can be explicitly mapped to a $d+1$ classical Ising model, in the sense that the zero-temperature (ground-state) density matrix can be explicitly mapped to the partition function of the classical Ising model. &lt;i&gt;(click to open)&lt;/i&gt;&lt;/summary&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    &lt;p&gt;It is well known that $d$-dimensional quantum systems map to $(d+1)$-dimensional classical systems. Here, I&amp;rsquo;ll show an explicit mapping between $d$-dimensional quantum Ising model of length $L_Q$ with a $(d+1)$-dimensional Ising Hamiltonian, which is very similar to&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; but is for general $d$ and with longitudinal field $b$.&lt;/p&gt;
+&lt;p&gt;Let $\hat{H}_0$ be the part of $\hat{H}$ that only contain $\hat{\sigma}^z$&amp;rsquo;s, and $\hat{H}_1$ be the rest of the Hamiltonian. Then the quantum partition function is given by&lt;/p&gt;
+&lt;p&gt;\begin{align}
+Z_Q = \mathrm{tr} [e^{-\beta_Q \hat{H}_0 - \beta_Q \hat{H}_1}].
+\end{align}&lt;/p&gt;
+&lt;p&gt;From Trotter&amp;rsquo;s theorem, for any two Hermitian operators bounded from below, $\hat{A}$, $\hat{B}$, we have $e^{\hat{A} + \hat{B}}= \lim_{L \rightarrow \infty} \left(e^{-\hat{A}/L} e^{-\hat{B}/L}\right)^L$, therefore. defining $\tau = \beta_Q / L$,&lt;/p&gt;
+&lt;p&gt;\begin{align}
+Z_Q = \sum_\sigma \langle \sigma \rvert \lim_{L \rightarrow \infty} \left(e^{-\tau\hat{H}_0} e^{-\tau \hat{H}_1}\right)^L \lvert \sigma \rangle.
+\end{align}&lt;/p&gt;
+&lt;p&gt;Inserting identities, we have&lt;/p&gt;
+&lt;p&gt;\begin{align}
+Z_Q &amp;amp; = \lim_{L \rightarrow \infty} \sum_{\sigma^1, \dots, \sigma^L} \prod_{l=1}^{L} \langle \sigma^{l+1} \rvert e^{-\tau \hat{H}_1} e^{-\tau \hat{H}_0} \lvert \sigma^l \rangle
+\end{align}&lt;/p&gt;
+&lt;p&gt;\begin{align}
+Z_Q &amp;amp; = \lim_{L \rightarrow \infty} \sum_{\sigma^1, \dots, \sigma^L} \prod_{l=1}^{L} e^{-\tau H_0(\sigma^l)} \langle \sigma^{l+1} \rvert e^{\tau g \sum_i \hat{\sigma}^x_i } \lvert \sigma^l \rangle,
+\end{align}&lt;/p&gt;
+&lt;p&gt;where $H_0(\sigma^l) = - J \sum_{\langle i, j\rangle} \sigma^l_i \sigma^l_j - b \sum_i  \sigma_i^l$. Now we can use the identity that $\langle \sigma^{l+1}_i \rvert e^{\tau g \hat{\sigma}^x_i} \lvert \sigma^l_i \rangle = \Lambda e^{\gamma \sigma^{l+1}_i \sigma^{l}_i}$, where $\Lambda = \sqrt{\sinh(\tau g)\cosh(\tau g)}$ and $\gamma = -\frac{1}{2} \ln \tanh(\tau g)$. Therefore we have&lt;/p&gt;
+&lt;p&gt;\begin{align}
+Z_Q = \lim_{L \rightarrow \infty} \Lambda^{L_Q^d L} \sum_{\sigma^1, \dots, \sigma^L} e^{\tau J \sum_{\langle i, j \rangle, l} \sigma^l_i \sigma^l_j + \tau b \sum_{i, l} \sigma^l_i + \gamma \sum_{i, l} \sigma^l_i \sigma^{l+1}_i},
+\end{align}&lt;/p&gt;
+&lt;p&gt;so we can interpret index $l$ as an additional dimension, and write $Z_Q = \lim_{L \rightarrow \infty} \Lambda^{L^d_Q L} Z_C$,&lt;/p&gt;
+&lt;p&gt;where the classical partition function is&lt;/p&gt;
+&lt;p&gt;\begin{align}
+Z_C = \lim_{L_{d+1} \rightarrow \infty} \sum_{\sigma} e^{-\beta_C(-\sum_i \sum_{a=1}^{d+1} J_a \sigma_i \sigma_{i+e_a} -h \sum_i \sigma_i)},
+\end{align}&lt;/p&gt;
+&lt;p&gt;where $e_a$ is the $a$&lt;sup&gt;th&lt;/sup&gt; basis vector. Therefore we have the identification $L_Q = L_a$ for $a = 1, \dots d$, $\beta_C J_a = J \tau$ for $L=L_{d+1}$, $\tau b = \beta_C h$ and $\beta_C J_{d+1} = \gamma$. We are free to set ratio $\tau=\beta_Q/L$ to a value of our choosing, and send $\beta_Q \rightarrow \infty$. To map to an isotropic $(d+1)$-dim Ising model, we can set $\tau = \beta_C$ and assert $J_a = J \forall a$, and have the mapping&lt;/p&gt;
+&lt;p&gt;\begin{align}
+\boxed{\lim_{\beta_Q \rightarrow \infty} Z_Q[\beta_Q, J, g, b] = \lim_{L_{d+1} \rightarrow \infty} \Lambda^{L_Q^d L_{d+1}} Z_C[\beta_C, J, b]},
+\end{align}&lt;/p&gt;
+&lt;p&gt;where $g = \frac{1}{\beta_C} \mathrm{arctanh}(e^{-2 \beta_C J})$ and $\Lambda = \frac{1}{2} \mathrm{csch}(2 \beta_C J)$.&lt;/p&gt;
+&lt;p&gt;Since $\beta_C \rightarrow \infty \leftrightarrow g \rightarrow 0$, $\beta_C \rightarrow 0 \leftrightarrow g \rightarrow \infty$, we can see that $g$ plays the role of temperature.&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;Lechner, D. (2014). Quantum Phase Transitions-The Quantum-Classical Mapping.&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;br/&gt;
+&lt;h2 id=&#34;d1-case&#34;&gt;$d=1$ case&lt;/h2&gt;
+&lt;h3 id=&#34;mapping-to-free-fermions&#34;&gt;Mapping to free fermions&lt;/h3&gt;
+&lt;p&gt;Pfeuty&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; showed that the TFI model can be mapped to free fermions, using the &lt;a href=&#34;https://en.wikipedia.org/wiki/Jordan%e2%80%93Wigner_transformation&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Jordan-Wigner transformation&lt;/a&gt;.&lt;/p&gt;
+&lt;details&gt;
+   &lt;summary&gt;Ignoring the boundary terms, one can show that the ground state energy is equal to&lt;/summary&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    &lt;p&gt;From Pfeuty, ignoring the terms at $k=0$,&lt;/p&gt;
+&lt;p&gt;$$e_0 \approx -\frac{g}{L}\sum_{m=-L/2}^{L/2} \sqrt{1+\lambda^2+2\lambda\cos(2\pi m/L)},$$
+where $e_0=E_0/L$ is the ground state energy density, and $\lambda = J/g$. As $L \rightarrow \infty$ this tends to&lt;/p&gt;
+&lt;p&gt;$$e_0 = -\frac{1}{2\pi} \int_{-\pi}^{\pi} dk \sqrt{1+2g\cos(k)+g^2}$$&lt;/p&gt;
+&lt;p&gt;Upon integration, this is equal to&lt;/p&gt;
+&lt;p&gt;$$e_0 = -\frac{2}{\pi} \lvert g-1\rvert E\left(\frac{-4g}{(g-1)^2}\right)$$&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;p&gt;$$E_0 = -\frac{2L}{\pi} \lvert g-1\rvert E\left(\frac{-4g}{(g-1)^2}\right),$$
+and from this or from the quantum-classical mapping, we can show that the second derivative of the ground state energy density diverges as $\sim \ln L$. We also know that $g_c=1$.&lt;/p&gt;
+&lt;h3 id=&#34;wavefunction&#34;&gt;Wavefunction&lt;/h3&gt;
+&lt;h4 id=&#34;g0&#34;&gt;$g=0$&lt;/h4&gt;
+&lt;p&gt;For $J=-1$, the ground state is degenerate; it can be any linear superposition $\lvert \psi_0 \rangle = \alpha \lvert \uparrow \rangle^{\otimes L} + \beta \lvert \downarrow \rangle^{\otimes L}$. This is &amp;lsquo;unphysical&amp;rsquo; in that if an infinitesimal longitudinal field $b$ is added, the degeneracy is immediately broken.&lt;/p&gt;
+&lt;p&gt;For $J=1$ the ground state is any superposition of the Neél state, $\lvert \psi_0 \rangle = \alpha \lvert \uparrow \downarrow \rangle^{\otimes L/2} + \beta \lvert \downarrow \uparrow \rangle^{\otimes L/2}$.&lt;/p&gt;
+&lt;h4 id=&#34;lvert-grvertinfty&#34;&gt;$\lvert g\rvert=\infty$&lt;/h4&gt;
+&lt;p&gt;Here we the spins would align in the $x$-direction, meaning that for $g&amp;gt;0$ we have $\lvert \psi_0 \rangle = \lvert + \rangle^{\otimes L}$ and for $g&amp;lt;0$ we have $\lvert \psi_0 \rangle = \lvert - \rangle^{\otimes L}$, where $\lvert \pm \rangle = \frac{1}{\sqrt{2}} \left(\lvert \uparrow \rangle \pm \rvert \downarrow \rangle\right)$.&lt;/p&gt;
+&lt;h3 id=&#34;entanglement&#34;&gt;Entanglement&lt;/h3&gt;
+&lt;p&gt;The entanglement entropy for the $d=1$ TFI model is an area law away from the critical point $g=1$, meaning that it tends to a constant as $L \rightarrow \infty$. This can be confirmed for the limits $g=0$, $\lvert g \rvert = \infty$ above. For $g=0$, we have due to the macroscopic superposition, we have an entanglement of $S_l^{(1)} = \ln 2$. For $g=\infty$, we have a product state in the $\sigma^x$-basis, and therefore have an entanglement entropy of 0.&lt;/p&gt;
+&lt;p&gt;On the other hand, from results of conformal field theory (CFT) at the critical point&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;, the bipartite entanglement entropy of scales as logarithm of system size with factor proportional to the central charge $c$,&lt;/p&gt;
+&lt;p&gt;\begin{equation}
+S_l^{(1)} = B + \frac{c}{3}\ln\left[\frac{L}{\pi} \sin \frac{\pi L_A}{L}\right],
+\end{equation}
+where $B$ is some constant.&lt;/p&gt;
+&lt;p&gt;We can check this using results from ED. We use &lt;code&gt;netket&lt;/code&gt; as they have a nice Hamiltonian representation builder.&lt;/p&gt;
+&lt;details&gt;&lt;summary&gt;&lt;font color=&#34;grey&#34;&gt; &lt;small&gt;Code&lt;/small&gt; &lt;/font&gt;&lt;/summary&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;numpy&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;as&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;np&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;netket&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;as&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;nk&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kn&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;netket.operator.spin&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sigmax&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;sigmaz&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sigmay&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kn&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;scipy.sparse.linalg&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;eigsh&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;bipartite_ee&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;psi&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;alphas&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]):&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   &lt;span class=&#34;n&#34;&gt;L&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;np&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;log2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;psi&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;shape&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]))&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   &lt;span class=&#34;n&#34;&gt;A_dim&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;  &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;**&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;L&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;//&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   &lt;span class=&#34;n&#34;&gt;psi_block&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;np&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;reshape&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;psi&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;A_dim&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;A_dim&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   &lt;span class=&#34;n&#34;&gt;s&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;np&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;linalg&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;svd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;psi_block&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;compute_uv&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   &lt;span class=&#34;n&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;**&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;20&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)]&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;**&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   &lt;span class=&#34;n&#34;&gt;entropies&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;alpha&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;alphas&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;alpha&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;         &lt;span class=&#34;n&#34;&gt;entropies&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;append&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;np&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;inner&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;np&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;k&#34;&gt;else&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;         &lt;span class=&#34;n&#34;&gt;entropies&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;append&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;np&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;np&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;sum&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;**&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;alpha&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;alpha&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;entropies&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;Ls&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;8&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;12&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;14&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;J&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;d&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;gs&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;np&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;linspace&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;41&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;ees&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;dict&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;L&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Ls&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   &lt;span class=&#34;n&#34;&gt;es&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;L&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   &lt;span class=&#34;n&#34;&gt;ees&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;L&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   &lt;span class=&#34;n&#34;&gt;res&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;L&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   &lt;span class=&#34;n&#34;&gt;graph&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;nk&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;graph&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Hypercube&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;length&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;L&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n_dim&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;pbc&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;kc&#34;&gt;True&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   &lt;span class=&#34;n&#34;&gt;hi&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;nk&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;hilbert&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Spin&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;N&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;L&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;**&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;g&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;enumerate&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;gs&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;nb&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;sa&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;L&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;, &lt;/span&gt;&lt;span class=&#34;si&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;delta&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;.2f&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;end&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\r&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;n&#34;&gt;H&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;graph&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;nodes&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;():&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;n&#34;&gt;H&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;append&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;delta&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;sigmax&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;hi&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;j&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;graph&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;edges&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;():&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;n&#34;&gt;H&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;append&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;sigmaz&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;hi&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;sigmaz&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;hi&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;j&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;n&#34;&gt;H&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;sum&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;H&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;n&#34;&gt;w&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;v&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;eigsh&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;H&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;to_sparse&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(),&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;k&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;which&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;SA&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;return_eigenvectors&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;kc&#34;&gt;True&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;tol&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;n&#34;&gt;ee&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;re&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;bipartite_ee&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;v&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[:,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;alphas&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;])&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;n&#34;&gt;ees&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;L&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;append&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ee&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   &lt;span class=&#34;n&#34;&gt;ees&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;L&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;np&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;array&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ees&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;L&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;])&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/details&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-entanglement-entropy-for-the-d1-tfi-model-calculated-through-exact-diagonalisation&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Entanglement entropy&#34;
+           src=&#34;https://sunwoo-kim.github.io/ko/posts/tfi-model/ee.svg&#34;
+           loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption&gt;
+      Entanglement entropy for the $d=1$ TFI model, calculated through exact diagonalisation.
+    &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h2 id=&#34;d2-case&#34;&gt;$d=2$ case&lt;/h2&gt;
+&lt;p&gt;In 2d there are multiple ways of building the lattice. The simplest is to have a square lattice. In that case, the critical transverse field is approximately $g_c \approx 3.045$&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;Pfeuty, P. (1970). The one-dimensional Ising model with a transverse field. ANNALS of Physics, 57(1), 79–90.&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;Calabrese, P., &amp;amp; Cardy, J. (2009). Entanglement entropy and conformal field theory. Journal of physics a: mathematical and theoretical, 42(50), 504005.&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
+&lt;p&gt;de Jongh, M. S. L., &amp;amp; van Leeuwen, J. M. J. (1997). The critical behaviour of the 2D Ising model in Transverse Field; a Density Matrix Renormalization calculation. arXiv preprint cond-mat/9709103.&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Hello World</title>
       <link>https://sunwoo-kim.github.io/ko/posts/hello-world/</link>
       <pubDate>Sun, 18 Apr 2021 00:00:00 +0000</pubDate>
@@ -332,7 +2252,7 @@ where $\nu_\mathrm{S} = \frac{1}{2 \lvert f&amp;rsquo;&amp;rsquo;_\mathrm{S}(0) 
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   title=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;Hello World&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;,
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   year=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;2021&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;,
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   howpublished=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;\url&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;https://sunwoo-kim.github.io/ko/posts/hello-world/&lt;span class=&#34;nb&#34;&gt;}}&lt;/span&gt;,
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   note=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;Accessed: 2026-03-16&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   note=&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;Accessed: 2026-06-12&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/details&gt;
 &lt;!-- Welcome to my new website! I hope to post some expository writeups on my research projects here. Stay tuned! --&gt;
@@ -371,6 +2291,27 @@ where $\nu_\mathrm{S} = \frac{1}{2 \lvert f&amp;rsquo;&amp;rsquo;_\mathrm{S}(0) 
     </item>
     
     <item>
+      <title>MASt Thesis - Metric tomography with Sobolev gradients</title>
+      <link>https://sunwoo-kim.github.io/ko/projects/sobolev/</link>
+      <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
+      <guid>https://sunwoo-kim.github.io/ko/projects/sobolev/</guid>
+      <description>&lt;details open&gt; &lt;summary&gt; &lt;b&gt;For the general public&lt;/b&gt; &lt;i&gt;(click to open and close)&lt;/i&gt; &lt;/summary&gt;
+&lt;hr&gt;
+&lt;p&gt;Even though the &amp;lsquo;metric tensor&amp;rsquo; seems like an exotic object that only exist in general relativity, it&amp;rsquo;s actually just a tool to describe effective distances. For example, it could be used to describe time that sound waves take, like inside of the Earth! This could be anisotropic, meaning that sound could be faster in one direction than the other. The speed of sound waves are determined by a myriad of factors, such as density and composition.
+&lt;br&gt;&lt;br&gt;
+The next (practical) question is, how do we determine the composition given that we have measured some sound waves at certain locations? Given a metric tensor, we have the &amp;lsquo;forward&amp;rsquo; equation that predicts how sound waves will travel, but now we are describing an &amp;lsquo;inverse&amp;rsquo; problem where we want to determine the metric tensor with essentially infinite parameters given some finite measurements. How do we do this? A basic way to do this is to use finite parameterisation and use regularisation to constrain the model. A better way is to work in function space and calculate &lt;em&gt;functional&lt;/em&gt; derivatives, then do gradient descent. Practically speaking, we resolve them via Fourier kernels, but this is fine, since after this we can increase the number of Fourier kernels until the solution converges.
+&lt;br&gt;&lt;br&gt;
+We want to impose any assumptions/knowledge we have about the solution. For example, point-wise convergence and some levels of differentiability are probably good assumptions. To constrain solutions to have such properties, we can work in specific functions spaces &amp;ndash; Sobolev spaces are such spaces.&lt;/p&gt;
+&lt;hr&gt;
+&lt;/details&gt;
+&lt;details&gt; &lt;summary&gt; &lt;b&gt;Abstract&lt;/b&gt; &lt;i&gt;(click to open and close)&lt;/i&gt; &lt;/summary&gt;
+&lt;hr&gt;
+&lt;p&gt;In underdetermined inverse problems such as ray-tracing tomography, finite-parametrisation of the model and regularisation of the misfit functional are often used to force a unique solution. However, these measures are unsatisfactory because they are arbitrarily chosen. An alternative method is to use gradient-based optimisation to find a local minimum of the misfit, where the first order gradient of the misfit is required for the scheme and the second order can be used to quantify the constraints on the obtained solution or to potentially improve the scheme. The adjoint method is an effective way of calculating these gradients. We show that, in order to obtain a sensible solution through this scheme, we must work in an appropriate Sobolev space, the space of square-integrable functions with additional continuity constraints. We apply these ideas to the metric tomographic problem, the problem of finding an unknown metric on a manifold given a finite number of geodesics, which is an analogous problem to ray-tracing tomography of surface waves. We numerically implement this method for the linearised version of the problem on a 2-dimensional torus. Additionally, we present the first and second adjoints for the general problem, which can be used to calculate the first and second order gradients of the misfit function.&lt;/p&gt;
+&lt;hr&gt;
+&lt;/details&gt;</description>
+    </item>
+    
+    <item>
       <title>Nonsymmorphic crystals and topological waveguiding</title>
       <link>https://sunwoo-kim.github.io/ko/projects/nonsymmorphic/</link>
       <pubDate>Sun, 19 Aug 2018 00:00:00 +0000</pubDate>
@@ -393,6 +2334,57 @@ If you like to know more about the work, please check out the PDF.&lt;/p&gt;
 &lt;p&gt;The study of wave propagation through structured periodic media depends critically upon the periodic lattice from which the medium is constructed. That is unsurprising, but perhaps what is slightly more surprising, is that pieces of pure mathematics play a key role - in particular, group and representation theory. Group theory is the natural language that encodes the symmetries of shape and form. Here we use it to consider a class of $2D$ periodic crystals whose lattice is encoded by &lt;em&gt;nonsymmorphic&lt;/em&gt; space groups. These are often overlooked due to their relative complexity compared to the symmorphic space groups. We demonstrate that nonsymmorphic groups have possible practical interest in terms of coalescence of dispersion curves, Dirac points and band-sticking, using both theory and simulation. Once we&amp;rsquo;ve laid out the group theoretical framework in the context of the nonsymmorphic crystals, we use it to illustrate how accidental degeneracies can arise in symmorphic square lattices. We combine this phenomenon with topological valley effects to design highly-efficient topological waveguides and energy-splitters.&lt;/p&gt;
 &lt;hr&gt;
 </description>
+    </item>
+    
+    <item>
+      <title>Growing network models</title>
+      <link>https://sunwoo-kim.github.io/ko/projects/networks/</link>
+      <pubDate>Fri, 01 Jun 2018 00:00:00 +0000</pubDate>
+      <guid>https://sunwoo-kim.github.io/ko/projects/networks/</guid>
+      <description>&lt;details open&gt; &lt;summary&gt; &lt;b&gt;For the general public&lt;/b&gt; &lt;i&gt;(click to open and close)&lt;/i&gt; &lt;/summary&gt;
+&lt;hr&gt;
+&lt;p&gt;Growing network models are simple models that model social settings. For example, it could model how much research papers are cited - people tend to cite papers that are already cited (preferential attachment). This effect by itself leads to winner-takes-all effects, with winners randomly chosen due to random fluctuations. We study some of the models and come up with more accurate expressions for certain limits.&lt;/p&gt;
+&lt;hr&gt;
+&lt;/details&gt;
+&lt;details&gt; &lt;summary&gt; &lt;b&gt;Abstract&lt;/b&gt; &lt;i&gt;(click to open and close)&lt;/i&gt; &lt;/summary&gt;
+&lt;hr&gt;
+&lt;p&gt;Three growing network models (GNMs) are studied numerically using Monte Carlo sampling and analytically using mean-field approximation. The first is the Barabási-Albert (BA)/PurePref model, where new nodes are connected preferentially connected to existing nodes with many preexisting links. The second is the PureRand model, where there is no preference. The third is the Mixed model, where node choice probability is chosen between the two models. Apart from rederivation of known results, our original contribution is as follows. We study the node degree evolution directly instead of the steady state distribution, to find an analytic form more accurate with number of edges added per timestep, $m$. We confirm the results with numerics.&lt;/p&gt;
+&lt;hr&gt;
+&lt;/details&gt;</description>
+    </item>
+    
+    <item>
+      <title>BSc Thesis - Coulomb branch of 𝓝 = 4, 𝑑 = 2 &#43; 1 supersymmetric gauge field theories</title>
+      <link>https://sunwoo-kim.github.io/ko/projects/quivers/</link>
+      <pubDate>Mon, 19 Feb 2018 00:00:00 +0000</pubDate>
+      <guid>https://sunwoo-kim.github.io/ko/projects/quivers/</guid>
+      <description>&lt;details open&gt; &lt;summary&gt; &lt;b&gt;For the general public&lt;/b&gt; &lt;i&gt;(click to open and close)&lt;/i&gt; &lt;/summary&gt;
+&lt;hr&gt;
+&lt;p&gt;The famous Higgs mechanism, where a scalar (Higgs) field chooses one of the degenerate minima, gives particles their mass. In so-called supersymmetric gauge field theories, the space of degenerate minima is called the moduli space. Information about the moduli space is encoded in diagrams called &amp;lsquo;quiver diagrams&amp;rsquo; and an algebraic series called the Hilbert series. We studied the structure of these moduli spaces for a particular set of these.&lt;/p&gt;
+&lt;hr&gt;
+&lt;/details&gt;
+&lt;details&gt; &lt;summary&gt; &lt;b&gt;Abstract&lt;/b&gt; &lt;i&gt;(click to open and close)&lt;/i&gt; &lt;/summary&gt;
+&lt;hr&gt;
+&lt;p&gt;Moduli space of a gauge ﬁeld theory is an abstract space of vacuum expectation values
+of scalar fields. It is of physical signiﬁcance as a point in this space must be chosen
+before the masses of particles can be determined. For $\mathcal{N} = 4$, $d = 2 + 1$ supersymmetric
+gauge fields theories, whose information can be encoded in quiver diagrams, there are
+two branches in its moduli space: the Higgs branch and the Coulomb branch, where
+the latter can be calculated using the monopole formula. In this article, the Coulomb
+branch of $A_n$, $C_n$, $F_4$, $G_2$ Dynkin quivers and their affine counterparts were studied by
+calculating their Hilbert series using the monopole formula. In addition to conﬁrming
+previous predictions, new implications on the choice of ungauging location (ﬁxing one of
+the phases) were found, which we state as the &lt;em&gt;ungauging hypothesis&lt;/em&gt;.&lt;/p&gt;
+&lt;hr&gt;
+&lt;/details&gt;</description>
+    </item>
+    
+    <item>
+      <title>KCL Many Body Circle</title>
+      <link>https://sunwoo-kim.github.io/ko/activities/kclmanybodycircle/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sunwoo-kim.github.io/ko/activities/kclmanybodycircle/</guid>
+      <description></description>
     </item>
     
   </channel>
