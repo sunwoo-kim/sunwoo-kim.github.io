@@ -296,34 +296,6 @@
                 href="https://sunwoo-kim.github.io/ko/activities/teaching/symmetries/"
                 />
   </url><url>
-    <loc>https://sunwoo-kim.github.io/ko/posts/free-energy/</loc>
-    <lastmod>2023-11-16T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://sunwoo-kim.github.io/en/posts/free-energy/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ko"
-                href="https://sunwoo-kim.github.io/ko/posts/free-energy/"
-                />
-  </url><url>
-    <loc>https://sunwoo-kim.github.io/ko/posts/</loc>
-    <lastmod>2023-11-16T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://sunwoo-kim.github.io/en/posts/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ko"
-                href="https://sunwoo-kim.github.io/ko/posts/"
-                />
-  </url><url>
     <loc>https://sunwoo-kim.github.io/ko/posts/fourier-transforms/</loc>
     <lastmod>2023-08-31T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -338,32 +310,18 @@
                 href="https://sunwoo-kim.github.io/ko/posts/fourier-transforms/"
                 />
   </url><url>
-    <loc>https://sunwoo-kim.github.io/ko/tags/model-zoo/</loc>
-    <lastmod>2023-11-16T00:00:00+00:00</lastmod>
+    <loc>https://sunwoo-kim.github.io/ko/posts/</loc>
+    <lastmod>2023-08-31T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://sunwoo-kim.github.io/en/tags/model-zoo/"
+                href="https://sunwoo-kim.github.io/en/posts/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://sunwoo-kim.github.io/ko/tags/model-zoo/"
-                />
-  </url><url>
-    <loc>https://sunwoo-kim.github.io/ko/posts/tfi-model/</loc>
-    <lastmod>2023-11-16T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://sunwoo-kim.github.io/en/posts/tfi-model/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ko"
-                href="https://sunwoo-kim.github.io/ko/posts/tfi-model/"
+                href="https://sunwoo-kim.github.io/ko/posts/"
                 />
   </url><url>
     <loc>https://sunwoo-kim.github.io/ko/posts/hello-world/</loc>
