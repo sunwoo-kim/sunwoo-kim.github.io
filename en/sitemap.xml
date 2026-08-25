@@ -459,5 +459,18 @@
                 hreflang="en"
                 href="https://sunwoo-kim.github.io/en/publications/"
                 />
+  </url><url>
+    <loc>https://sunwoo-kim.github.io/en/tools/</loc>
+    <changefreq>weekly</changefreq>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ko"
+                href="https://sunwoo-kim.github.io/ko/tools/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://sunwoo-kim.github.io/en/tools/"
+                />
   </url>
 </urlset>
