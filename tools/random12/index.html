@@ -48,7 +48,7 @@
         }
 
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             width: 100%;
         }
 
@@ -225,6 +225,8 @@
             border-radius: 12px;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
             border: 1px solid var(--border-color);
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .note {
@@ -232,9 +234,10 @@
             align-items: center;
             justify-content: center;
             aspect-ratio: 1;
+            width: 100%;
             min-width: 0;
             min-height: 0;
-            font-size: clamp(1.8rem, 5vw, 3.5rem);
+            font-size: clamp(1.4rem, 3vw, 2.2rem);
             font-weight: 700;
             background-color: var(--bg-color);
             border: 1px solid var(--border-color);
@@ -245,6 +248,7 @@
             line-height: 1.1;
             cursor: pointer;
             user-select: none;
+            overflow: hidden;
         }
 
         .note.active {
@@ -389,44 +393,43 @@
                 </label>
             </div>
         </div>
-    </div>
 
-    <div class="controls">
-        <div class="radio-group">
-            <label>
-                <input type="radio" name="accidental" value="flats" checked> Flats (♭)
-            </label>
-            <label>
-                <input type="radio" name="accidental" value="sharps"> Sharps (♯)
-            </label>
-            <label>
-                <input type="radio" name="accidental" value="random"> Random
-            </label>
+        <div class="controls">
+            <div class="radio-group">
+                <label>
+                    <input type="radio" name="accidental" value="flats" checked> Flats (♭)
+                </label>
+                <label>
+                    <input type="radio" name="accidental" value="sharps"> Sharps (♯)
+                </label>
+                <label>
+                    <input type="radio" name="accidental" value="random"> Random
+                </label>
+            </div>
+            <div class="buttons-group">
+                <button class="secondary-btn" id="toggle-playback-btn" onclick="togglePlayback()">Playback</button>
+                <button class="secondary-btn" id="toggle-options-btn" onclick="toggleOptions()">Chords</button>
+                <button onclick="manualRerandomise()">Re-randomise</button>
+            </div>
         </div>
-        <div class="buttons-group">
-            <button class="secondary-btn" id="toggle-playback-btn" onclick="togglePlayback()">Playback</button>
-            <button class="secondary-btn" id="toggle-options-btn" onclick="toggleOptions()">Random Chords</button>
-            <button onclick="manualRerandomise()">Re-randomise</button>
-        </div>
-    </div>
 
-    <div class="more-options-panel" id="more-options-panel">
-        <div class="options-title" style="margin-bottom: 12px;">Include Random Chords:</div>
-        <div class="checkbox-group" id="chord-checkboxes">
-            <label><input type="checkbox" value="maj"> Major</label>
-            <label><input type="checkbox" value="m"> Minor</label>
-            <label><input type="checkbox" value="maj7"> Major 7</label>
-            <label><input type="checkbox" value="m7"> Minor 7</label>
-            <label><input type="checkbox" value="7"> Dominant 7</label>
-            <label><input type="checkbox" value="m7♭5"> Half Dim</label>
-            <label><input type="checkbox" value="dim"> Diminished</label>
-            <label><input type="checkbox" value="aug"> Augmented</label>
+        <div class="more-options-panel" id="more-options-panel">
+            <div class="options-title" style="margin-bottom: 12px;">Include Chords:</div>
+            <div class="checkbox-group" id="chord-checkboxes">
+                <label><input type="checkbox" value="maj"> Major</label>
+                <label><input type="checkbox" value="m"> Minor</label>
+                <label><input type="checkbox" value="maj7"> Major 7</label>
+                <label><input type="checkbox" value="m7"> Minor 7</label>
+                <label><input type="checkbox" value="7"> Dominant 7</label>
+                <label><input type="checkbox" value="m7♭5"> Half Dim</label>
+                <label><input type="checkbox" value="dim"> Diminished</label>
+                <label><input type="checkbox" value="aug"> Augmented</label>
+            </div>
         </div>
-    </div>
 
-    <div class="grid" id="grid">
-        <!-- Notes will be inserted here -->
-    </div>
+        <div class="grid" id="grid">
+            <!-- Notes will be inserted here -->
+        </div>
     </div>
 
     <script>
