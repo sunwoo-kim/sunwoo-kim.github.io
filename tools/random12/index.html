@@ -16,6 +16,8 @@
             --secondary-bg: #e2e8f0;
             --secondary-hover: #cbd5e1;
             --secondary-text: #334155;
+            --stop-bg: #ef4444;
+            --stop-hover: #dc2626;
         }
 
         /* Dark mode support */
@@ -46,13 +48,13 @@
         }
 
         .container {
-            max-width: 700px;
+            max-width: 900px;
             width: 100%;
         }
 
         .header-section {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 24px;
         }
 
         h1 {
@@ -64,10 +66,11 @@
         .controls {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
             margin-bottom: 16px;
             gap: 16px;
+            width: 100%;
         }
 
         .buttons-group {
@@ -77,6 +80,7 @@
 
         .radio-group {
             display: flex;
+            justify-content: center;
             gap: 16px;
             background-color: var(--grid-bg);
             padding: 12px 16px;
@@ -91,6 +95,42 @@
             cursor: pointer;
             font-size: 1.1rem;
             user-select: none;
+        }
+
+        .playback-controls {
+            display: none;
+            /* Hidden by default */
+            align-items: center;
+            justify-content: space-between;
+            background-color: var(--grid-bg);
+            padding: 12px 16px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 24px;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .playback-controls.open {
+            display: flex;
+        }
+
+        .bpm-control {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex: 1;
+        }
+
+        .bpm-control input[type="range"] {
+            flex: 1;
+            cursor: pointer;
+        }
+
+        .bpm-val {
+            font-weight: 600;
+            min-width: 3ch;
+            text-align: right;
         }
 
         .more-options-panel {
@@ -145,8 +185,12 @@
             font-size: 1.1rem;
             cursor: pointer;
             font-weight: 600;
-            transition: background-color 0.2s;
+            transition: all 0.2s;
             box-shadow: 0 2px 4px rgba(59, 130, 246, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
         }
 
         button:hover {
@@ -161,6 +205,15 @@
 
         button.secondary-btn:hover {
             background-color: var(--secondary-hover);
+        }
+
+        button.playing {
+            background-color: var(--stop-bg);
+            box-shadow: 0 2px 4px rgba(239, 68, 68, 0.3);
+        }
+
+        button.playing:hover {
+            background-color: var(--stop-hover);
         }
 
         .grid {
@@ -181,15 +234,26 @@
             aspect-ratio: 1;
             min-width: 0;
             min-height: 0;
-            font-size: 2.2rem;
+            font-size: clamp(1.8rem, 5vw, 3.5rem);
             font-weight: 700;
             background-color: var(--bg-color);
             border: 1px solid var(--border-color);
             border-radius: 8px;
-            transition: transform 0.1s ease-in-out;
+            transition: all 0.1s ease-in-out;
             text-align: center;
             flex-direction: row;
             line-height: 1.1;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .note.active {
+            background-color: var(--primary);
+            color: white;
+            border-color: var(--primary);
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+            z-index: 10;
         }
 
         .chord-suffix {
@@ -201,6 +265,27 @@
 
         .note:active {
             transform: scale(0.95);
+        }
+
+        @keyframes pulseBeat {
+            0% {
+                transform: scale(1.05);
+                box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+            }
+
+            50% {
+                transform: scale(1.12);
+                box-shadow: 0 8px 24px rgba(59, 130, 246, 0.7);
+            }
+
+            100% {
+                transform: scale(1.05);
+                box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+            }
+        }
+
+        .beat-pulse {
+            animation: pulseBeat 0.3s ease-out;
         }
 
         @media (max-width: 500px) {
@@ -234,9 +319,9 @@
                 gap: 12px;
             }
 
-            h1 {
-                font-size: 1.5rem;
-                margin-bottom: 10px;
+            .playback-controls {
+                flex-direction: column;
+                align-items: stretch;
             }
         }
     </style>
@@ -249,56 +334,352 @@
             <h1>random12</h1>
         </div>
 
-        <div class="controls">
-            <div class="radio-group">
-                <label>
-                    <input type="radio" name="accidental" value="flats" checked> Flats (♭)
-                </label>
-                <label>
-                    <input type="radio" name="accidental" value="sharps"> Sharps (♯)
-                </label>
-                <label>
-                    <input type="radio" name="accidental" value="random"> Random
-                </label>
+        <div class="playback-controls">
+            <div style="display: flex; gap: 16px; width: 100%; align-items: center; flex-wrap: wrap;">
+                <button id="play-btn" onclick="togglePlay()">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" id="play-icon">
+                        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                    </svg>
+                    <span id="play-text">Play</span>
+                </button>
+                <div class="bpm-control">
+                    <label for="bpm-slider">BPM:</label>
+                    <input type="range" id="bpm-slider" min="30" max="240" value="120" oninput="updateBPMUI()"
+                        onchange="updateBPM()">
+                    <span id="bpm-val" class="bpm-val">120</span>
+                </div>
             </div>
-            <div class="buttons-group">
-                <button class="secondary-btn" id="toggle-options-btn" onclick="toggleOptions()">More Options</button>
-                <button onclick="generateNotes()">Re-randomise</button>
-            </div>
-        </div>
 
-        <div class="more-options-panel" id="more-options-panel">
-            <div class="options-title">Include Random Chords:</div>
-            <div class="checkbox-group" id="chord-checkboxes">
-                <label><input type="checkbox" value="maj"> Major</label>
-                <label><input type="checkbox" value="m"> Minor</label>
-                <label><input type="checkbox" value="maj7"> Major 7</label>
-                <label><input type="checkbox" value="m7"> Minor 7</label>
-                <label><input type="checkbox" value="7"> Dominant 7</label>
-                <label><input type="checkbox" value="m7♭5"> Half Dim (m7♭5)</label>
-                <label><input type="checkbox" value="dim"> Diminished</label>
-                <label><input type="checkbox" value="aug"> Augmented</label>
+            <div style="display: flex; gap: 16px; width: 100%; flex-wrap: wrap; align-items: center;">
+                <div class="beats-control" style="display: flex; align-items: center; gap: 8px;">
+                    <label for="beats-select" style="font-size: 0.9rem; font-weight: 500;">Beats/Note:</label>
+                    <select id="beats-select" onchange="updateBeats()"
+                        style="padding: 4px 8px; border-radius: 6px; border: 1px solid var(--border-color); background-color: var(--bg-color); color: var(--text-color); font-size: 0.9rem;">
+                        <option value="1">1 (Quarter)</option>
+                        <option value="2">2 (Half)</option>
+                        <option value="3">3 (3/4 Time)</option>
+                        <option value="4" selected>4 (Whole)</option>
+                    </select>
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <label for="sustain-select" style="font-size: 0.9rem; font-weight: 500;">Sustain:</label>
+                    <select id="sustain-select" onchange="updateSustain()"
+                        style="padding: 4px 8px; border-radius: 6px; border: 1px solid var(--border-color); background-color: var(--bg-color); color: var(--text-color); font-size: 0.9rem;">
+                        <option value="0.2">Short (0.2s)</option>
+                        <option value="0.5">Medium (0.5s)</option>
+                        <option value="1.0">Long (1s)</option>
+                        <option value="2.0" selected>Very Long (2s)</option>
+                        <option value="3.0">Ultra Long (3s)</option>
+                        <option value="4.0">Endless (4s)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div style="display: flex; gap: 16px; width: 100%; flex-wrap: wrap; flex-direction: column;">
+                <label
+                    style="font-weight: 600; font-size: 0.95rem; display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                    <input type="checkbox" id="continuous-mode" onchange="updateContinuousMode()"> Continuous Generation
+                    Mode (Replaces rows during playback)
+                </label>
+                <label
+                    style="font-weight: 600; font-size: 0.95rem; display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                    <input type="checkbox" id="pulsate-beat" onchange="updatePulsateBeat()" checked> Pulsate box on
+                    every beat
+                </label>
             </div>
         </div>
+    </div>
 
-        <div class="grid" id="grid">
-            <!-- Notes will be inserted here -->
+    <div class="controls">
+        <div class="radio-group">
+            <label>
+                <input type="radio" name="accidental" value="flats" checked> Flats (♭)
+            </label>
+            <label>
+                <input type="radio" name="accidental" value="sharps"> Sharps (♯)
+            </label>
+            <label>
+                <input type="radio" name="accidental" value="random"> Random
+            </label>
         </div>
+        <div class="buttons-group">
+            <button class="secondary-btn" id="toggle-playback-btn" onclick="togglePlayback()">Playback</button>
+            <button class="secondary-btn" id="toggle-options-btn" onclick="toggleOptions()">Random Chords</button>
+            <button onclick="manualRerandomise()">Re-randomise</button>
+        </div>
+    </div>
+
+    <div class="more-options-panel" id="more-options-panel">
+        <div class="options-title" style="margin-bottom: 12px;">Include Random Chords:</div>
+        <div class="checkbox-group" id="chord-checkboxes">
+            <label><input type="checkbox" value="maj"> Major</label>
+            <label><input type="checkbox" value="m"> Minor</label>
+            <label><input type="checkbox" value="maj7"> Major 7</label>
+            <label><input type="checkbox" value="m7"> Minor 7</label>
+            <label><input type="checkbox" value="7"> Dominant 7</label>
+            <label><input type="checkbox" value="m7♭5"> Half Dim</label>
+            <label><input type="checkbox" value="dim"> Diminished</label>
+            <label><input type="checkbox" value="aug"> Augmented</label>
+        </div>
+    </div>
+
+    <div class="grid" id="grid">
+        <!-- Notes will be inserted here -->
+    </div>
     </div>
 
     <script>
         const notesFlats = ["C", "D♭", "D", "E♭", "E", "F", "G♭", "G", "A♭", "A", "B♭", "B"];
         const notesSharps = ["C", "C♯", "D", "D♯", "E", "F", "F♯", "G", "G♯", "A", "A♯", "B"];
 
+        let queuedNotes = [];
+        let isContinuousMode = false;
+        let isPulsateBeat = true;
+
+        function updatePulsateBeat() {
+            isPulsateBeat = document.getElementById('pulsate-beat').checked;
+            localStorage.setItem('random12_pulsate', isPulsateBeat);
+        }
+
+        // --- Web Audio API Synth Setup ---
+        let audioCtx = null;
+        let currentSustain = 2.0;
+
+        const noteFreqs = {
+            "C": 261.63,
+            "C♯": 277.18, "D♭": 277.18,
+            "D": 293.66,
+            "D♯": 311.13, "E♭": 311.13,
+            "E": 329.63,
+            "F": 349.23,
+            "F♯": 369.99, "G♭": 369.99,
+            "G": 392.00,
+            "G♯": 415.30, "A♭": 415.30,
+            "A": 440.00,
+            "A♯": 466.16, "B♭": 466.16,
+            "B": 493.88
+        };
+
+        const chordIntervals = {
+            "": [0],
+            "maj": [0, 4, 7],
+            "m": [0, 3, 7],
+            "maj7": [0, 4, 7, 11],
+            "m7": [0, 3, 7, 10],
+            "7": [0, 4, 7, 10],
+            "m7♭5": [0, 3, 6, 10],
+            "dim": [0, 3, 6],
+            "aug": [0, 4, 8]
+        };
+
+        function initAudio() {
+            if (!audioCtx) {
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            }
+            if (audioCtx.state === 'suspended') {
+                audioCtx.resume();
+            }
+        }
+
+        function playSound(baseNote, suffix) {
+            initAudio();
+
+            const intervals = chordIntervals[suffix] || [0];
+            const baseFreq = noteFreqs[baseNote];
+            if (!baseFreq) return;
+
+            const t = audioCtx.currentTime;
+            const duration = currentSustain;
+
+            intervals.forEach(interval => {
+                const osc = audioCtx.createOscillator();
+                const gainNode = audioCtx.createGain();
+
+                osc.type = 'triangle';
+                osc.frequency.value = baseFreq * Math.pow(2, interval / 12);
+
+                // Envelope to avoid popping
+                gainNode.gain.setValueAtTime(0, t);
+                gainNode.gain.linearRampToValueAtTime(0.3 / intervals.length, t + 0.05);
+                // Sustain slightly longer before decaying quickly
+                gainNode.gain.setTargetAtTime(0.15 / intervals.length, t + 0.1, duration * 0.4);
+                gainNode.gain.exponentialRampToValueAtTime(0.001, t + duration);
+
+                osc.connect(gainNode);
+                gainNode.connect(audioCtx.destination);
+
+                osc.start(t);
+                osc.stop(t + duration);
+            });
+        }
+
+        // --- Sequencer Logic ---
+        let isPlaying = false;
+        let currentStep = -1;
+        let currentBPM = 120;
+        let beatsPerNote = 4;
+        let currentBeat = 0;
+
+        // Use a Web Worker for precise timing even in background tabs
+        const workerCode = `
+            let timerID = null;
+            self.onmessage = function(e) {
+                if (e.data.action === 'start') {
+                    if (timerID) clearInterval(timerID);
+                    timerID = setInterval(() => postMessage('tick'), e.data.interval);
+                } else if (e.data.action === 'stop') {
+                    if (timerID) clearInterval(timerID);
+                    timerID = null;
+                }
+            };
+        `;
+        const workerBlob = new Blob([workerCode], { type: 'application/javascript' });
+        const metronomeWorker = new Worker(URL.createObjectURL(workerBlob));
+        metronomeWorker.onmessage = function (e) {
+            if (e.data === 'tick' && isPlaying) {
+                nextStep();
+            }
+        };
+
+        function togglePlay() {
+            initAudio();
+            isPlaying = !isPlaying;
+            const btn = document.getElementById('play-btn');
+            const text = document.getElementById('play-text');
+            const icon = document.getElementById('play-icon');
+
+            if (isPlaying) {
+                text.textContent = "Stop";
+                btn.classList.add("playing");
+                icon.innerHTML = '<rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>';
+                startSequence();
+            } else {
+                text.textContent = "Play";
+                btn.classList.remove("playing");
+                icon.innerHTML = '<polygon points="5 3 19 12 5 21 5 3"></polygon>';
+                stopSequence();
+            }
+        }
+
+        function startSequence() {
+            stopSequence();
+            // Force reset step and beat so it starts from 0
+            currentStep = -1;
+            currentBeat = 0;
+            nextStep();
+            // Interval is strictly 1 beat
+            const intervalMs = (60 / currentBPM) * 1000;
+            metronomeWorker.postMessage({ action: 'start', interval: intervalMs });
+        }
+
+        function stopSequence() {
+            metronomeWorker.postMessage({ action: 'stop' });
+            clearHighlight();
+        }
+
+        function updateBPMUI() {
+            document.getElementById('bpm-val').textContent = document.getElementById('bpm-slider').value;
+        }
+
+        function updateBPM() {
+            currentBPM = parseInt(document.getElementById('bpm-slider').value);
+            localStorage.setItem('random12_bpm', currentBPM);
+            if (isPlaying) {
+                startSequence(); // Restart interval with new BPM
+            }
+        }
+
+        function updateBeats() {
+            beatsPerNote = parseInt(document.getElementById('beats-select').value);
+            localStorage.setItem('random12_beats', beatsPerNote);
+            if (isPlaying) {
+                startSequence(); // Restart interval
+            }
+        }
+
+        function updateSustain() {
+            currentSustain = parseFloat(document.getElementById('sustain-select').value);
+            localStorage.setItem('random12_sustain', currentSustain);
+        }
+
+        function clearHighlight() {
+            document.querySelectorAll('.note.active').forEach(n => n.classList.remove('active'));
+        }
+
+        function nextStep() {
+            const grid = document.getElementById("grid");
+            const notes = grid.children;
+            if (notes.length === 0) return;
+
+            if (currentBeat === 0) {
+                clearHighlight();
+                let wasMinusOne = (currentStep === -1);
+                currentStep++;
+
+                if (currentStep >= notes.length) {
+                    if (!isContinuousMode) {
+                        // Loop normally
+                    }
+                    currentStep = 0;
+                }
+
+                const newNotes = document.getElementById("grid").children;
+
+                // Replace previous row in continuous mode
+                if (isContinuousMode && currentStep % 4 === 0 && !wasMinusOne) {
+                    let replaceStart = -1;
+                    if (currentStep === 4) replaceStart = 0;
+                    else if (currentStep === 8) replaceStart = 4;
+                    else if (currentStep === 0) replaceStart = 8;
+
+                    if (replaceStart !== -1) {
+                        refillQueue();
+                        for (let i = 0; i < 4; i++) {
+                            const newNote = queuedNotes.shift();
+                            updateNoteDiv(newNotes[replaceStart + i], newNote);
+                        }
+                    }
+                }
+                if (newNotes.length > currentStep) {
+                    const activeNoteDiv = newNotes[currentStep];
+                    activeNoteDiv.classList.add("active");
+
+                    const noteText = activeNoteDiv.getAttribute('data-note');
+                    const suffixText = activeNoteDiv.getAttribute('data-suffix');
+                    playSound(noteText, suffixText);
+                }
+            }
+
+            // Pulse animation on every beat
+            if (isPulsateBeat) {
+                const newNotes = document.getElementById("grid").children;
+                if (newNotes.length > currentStep) {
+                    const activeNoteDiv = newNotes[currentStep];
+
+                    // Restart animation
+                    activeNoteDiv.classList.remove("beat-pulse");
+                    void activeNoteDiv.offsetWidth; // trigger reflow
+                    activeNoteDiv.classList.add("beat-pulse");
+                }
+            }
+
+            currentBeat++;
+            if (currentBeat >= beatsPerNote) {
+                currentBeat = 0;
+            }
+        }
+
+
         function toggleOptions() {
             const panel = document.getElementById("more-options-panel");
             const btn = document.getElementById("toggle-options-btn");
             if (panel.classList.contains("open")) {
                 panel.classList.remove("open");
-                btn.textContent = "More Options";
+                btn.textContent = "Random Chords";
             } else {
                 panel.classList.add("open");
-                btn.textContent = "Hide Options";
+                btn.textContent = "Hide Chords";
             }
         }
 
@@ -316,8 +697,6 @@
                         cbs.forEach(cb => {
                             if (cb.value === p.trim()) {
                                 cb.checked = true;
-                                document.getElementById("more-options-panel").classList.add("open");
-                                document.getElementById("toggle-options-btn").textContent = "Hide Options";
                             }
                         });
                     }
@@ -340,10 +719,47 @@
                                     if (cb.value === c) cb.checked = true;
                                 });
                             });
-                            document.getElementById("more-options-panel").classList.add("open");
-                            document.getElementById("toggle-options-btn").textContent = "Hide Options";
                         }
                     } catch (e) { }
+                }
+
+                const savedBPM = localStorage.getItem('random12_bpm');
+                if (savedBPM) {
+                    document.getElementById('bpm-slider').value = savedBPM;
+                    updateBPMUI();
+                    currentBPM = parseInt(savedBPM);
+                }
+
+                const savedBeats = localStorage.getItem('random12_beats');
+                if (savedBeats) {
+                    const sel = document.getElementById('beats-select');
+                    if (sel) {
+                        sel.value = savedBeats;
+                        beatsPerNote = parseInt(savedBeats);
+                    }
+                }
+
+                const savedSustain = localStorage.getItem('random12_sustain');
+                if (savedSustain) {
+                    const sel = document.getElementById('sustain-select');
+                    if (sel) {
+                        sel.value = savedSustain;
+                        currentSustain = parseFloat(savedSustain);
+                    }
+                }
+
+                const savedCont = localStorage.getItem('random12_continuous');
+                if (savedCont !== null) {
+                    isContinuousMode = (savedCont === 'true');
+                    const cb = document.getElementById('continuous-mode');
+                    if (cb) cb.checked = isContinuousMode;
+                }
+
+                const savedPulsate = localStorage.getItem('random12_pulsate');
+                if (savedPulsate !== null) {
+                    isPulsateBeat = (savedPulsate === 'true');
+                    const cb = document.getElementById('pulsate-beat');
+                    if (cb) cb.checked = isPulsateBeat;
                 }
             }
         }
@@ -370,7 +786,80 @@
             return array;
         }
 
+        function togglePlayback() {
+            const panel = document.querySelector(".playback-controls");
+            const btn = document.getElementById("toggle-playback-btn");
+            if (panel.classList.contains("open")) {
+                panel.classList.remove("open");
+                btn.textContent = "Playback...";
+            } else {
+                panel.classList.add("open");
+                btn.textContent = "Hide Playback";
+            }
+        }
+
+        function manualRerandomise() {
+            if (isPlaying) {
+                // Stop and restart sequence cleanly
+                stopSequence();
+                generateNotes();
+                startSequence();
+            } else {
+                generateNotes();
+            }
+        }
+
+        function updateContinuousMode() {
+            isContinuousMode = document.getElementById('continuous-mode').checked;
+            localStorage.setItem('random12_continuous', isContinuousMode);
+            if (isContinuousMode) {
+                queuedNotes = [];
+            }
+        }
+
+        function generateNext12Notes() {
+            const mode = document.querySelector('input[name="accidental"]:checked').value;
+            const chordCheckboxes = document.querySelectorAll('#chord-checkboxes input:checked');
+            const selectedChords = Array.from(chordCheckboxes).map(cb => cb.value);
+
+            let selectedNotes = [];
+            for (let i = 0; i < 12; i++) {
+                let note = "";
+                if (mode === "flats") {
+                    note = notesFlats[i];
+                } else if (mode === "sharps") {
+                    note = notesSharps[i];
+                } else {
+                    note = Math.random() < 0.5 ? notesFlats[i] : notesSharps[i];
+                }
+
+                let suffix = "";
+                if (selectedChords.length > 0) {
+                    suffix = selectedChords[Math.floor(Math.random() * selectedChords.length)];
+                }
+                selectedNotes.push({ note, suffix });
+            }
+            return shuffle(selectedNotes);
+        }
+
+        function refillQueue() {
+            if (queuedNotes.length < 4) {
+                queuedNotes = queuedNotes.concat(generateNext12Notes());
+            }
+        }
+
+        function updateNoteDiv(div, item) {
+            div.setAttribute('data-note', item.note);
+            div.setAttribute('data-suffix', item.suffix);
+            if (item.suffix) {
+                div.innerHTML = `<span>${item.note}</span><span class="chord-suffix">${item.suffix}</span>`;
+            } else {
+                div.textContent = item.note;
+            }
+        }
+
         function generateNotes() {
+            queuedNotes = [];
             const mode = document.querySelector('input[name="accidental"]:checked').value;
             const grid = document.getElementById("grid");
 
@@ -404,12 +893,30 @@
                 const div = document.createElement("div");
                 div.className = "note";
 
+                // Store data for playback
+                div.setAttribute('data-note', item.note);
+                div.setAttribute('data-suffix', item.suffix);
+
                 // If there's a suffix, show it next to the note root
                 if (item.suffix) {
                     div.innerHTML = `<span>${item.note}</span><span class="chord-suffix">${item.suffix}</span>`;
                 } else {
                     div.textContent = item.note;
                 }
+
+                // Allow manual click to play
+                div.addEventListener('click', () => {
+                    clearHighlight();
+                    div.classList.add('active');
+                    playSound(item.note, item.suffix);
+
+                    // Clear highlight after a short delay if sequencer is not running on it
+                    setTimeout(() => {
+                        if (!isPlaying || grid.children[currentStep] !== div) {
+                            div.classList.remove('active');
+                        }
+                    }, 400);
+                });
 
                 grid.appendChild(div);
             });
@@ -419,14 +926,27 @@
 
         // Re-generate when radio or checkboxes change
         document.querySelectorAll('input[name="accidental"], #chord-checkboxes input').forEach(input => {
-            input.addEventListener('change', generateNotes);
+            input.addEventListener('change', () => {
+                if (isPlaying) {
+                    stopSequence();
+                    generateNotes();
+                    startSequence();
+                } else {
+                    generateNotes();
+                }
+            });
         });
 
         // Add hashchange listener
         window.addEventListener('hashchange', () => {
-            // Only load state if hash changed externally
             loadState();
-            generateNotes();
+            if (isPlaying) {
+                stopSequence();
+                generateNotes();
+                startSequence();
+            } else {
+                generateNotes();
+            }
         });
 
         // Initial generation
