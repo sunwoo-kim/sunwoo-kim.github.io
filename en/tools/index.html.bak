@@ -286,7 +286,7 @@
 
   
 
-<meta name="description" content=" timesync - A tool for viewing times across different zones. " />
+<meta name="description" content=" timesync - A tool for viewing times across different zones. random12 - A random sequence generator for the 12 chromatic notes. " />
 
 
 
@@ -328,7 +328,7 @@
 <meta property="og:site_name" content="Sun Woo P. Kim" />
 <meta property="og:url" content="https://sunwoo-kim.github.io/en/tools/" />
 <meta property="og:title" content="Tools | Sun Woo P. Kim" />
-<meta property="og:description" content=" timesync - A tool for viewing times across different zones. " /><meta property="og:image" content="https://sunwoo-kim.github.io/media/icon_hu8b309a9302268010949630654373c3a0_79828_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
+<meta property="og:description" content=" timesync - A tool for viewing times across different zones. random12 - A random sequence generator for the 12 chromatic notes. " /><meta property="og:image" content="https://sunwoo-kim.github.io/media/icon_hu8b309a9302268010949630654373c3a0_79828_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
 
   
   
@@ -826,6 +826,7 @@
     <div class="article-style">
       <ul>
 <li><a href="/tools/timesync/">timesync</a> - A tool for viewing times across different zones.</li>
+<li><a href="/tools/random12/">random12</a> - A random sequence generator for the 12 chromatic notes.</li>
 </ul>
 
     </div>
